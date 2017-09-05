@@ -1,0 +1,9 @@
+dependencies {
+	compile "com.google.code.gson:gson:$gson_version"
+
+	compile "javax.servlet:javax.servlet-api:$javax_servlet_version"
+	compile "javax.validation:validation-api:$javax_validation_version"
+	compile "javax.mail:mail:$javax_mail_version"
+
+	compile "org.apache.httpcomponents:httpclient:$apache_httpcomponents_version"
+}

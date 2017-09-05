@@ -82,4 +82,8 @@ allprojects {
 
 subprojects{
 
+
+	dependencies{
+		compile project(':core')
+	}
 }

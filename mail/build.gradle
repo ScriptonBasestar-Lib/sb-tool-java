@@ -1,0 +1,3 @@
+dependencies {
+	compile "javax.mail:mail:$javax_mail_version"
+}
