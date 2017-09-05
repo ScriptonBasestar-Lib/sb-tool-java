@@ -65,15 +65,12 @@ allprojects {
 		}
 	}
 
-	dependencies {
+	dependencies{
 		compileOnly "org.codehaus.groovy:groovy-all:$groovy_version"
 		compile 'org.scala-lang:scala-library:2.11.8'
 		testCompile 'org.scalatest:scalatest_2.11:3.0.0'
-		compile "org.projectlombok:lombok:$lombok_version"
 		compile "org.jetbrains.kotlin:kotlin-stdlib-jre8:$kotlin_version"
 		compile "org.jetbrains.kotlin:kotlin-reflect:$kotlin_version"
-
-		testCompile "junit:junit:$junit_version"
 	}
 
 	task stage(dependsOn: ['build'])
@@ -81,9 +78,10 @@ allprojects {
 }
 
 subprojects{
-
-
 	dependencies{
 		compile project(':core')
+		compile "org.projectlombok:lombok:$lombok_version"
+
+		testCompile "junit:junit:$junit_version"
 	}
 }
