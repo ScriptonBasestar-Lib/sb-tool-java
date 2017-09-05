@@ -12,12 +12,12 @@ import java.util.Properties;
  * <p>
  * jar파일내에 포함된 설정파일을 이용해서 프로퍼티 만드는 메서드들
  */
-public class BSPropertiesUtil {
+public class SBPropertiesUtil {
 
 	/**
 	 * 사용 예)
 	 * String sourcePath1 = "META-INF/conf/domain.jdbc.local.mysql.properties";
-	 * return BSPropertiesUtil.propertiesMaker(DomainJdbcProfileConfig.class, sourcePath1);
+	 * return SBPropertiesUtil.propertiesMaker(DomainJdbcProfileConfig.class, sourcePath1);
 	 * <p>
 	 * jar파일내의 경로
 	 *

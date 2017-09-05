@@ -7,8 +7,8 @@ import lombok.extern.slf4j.Slf4j;
  * @CreatedAt 2016-12-07 18
  */
 @Slf4j
-public class BSDisabledException extends BSRuntimeBaseException {
-	public BSDisabledException(String message) {
+public class SBDataAccessException extends SBRuntimeBaseException {
+	public SBDataAccessException(String message) {
 		super(message);
 	}
 }

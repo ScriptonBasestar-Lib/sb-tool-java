@@ -2,7 +2,7 @@ package org.scriptonbasestar.tool.collection.map;
 
 import lombok.AccessLevel;
 import lombok.NoArgsConstructor;
-import org.scriptonbasestar.tool.core.exception.BSDisabledException;
+import org.scriptonbasestar.tool.core.exception.SBDisabledException;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -12,11 +12,11 @@ import java.util.Map;
  * @CreatedAt 2016-12-19 16
  */
 @NoArgsConstructor(access = AccessLevel.PRIVATE)
-public class BSDefinedStringMap extends HashMap<String, String> {
+public class SBDefinedStringMap extends HashMap<String, String> {
 
-	private BSRuleMap elementRule;
+	private SBRuleMap elementRule;
 
-	BSDefinedStringMap(BSRuleMap elementRule){
+	SBDefinedStringMap(SBRuleMap elementRule){
 		this.elementRule = elementRule;
 	}
 
@@ -31,7 +31,7 @@ public class BSDefinedStringMap extends HashMap<String, String> {
 	@Deprecated
 	@Override
 	public void putAll(Map<? extends String, ? extends String> m) {
-		throw new BSDisabledException("불허한다");
+		throw new SBDisabledException("불허한다");
 //		super.putAll(m);
 	}
 

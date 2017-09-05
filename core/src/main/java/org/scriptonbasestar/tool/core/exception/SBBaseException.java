@@ -7,8 +7,8 @@ import lombok.extern.slf4j.Slf4j;
  * @CreatedAt 2016-10-21 17
  */
 @Slf4j
-public abstract class BSBaseException extends Exception {
-	public BSBaseException(String message) {
+public abstract class SBBaseException extends Exception {
+	public SBBaseException(String message) {
 		super(message);
 	}
 }

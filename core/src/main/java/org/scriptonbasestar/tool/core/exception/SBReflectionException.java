@@ -7,8 +7,8 @@ import lombok.extern.slf4j.Slf4j;
  * @CreatedAt 2016-12-07 18
  */
 @Slf4j
-public class BSReflectionException extends BSRuntimeBaseException {
-	public BSReflectionException(String message) {
+public class SBReflectionException extends SBRuntimeBaseException {
+	public SBReflectionException(String message) {
 		super(message);
 	}
 }

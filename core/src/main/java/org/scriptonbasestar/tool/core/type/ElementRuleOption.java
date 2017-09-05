@@ -1,6 +1,6 @@
 package org.scriptonbasestar.tool.core.type;
 
-public enum ELEMENT_RULE_OPTION {
+public enum ElementRuleOption {
 	/**
 	 * 필수 없으면 에러
 	 */

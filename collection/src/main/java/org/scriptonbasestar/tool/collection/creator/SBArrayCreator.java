@@ -10,7 +10,7 @@ import lombok.NoArgsConstructor;
  * 더 편할줄알았는데... new Object[]{"",""} 하면 생성되는거라서 그닥 쓸일이 있을지
  */
 @NoArgsConstructor(access = AccessLevel.PRIVATE)
-public class BSArrayCreator {
+public class SBArrayCreator {
 
 	public static String[] create(String ... vals){
 		String[] result = new String[vals.length];

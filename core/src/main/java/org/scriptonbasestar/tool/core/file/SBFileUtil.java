@@ -10,7 +10,7 @@ import java.nio.channels.FileChannel;
  * @with sb-tool-java
  * @since 2014-09-15-16
  */
-public class BSFileUtil {
+public class SBFileUtil {
 
 	public static boolean copyFile(String sourcePath, String destinationPath) {
 		boolean result = false;

@@ -2,7 +2,7 @@ package org.scriptonbasestar.tool.core.reflection;
 
 import lombok.AccessLevel;
 import lombok.NoArgsConstructor;
-import org.scriptonbasestar.tool.core.exception.BSReflectionException;
+import org.scriptonbasestar.tool.core.exception.SBReflectionException;
 
 import java.lang.reflect.Field;
 
@@ -88,10 +88,10 @@ public class ReflectionUtil {
 			return field.get(source);
 		} catch (NoSuchFieldException e) {
 			e.printStackTrace();
-			throw new BSReflectionException("NoSuchFieldException is occurred");
+			throw new SBReflectionException("NoSuchFieldException is occurred");
 		} catch (IllegalAccessException e) {
 			e.printStackTrace();
-			throw new BSReflectionException("NoSuchFieldException is occurred");
+			throw new SBReflectionException("NoSuchFieldException is occurred");
 		}
 	}
 
@@ -105,10 +105,10 @@ public class ReflectionUtil {
 			field.set(source, value);
 		} catch (NoSuchFieldException e) {
 			e.printStackTrace();
-			throw new BSReflectionException("NoSuchFieldException is occurred");
+			throw new SBReflectionException("NoSuchFieldException is occurred");
 		} catch (IllegalAccessException e) {
 			e.printStackTrace();
-			throw new BSReflectionException("NoSuchFieldException is occurred");
+			throw new SBReflectionException("NoSuchFieldException is occurred");
 		}
 	}
 }

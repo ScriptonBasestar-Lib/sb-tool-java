@@ -1,0 +1,6 @@
+dependencies {
+	compile "com.google.code.gson:gson:$gson_version"
+	compile "commons-codec:commons-codec:$commons_codec_version"
+	compile "org.slf4j:slf4j-api:$slf4j_version"
+	compileOnly "org.slf4j:jcl-over-slf4j:$slf4j_version"
+}

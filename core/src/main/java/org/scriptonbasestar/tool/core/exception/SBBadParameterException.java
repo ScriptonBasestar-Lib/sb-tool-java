@@ -7,8 +7,8 @@ import lombok.extern.slf4j.Slf4j;
  * @CreatedAt 2016-12-19 18
  */
 @Slf4j
-public class BSBadParameterException extends BSRuntimeBaseException {
-	public BSBadParameterException(String message) {
+public class SBBadParameterException extends SBRuntimeBaseException {
+	public SBBadParameterException(String message) {
 		super(message);
 	}
 }
