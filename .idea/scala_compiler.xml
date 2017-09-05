@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ScalaCompilerConfiguration">
+    <profile name="Gradle 1" modules="tool-jvm-parent_main,tool-jvm-parent_test,collection_main,collection_test,core_main,core_test,crypto_main,crypto_test,http_main,http_test,logback_main,logback_test,logging_main,logging_test,test_main,test_test,threading_main,threading_test,validation_main,validation_test">
+      <option name="deprecationWarnings" value="true" />
+      <option name="uncheckedWarnings" value="true" />
+      <parameters>
+        <parameter value="-target:jvm-1.8" />
+      </parameters>
+    </profile>
+  </component>
+</project>

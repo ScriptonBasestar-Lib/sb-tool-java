@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+		 xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+		 xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<parent>
+		<groupId>org.beansugar.tool</groupId>
+		<artifactId>sb-tool-java</artifactId>
+		<version>sb-tool-201703-1-RELEASE</version>
+	</parent>
+	<modelVersion>4.0.0</modelVersion>
+
+	<artifactId>sb-tool-logback</artifactId>
+	<packaging>pom</packaging>
+
+	<modules>
+		<module>logback-appender-core</module>
+		<module>logback-appender-amqp</module>
+		<module>logback-appender-mongodb</module>
+		<module>logback-appender-rabbitmq</module>
+		<module>logback-appender-slack</module>
+	</modules>
+
+	<dependencies>
+		<!-- json,GSON -->
+		<dependency>
+			<groupId>com.google.code.gson</groupId>
+			<artifactId>gson</artifactId>
+		</dependency>
+
+	</dependencies>
+
+</project>

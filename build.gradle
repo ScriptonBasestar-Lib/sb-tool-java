@@ -1,0 +1,85 @@
+group 'org.scriptonbasestar.tool'
+version '1.0-SNAPSHOT'
+
+buildscript {
+	repositories {
+		mavenCentral()
+	}
+	dependencies {
+		classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
+		classpath("org.jetbrains.kotlin:kotlin-allopen:${kotlin_version}")
+	}
+}
+
+apply plugin: 'base'
+
+allprojects {
+	apply plugin: 'groovy'
+	apply plugin: 'java'
+	apply plugin: 'kotlin'
+	apply plugin: 'scala'
+	apply plugin: 'eclipse'
+	apply plugin: 'idea'
+
+	[compileJava, compileTestJava]*.options*.encoding = 'UTF-8'
+	group "org.scriptonbasestar.tool"
+	version = project_version
+	sourceCompatibility = java_version
+	targetCompatibility = java_version
+	compileKotlin {
+		kotlinOptions.jvmTarget = java_version
+	}
+	compileTestKotlin {
+		kotlinOptions.jvmTarget = java_version
+	}
+
+	repositories {
+		mavenCentral()
+		jcenter()
+		mavenLocal()
+	}
+	idea {
+		module {
+			downloadJavadoc = true
+			downloadSources = true
+		}
+	}
+	eclipse {
+		classpath {
+			downloadJavadoc = true
+			downloadSources = true
+		}
+	}
+	task printProjectName {
+		doLast {
+			println "${project.name}"
+		}
+	}
+	task "create-dirs" {
+		doLast {
+			sourceSets*.java.srcDirs*.each { it.mkdirs() }
+			sourceSets*.kotlin.srcDirs*.each { it.mkdirs() }
+			sourceSets*.resources.srcDirs*.each { it.mkdirs() }
+			sourceSets*.groovy.srcDirs*.each { it.mkdirs() }
+			sourceSets*.scala.srcDirs*.each { it.mkdirs() }
+		}
+	}
+
+	dependencies {
+		compileOnly "org.codehaus.groovy:groovy-all:$groovy_version"
+		compile 'org.scala-lang:scala-library:2.11.8'
+		testCompile 'org.scalatest:scalatest_2.11:3.0.0'
+		compile "org.projectlombok:lombok:$lombok_version"
+		compile "org.jetbrains.kotlin:kotlin-stdlib-jre8:$kotlin_version"
+		compile "org.jetbrains.kotlin:kotlin-reflect:$kotlin_version"
+
+		testCompile "junit:junit:$junit_version"
+	}
+
+	task stage(dependsOn: ['build'])
+	build.mustRunAfter clean
+}
+
+subprojects{
+
+}

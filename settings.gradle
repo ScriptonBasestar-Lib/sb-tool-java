@@ -1,0 +1,11 @@
+rootProject.name = 'tool-jvm-parent'
+
+include "core"
+include "collection"
+include "crypto"
+include "http"
+include "logback"
+include "logging"
+include "test"
+include "threading"
+include "validation"
