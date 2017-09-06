@@ -1,7 +1,7 @@
 package org.scriptonbasestar.tool.collection.map;
 
 /**
- * @author chaeeung.e
+ * @author archmagece
  * @since 2017-09-06
  *
  * 만들다만거

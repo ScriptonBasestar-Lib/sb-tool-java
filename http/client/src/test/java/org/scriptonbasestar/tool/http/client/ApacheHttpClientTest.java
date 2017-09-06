@@ -7,7 +7,7 @@ import org.apache.http.impl.client.HttpClients;
 import org.apache.http.impl.conn.PoolingHttpClientConnectionManager;
 
 /**
- * @author chaeeung.e
+ * @author archmagece
  * @since 2017-09-01
  */
 public class ApacheHttpClientTest {

@@ -9,7 +9,7 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
 /**
- * @author chaeeung.e
+ * @author archmagece
  * @since 2017-08-30
  */
 public class SimpleApiAuthCodeFilter implements Filter {

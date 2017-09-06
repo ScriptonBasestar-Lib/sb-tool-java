@@ -1,4 +1,4 @@
-package org.scriptonbasestar.tool.http.core.protocol.dto;
+package org.scriptonbasestar.tool.transfer.dto;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;

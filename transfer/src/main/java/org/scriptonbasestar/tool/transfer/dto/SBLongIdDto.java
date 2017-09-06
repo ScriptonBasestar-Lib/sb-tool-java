@@ -1,4 +1,4 @@
-package org.scriptonbasestar.tool.http.core.protocol.dto;
+package org.scriptonbasestar.tool.transfer.dto;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -11,6 +11,6 @@ import lombok.NoArgsConstructor;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-public class SBLongIdsDto {
-	private Long[] ids;
+public class SBLongIdDto {
+	private Long id;
 }

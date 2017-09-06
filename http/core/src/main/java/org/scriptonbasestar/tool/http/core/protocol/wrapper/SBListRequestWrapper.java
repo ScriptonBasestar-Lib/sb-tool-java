@@ -5,7 +5,7 @@ import lombok.Data;
 import java.util.List;
 
 /**
- * @author chaeeung.e
+ * @author archmagece
  * @since 2017-09-05
  */
 @Data

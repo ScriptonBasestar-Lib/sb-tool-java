@@ -1,4 +1,4 @@
-package org.scriptonbasestar.tool.http.core.protocol.wrapper;
+package org.scriptonbasestar.tool.transfer.wrapper;
 
 import lombok.AccessLevel;
 import lombok.Data;

@@ -3,7 +3,7 @@ package org.scriptonbasestar.tool.http.core.protocol.wrapper;
 import org.scriptonbasestar.tool.http.core.protocol.dto.SBPageable;
 
 /**
- * @author chaeeung.e
+ * @author archmagece
  * @since 2017-09-05
  */
 public class SBPageRequestWrapper {

@@ -3,7 +3,7 @@ package org.scriptonbasestar.tool.http.client;
 import org.apache.http.impl.client.HttpClients;
 
 /**
- * @author chaeeung.e
+ * @author archmagece
  * @since 2017-09-01
  */
 public class RestTemplateTest {

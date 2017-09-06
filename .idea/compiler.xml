@@ -1,6 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile default="true" name="Default" enabled="true" />
+    </annotationProcessing>
     <bytecodeTargetLevel>
       <module name="client_main" target="1.8" />
       <module name="client_test" target="1.8" />
@@ -28,6 +31,8 @@
       <module name="tool-jvm-parent-core_test" target="1.8" />
       <module name="tool-jvm-parent_main" target="1.8" />
       <module name="tool-jvm-parent_test" target="1.8" />
+      <module name="transfer_main" target="1.8" />
+      <module name="transfer_test" target="1.8" />
       <module name="validation_main" target="1.8" />
       <module name="validation_test" target="1.8" />
     </bytecodeTargetLevel>

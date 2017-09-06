@@ -1,9 +1,8 @@
-package org.scriptonbasestar.tool.http.core.protocol.wrapper;
+package org.scriptonbasestar.tool.transfer.wrapper;
 
 import lombok.AccessLevel;
 import lombok.Data;
 import lombok.Setter;
-import org.scriptonbasestar.tool.http.core.protocol.dto.SBPage;
 
 import java.util.Collection;
 
@@ -26,5 +25,5 @@ public class SBPageResponseWrapper<RESPONSE> {
 	}
 
 	private Collection<RESPONSE> data;
-	private SBPage page;
+	private SCPage page;
 }

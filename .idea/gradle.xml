@@ -20,6 +20,7 @@
             <option value="$PROJECT_DIR$/logging" />
             <option value="$PROJECT_DIR$/test" />
             <option value="$PROJECT_DIR$/threading" />
+            <option value="$PROJECT_DIR$/transfer" />
             <option value="$PROJECT_DIR$/validation" />
           </set>
         </option>

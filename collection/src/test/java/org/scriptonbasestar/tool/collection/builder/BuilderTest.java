@@ -8,7 +8,7 @@ import java.util.Map;
 import java.util.Set;
 
 /**
- * @author chaeeung.e
+ * @author archmagece
  * @since 2017-09-06
  */
 public class BuilderTest {

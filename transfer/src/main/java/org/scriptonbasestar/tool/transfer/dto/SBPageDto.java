@@ -1,4 +1,4 @@
-package org.scriptonbasestar.tool.http.core.protocol.dto;
+package org.scriptonbasestar.tool.transfer.dto;
 
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -9,9 +9,9 @@ import lombok.NoArgsConstructor;
  */
 @Data
 @NoArgsConstructor
-public class SBPage {
+public class SBPageDto {
 
-	public SBPage(int pageNo, int pageSize, long totalElements){
+	public SBPageDto(int pageNo, int pageSize, long totalElements){
 		this.pageNo = pageNo;
 		this.pageSize = pageSize;
 		this.totalElements = totalElements;

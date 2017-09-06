@@ -3,10 +3,7 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/http/client/client.iml" filepath="$PROJECT_DIR$/.idea/modules/http/client/client.iml" group="http/client" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/http/client/client.iml" filepath="$PROJECT_DIR$/.idea/modules/http/client/client.iml" group="http/client" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/http/client/client_main.iml" filepath="$PROJECT_DIR$/.idea/modules/http/client/client_main.iml" group="http/client" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/http/client/client_main.iml" filepath="$PROJECT_DIR$/.idea/modules/http/client/client_main.iml" group="http/client" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/http/client/client_test.iml" filepath="$PROJECT_DIR$/.idea/modules/http/client/client_test.iml" group="http/client" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/http/client/client_test.iml" filepath="$PROJECT_DIR$/.idea/modules/http/client/client_test.iml" group="http/client" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/collection/collection.iml" filepath="$PROJECT_DIR$/.idea/modules/collection/collection.iml" group="collection" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/collection/collection_main.iml" filepath="$PROJECT_DIR$/.idea/modules/collection/collection_main.iml" group="collection" />
@@ -16,10 +13,7 @@
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/crypto/crypto_test.iml" filepath="$PROJECT_DIR$/.idea/modules/crypto/crypto_test.iml" group="crypto" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/http/http.iml" filepath="$PROJECT_DIR$/.idea/modules/http/http.iml" group="http" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/http/core/http-core.iml" filepath="$PROJECT_DIR$/.idea/modules/http/core/http-core.iml" group="http/core" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/http/core/http-core.iml" filepath="$PROJECT_DIR$/.idea/modules/http/core/http-core.iml" group="http/core" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/http/core/http-core_main.iml" filepath="$PROJECT_DIR$/.idea/modules/http/core/http-core_main.iml" group="http/core" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/http/core/http-core_main.iml" filepath="$PROJECT_DIR$/.idea/modules/http/core/http-core_main.iml" group="http/core" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/http/core/http-core_test.iml" filepath="$PROJECT_DIR$/.idea/modules/http/core/http-core_test.iml" group="http/core" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/http/core/http-core_test.iml" filepath="$PROJECT_DIR$/.idea/modules/http/core/http-core_test.iml" group="http/core" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/http/http_main.iml" filepath="$PROJECT_DIR$/.idea/modules/http/http_main.iml" group="http" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/http/http_test.iml" filepath="$PROJECT_DIR$/.idea/modules/http/http_test.iml" group="http" />
@@ -30,10 +24,7 @@
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/logging/logging_main.iml" filepath="$PROJECT_DIR$/.idea/modules/logging/logging_main.iml" group="logging" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/logging/logging_test.iml" filepath="$PROJECT_DIR$/.idea/modules/logging/logging_test.iml" group="logging" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/http/server/server.iml" filepath="$PROJECT_DIR$/.idea/modules/http/server/server.iml" group="http/server" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/http/server/server.iml" filepath="$PROJECT_DIR$/.idea/modules/http/server/server.iml" group="http/server" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/http/server/server_main.iml" filepath="$PROJECT_DIR$/.idea/modules/http/server/server_main.iml" group="http/server" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/http/server/server_main.iml" filepath="$PROJECT_DIR$/.idea/modules/http/server/server_main.iml" group="http/server" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/http/server/server_test.iml" filepath="$PROJECT_DIR$/.idea/modules/http/server/server_test.iml" group="http/server" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/http/server/server_test.iml" filepath="$PROJECT_DIR$/.idea/modules/http/server/server_test.iml" group="http/server" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/test/test.iml" filepath="$PROJECT_DIR$/.idea/modules/test/test.iml" group="test" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/test/test_main.iml" filepath="$PROJECT_DIR$/.idea/modules/test/test_main.iml" group="test" />
@@ -43,13 +34,13 @@
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/threading/threading_test.iml" filepath="$PROJECT_DIR$/.idea/modules/threading/threading_test.iml" group="threading" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/tool-jvm-parent.iml" filepath="$PROJECT_DIR$/.idea/modules/tool-jvm-parent.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/core/tool-jvm-parent-core.iml" filepath="$PROJECT_DIR$/.idea/modules/core/tool-jvm-parent-core.iml" group="core" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/core/tool-jvm-parent-core.iml" filepath="$PROJECT_DIR$/.idea/modules/core/tool-jvm-parent-core.iml" group="core" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/core/tool-jvm-parent-core_main.iml" filepath="$PROJECT_DIR$/.idea/modules/core/tool-jvm-parent-core_main.iml" group="core" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/core/tool-jvm-parent-core_main.iml" filepath="$PROJECT_DIR$/.idea/modules/core/tool-jvm-parent-core_main.iml" group="core" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/core/tool-jvm-parent-core_test.iml" filepath="$PROJECT_DIR$/.idea/modules/core/tool-jvm-parent-core_test.iml" group="core" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/core/tool-jvm-parent-core_test.iml" filepath="$PROJECT_DIR$/.idea/modules/core/tool-jvm-parent-core_test.iml" group="core" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/tool-jvm-parent_main.iml" filepath="$PROJECT_DIR$/.idea/modules/tool-jvm-parent_main.iml" group="tool-jvm-parent" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/tool-jvm-parent_test.iml" filepath="$PROJECT_DIR$/.idea/modules/tool-jvm-parent_test.iml" group="tool-jvm-parent" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/transfer/transfer.iml" filepath="$PROJECT_DIR$/.idea/modules/transfer/transfer.iml" group="transfer" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/transfer/transfer_main.iml" filepath="$PROJECT_DIR$/.idea/modules/transfer/transfer_main.iml" group="transfer" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/transfer/transfer_test.iml" filepath="$PROJECT_DIR$/.idea/modules/transfer/transfer_test.iml" group="transfer" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/validation/validation.iml" filepath="$PROJECT_DIR$/.idea/modules/validation/validation.iml" group="validation" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/validation/validation_main.iml" filepath="$PROJECT_DIR$/.idea/modules/validation/validation_main.iml" group="validation" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/validation/validation_test.iml" filepath="$PROJECT_DIR$/.idea/modules/validation/validation_test.iml" group="validation" />

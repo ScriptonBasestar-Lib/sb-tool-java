@@ -7,7 +7,7 @@ import lombok.Setter;
 import java.util.Collection;
 
 /**
- * @author chaeeung.e
+ * @author archmagece
  * @since 2017-08-25
  */
 @Data
