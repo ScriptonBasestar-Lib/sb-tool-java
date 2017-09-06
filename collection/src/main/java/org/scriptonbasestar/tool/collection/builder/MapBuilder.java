@@ -11,21 +11,16 @@ public final class MapBuilder<K, V> {
 
 	private final Map<K, V> map;
 
-	/**
-	 * 기본적으로 HashMap 사용
-	 */
 	private MapBuilder() {
 		this.map = new HashMap<>();
 	}
-
-	/**
-	 * 특정 Map을 쓰려면 입력
-	 * @param map
-	 */
 	private MapBuilder(Map<K, V> map) {
 		this.map = map;
 	}
 
+	public static <K, V> MapBuilder<K, V> create(){
+		return new MapBuilder<>();
+	}
 	public static <K, V> MapBuilder<K, V> create(Class<K> keyType, Class<V> valType){
 		return new MapBuilder<>();
 	}

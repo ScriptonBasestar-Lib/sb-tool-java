@@ -7,51 +7,45 @@ import java.util.Set;
  * @author archmagece
  * @since 2014. 9. 11.
  */
-public final class SetBuilder<ENTITY> {
+public final class SetBuilder<ITEM> {
 
-	private Set<ENTITY> set;
+	private Set<ITEM> set;
 
-	/**
-	 * 기본적으로 HashSet 사용
-	 */
 	private SetBuilder() {
 		this.set = new HashSet<>();
 	}
-
-	/**
-	 * 특정 Set을 쓰려면 입력
-	 * @param set
-	 */
-	private SetBuilder(Set<ENTITY> set) {
+	private SetBuilder(Set<ITEM> set) {
 		this.set = set;
 	}
 
-	public static <ENTITY> SetBuilder<ENTITY> create(Class<ENTITY> type) {
+	public static <ITEM1> SetBuilder<ITEM1> create() {
 		return new SetBuilder<>();
 	}
-
-	public static <ENTITY> SetBuilder<ENTITY> create(Set<ENTITY> set) {
+	public static <ITEM2> SetBuilder<ITEM2> create(Class<ITEM2> itemType) {
+		return new SetBuilder<>();
+	}
+	public static <ITEM3> SetBuilder<ITEM3> create(Set<ITEM3> set) {
 		return new SetBuilder<>(set);
 	}
-
-	public SetBuilder<ENTITY> add(ENTITY entity) {
-		this.set.add(entity);
-		return this;
+	public static <ITEM4> SetBuilder<ITEM4> create(ITEM4 ... items) {
+		SetBuilder<ITEM4> builder = new SetBuilder<>();
+		builder.add(items);
+		return builder;
 	}
 
-	public SetBuilder<ENTITY> add(Set<ENTITY> set) {
-		this.set.addAll(set);
-		return this;
-	}
-
-	public SetBuilder<ENTITY> a(ENTITY... entities) {
-		for (ENTITY e : entities) {
+	public SetBuilder<ITEM> add(ITEM... entities) {
+		for (ITEM e : entities) {
 			this.set.add(e);
 		}
 		return this;
 	}
+	public SetBuilder<ITEM> add(Set<ITEM> set) {
+		this.set.addAll(set);
+		return this;
+	}
 
-	public Set<ENTITY> build() {
+	public Set<ITEM> build() {
 		return this.set;
 	}
+
 }

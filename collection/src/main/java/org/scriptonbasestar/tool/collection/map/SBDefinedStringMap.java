@@ -2,7 +2,7 @@ package org.scriptonbasestar.tool.collection.map;
 
 import lombok.AccessLevel;
 import lombok.NoArgsConstructor;
-import org.scriptonbasestar.tool.core.exception.SBDisabledException;
+import org.scriptonbasestar.tool.core.exception.runtime.SBDisabledException;
 
 import java.util.HashMap;
 import java.util.Map;

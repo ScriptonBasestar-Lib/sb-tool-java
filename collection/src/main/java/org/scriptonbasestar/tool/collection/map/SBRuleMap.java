@@ -1,7 +1,6 @@
 package org.scriptonbasestar.tool.collection.map;
 
-import lombok.extern.slf4j.Slf4j;
-import org.scriptonbasestar.tool.core.exception.SBBadParameterException;
+import org.scriptonbasestar.tool.core.exception.runtime.SBBadParameterException;
 import org.scriptonbasestar.tool.core.type.ElementRuleOption;
 
 import java.util.HashMap;
@@ -10,7 +9,6 @@ import java.util.HashMap;
  * @Author archmagece
  * @CreatedAt 2016-12-19 18
  */
-@Slf4j
 public final class SBRuleMap extends HashMap<String, ElementRuleOption> {
 
 	private final boolean defaultAllow;
@@ -30,7 +28,7 @@ public final class SBRuleMap extends HashMap<String, ElementRuleOption> {
 		if (include && elementRuleOption == ElementRuleOption.ESSENTIAL) {
 			return true;
 		} else if (include && elementRuleOption == ElementRuleOption.BAN){
-			throw new SBBadParameterException("허용되지 않은 파라미터입니다");
+			throw new SBBadParameterException("허용되지 않는 파라미터입니다");
 		} else if(include && elementRuleOption == ElementRuleOption.IGNORE) {
 			return false;
 		}else if(defaultAllow){

@@ -2,6 +2,7 @@ package org.scriptonbasestar.tool.collection.joiner;
 
 
 import org.scriptonbasestar.tool.core.check.Check;
+import org.scriptonbasestar.tool.core.exception.runtime.SBBadParameterException;
 
 import java.util.ArrayList;
 import java.util.Collection;
@@ -11,17 +12,17 @@ import java.util.Collection;
  * @with sb-toolbox-basic
  * @since 2015-06-10-15
  */
-public final class Joiner<ENTITY> {
+public final class Joiner<ITEM> {
 
 	private final String separator;
 
-	private final Collection<ENTITY> toAppend;
+	private final Collection<ITEM> toAppend;
 
 	private Joiner(String separator) {
-		this(separator, new ArrayList<ENTITY>());
+		this(separator, new ArrayList<>());
 	}
 
-	private Joiner(String separator, Collection<ENTITY> toAppend) {
+	private Joiner(String separator, Collection<ITEM> toAppend) {
 		Check.notNull(separator, "separator should not be null");
 		this.separator = separator;
 		this.toAppend = toAppend;
@@ -35,19 +36,22 @@ public final class Joiner<ENTITY> {
 		return new Joiner(String.valueOf(separator));
 	}
 
-	public Joiner append(ENTITY... entities) {
-		for (ENTITY e : entities) {
+	public Joiner append(ITEM... entities) {
+		for (ITEM e : entities) {
 			this.toAppend.add(e);
 		}
 		return this;
 	}
 
-	public Joiner append(Collection<ENTITY> entities) {
+	public Joiner append(Collection<ITEM> entities) {
 		this.toAppend.addAll(entities);
 		return this;
 	}
 
 	public String join() {
+		if(toAppend.isEmpty()){
+			throw new SBBadParameterException("컬렉션이 공백입니다.");
+		}
 		StringBuilder sb = new StringBuilder();
 		for (Object o : this.toAppend) {
 			sb
@@ -57,4 +61,5 @@ public final class Joiner<ENTITY> {
 		sb.deleteCharAt(sb.length() - 1);
 		return sb.toString();
 	}
+
 }

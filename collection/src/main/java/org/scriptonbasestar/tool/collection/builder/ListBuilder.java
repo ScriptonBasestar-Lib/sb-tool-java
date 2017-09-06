@@ -3,98 +3,45 @@ package org.scriptonbasestar.tool.collection.builder;
 import java.util.ArrayList;
 import java.util.List;
 
-public final class ListBuilder<ENTITY> {
+public final class ListBuilder<ITEM> {
 
-	private final List<ENTITY> list;
+	private final List<ITEM> list;
 
-	/**
-	 * 기본적으로 array extractor 사용
-	 */
 	private ListBuilder() {
 		this.list = new ArrayList<>();
 	}
-
-	/**
-	 * 특정 List를 쓰려면 입력
-	 * @param list
-	 */
-	private ListBuilder(List<ENTITY> list) {
+	private ListBuilder(List<ITEM> list) {
 		this.list = list;
 	}
 
-
-	/**
-	 * 스테틱 생성자
-	 * List의 ENTITY 타입을 입력
-	 * @param <ENTITY>
-	 * @return
-	 */
-	public static <ENTITY> ListBuilder<ENTITY> create() {
+	public static <ITEM1> ListBuilder<ITEM1> create() {
 		return new ListBuilder<>();
 	}
-
-	/**
-	 * 스테틱 생성자
-	 * List의 ENTITY 타입을 입력
-	 * @param entityType
-	 * @param <ENTITY>
-	 * @return
-	 */
-	public static <ENTITY> ListBuilder<ENTITY> create(Class<ENTITY> entityType) {
+	public static <ITEM2> ListBuilder<ITEM2> create(Class<ITEM2> itemType) {
 		return new ListBuilder<>();
 	}
-
-	/**
-	 * 스테틱 생성자
-	 * 특정 List를 입력
-	 * @param list
-	 * @param <ENTITY>
-	 * @return
-	 */
-	public static <ENTITY> ListBuilder<ENTITY> create(List<ENTITY> list) {
+	public static <ITEM3> ListBuilder<ITEM3> create(List<ITEM3> list) {
 		return new ListBuilder<>(list);
 	}
-
-	/**
-	 * 스테틱 생성자
-	 * 한개짜리로 생성
-	 * @param entity
-	 * @param <ENTITY>
-	 * @return
-	 */
-	public static <ENTITY> ListBuilder<ENTITY> create(ENTITY ... entity) {
-		ListBuilder<ENTITY> listBuilder = new ListBuilder<>();
-		listBuilder.add(entity);
-		return listBuilder;
+	public static <ITEM4> ListBuilder<ITEM4> create(ITEM4... entity) {
+		ListBuilder<ITEM4> builder = new ListBuilder<>();
+		builder.add(entity);
+		return builder;
 	}
 
-	/**
-	 * ENTITY 추가
-	 * @param entities
-	 * @return
-	 */
-	public ListBuilder<ENTITY> add(ENTITY ... entities) {
-		for(ENTITY e : entities){
+	public ListBuilder<ITEM> add(ITEM... entities) {
+		for(ITEM e : entities){
 			this.list.add(e);
 		}
 		return this;
 	}
-
-	/**
-	 * ENTITY 추가
-	 * @param list
-	 * @return
-	 */
-	public ListBuilder<ENTITY> add(List<ENTITY> list) {
+	public ListBuilder<ITEM> add(List<ITEM> list) {
 		this.list.addAll(list);
 		return this;
 	}
 
-	/**
-	 * 완료버튼 
-	 * @return
-	 */
-	public List<ENTITY> build() {
+	public List<ITEM> build() {
 		return this.list;
 	}
+
 }

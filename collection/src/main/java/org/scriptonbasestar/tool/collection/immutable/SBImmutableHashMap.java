@@ -1,7 +1,6 @@
-package org.scriptonbasestar.tool.collection.map;
+package org.scriptonbasestar.tool.collection.immutable;
 
-import lombok.extern.slf4j.Slf4j;
-import org.scriptonbasestar.tool.core.exception.SBDisabledException;
+import org.scriptonbasestar.tool.core.exception.runtime.SBDisabledException;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -10,17 +9,16 @@ import java.util.Map;
  * @Author archmagece
  * @CreatedAt 2016-08-29 11
  */
-@Slf4j
 public class SBImmutableHashMap<K, V> extends HashMap<K,V>{
 
 	@Override
 	public V put(K key, V value) {
-		throw new SBDisabledException("cannot change immutable collection");
+		throw new SBDisabledException("cannot change. This collection is immutable");
 	}
 
 	@Override
 	public void putAll(Map<? extends K, ? extends V> m) {
-		throw new SBDisabledException("cannot change immutable collection");
+		throw new SBDisabledException("cannot change. This collection is immutable");
 	}
 
 //	@Override
