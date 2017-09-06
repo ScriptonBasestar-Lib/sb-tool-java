@@ -8,8 +8,10 @@ import java.util.Set;
 /**
  * @author archmagece
  * @date 2017-05-14
+ *
+ * 만들다만거
  */
-public class MultipleKeyMap<K,V> implements Map<K,V>{
+public class MultiKeyMap<K,V> implements Map<K,V>{
 
 	private Map<K, Set<K>> mapKey = new HashMap<>();
 	private Map<K, V> mapVal = new HashMap<>();

@@ -8,7 +8,9 @@ import java.util.Map;
 /**
  * @Author archmagece
  * @CreatedAt 2016-08-29 11
+ * @see java.util.Collections.unmodifiableMap(Map<? extends K,? extends V> m)
  */
+@Deprecated
 public class SBImmutableHashMap<K, V> extends HashMap<K,V>{
 
 	@Override

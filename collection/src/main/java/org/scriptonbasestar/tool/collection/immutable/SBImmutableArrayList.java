@@ -8,7 +8,10 @@ import java.util.Collection;
 /**
  * @Author archmagece
  * @CreatedAt 2016-12-07 18
+ *
+ * @see java.util.Collections.unmodifiableList(List<? extends T> list)
  */
+@Deprecated
 public class SBImmutableArrayList<E> extends ArrayList<E>{
 	@Override
 	public boolean add(E e) {
