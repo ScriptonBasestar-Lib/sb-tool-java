@@ -1,4 +1,4 @@
-package org.scriptonbasestar.tool.core.result;
+package org.scriptonbasestar.tool.transfer;
 
 import lombok.Data;
 

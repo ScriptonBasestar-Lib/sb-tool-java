@@ -4,8 +4,8 @@ import java.io.*;
 
 /**
  * @author archmagece
- *         <p>
- *         jar에 설정파일을 포함시키는 경우(maven 모듈)
+ * <p>
+ * jar에 설정파일을 포함시키는 경우(maven 모듈)
  */
 public class ResourceReader {
 

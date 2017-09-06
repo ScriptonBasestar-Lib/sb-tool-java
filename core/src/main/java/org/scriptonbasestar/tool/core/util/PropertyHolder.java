@@ -28,10 +28,13 @@ public class PropertyHolder implements Serializable {
 		return this;
 	}
 
-	public String get(String key) {
+	public String getString(String key) {
 		return setting.get(key).toString();
 	}
 
+	public <Type> Type get(String key) {
+		return (Type) setting.get(key);
+	}
 	public <Type> Type get(Class<Type> clazz, String key) {
 		return (Type) setting.get(key);
 	}
