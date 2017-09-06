@@ -1,0 +1,12 @@
+apply plugin: 'base'
+
+subprojects{
+	dependencies {
+		compile project(":core")
+		compile project(":validation")
+		compile "org.hibernate.javax.persistence:hibernate-jpa-2.1-api:1.0.0.Final"
+
+		compile "com.google.guava:guava:$guava_version"
+		testCompile "com.google.guava:guava-testlib:$guava_version"
+	}
+}

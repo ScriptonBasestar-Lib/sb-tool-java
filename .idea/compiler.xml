@@ -5,6 +5,8 @@
       <profile default="true" name="Default" enabled="true" />
     </annotationProcessing>
     <bytecodeTargetLevel>
+      <module name="avro_main" target="1.8" />
+      <module name="avro_test" target="1.8" />
       <module name="client_main" target="1.8" />
       <module name="client_test" target="1.8" />
       <module name="collection_main" target="1.8" />
@@ -13,14 +15,20 @@
       <module name="core_test" target="1.8" />
       <module name="crypto_main" target="1.8" />
       <module name="crypto_test" target="1.8" />
+      <module name="data_main" target="1.8" />
+      <module name="data_test" target="1.8" />
       <module name="http-core_main" target="1.8" />
       <module name="http-core_test" target="1.8" />
       <module name="http_main" target="1.8" />
       <module name="http_test" target="1.8" />
+      <module name="jpa_main" target="1.8" />
+      <module name="jpa_test" target="1.8" />
       <module name="logback_main" target="1.8" />
       <module name="logback_test" target="1.8" />
       <module name="logging_main" target="1.8" />
       <module name="logging_test" target="1.8" />
+      <module name="mongo_main" target="1.8" />
+      <module name="mongo_test" target="1.8" />
       <module name="server_main" target="1.8" />
       <module name="server_test" target="1.8" />
       <module name="test_main" target="1.8" />

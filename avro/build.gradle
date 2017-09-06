@@ -1,0 +1,4 @@
+dependencies {
+	compile "org.apache.avro:avro:$avro_version"
+	compile "org.apache.avro:avro-ipc:$avro_version"
+}

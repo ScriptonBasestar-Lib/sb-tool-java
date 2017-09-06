@@ -1,6 +1,9 @@
 rootProject.name = 'tool-jvm-parent'
 
 include "core"
+include "avro"
+include "data:mongo"
+include "data:jpa"
 include "collection"
 include "crypto"
 include "http:core"
@@ -8,6 +11,7 @@ include "http:client"
 include "http:server"
 include "logback"
 include "logging"
+include "spring"
 include "test"
 include "threading"
 include "transfer"
