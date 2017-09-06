@@ -10,13 +10,12 @@ import java.util.Set;
  * @with sb-tool-java
  * @since 2016-11-12
  */
-
-public class SBStringLimitorImpl implements ConstraintValidator<SBStringLimitor, String> {
+public class SBStringLimiterImpl implements ConstraintValidator<SBStringLimiter, String> {
 
 	private Set<String> valueSet;
 
 	@Override
-	public void initialize(SBStringLimitor constraintAnnotation) {
+	public void initialize(SBStringLimiter constraintAnnotation) {
 		valueSet = new HashSet<>();
 		for(String value : constraintAnnotation.limitationStrings()){
 			valueSet.add(value);
@@ -30,4 +29,5 @@ public class SBStringLimitorImpl implements ConstraintValidator<SBStringLimitor,
 		}
 		return false;
 	}
+
 }

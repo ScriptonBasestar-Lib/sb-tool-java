@@ -12,12 +12,12 @@ import java.lang.annotation.*;
  * @since 2016-11-12
  */
 @Documented
-@Constraint(validatedBy = SBStringLimitorImpl.class)
+@Constraint(validatedBy = SBStringLimiterImpl.class)
 @Retention(RetentionPolicy.RUNTIME)
 @Target(ElementType.FIELD)
 @NotNull(message = "~ must not null")
 @ReportAsSingleViolation
-public @interface SBStringLimitor {
+public @interface SBStringLimiter {
 	String [] limitationStrings();
 	String message() default "~ is not acceptable";
 	Class<?>[] groups() default {};

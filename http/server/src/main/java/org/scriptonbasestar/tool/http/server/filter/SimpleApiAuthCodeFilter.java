@@ -1,7 +1,7 @@
 package org.scriptonbasestar.tool.http.server.filter;
 
 import org.apache.http.HttpHeaders;
-import org.scriptonbasestar.tool.core.exception.SBAuthenticationException;
+import org.scriptonbasestar.tool.core.exception.runtime.SBAuthenticationException;
 
 import javax.servlet.*;
 import javax.servlet.http.HttpServletRequest;
