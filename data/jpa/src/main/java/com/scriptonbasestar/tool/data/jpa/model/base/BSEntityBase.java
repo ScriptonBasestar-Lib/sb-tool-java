@@ -6,14 +6,10 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import org.hibernate.annotations.DynamicInsert;
 import org.hibernate.annotations.DynamicUpdate;
-import org.hibernate.annotations.Type;
-import org.joda.time.DateTime;
 
-import javax.persistence.Column;
-import javax.persistence.MappedSuperclass;
-import javax.persistence.PrePersist;
-import javax.persistence.PreUpdate;
+import javax.persistence.*;
 import java.io.Serializable;
+import java.util.Date;
 
 /**
  * @author archmagece
@@ -28,24 +24,24 @@ public abstract class BSEntityBase implements Serializable {
 
 	//	@Temporal(TemporalType.TIMESTAMP)
 	@Column(nullable = false, insertable = true, updatable = false)
-	@Type(type="org.jadira.usertype.dateandtime.joda.PersistentDateTime")
-	private DateTime createdAt;
+	@Temporal(TemporalType.DATE)
+	private Date createdAt;
 
 	//	@Temporal(TemporalType.TIMESTAMP)
 	@Column(nullable = false, insertable = true, updatable = true)
-	@Type(type="org.jadira.usertype.dateandtime.joda.PersistentDateTime")
-	private DateTime updatedAt;
+	@Temporal(TemporalType.DATE)
+	private Date updatedAt;
 
 
 	@PrePersist
 	protected void onCreate() {
-		this.createdAt = this.updatedAt = DateTime.now();
+		this.createdAt = this.updatedAt = new Date();
 //		this.active = true;
 	}
 
 	@PreUpdate
 	protected void onUpdate() {
-		this.updatedAt = DateTime.now();
+		this.updatedAt = new Date();
 	}
 
 	@Override
