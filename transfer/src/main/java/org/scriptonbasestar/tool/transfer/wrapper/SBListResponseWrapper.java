@@ -31,7 +31,15 @@ public class SBListResponseWrapper<RESPONSE> {
 	}
 
 	private String lang;
+	public SBListResponseWrapper lang(String lang){
+		this.lang = lang;
+		return this;
+	}
 	private String message;
+	public SBListResponseWrapper message(String message){
+		this.message = message;
+		return this;
+	}
 	protected Set<Map<String,String>> validationErrorSet = new HashSet<>();
 
 	private Collection<RESPONSE> data;

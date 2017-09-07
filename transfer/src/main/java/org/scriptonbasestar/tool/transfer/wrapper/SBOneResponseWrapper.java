@@ -30,7 +30,15 @@ public class SBOneResponseWrapper<RESPONSE> {
 	}
 
 	private String lang;
+	public SBOneResponseWrapper lang(String lang){
+		this.lang = lang;
+		return this;
+	}
 	private String message;
+	public SBOneResponseWrapper message(String message){
+		this.message = message;
+		return this;
+	}
 	protected Set<Map<String,String>> validationErrorSet = new HashSet<>();
 
 	private RESPONSE data;

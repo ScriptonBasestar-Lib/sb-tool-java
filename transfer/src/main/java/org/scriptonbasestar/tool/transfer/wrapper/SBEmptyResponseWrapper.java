@@ -30,6 +30,14 @@ public class SBEmptyResponseWrapper {
 	}
 
 	private String lang;
+	public SBEmptyResponseWrapper lang(String lang){
+		this.lang = lang;
+		return this;
+	}
 	private String message;
+	public SBEmptyResponseWrapper message(String message){
+		this.message = message;
+		return this;
+	}
 	protected Set<Map<String,String>> validationErrorSet = new HashSet<>();
 }
