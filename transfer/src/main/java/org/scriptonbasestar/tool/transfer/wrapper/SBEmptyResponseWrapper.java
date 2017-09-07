@@ -14,16 +14,19 @@ import java.util.Set;
  */
 @Data
 public class SBEmptyResponseWrapper {
+
+	public static SBEmptyResponseWrapper create(){
+		return new SBEmptyResponseWrapper();
+	}
+
 	@Setter(AccessLevel.PROTECTED)
 	private long leadTime;
-
 	public SBEmptyResponseWrapper leadTime(long leadTime) {
 		this.leadTime = leadTime;
 		return this;
 	}
 
 	private boolean success = true;
-
 	public SBEmptyResponseWrapper fail() {
 		success = false;
 		return this;
@@ -34,10 +37,13 @@ public class SBEmptyResponseWrapper {
 		this.lang = lang;
 		return this;
 	}
+
 	private String message;
 	public SBEmptyResponseWrapper message(String message){
 		this.message = message;
 		return this;
 	}
+
 	protected Set<Map<String,String>> validationErrorSet = new HashSet<>();
+
 }

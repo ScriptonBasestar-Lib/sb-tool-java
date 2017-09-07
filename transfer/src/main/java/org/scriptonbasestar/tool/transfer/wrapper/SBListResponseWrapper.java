@@ -15,16 +15,19 @@ import java.util.Set;
  */
 @Data
 public class SBListResponseWrapper<RESPONSE> {
+
+	public static SBListResponseWrapper create(){
+		return new SBListResponseWrapper();
+	}
+
 	@Setter(AccessLevel.PROTECTED)
 	private long leadTime;
-
 	public SBListResponseWrapper<RESPONSE> leadTime(long leadTime) {
 		this.leadTime = leadTime;
 		return this;
 	}
 
 	private boolean success = true;
-
 	public SBListResponseWrapper<RESPONSE> fail() {
 		success = false;
 		return this;
@@ -35,12 +38,15 @@ public class SBListResponseWrapper<RESPONSE> {
 		this.lang = lang;
 		return this;
 	}
+
 	private String message;
 	public SBListResponseWrapper message(String message){
 		this.message = message;
 		return this;
 	}
+
 	protected Set<Map<String,String>> validationErrorSet = new HashSet<>();
 
 	private Collection<RESPONSE> data;
+
 }

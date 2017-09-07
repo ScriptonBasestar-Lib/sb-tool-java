@@ -16,16 +16,19 @@ import java.util.Set;
  */
 @Data
 public class SBPageResponseWrapper<RESPONSE> {
+
+	public static SBPageResponseWrapper create(){
+		return new SBPageResponseWrapper();
+	}
+
 	@Setter(AccessLevel.PROTECTED)
 	private long leadTime;
-
 	public SBPageResponseWrapper leadTime(long leadTime) {
 		this.leadTime = leadTime;
 		return this;
 	}
 
 	private boolean success = true;
-
 	public SBPageResponseWrapper<RESPONSE> fail() {
 		success = false;
 		return this;
@@ -36,13 +39,16 @@ public class SBPageResponseWrapper<RESPONSE> {
 		this.lang = lang;
 		return this;
 	}
+
 	private String message;
 	public SBPageResponseWrapper message(String message){
 		this.message = message;
 		return this;
 	}
+
 	protected Set<Map<String,String>> validationErrorSet = new HashSet<>();
 
 	private Collection<RESPONSE> data;
 	private SBPageDto page;
+
 }
