@@ -1,5 +1,5 @@
 dependencies {
-	compile project (':http:core')
+	compile project (':http:http-core')
 
 	compile "org.apache.httpcomponents:httpclient:$apache_httpcomponents_version"
 }

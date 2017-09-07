@@ -1,9 +1,16 @@
 dependencies {
 	compile project(":core")
+	compile project(":collection")
 	compile project(":validation")
 
+	compile "javax.servlet:javax.servlet-api:$javax_servlet_version"
+
+	compile "org.springframework.boot:spring-boot-starter-data-redis:$spring_boot_version"
 	compile "org.springframework.boot:spring-boot-starter-security:$spring_boot_version"
 	testCompile "org.springframework.boot:spring-boot-test:$spring_boot_version"
+
+	compile "org.slf4j:slf4j-api:$slf4j_version"
+	compileOnly "org.slf4j:jcl-over-slf4j:$slf4j_version"
 
 //	compile "com.google.guava:guava:$guava_version"
 	testCompile "com.google.guava:guava-testlib:$guava_version"

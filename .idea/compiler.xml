@@ -20,7 +20,9 @@
       <module name="data_main" target="1.8" />
       <module name="data_test" target="1.8" />
       <module name="http-core_main" target="1.8" />
+      <module name="http-core_main~1" target="1.8" />
       <module name="http-core_test" target="1.8" />
+      <module name="http-core_test~1" target="1.8" />
       <module name="http_main" target="1.8" />
       <module name="http_test" target="1.8" />
       <module name="jpa_main" target="1.8" />

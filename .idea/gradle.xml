@@ -18,7 +18,7 @@
             <option value="$PROJECT_DIR$/data/mongo" />
             <option value="$PROJECT_DIR$/http" />
             <option value="$PROJECT_DIR$/http/client" />
-            <option value="$PROJECT_DIR$/http/core" />
+            <option value="$PROJECT_DIR$/http/http-core" />
             <option value="$PROJECT_DIR$/http/server" />
             <option value="$PROJECT_DIR$/logback" />
             <option value="$PROJECT_DIR$/logging" />

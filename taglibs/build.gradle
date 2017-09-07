@@ -1,4 +1,6 @@
 dependencies {
+	compile project(":collection")
+
 	compile "org.apache.commons:commons-lang3:$commons_lang3_version"
 	compile "javax.servlet.jsp:jsp-api:$javax_jsp_version"
 	compile "org.springframework.boot:spring-boot-starter-web:$spring_boot_version"

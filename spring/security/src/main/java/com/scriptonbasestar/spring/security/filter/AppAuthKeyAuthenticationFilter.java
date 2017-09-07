@@ -1,8 +1,8 @@
 package com.scriptonbasestar.spring.security.filter;
 
+import com.scriptonbasestar.spring.security.auth.app.AppAuthKeyManager;
 import lombok.Getter;
 import lombok.Setter;
-import org.beansugar.base.spring.security.auth.app.AppAuthKeyManager;
 import org.springframework.security.authentication.BadCredentialsException;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.context.SecurityContextHolder;
