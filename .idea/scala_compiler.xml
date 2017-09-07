@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ScalaCompilerConfiguration">
-    <profile name="Gradle 1" modules="core_main,core_test,tool-jvm-parent-core_main,tool-jvm-parent-core_test,http-core_main,http-core_test,tool-jvm-parent_main,tool-jvm-parent_test,avro_main,avro_test,collection_main,collection_test,crypto_main,crypto_test,data_main,data_test,http_main,http_test,logback_main,logback_test,logging_main,logging_test,mail_main,mail_test,spring_main,spring_test,taglibs_main,taglibs_test,test_main,test_test,threading_main,threading_test,transfer_main,transfer_test,validation_main,validation_test,jpa_main,jpa_test,mongo_main,mongo_test,client_main,client_test,server_main,server_test,api_main,api_test,security_main,security_test,web_main,web_test">
+    <profile name="Gradle 1" modules="tool-jvm-parent-core_main,tool-jvm-parent-core_test,tool-jvm-parent_main,tool-jvm-parent_test,avro_main,avro_test,collection_main,collection_test,core_main,core_test,crypto_main,crypto_test,data_main,data_test,http_main,http_test,logback_main,logback_test,logging_main,logging_test,mail_main,mail_test,spring_main,spring_test,taglibs_main,taglibs_test,test_main,test_test,threading_main,threading_test,transfer_main,transfer_test,validation_main,validation_test,jpa_main,jpa_test,mongo_main,mongo_test,client_main,client_test,http-core_main,http-core_test,server_main,server_test,api_main,api_test,security_main,security_test,web_main,web_test">
       <option name="deprecationWarnings" value="true" />
       <option name="uncheckedWarnings" value="true" />
       <parameters>
