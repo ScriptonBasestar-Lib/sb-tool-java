@@ -1,5 +1,5 @@
 group 'org.scriptonbasestar.tool'
-version '1.0-SNAPSHOT'
+version '201709-RELEAE'
 
 buildscript {
 	repositories {
