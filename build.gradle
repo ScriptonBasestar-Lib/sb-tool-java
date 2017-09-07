@@ -3,11 +3,13 @@ version '201709-RELEAE'
 
 buildscript {
 	repositories {
-		mavenCentral()
+		jcenter()
+//		mavenCentral()
 	}
 	dependencies {
 		classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
 		classpath("org.jetbrains.kotlin:kotlin-allopen:${kotlin_version}")
+		classpath 'com.jfrog.bintray.gradle:gradle-bintray-plugin:1.7.3'
 	}
 }
 
@@ -86,5 +88,63 @@ subprojects{
 		testCompileOnly "org.slf4j:jcl-over-slf4j:$slf4j_version"
 
 		testCompile "junit:junit:$junit_version"
+	}
+//	111
+//	repositories {
+//		flatDir {
+//			name "fileRepo"
+//			dirs "repo"
+//		}
+//	}
+//	uploadArchives {
+//		repositories {
+//			add project.repositories.fileRepo
+//			ivy {
+//				credentials {
+//					username bintrayUser
+//					password bintrayApiKey
+//				}
+//				url "https://dl.bintray.com/archmagece/jvm-repo"
+//			}
+//		}
+//	}
+
+//	222
+	apply plugin: 'maven'
+	apply plugin: 'maven-publish'
+	apply plugin: 'com.jfrog.bintray'
+
+	publishing {
+		publications {
+			MyPublication(MavenPublication) {
+				from components.java
+				groupId 'org.scriptonbasestar.tool'
+				artifactId project.name
+				version project_version
+			}
+		}
+	}
+
+	bintray {
+		user = project.hasProperty('bintrayUser') ? project.property('bintrayUser') : System.getenv('BINTRAY_USER')
+		key = project.hasProperty('bintrayApiKey') ? project.property('bintrayApiKey') : System.getenv('BINTRAY_API_KEY')
+		publications = ['MyPublication']
+		pkg {
+			repo = 'jvm-repo'
+			name = 'sb-tool-jvm'
+			desc = 'tool for jvm languages'
+			userOrg = "ScriptonBasestar Inc."
+			licenses = ['Apache-2.0']
+			vcsUrl = 'https://github.com/ScriptonBasestar-Lib/sb-tool-jvm.git'
+			labels = ['java', 'kotlin', 'groovy', 'gradle', 'library']
+			publicDownloadNumbers = true
+//			attributes= ['a': ['ay1', 'ay2'], 'b': ['bee'], c: 'cee'] //Optional package-level attributes
+			version {
+				name = project.version
+				desc = '201709-RELEAE'
+				vcsTag = '201709-RELEAE'
+//				attributes = ['gradle-plugin': 'com.use.less:com.use.less.gradle:gradle-useless-plugin']
+			}
+		}
 	}
 }
