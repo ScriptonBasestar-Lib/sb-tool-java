@@ -1,5 +1,5 @@
 group 'org.scriptonbasestar.tool'
-version '201709-RELEASE'
+version project_version
 
 buildscript {
 	repositories {
@@ -132,10 +132,10 @@ allprojects {
 			publicDownloadNumbers = true
 //			attributes= ['a': ['ay1', 'ay2'], 'b': ['bee'], c: 'cee'] //Optional package-level attributes
 			version {
-				name = '201709-RELEASE'
-				desc = '2017-09-07'
+				name = project_version
+				desc = "released at ${new Date()} : $project_version"
 				released = new Date()
-				vcsTag = '201709-RELEASE'
+				vcsTag = project_version
 //				attributes = ['gradle-plugin': 'com.use.less:com.use.less.gradle:gradle-useless-plugin']
 			}
 		}
