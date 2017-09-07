@@ -1,5 +1,5 @@
 group 'org.scriptonbasestar.tool'
-version '201709-RELEAE'
+version '201709-RELEASE'
 
 buildscript {
 	repositories {
@@ -78,18 +78,8 @@ allprojects {
 
 	task stage(dependsOn: ['build'])
 	build.mustRunAfter clean
-}
 
-subprojects{
-	dependencies{
-//		compile project(':core')
-
-		testCompile "org.slf4j:slf4j-api:$slf4j_version"
-		testCompileOnly "org.slf4j:jcl-over-slf4j:$slf4j_version"
-
-		testCompile "junit:junit:$junit_version"
-	}
-//	111
+	//	111
 //	repositories {
 //		flatDir {
 //			name "fileRepo"
@@ -118,6 +108,8 @@ subprojects{
 		publications {
 			MyPublication(MavenPublication) {
 				from components.java
+//				artifact sourcesJar
+//				artifact javadocJar
 				groupId 'org.scriptonbasestar.tool'
 				artifactId project.name
 				version project_version
@@ -133,18 +125,30 @@ subprojects{
 			repo = 'jvm-repo'
 			name = 'sb-tool-jvm'
 			desc = 'tool for jvm languages'
-			userOrg = "ScriptonBasestar Inc."
+			userOrg = "archmagece"
 			licenses = ['Apache-2.0']
 			vcsUrl = 'https://github.com/ScriptonBasestar-Lib/sb-tool-jvm.git'
 			labels = ['java', 'kotlin', 'groovy', 'gradle', 'library']
 			publicDownloadNumbers = true
 //			attributes= ['a': ['ay1', 'ay2'], 'b': ['bee'], c: 'cee'] //Optional package-level attributes
 			version {
-				name = project.version
-				desc = '201709-RELEAE'
-				vcsTag = '201709-RELEAE'
+				name = '201709-RELEASE'
+				desc = '2017-09-07'
+				released = new Date()
+				vcsTag = '201709-RELEASE'
 //				attributes = ['gradle-plugin': 'com.use.less:com.use.less.gradle:gradle-useless-plugin']
 			}
 		}
+	}
+}
+
+subprojects{
+	dependencies{
+//		compile project(':core')
+
+		testCompile "org.slf4j:slf4j-api:$slf4j_version"
+		testCompileOnly "org.slf4j:jcl-over-slf4j:$slf4j_version"
+
+		testCompile "junit:junit:$junit_version"
 	}
 }
