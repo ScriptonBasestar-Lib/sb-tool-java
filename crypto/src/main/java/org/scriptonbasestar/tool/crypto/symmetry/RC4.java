@@ -4,7 +4,7 @@ package org.scriptonbasestar.tool.crypto.symmetry;
  * @author chaeeung.e
  * @since 2017-09-07
  *
- * PBEwithMD5andDES
+ * https://en.wikipedia.org/wiki/RC4
  */
-public class DES {
+public class RC4 {
 }

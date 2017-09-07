@@ -1,8 +1,8 @@
 package org.scriptonbasestar.tool.threading;
 
 import org.scriptonbasestar.tool.threading.testres.AdderAsyncExecuteMethodsImpl;
-import org.scriptonbasestar.tool.threading.testres.RequestVo;
-import org.scriptonbasestar.tool.threading.testres.ResponseVo;
+import org.scriptonbasestar.tool.threading.testres.RequestDto;
+import org.scriptonbasestar.tool.threading.testres.ResponseDto;
 import org.junit.Test;
 
 /**
@@ -14,7 +14,7 @@ import org.junit.Test;
 public class AsyncTaskManagerTest {
 
 
-	AsyncTaskManager<RequestVo, ResponseVo> asyncTaskManager;
+	AsyncTaskManager<RequestDto, ResponseDto> asyncTaskManager;
 //	@Before
 //	public void before(){
 //		asyncTaskManager = new AsyncTaskManager(new AdderAsyncExecuteMethodsImpl());
@@ -24,7 +24,7 @@ public class AsyncTaskManagerTest {
 	public void test() throws InterruptedException {
 		asyncTaskManager = new AsyncTaskManager(new AdderAsyncExecuteMethodsImpl());
 		for(int i=0;i<100;i++){
-			RequestVo requestVo = new RequestVo();
+			RequestDto requestVo = new RequestDto();
 			asyncTaskManager.execute(requestVo);
 		}
 		//늦게오는친구 기다려주긔

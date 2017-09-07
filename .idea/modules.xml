@@ -38,6 +38,9 @@
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/http/server/server.iml" filepath="$PROJECT_DIR$/.idea/modules/http/server/server.iml" group="http/server" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/http/server/server_main.iml" filepath="$PROJECT_DIR$/.idea/modules/http/server/server_main.iml" group="http/server" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/http/server/server_test.iml" filepath="$PROJECT_DIR$/.idea/modules/http/server/server_test.iml" group="http/server" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/spring/spring.iml" filepath="$PROJECT_DIR$/.idea/modules/spring/spring.iml" group="spring" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/spring/spring_main.iml" filepath="$PROJECT_DIR$/.idea/modules/spring/spring_main.iml" group="spring" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/spring/spring_test.iml" filepath="$PROJECT_DIR$/.idea/modules/spring/spring_test.iml" group="spring" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/test/test.iml" filepath="$PROJECT_DIR$/.idea/modules/test/test.iml" group="test" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/test/test_main.iml" filepath="$PROJECT_DIR$/.idea/modules/test/test_main.iml" group="test" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/test/test_test.iml" filepath="$PROJECT_DIR$/.idea/modules/test/test_test.iml" group="test" />

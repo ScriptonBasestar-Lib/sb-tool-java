@@ -15,7 +15,6 @@ import java.util.Map;
 /**
  * @author : archmagece@gmail.com
  * @since: 2014-03-06 10:53
- * hello world, hello venus, hello alice
  */
 public class RestObject {
 

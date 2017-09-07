@@ -31,6 +31,8 @@
       <module name="mongo_test" target="1.8" />
       <module name="server_main" target="1.8" />
       <module name="server_test" target="1.8" />
+      <module name="spring_main" target="1.8" />
+      <module name="spring_test" target="1.8" />
       <module name="test_main" target="1.8" />
       <module name="test_test" target="1.8" />
       <module name="threading_main" target="1.8" />
