@@ -82,6 +82,9 @@ subprojects{
 	dependencies{
 		compile project(':core')
 
+		testCompile "org.slf4j:slf4j-api:$slf4j_version"
+		testCompileOnly "org.slf4j:jcl-over-slf4j:$slf4j_version"
+
 		testCompile "junit:junit:$junit_version"
 	}
 }

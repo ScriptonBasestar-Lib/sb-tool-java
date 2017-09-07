@@ -22,7 +22,12 @@
             <option value="$PROJECT_DIR$/http/server" />
             <option value="$PROJECT_DIR$/logback" />
             <option value="$PROJECT_DIR$/logging" />
+            <option value="$PROJECT_DIR$/mail" />
             <option value="$PROJECT_DIR$/spring" />
+            <option value="$PROJECT_DIR$/spring/api" />
+            <option value="$PROJECT_DIR$/spring/security" />
+            <option value="$PROJECT_DIR$/spring/web" />
+            <option value="$PROJECT_DIR$/taglibs" />
             <option value="$PROJECT_DIR$/test" />
             <option value="$PROJECT_DIR$/threading" />
             <option value="$PROJECT_DIR$/transfer" />

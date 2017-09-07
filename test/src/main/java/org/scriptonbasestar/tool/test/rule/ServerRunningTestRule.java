@@ -1,4 +1,4 @@
-package org.beansugar.tool.test.rule;
+package org.scriptonbasestar.tool.test.rule;
 
 import org.junit.Assert;
 import org.junit.rules.TestRule;

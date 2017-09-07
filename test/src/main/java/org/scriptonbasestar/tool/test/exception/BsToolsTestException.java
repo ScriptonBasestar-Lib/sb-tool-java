@@ -1,4 +1,4 @@
-package org.beansugar.tool.test.exception;
+package org.scriptonbasestar.tool.test.exception;
 
 import lombok.extern.slf4j.Slf4j;
 import org.scriptonbasestar.tool.core.exception.runtime.SBRuntimeBaseException;

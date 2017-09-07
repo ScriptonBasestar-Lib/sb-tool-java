@@ -5,6 +5,8 @@
       <profile default="true" name="Default" enabled="true" />
     </annotationProcessing>
     <bytecodeTargetLevel>
+      <module name="api_main" target="1.8" />
+      <module name="api_test" target="1.8" />
       <module name="avro_main" target="1.8" />
       <module name="avro_test" target="1.8" />
       <module name="client_main" target="1.8" />
@@ -27,12 +29,18 @@
       <module name="logback_test" target="1.8" />
       <module name="logging_main" target="1.8" />
       <module name="logging_test" target="1.8" />
+      <module name="mail_main" target="1.8" />
+      <module name="mail_test" target="1.8" />
       <module name="mongo_main" target="1.8" />
       <module name="mongo_test" target="1.8" />
+      <module name="security_main" target="1.8" />
+      <module name="security_test" target="1.8" />
       <module name="server_main" target="1.8" />
       <module name="server_test" target="1.8" />
       <module name="spring_main" target="1.8" />
       <module name="spring_test" target="1.8" />
+      <module name="taglibs_main" target="1.8" />
+      <module name="taglibs_test" target="1.8" />
       <module name="test_main" target="1.8" />
       <module name="test_test" target="1.8" />
       <module name="threading_main" target="1.8" />
@@ -45,6 +53,8 @@
       <module name="transfer_test" target="1.8" />
       <module name="validation_main" target="1.8" />
       <module name="validation_test" target="1.8" />
+      <module name="web_main" target="1.8" />
+      <module name="web_test" target="1.8" />
     </bytecodeTargetLevel>
   </component>
 </project>
