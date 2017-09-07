@@ -1,6 +1,5 @@
 package org.scriptonbasestar.tool.http.server.filter;
 
-import lombok.extern.slf4j.Slf4j;
 import org.scriptonbasestar.tool.core.check.Check;
 
 import javax.servlet.*;
@@ -14,7 +13,6 @@ import java.io.IOException;
  * redirect filter.. http 접속을 https로 튕겨낼 때 사용
  * 보통은 http서버에서 처리하겠지만 그게 곤란할 경우
  */
-@Slf4j
 public class HttpsRedirectFilter implements Filter {
 	private FilterConfig filterConfig;
 

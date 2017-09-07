@@ -2,45 +2,22 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c777379e-c850-4f75-ba61-049e50439d1e" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/http/http-core/build.gradle" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/http/core/build.gradle" afterPath="$PROJECT_DIR$/core/build.gradle" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/http/core/src/main/java/org/scriptonbasestar/tool/http/core/package-info.java" afterPath="$PROJECT_DIR$/http/http-core/src/main/java/org/scriptonbasestar/tool/http/core/package-info.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/http/core/src/main/java/org/scriptonbasestar/tool/http/core/util/SSLUtil.java" afterPath="$PROJECT_DIR$/http/http-core/src/main/java/org/scriptonbasestar/tool/http/core/util/SSLUtil.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/http/core/src/test/java/org/scriptonbasestar/tool/http/core/zzz" afterPath="$PROJECT_DIR$/http/http-core/src/test/java/org/scriptonbasestar/tool/http/core/zzz" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/http/core/src/test/resources/logback-test.xml" afterPath="$PROJECT_DIR$/http/http-core/src/test/resources/logback-test.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/compiler.xml" afterPath="$PROJECT_DIR$/.idea/compiler.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/gradle.xml" afterPath="$PROJECT_DIR$/.idea/gradle.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/modules.xml" afterPath="$PROJECT_DIR$/.idea/modules.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/core/src/main/java/org/scriptonbasestar/tool/core/exception/runtime/SBCryptoException.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/modules/crypto/crypto_main.iml" afterPath="$PROJECT_DIR$/.idea/modules/crypto/crypto_main.iml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/modules/crypto/crypto_test.iml" afterPath="$PROJECT_DIR$/.idea/modules/crypto/crypto_test.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/modules/http/http_main.iml" afterPath="$PROJECT_DIR$/.idea/modules/http/http_main.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/modules/http/http_test.iml" afterPath="$PROJECT_DIR$/.idea/modules/http/http_test.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/modules/logback/logback_main.iml" afterPath="$PROJECT_DIR$/.idea/modules/logback/logback_main.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/modules/logback/logback_test.iml" afterPath="$PROJECT_DIR$/.idea/modules/logback/logback_test.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/modules/logging/logging_main.iml" afterPath="$PROJECT_DIR$/.idea/modules/logging/logging_main.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/modules/logging/logging_test.iml" afterPath="$PROJECT_DIR$/.idea/modules/logging/logging_test.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/modules/test/test_main.iml" afterPath="$PROJECT_DIR$/.idea/modules/test/test_main.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/modules/threading/threading_main.iml" afterPath="$PROJECT_DIR$/.idea/modules/threading/threading_main.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/modules/threading/threading_test.iml" afterPath="$PROJECT_DIR$/.idea/modules/threading/threading_test.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/modules/validation/validation_main.iml" afterPath="$PROJECT_DIR$/.idea/modules/validation/validation_main.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/modules/validation/validation_test.iml" afterPath="$PROJECT_DIR$/.idea/modules/validation/validation_test.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/scala_compiler.xml" afterPath="$PROJECT_DIR$/.idea/scala_compiler.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build.gradle" afterPath="$PROJECT_DIR$/build.gradle" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/gradle.properties" afterPath="$PROJECT_DIR$/gradle.properties" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/http/client/build.gradle" afterPath="$PROJECT_DIR$/http/client/build.gradle" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/http/server/build.gradle" afterPath="$PROJECT_DIR$/http/server/build.gradle" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/mail/build.gradle" afterPath="$PROJECT_DIR$/mail/build.gradle" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/settings.gradle" afterPath="$PROJECT_DIR$/settings.gradle" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/spring/security/build.gradle" afterPath="$PROJECT_DIR$/spring/security/build.gradle" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/spring/security/src/main/java/com/scriptonbasestar/spring/security/filter/AppAuthKeyAuthenticationFilter.java" afterPath="$PROJECT_DIR$/spring/security/src/main/java/com/scriptonbasestar/spring/security/filter/AppAuthKeyAuthenticationFilter.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/spring/security/src/main/java/com/scriptonbasestar/spring/security/filter/HardKeyAuthenticationFilter.java" afterPath="$PROJECT_DIR$/spring/security/src/main/java/com/scriptonbasestar/spring/security/filter/HardKeyAuthenticationFilter.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/spring/security/src/main/java/com/scriptonbasestar/spring/security/filter/RequestHeaderProcessingFilter.java" afterPath="$PROJECT_DIR$/spring/security/src/main/java/com/scriptonbasestar/spring/security/filter/RequestHeaderProcessingFilter.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/taglibs/build.gradle" afterPath="$PROJECT_DIR$/taglibs/build.gradle" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/taglibs/src/main/java/org/scriptonbasestar/tool/taglib/tag/MessageAppender.java" afterPath="$PROJECT_DIR$/taglibs/src/main/java/org/scriptonbasestar/tool/taglib/tag/MessageAppender.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/build.gradle" afterPath="$PROJECT_DIR$/test/build.gradle" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/src/main/java/org/scriptonbasestar/tool/test/exception/BsToolsTestException.java" afterPath="$PROJECT_DIR$/test/src/main/java/org/scriptonbasestar/tool/test/exception/BsToolsTestException.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/transfer/build.gradle" afterPath="$PROJECT_DIR$/transfer/build.gradle" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/core/src/main/java/org/scriptonbasestar/tool/core/exception/runtime/SBAuthenticationException.java" afterPath="$PROJECT_DIR$/core/src/main/java/org/scriptonbasestar/tool/core/exception/runtime/SBAuthenticationException.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/core/src/main/java/org/scriptonbasestar/tool/core/exception/runtime/SBBadParameterException.java" afterPath="$PROJECT_DIR$/core/src/main/java/org/scriptonbasestar/tool/core/exception/runtime/SBBadParameterException.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/core/src/main/java/org/scriptonbasestar/tool/core/exception/runtime/SBDataAccessException.java" afterPath="$PROJECT_DIR$/core/src/main/java/org/scriptonbasestar/tool/core/exception/runtime/SBDataAccessException.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/core/src/main/java/org/scriptonbasestar/tool/core/exception/runtime/SBDataNotFoundException.java" afterPath="$PROJECT_DIR$/core/src/main/java/org/scriptonbasestar/tool/core/exception/runtime/SBDataNotFoundException.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/core/src/main/java/org/scriptonbasestar/tool/core/exception/runtime/SBNetworkException.java" afterPath="$PROJECT_DIR$/core/src/main/java/org/scriptonbasestar/tool/core/exception/runtime/SBNetworkException.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/core/src/main/java/org/scriptonbasestar/tool/core/exception/runtime/SBReflectionException.java" afterPath="$PROJECT_DIR$/core/src/main/java/org/scriptonbasestar/tool/core/exception/runtime/SBReflectionException.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/core/src/main/java/org/scriptonbasestar/tool/core/exception/runtime/SBRuntimeBaseException.java" afterPath="$PROJECT_DIR$/core/src/main/java/org/scriptonbasestar/tool/core/exception/runtime/SBRuntimeBaseException.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/core/src/main/java/org/scriptonbasestar/tool/core/exception/runtime/SBTimeoutException.java" afterPath="$PROJECT_DIR$/core/src/main/java/org/scriptonbasestar/tool/core/exception/runtime/SBTimeoutException.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/core/src/main/java/org/scriptonbasestar/tool/core/exception/runtime/SBValidationException.java" afterPath="$PROJECT_DIR$/core/src/main/java/org/scriptonbasestar/tool/core/exception/runtime/SBValidationException.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/crypto/build.gradle" afterPath="$PROJECT_DIR$/crypto/build.gradle" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/crypto/src/main/java/org/scriptonbasestar/tool/crypto/EncryptUtility.java" afterPath="$PROJECT_DIR$/crypto/src/main/java/org/scriptonbasestar/tool/crypto/EncryptUtility.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/http/server/src/main/java/org/scriptonbasestar/tool/http/server/filter/HttpsRedirectFilter.java" afterPath="$PROJECT_DIR$/http/server/src/main/java/org/scriptonbasestar/tool/http/server/filter/HttpsRedirectFilter.java" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/.gradle/" />
@@ -140,12 +117,47 @@
         <task path="$PROJECT_DIR$/http/server">
           <activation />
         </task>
+        <task path="$PROJECT_DIR$/http/http-core">
+          <activation />
+        </task>
         <projects_view>
           <tree_state>
             <expand>
               <path>
                 <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
                 <item name="tool-jvm-parent" type="f1a62948:ProjectNode" />
+              </path>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="tool-jvm-parent" type="f1a62948:ProjectNode" />
+                <item name=":http:http-core" type="2d1252cf:ModuleNode" />
+              </path>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="tool-jvm-parent" type="f1a62948:ProjectNode" />
+                <item name=":http:http-core" type="2d1252cf:ModuleNode" />
+                <item name="Source Sets" type="e897c970:GradleViewContributor$SourceSetsNode" />
+              </path>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="tool-jvm-parent" type="f1a62948:ProjectNode" />
+                <item name=":http:http-core" type="2d1252cf:ModuleNode" />
+                <item name="Source Sets" type="e897c970:GradleViewContributor$SourceSetsNode" />
+                <item name="main" type="396b929e:GradleViewContributor$SourceSetNode" />
+              </path>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="tool-jvm-parent" type="f1a62948:ProjectNode" />
+                <item name=":http:http-core" type="2d1252cf:ModuleNode" />
+                <item name="Source Sets" type="e897c970:GradleViewContributor$SourceSetsNode" />
+                <item name="main" type="396b929e:GradleViewContributor$SourceSetNode" />
+                <item name="Dependencies" type="6de06a37:ExternalSystemViewDefaultContributor$MyDependenciesNode" />
+              </path>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="tool-jvm-parent" type="f1a62948:ProjectNode" />
+                <item name=":http:http-core" type="2d1252cf:ModuleNode" />
+                <item name="Tasks" type="e4a08cd1:TasksNode" />
               </path>
               <path>
                 <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
@@ -182,103 +194,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="525">
-      <file leaf-file-name="build.gradle" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/http/http-core/build.gradle">
+      <file leaf-file-name="EncryptUtility.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/crypto/src/main/java/org/scriptonbasestar/tool/crypto/EncryptUtility.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="32">
-              <caret line="1" column="22" lean-forward="false" selection-start-line="1" selection-start-column="22" selection-end-line="1" selection-end-column="22" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="SSLUtil.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/http/http-core/src/main/java/org/scriptonbasestar/tool/http/core/util/SSLUtil.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="160">
-              <caret line="14" column="19" lean-forward="false" selection-start-line="14" selection-start-column="19" selection-end-line="14" selection-end-column="19" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="SimpleApiAuthCodeFilter.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/http/server/src/main/java/org/scriptonbasestar/tool/http/server/filter/SimpleApiAuthCodeFilter.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1312">
-              <caret line="41" column="36" lean-forward="false" selection-start-line="41" selection-start-column="36" selection-end-line="41" selection-end-column="36" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="HttpsRedirectFilter.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/http/server/src/main/java/org/scriptonbasestar/tool/http/server/filter/HttpsRedirectFilter.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="352">
-              <caret line="17" column="13" lean-forward="false" selection-start-line="17" selection-start-column="13" selection-end-line="17" selection-end-column="13" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="build.gradle" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/data/build.gradle">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="288">
-              <caret line="9" column="47" lean-forward="false" selection-start-line="9" selection-start-column="47" selection-end-line="9" selection-end-column="47" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="build.gradle" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/build.gradle">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="687">
-              <caret line="83" column="0" lean-forward="false" selection-start-line="83" selection-start-column="0" selection-end-line="85" selection-end-column="65" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="settings.gradle" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/settings.gradle">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="256">
-              <caret line="8" column="23" lean-forward="false" selection-start-line="8" selection-start-column="23" selection-end-line="8" selection-end-column="23" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="build.gradle" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/http/client/build.gradle">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="14" lean-forward="false" selection-start-line="0" selection-start-column="14" selection-end-line="2" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="gradle.properties" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/gradle.properties">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="448">
-              <caret line="14" column="25" lean-forward="false" selection-start-line="14" selection-start-column="25" selection-end-line="14" selection-end-column="25" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="build.gradle" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/http/server/build.gradle">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="64">
-              <caret line="2" column="0" lean-forward="false" selection-start-line="2" selection-start-column="0" selection-end-line="2" selection-end-column="0" />
+            <state relative-caret-position="2016">
+              <caret line="76" column="57" lean-forward="false" selection-start-line="76" selection-start-column="57" selection-end-line="76" selection-end-column="57" />
               <folding />
             </state>
           </provider>
@@ -291,8 +211,8 @@
       <list>
         <option value="Package Object" />
         <option value="Interface" />
-        <option value="Class" />
         <option value="package-info" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -6168,12 +6088,12 @@
     </option>
     <option name="modificationStamps">
       <map>
-        <entry key="$PROJECT_DIR$" value="37611169784603" />
+        <entry key="$PROJECT_DIR$" value="37611180698204" />
         <entry key="$PROJECT_DIR$/avro/build.gradle" value="1756375889" />
         <entry key="$PROJECT_DIR$/build.gradle" value="3434295325" />
         <entry key="$PROJECT_DIR$/collection/build.gradle" value="237886747" />
         <entry key="$PROJECT_DIR$/core/build.gradle" value="2106507894" />
-        <entry key="$PROJECT_DIR$/crypto/build.gradle" value="825576153" />
+        <entry key="$PROJECT_DIR$/crypto/build.gradle" value="2151543607" />
         <entry key="$PROJECT_DIR$/data/build.gradle" value="81177761" />
         <entry key="$PROJECT_DIR$/data/jpa/build.gradle" value="2206066951" />
         <entry key="$PROJECT_DIR$/data/mongo/build.gradle" value="1429268344" />
@@ -7020,22 +6940,9 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/data/jpa/src/main/java/com/scriptonbasestar/tool/data/jpa/typlizer/SsoNamingStrategy.java" />
-        <option value="$PROJECT_DIR$/data/jpa/src/main/java/com/scriptonbasestar/tool/data/jpa/hibernate/SsoNamingStrategy.java" />
-        <option value="$PROJECT_DIR$/data/jpa/src/main/java/com/scriptonbasestar/tool/data/jpa/hibernate/OracleNamingStrategy.java" />
-        <option value="$PROJECT_DIR$/http/client/src/main/java/org/scriptonbasestar/tool/http/client/rest/access/RestObject.java" />
-        <option value="$PROJECT_DIR$/http/client/src/main/java/org/scriptonbasestar/tool/http/client/rest/type/EncodingType.java" />
-        <option value="$PROJECT_DIR$/data/jpa/src/main/java/com/scriptonbasestar/tool/data/jpa/hibernate/EnumTuplizer.java" />
-        <option value="$PROJECT_DIR$/threading/src/test/java/org/scriptonbasestar/tool/threading/testres/AdderAsyncExecuteMethodsImpl.java" />
-        <option value="$PROJECT_DIR$/threading/src/test/java/org/scriptonbasestar/tool/threading/testres/RequestVo.java" />
-        <option value="$PROJECT_DIR$/threading/src/test/java/org/scriptonbasestar/tool/threading/testres/ResponseVo.java" />
-        <option value="$PROJECT_DIR$/threading/src/test/java/org/scriptonbasestar/tool/threading/testres/RequestDto.java" />
-        <option value="$PROJECT_DIR$/crypto/src/main/java/org/scriptonbasestar/tool/crypto/symmetry/RC2.java" />
-        <option value="$PROJECT_DIR$/crypto/src/main/java/org/scriptonbasestar/tool/crypto/symmetry/TripleDES.java" />
         <option value="$PROJECT_DIR$/crypto/src/main/java/org/scriptonbasestar/tool/crypto/symmetry/DES.java" />
         <option value="$PROJECT_DIR$/crypto/src/main/java/org/scriptonbasestar/tool/crypto/symmetry/Aria.java" />
         <option value="$PROJECT_DIR$/crypto/src/main/java/org/scriptonbasestar/tool/crypto/hash/SHA.java" />
-        <option value="$PROJECT_DIR$/crypto/build.gradle" />
         <option value="$PROJECT_DIR$/spring/security/src/main/java/com/scriptonbasestar/spring/security/package-info.java" />
         <option value="$PROJECT_DIR$/spring/web/src/main/java/com/scriptonbasestar/spring/web/package-info.java" />
         <option value="$PROJECT_DIR$/spring/api/src/main/java/com/scriptonbasestar/spring/api/config/servlet/BaseApiServletConfig.java" />
@@ -7049,7 +6956,6 @@
         <option value="$PROJECT_DIR$/test/src/main/java/org.beansugar.tools.test/rule/LoggingRule.java" />
         <option value="$PROJECT_DIR$/test/src/main/java/org.beansugar.tools.test/rule/ServerRunningTestRule.java" />
         <option value="$PROJECT_DIR$/test/src/main/java/org/scriptonbasestar/tool/test/rule/ServerRunningTestRule.java" />
-        <option value="$PROJECT_DIR$/core/src/main/java/org/scriptonbasestar/tool/core/exception/runtime/SBRuntimeBaseException.java" />
         <option value="$PROJECT_DIR$/taglibs/build.gradle" />
         <option value="$PROJECT_DIR$/taglibs/src/main/java/org/scriptonbasestar/tool/taglib/MessageAppender.java" />
         <option value="$PROJECT_DIR$/taglibs/src/main/java/org/scriptonbasestar/tool/taglib/tag/MessageAppender.java" />
@@ -7071,6 +6977,20 @@
         <option value="$PROJECT_DIR$/http/client/build.gradle" />
         <option value="$PROJECT_DIR$/http/server/build.gradle" />
         <option value="$PROJECT_DIR$/http/server/src/main/java/org/scriptonbasestar/tool/http/server/filter/SimpleApiAuthCodeFilter.java" />
+        <option value="$PROJECT_DIR$/http/server/src/main/java/org/scriptonbasestar/tool/http/server/filter/HttpsRedirectFilter.java" />
+        <option value="$PROJECT_DIR$/crypto/build.gradle" />
+        <option value="$PROJECT_DIR$/core/src/main/java/org/scriptonbasestar/tool/core/exception/runtime/SBEncryptionException.java" />
+        <option value="$PROJECT_DIR$/core/src/main/java/org/scriptonbasestar/tool/core/exception/runtime/SBCryptoException.java" />
+        <option value="$PROJECT_DIR$/core/src/main/java/org/scriptonbasestar/tool/core/exception/runtime/SBAuthenticationException.java" />
+        <option value="$PROJECT_DIR$/core/src/main/java/org/scriptonbasestar/tool/core/exception/runtime/SBBadParameterException.java" />
+        <option value="$PROJECT_DIR$/core/src/main/java/org/scriptonbasestar/tool/core/exception/runtime/SBDataNotFoundException.java" />
+        <option value="$PROJECT_DIR$/core/src/main/java/org/scriptonbasestar/tool/core/exception/runtime/SBNetworkException.java" />
+        <option value="$PROJECT_DIR$/core/src/main/java/org/scriptonbasestar/tool/core/exception/runtime/SBReflectionException.java" />
+        <option value="$PROJECT_DIR$/core/src/main/java/org/scriptonbasestar/tool/core/exception/runtime/SBRuntimeBaseException.java" />
+        <option value="$PROJECT_DIR$/core/src/main/java/org/scriptonbasestar/tool/core/exception/runtime/SBTimeoutException.java" />
+        <option value="$PROJECT_DIR$/core/src/main/java/org/scriptonbasestar/tool/core/exception/runtime/SBValidationException.java" />
+        <option value="$PROJECT_DIR$/core/src/main/java/org/scriptonbasestar/tool/core/exception/runtime/SBDataAccessException.java" />
+        <option value="$PROJECT_DIR$/crypto/src/main/java/org/scriptonbasestar/tool/crypto/EncryptUtility.java" />
       </list>
     </option>
   </component>
@@ -7118,6 +7038,103 @@
               <item name="tool-jvm-parent" type="b2602c69:ProjectViewProjectNode" />
               <item name="tool-jvm-parent" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
               <item name="core" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+            </path>
+            <path>
+              <item name="tool-jvm-parent" type="b2602c69:ProjectViewProjectNode" />
+              <item name="tool-jvm-parent" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="core" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="tool-jvm-parent" type="b2602c69:ProjectViewProjectNode" />
+              <item name="tool-jvm-parent" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="core" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+            </path>
+            <path>
+              <item name="tool-jvm-parent" type="b2602c69:ProjectViewProjectNode" />
+              <item name="tool-jvm-parent" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="core" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="tool-jvm-parent" type="b2602c69:ProjectViewProjectNode" />
+              <item name="tool-jvm-parent" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="core" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="core" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="tool-jvm-parent" type="b2602c69:ProjectViewProjectNode" />
+              <item name="tool-jvm-parent" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="core" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="core" type="462c0819:PsiDirectoryNode" />
+              <item name="exception" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="tool-jvm-parent" type="b2602c69:ProjectViewProjectNode" />
+              <item name="tool-jvm-parent" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="core" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="core" type="462c0819:PsiDirectoryNode" />
+              <item name="exception" type="462c0819:PsiDirectoryNode" />
+              <item name="compiletime" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="tool-jvm-parent" type="b2602c69:ProjectViewProjectNode" />
+              <item name="tool-jvm-parent" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="core" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="core" type="462c0819:PsiDirectoryNode" />
+              <item name="exception" type="462c0819:PsiDirectoryNode" />
+              <item name="runtime" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="tool-jvm-parent" type="b2602c69:ProjectViewProjectNode" />
+              <item name="tool-jvm-parent" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="crypto" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+            </path>
+            <path>
+              <item name="tool-jvm-parent" type="b2602c69:ProjectViewProjectNode" />
+              <item name="tool-jvm-parent" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="crypto" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="tool-jvm-parent" type="b2602c69:ProjectViewProjectNode" />
+              <item name="tool-jvm-parent" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="crypto" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+            </path>
+            <path>
+              <item name="tool-jvm-parent" type="b2602c69:ProjectViewProjectNode" />
+              <item name="tool-jvm-parent" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="crypto" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="tool-jvm-parent" type="b2602c69:ProjectViewProjectNode" />
+              <item name="tool-jvm-parent" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="crypto" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="crypto" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="tool-jvm-parent" type="b2602c69:ProjectViewProjectNode" />
@@ -7245,7 +7262,7 @@
   </component>
   <component name="PropertiesComponent">
     <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../solcon-message-service" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../idea_open/commons-collections" />
     <property name="nodejs_interpreter_path" value="C:/Program Files/nodejs/node" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
@@ -7489,7 +7506,7 @@
     </recent_temporary>
   </component>
   <component name="SbtLocalSettings">
-    <option name="lastUpdateTimestamp" value="1504761052690" />
+    <option name="lastUpdateTimestamp" value="1504761434099" />
     <option name="externalProjectsViewState">
       <projects_view />
     </option>
@@ -7509,7 +7526,7 @@
       <workItem from="1504586973260" duration="1751000" />
       <workItem from="1504684470488" duration="2335000" />
       <workItem from="1504686930624" duration="5489000" />
-      <workItem from="1504747401125" duration="10326000" />
+      <workItem from="1504747401125" duration="11072000" />
     </task>
     <task id="LOCAL-00001" summary="파일명 변경. 의존성 수정">
       <created>1504588524252</created>
@@ -7588,7 +7605,14 @@
       <option name="project" value="LOCAL" />
       <updated>1504758712363</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="gradle bug. 모듈 네이밍 충돌">
+      <created>1504761084764</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1504761084764</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -7618,10 +7642,11 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="23906000" />
+    <option name="totallyTimeSpent" value="24652000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-12" y="-12" width="3864" height="2114" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info id="PlantUML" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -7636,7 +7661,7 @@
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3295207" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3295207" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -7644,7 +7669,7 @@
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Spring" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33006537" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.14619882" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.18846358" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Bean Validation" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3295207" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Gradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.16799575" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -7673,111 +7698,16 @@
     <MESSAGE value="dto 잘라붙이기" />
     <MESSAGE value="암호화 관련 만들거 셋팅만" />
     <MESSAGE value="의존성 정리" />
-    <option name="LAST_COMMIT_MESSAGE" value="의존성 정리" />
+    <MESSAGE value="gradle bug. 모듈 네이밍 충돌" />
+    <option name="LAST_COMMIT_MESSAGE" value="gradle bug. 모듈 네이밍 충돌" />
   </component>
   <component name="XDebuggerManager">
-    <breakpoint-manager />
+    <breakpoint-manager>
+      <option name="time" value="1" />
+    </breakpoint-manager>
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/crypto/build.gradle">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="224">
-          <caret line="7" column="0" lean-forward="false" selection-start-line="7" selection-start-column="0" selection-end-line="9" selection-end-column="57" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/threading/build.gradle">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/core/src/main/java/org/scriptonbasestar/tool/core/exception/runtime/SBRuntimeBaseException.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="224">
-          <caret line="7" column="14" lean-forward="false" selection-start-line="7" selection-start-column="14" selection-end-line="7" selection-end-column="14" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/test/src/main/java/org/scriptonbasestar/tool/test/rule/LoggingRule.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="256">
-          <caret line="10" column="13" lean-forward="false" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/test/src/main/java/org/scriptonbasestar/tool/test/rule/ServerRunningTestRule.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="671">
-          <caret line="28" column="12" lean-forward="false" selection-start-line="28" selection-start-column="12" selection-end-line="28" selection-end-column="12" />
-          <folding>
-            <element signature="imports" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/threading/src/test/java/org/scriptonbasestar/tool/threading/sample/AsyncSendFile.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="544">
-          <caret line="43" column="51" lean-forward="false" selection-start-line="43" selection-start-column="51" selection-end-line="43" selection-end-column="51" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/collection/src/main/java/org/scriptonbasestar/tool/collection/joiner/Joiner.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="320">
-          <caret line="14" column="19" lean-forward="false" selection-start-line="14" selection-start-column="19" selection-end-line="14" selection-end-column="19" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/taglibs/build.gradle">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="224">
-          <caret line="7" column="0" lean-forward="false" selection-start-line="7" selection-start-column="0" selection-end-line="7" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/taglibs/src/main/java/org/scriptonbasestar/tool/taglib/MessageAppender.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="383">
-          <caret line="84" column="22" lean-forward="false" selection-start-line="84" selection-start-column="22" selection-end-line="84" selection-end-column="22" />
-          <folding>
-            <element signature="imports" expanded="false" />
-            <element signature="e#3030#3031#0" expanded="false" />
-            <element signature="e#3084#3085#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/taglibs/src/main/java/org/scriptonbasestar/tool/taglib/tag/MessageAppender.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1440">
-          <caret line="84" column="21" lean-forward="false" selection-start-line="84" selection-start-column="21" selection-end-line="84" selection-end-column="21" />
-          <folding>
-            <element signature="imports" expanded="false" />
-            <element signature="e#3028#3029#0" expanded="false" />
-            <element signature="e#3082#3083#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.apache.httpcomponents/httpcore/4.4.6/57cc0a7af46d66754e632bddc558a913b9e66ac3/httpcore-4.4.6-sources.jar!/org/apache/http/HttpHeaders.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="320">
-          <caret line="35" column="19" lean-forward="false" selection-start-line="35" selection-start-column="19" selection-end-line="35" selection-end-column="19" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/http/server/src/main/java/org/scriptonbasestar/tool/http/server/ApiNameMapManager.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="160">
@@ -7929,7 +7859,7 @@
         <state relative-caret-position="956">
           <caret line="39" column="21" lean-forward="false" selection-start-line="39" selection-start-column="21" selection-end-line="39" selection-end-column="21" />
           <folding>
-            <element signature="imports" expanded="true" />
+            <element signature="imports" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -7963,7 +7893,7 @@
         <state relative-caret-position="60">
           <caret line="29" column="46" lean-forward="false" selection-start-line="29" selection-start-column="46" selection-end-line="29" selection-end-column="46" />
           <folding>
-            <element signature="imports" expanded="true" />
+            <element signature="imports" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -7981,7 +7911,7 @@
         <state relative-caret-position="1020">
           <caret line="41" column="13" lean-forward="false" selection-start-line="41" selection-start-column="13" selection-end-line="41" selection-end-column="13" />
           <folding>
-            <element signature="imports" expanded="true" />
+            <element signature="imports" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -7990,14 +7920,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="93">
           <caret line="4" column="21" lean-forward="false" selection-start-line="4" selection-start-column="21" selection-end-line="4" selection-end-column="21" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/core/src/main/java/org/scriptonbasestar/tool/core/exception/runtime/SBAuthenticationException.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="192">
-          <caret line="6" column="38" lean-forward="false" selection-start-line="6" selection-start-column="13" selection-end-line="6" selection-end-column="38" />
           <folding />
         </state>
       </provider>
@@ -8108,10 +8030,138 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/crypto/build.gradle">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="32">
+          <caret line="1" column="26" lean-forward="false" selection-start-line="1" selection-start-column="26" selection-end-line="1" selection-end-column="26" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/http/server/src/main/java/org/scriptonbasestar/tool/http/server/filter/HttpsRedirectFilter.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="352">
-          <caret line="17" column="13" lean-forward="false" selection-start-line="17" selection-start-column="13" selection-end-line="17" selection-end-column="13" />
+        <state relative-caret-position="-1">
+          <caret line="46" column="25" lean-forward="true" selection-start-line="46" selection-start-column="25" selection-end-line="46" selection-end-column="25" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/core/src/main/java/org/scriptonbasestar/tool/core/exception/runtime/SBAuthenticationException.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="256">
+          <caret line="10" column="10" lean-forward="false" selection-start-line="10" selection-start-column="10" selection-end-line="10" selection-end-column="10" />
+          <folding>
+            <element signature="e#312#313#0" expanded="true" />
+            <element signature="e#336#337#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/core/src/main/java/org/scriptonbasestar/tool/core/exception/runtime/SBBadParameterException.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="256">
+          <caret line="10" column="10" lean-forward="false" selection-start-line="10" selection-start-column="10" selection-end-line="10" selection-end-column="10" />
+          <folding>
+            <element signature="e#319#320#0" expanded="true" />
+            <element signature="e#343#344#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/core/src/main/java/org/scriptonbasestar/tool/core/exception/runtime/SBDataNotFoundException.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="256">
+          <caret line="10" column="10" lean-forward="false" selection-start-line="10" selection-start-column="4" selection-end-line="10" selection-end-column="10" />
+          <folding>
+            <element signature="e#319#320#0" expanded="true" />
+            <element signature="e#343#344#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/core/src/main/java/org/scriptonbasestar/tool/core/exception/runtime/SBNetworkException.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="256">
+          <caret line="10" column="10" lean-forward="false" selection-start-line="10" selection-start-column="10" selection-end-line="10" selection-end-column="10" />
+          <folding>
+            <element signature="e#304#305#0" expanded="true" />
+            <element signature="e#328#329#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/core/src/main/java/org/scriptonbasestar/tool/core/exception/runtime/SBValidationException.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="416">
+          <caret line="15" column="1" lean-forward="true" selection-start-line="15" selection-start-column="1" selection-end-line="15" selection-end-column="1" />
+          <folding>
+            <element signature="e#330#331#0" expanded="true" />
+            <element signature="e#354#355#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/core/src/main/java/org/scriptonbasestar/tool/core/exception/runtime/SBTimeoutException.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="256">
+          <caret line="10" column="10" lean-forward="false" selection-start-line="10" selection-start-column="10" selection-end-line="10" selection-end-column="10" />
+          <folding>
+            <element signature="e#304#305#0" expanded="true" />
+            <element signature="e#328#329#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/core/src/main/java/org/scriptonbasestar/tool/core/exception/runtime/SBRuntimeBaseException.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="256">
+          <caret line="10" column="13" lean-forward="false" selection-start-line="10" selection-start-column="4" selection-end-line="10" selection-end-column="13" />
+          <folding>
+            <element signature="e#317#318#0" expanded="true" />
+            <element signature="e#341#342#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/core/src/main/java/org/scriptonbasestar/tool/core/exception/runtime/SBReflectionException.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="256">
+          <caret line="10" column="10" lean-forward="false" selection-start-line="10" selection-start-column="10" selection-end-line="10" selection-end-column="10" />
+          <folding>
+            <element signature="e#313#314#0" expanded="true" />
+            <element signature="e#337#338#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/core/src/main/java/org/scriptonbasestar/tool/core/exception/runtime/SBDataAccessException.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="256">
+          <caret line="10" column="10" lean-forward="false" selection-start-line="10" selection-start-column="10" selection-end-line="10" selection-end-column="10" />
+          <folding>
+            <element signature="e#313#314#0" expanded="true" />
+            <element signature="e#337#338#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/core/src/main/java/org/scriptonbasestar/tool/core/exception/runtime/SBCryptoException.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="256">
+          <caret line="10" column="9" lean-forward="false" selection-start-line="10" selection-start-column="9" selection-end-line="10" selection-end-column="9" />
+          <folding>
+            <element signature="e#294#295#0" expanded="true" />
+            <element signature="e#318#319#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/crypto/src/main/java/org/scriptonbasestar/tool/crypto/EncryptUtility.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2016">
+          <caret line="76" column="57" lean-forward="false" selection-start-line="76" selection-start-column="57" selection-end-line="76" selection-end-column="57" />
           <folding />
         </state>
       </provider>

@@ -8,4 +8,7 @@ public class SBAuthenticationException extends RuntimeException {
 	public SBAuthenticationException(String message) {
 		super(message);
 	}
+	public SBAuthenticationException(String message, Throwable e) {
+		super(message, e);
+	}
 }

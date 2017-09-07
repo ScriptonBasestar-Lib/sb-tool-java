@@ -8,4 +8,7 @@ public class SBNetworkException extends SBRuntimeBaseException {
 	public SBNetworkException(String message) {
 		super(message);
 	}
+	public SBNetworkException(String message, Throwable e) {
+		super(message, e);
+	}
 }

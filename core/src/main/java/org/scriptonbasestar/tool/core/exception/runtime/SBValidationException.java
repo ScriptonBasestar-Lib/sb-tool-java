@@ -10,4 +10,7 @@ public class SBValidationException extends SBRuntimeBaseException {
 	public SBValidationException(String message) {
 		super(message);
 	}
+	public SBValidationException(String message, Throwable e) {
+		super(message, e);
+	}
 }

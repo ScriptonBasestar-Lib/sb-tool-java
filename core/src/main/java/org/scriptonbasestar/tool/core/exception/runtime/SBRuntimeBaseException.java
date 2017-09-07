@@ -8,4 +8,7 @@ public abstract class SBRuntimeBaseException extends RuntimeException {
 	protected SBRuntimeBaseException(String message) {
 		super(message);
 	}
+	protected SBRuntimeBaseException(String message, Throwable e) {
+		super(message, e);
+	}
 }

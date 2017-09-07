@@ -1,7 +1,7 @@
 package org.scriptonbasestar.tool.crypto;
 
-import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.codec.binary.Base64;
+import org.scriptonbasestar.tool.core.exception.runtime.SBCryptoException;
 
 import javax.crypto.BadPaddingException;
 import javax.crypto.Cipher;
@@ -15,7 +15,6 @@ import java.security.InvalidKeyException;
 import java.security.NoSuchAlgorithmException;
 import java.security.spec.AlgorithmParameterSpec;
 
-@Slf4j
 public class EncryptUtility {
 
 	public final static byte[] ivBytes = { 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00 };
@@ -33,19 +32,19 @@ public class EncryptUtility {
 
 			rtnValue = Base64.encodeBase64String(cipher.doFinal(textBytes));
 		} catch (UnsupportedEncodingException e) {
-			log.debug(e.getMessage());
+			throw new SBCryptoException("지원하지 않는 인코딩", e);
 		} catch (NoSuchAlgorithmException e) {
-			log.debug(e.getMessage());
+			throw new SBCryptoException("알 수 없는 알고리즘", e);
 		} catch (NoSuchPaddingException e) {
-			log.debug(e.getMessage());
+			throw new SBCryptoException("패딩이 없음", e);
 		} catch (InvalidKeyException e) {
-			log.debug(e.getMessage());
+			throw new SBCryptoException("키가 잘못됨", e);
 		} catch (InvalidAlgorithmParameterException e) {
-			log.debug(e.getMessage());
+			throw new SBCryptoException("잘못된 알고리즘 파라미터", e);
 		} catch (IllegalBlockSizeException e) {
-			log.debug(e.getMessage());
+			throw new SBCryptoException("블록 사이즈가 잘못됨", e);
 		} catch (BadPaddingException e) {
-			log.debug(e.getMessage());
+			throw new SBCryptoException("K2노스페이스 오류", e);
 		}
 
 		return rtnValue ;
@@ -63,19 +62,19 @@ public class EncryptUtility {
 			cipher.init(Cipher.DECRYPT_MODE, newKey, ivSpec);
 			rtnValue = new String(cipher.doFinal(textBytes), "UTF-8");
 		} catch (UnsupportedEncodingException e) {
-			log.debug(e.getMessage());
+			throw new SBCryptoException("지원하지 않는 인코딩", e);
 		} catch (NoSuchAlgorithmException e) {
-			log.debug(e.getMessage());
+			throw new SBCryptoException("알 수 없는 알고리즘", e);
 		} catch (NoSuchPaddingException e) {
-			log.debug(e.getMessage());
+			throw new SBCryptoException("패딩이 없음", e);
 		} catch (InvalidKeyException e) {
-			log.debug(e.getMessage());
+			throw new SBCryptoException("키가 잘못됨", e);
 		} catch (InvalidAlgorithmParameterException e) {
-			log.debug(e.getMessage());
+			throw new SBCryptoException("잘못된 알고리즘 파라미터", e);
 		} catch (IllegalBlockSizeException e) {
-			log.debug(e.getMessage());
+			throw new SBCryptoException("블록 사이즈가 잘못됨", e);
 		} catch (BadPaddingException e) {
-			log.debug(e.getMessage());
+			throw new SBCryptoException("K2노스페이스 오류", e);
 		}
 
 		return rtnValue ;

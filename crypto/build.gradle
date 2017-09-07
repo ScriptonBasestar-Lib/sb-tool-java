@@ -1,4 +1,6 @@
 dependencies {
+	compile project(':core')
+
 	compile "com.google.code.gson:gson:$gson_version"
 	compile "commons-codec:commons-codec:$commons_codec_version"
 

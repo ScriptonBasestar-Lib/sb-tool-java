@@ -8,4 +8,7 @@ public class SBBadParameterException extends SBRuntimeBaseException {
 	public SBBadParameterException(String message) {
 		super(message);
 	}
+	public SBBadParameterException(String message, Throwable e) {
+		super(message, e);
+	}
 }

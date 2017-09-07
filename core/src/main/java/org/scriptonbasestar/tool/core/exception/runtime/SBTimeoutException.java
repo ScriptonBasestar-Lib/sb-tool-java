@@ -8,4 +8,7 @@ public class SBTimeoutException extends SBRuntimeBaseException {
 	public SBTimeoutException(String message) {
 		super(message);
 	}
+	public SBTimeoutException(String message, Throwable e) {
+		super(message, e);
+	}
 }

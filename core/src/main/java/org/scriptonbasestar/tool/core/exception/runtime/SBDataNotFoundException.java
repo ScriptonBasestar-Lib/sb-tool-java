@@ -8,4 +8,7 @@ public class SBDataNotFoundException extends SBRuntimeBaseException {
 	public SBDataNotFoundException(String message) {
 		super(message);
 	}
+	public SBDataNotFoundException(String message, Throwable e) {
+		super(message, e);
+	}
 }

@@ -8,4 +8,7 @@ public class SBReflectionException extends SBRuntimeBaseException {
 	public SBReflectionException(String message) {
 		super(message);
 	}
+	public SBReflectionException(String message, Throwable e) {
+		super(message, e);
+	}
 }
