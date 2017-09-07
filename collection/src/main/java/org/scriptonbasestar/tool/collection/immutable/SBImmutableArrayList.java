@@ -4,12 +4,13 @@ import org.scriptonbasestar.tool.core.exception.runtime.SBDisabledException;
 
 import java.util.ArrayList;
 import java.util.Collection;
+import java.util.List;
 
 /**
  * @Author archmagece
  * @CreatedAt 2016-12-07 18
  *
- * @see java.util.Collections.unmodifiableList(List<? extends T> list)
+ * @see java.util.Collections#unmodifiableList(List) <? extends T> list)
  */
 @Deprecated
 public class SBImmutableArrayList<E> extends ArrayList<E>{

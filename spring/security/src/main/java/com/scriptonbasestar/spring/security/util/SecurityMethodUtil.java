@@ -1,8 +1,8 @@
 package com.scriptonbasestar.spring.security.util;
 
+import com.scriptonbasestar.spring.security.domain.SaltedUser;
 import lombok.AccessLevel;
 import lombok.NoArgsConstructor;
-import org.beansugar.base.spring.security.domain.SaltedUser;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;

@@ -1,9 +1,6 @@
 package com.scriptonbasestar.spring.api.config.root;
 
 import lombok.extern.slf4j.Slf4j;
-import org.beansugar.base.spring.core.mvc.handler.AjaxResponseHandler;
-import org.beansugar.base.spring.core.mvc.interceptor.AccessLogInterceptor;
-import org.beansugar.base.spring.core.mvc.interceptor.ResponseTimeInterceptor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -21,15 +18,15 @@ public class BaseApiRootBeanConfig {
 	@Autowired
 	private Environment env;
 
-	@Bean
-	public ResponseTimeInterceptor responseTimeInterceptor() {
-		return new ResponseTimeInterceptor();
-	}
+//	@Bean
+//	public ResponseTimeInterceptor responseTimeInterceptor() {
+//		return new ResponseTimeInterceptor();
+//	}
 
-	@Bean
-	public AccessLogInterceptor accessLogInterceptor() {
-		return new AccessLogInterceptor();
-	}
+//	@Bean
+//	public AccessLogInterceptor accessLogInterceptor() {
+//		return new AccessLogInterceptor();
+//	}
 
 	@Bean
 	public LocaleChangeInterceptor localeChangeInterceptor() {
@@ -38,8 +35,8 @@ public class BaseApiRootBeanConfig {
 		return bean;
 	}
 
-	@Bean
-	public AjaxResponseHandler ajaxResponseHandler() {
-		return new AjaxResponseHandler();
-	}
+//	@Bean
+//	public AjaxResponseHandler ajaxResponseHandler() {
+//		return new AjaxResponseHandler();
+//	}
 }

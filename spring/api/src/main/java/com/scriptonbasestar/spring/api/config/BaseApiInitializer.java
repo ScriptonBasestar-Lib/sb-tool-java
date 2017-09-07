@@ -6,6 +6,7 @@ import org.springframework.web.filter.CharacterEncodingFilter;
 import org.springframework.web.servlet.DispatcherServlet;
 import org.springframework.web.servlet.support.AbstractAnnotationConfigDispatcherServletInitializer;
 
+import javax.servlet.*;
 import java.util.Map;
 
 public abstract class BaseApiInitializer extends AbstractAnnotationConfigDispatcherServletInitializer {

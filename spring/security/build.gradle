@@ -11,6 +11,8 @@ dependencies {
 
 	compile "org.slf4j:slf4j-api:$slf4j_version"
 	compileOnly "org.slf4j:jcl-over-slf4j:$slf4j_version"
+	compile "org.jasypt:jasypt:$jasypt_version"
+
 
 //	compile "com.google.guava:guava:$guava_version"
 	testCompile "com.google.guava:guava-testlib:$guava_version"

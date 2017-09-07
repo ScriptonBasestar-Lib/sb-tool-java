@@ -1,8 +1,6 @@
 package com.scriptonbasestar.spring.api.config.servlet;
 
 import lombok.extern.slf4j.Slf4j;
-import org.beansugar.base.spring.core.mvc.handler.AjaxResponseHandler;
-import org.beansugar.base.spring.core.mvc.interceptor.AccessLogInterceptor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
@@ -49,24 +47,24 @@ public abstract class BaseApiServletConfig extends WebMvcConfigurerAdapter {
 		configurer.enable();
 	}
 
-	@Autowired
-	private AccessLogInterceptor accessLogInterceptor;
+//	@Autowired
+//	private AccessLogInterceptor accessLogInterceptor;
 	@Autowired
 	private LocaleChangeInterceptor localeChangeInterceptor;
 
 	@Override
 	public void addInterceptors(InterceptorRegistry registry) {
 		registry.addInterceptor(localeChangeInterceptor);
-		registry.addWebRequestInterceptor(accessLogInterceptor);
+//		registry.addWebRequestInterceptor(accessLogInterceptor);
 	}
 
-	@Autowired
-	private AjaxResponseHandler ajaxResponseHandler;
+//	@Autowired
+//	private AjaxResponseHandler ajaxResponseHandler;
 
-	@Override
-	public void addReturnValueHandlers(List<HandlerMethodReturnValueHandler> returnValueHandlers) {
-		returnValueHandlers.add(ajaxResponseHandler);
-	}
+//	@Override
+//	public void addReturnValueHandlers(List<HandlerMethodReturnValueHandler> returnValueHandlers) {
+//		returnValueHandlers.add(ajaxResponseHandler);
+//	}
 
 	@Bean
 	public SessionLocaleResolver sessionLocaleResolver() {
