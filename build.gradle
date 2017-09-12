@@ -68,12 +68,18 @@ allprojects {
 	}
 
 	dependencies{
+		testCompile 'org.scalatest:scalatest_2.11:3.0.0'
 		compileOnly "org.projectlombok:lombok:$lombok_version"
 		compileOnly "org.codehaus.groovy:groovy-all:$groovy_version"
 		compileOnly 'org.scala-lang:scala-library:2.11.8'
-		testCompile 'org.scalatest:scalatest_2.11:3.0.0'
 		compileOnly "org.jetbrains.kotlin:kotlin-stdlib-jre8:$kotlin_version"
 		compileOnly "org.jetbrains.kotlin:kotlin-reflect:$kotlin_version"
+
+		testCompileOnly "org.projectlombok:lombok:$lombok_version"
+		testCompileOnly "org.codehaus.groovy:groovy-all:$groovy_version"
+		testCompileOnly 'org.scala-lang:scala-library:2.11.8'
+		testCompileOnly "org.jetbrains.kotlin:kotlin-stdlib-jre8:$kotlin_version"
+		testCompileOnly "org.jetbrains.kotlin:kotlin-reflect:$kotlin_version"
 	}
 
 	task stage(dependsOn: ['build'])
