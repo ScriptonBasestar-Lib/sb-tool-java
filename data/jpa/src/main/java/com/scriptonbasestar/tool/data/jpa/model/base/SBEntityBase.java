@@ -20,7 +20,7 @@ import java.util.Date;
 @DynamicInsert
 @DynamicUpdate
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
-public abstract class BSEntityBase implements Serializable {
+public abstract class SBEntityBase implements Serializable {
 
 	//	@Temporal(TemporalType.TIMESTAMP)
 	@Column(nullable = false, insertable = true, updatable = false)

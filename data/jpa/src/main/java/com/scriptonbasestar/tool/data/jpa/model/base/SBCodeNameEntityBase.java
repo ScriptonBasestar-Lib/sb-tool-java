@@ -19,7 +19,7 @@ import javax.validation.constraints.Size;
 @DynamicUpdate
 @Getter
 @Setter
-public abstract class BSCodeNameEntityBase extends BSCodeEntityBase {
+public abstract class SBCodeNameEntityBase extends SBCodeEntityBase {
 
 	@Size(min = 1, max = 50)
 	@Column(length = 50)
