@@ -8,9 +8,8 @@ import org.springframework.security.core.userdetails.User;
 import java.util.Collection;
 
 /**
- * @author : archmagece@beansugar.com
+ * @author : archmagece@scriptonbasestar.com
  * @since: 2013-12-25 23:48
- * hello world, hello venus, hello alice
  */
 public class SaltedUser extends User {
 

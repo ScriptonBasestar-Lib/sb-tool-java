@@ -10,6 +10,6 @@ import java.io.IOException;
  * @author archmagece
  * @since 2015-04-28-18
  */
-public interface BSAuthenticationFailureHandlerInjection {
+public interface SBAuthenticationFailureHandlerInjection {
 	void onFailure(HttpServletRequest request, HttpServletResponse response, AuthenticationException exception) throws IOException;
 }

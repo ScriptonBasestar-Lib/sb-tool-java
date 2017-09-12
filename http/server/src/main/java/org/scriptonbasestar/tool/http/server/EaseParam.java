@@ -24,7 +24,7 @@ public class EaseParam {
 	}
 
 	private void init(){
-//		for(BSParam bsParam : bsParamMap.params){
+//		for(SBParam bsParam : bsParamMap.params){
 //			
 //		}
 	}
