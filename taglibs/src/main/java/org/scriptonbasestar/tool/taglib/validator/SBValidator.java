@@ -7,5 +7,5 @@ import javax.servlet.jsp.tagext.TagLibraryValidator;
  * @with sb-tool-java
  * @since 2014-09-05-17
  */
-public class BSValidator extends TagLibraryValidator {
+public class SBValidator extends TagLibraryValidator {
 }

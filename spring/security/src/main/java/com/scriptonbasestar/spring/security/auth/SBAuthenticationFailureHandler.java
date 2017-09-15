@@ -10,11 +10,11 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
 @Slf4j
-public class BSAuthenticationFailureHandler
+public class SBAuthenticationFailureHandler
 		implements AuthenticationFailureHandler {
 
-	private final BSAuthenticationFailureHandlerInjection injection;
-	public BSAuthenticationFailureHandler(BSAuthenticationFailureHandlerInjection injection){
+	private final SBAuthenticationFailureHandlerInjection injection;
+	public SBAuthenticationFailureHandler(SBAuthenticationFailureHandlerInjection injection){
 		this.injection = injection;
 	}
 

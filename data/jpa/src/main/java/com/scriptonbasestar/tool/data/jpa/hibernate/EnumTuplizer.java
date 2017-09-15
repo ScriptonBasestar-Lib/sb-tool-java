@@ -8,7 +8,7 @@ import org.hibernate.tuple.entity.PojoEntityTuplizer;
 import java.io.Serializable;
 
 /**
- * @author : archmagece@beansugar.com
+ * @author : archmagece@scriptonbasestar.com
  * @since: 2013-07-21 15:15
  */
 public class EnumTuplizer extends PojoEntityTuplizer {

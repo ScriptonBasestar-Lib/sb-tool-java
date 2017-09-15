@@ -11,7 +11,7 @@ import java.util.Set;
 
 /**
  * @author archmagece
- * @with bs-tools-java
+ * @with sb-tool-jvm
  * @since 2015-06-27-15
  */
 @Data

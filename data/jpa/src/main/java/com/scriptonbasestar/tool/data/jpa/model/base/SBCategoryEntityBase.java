@@ -18,7 +18,7 @@ import javax.validation.constraints.Size;
 @DynamicUpdate
 @Getter
 @Setter
-public abstract class BSCategoryEntityBase extends BSEntityBase {
+public abstract class SBCategoryEntityBase extends SBEntityBase {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)

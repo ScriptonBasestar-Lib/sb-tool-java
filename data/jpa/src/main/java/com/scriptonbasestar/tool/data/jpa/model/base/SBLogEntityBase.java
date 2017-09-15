@@ -8,18 +8,12 @@ import lombok.Setter;
 import javax.persistence.*;
 import javax.validation.constraints.Size;
 
-/**
- * com.kt.com.kt.vital.domain.model.BSLogEntityBase
- *
- * @author sunghyouk.bae@gmail.com
- * @since 13. 3. 19 오후 2:55
- */
 @MappedSuperclass
 @Getter
 @Setter
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
-public abstract class BSLogEntityBase
-		extends BSEntityBase {
+public abstract class SBLogEntityBase
+		extends SBEntityBase {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)

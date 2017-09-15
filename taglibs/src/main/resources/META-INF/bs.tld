@@ -15,8 +15,8 @@
 			검증코드..어떻게 넣는건지?
 		</description>
 		<validator-class>
-			org.scriptonbasestar.tool.taglib.validator.BSValidator
-		</validator-class>
+            org.scriptonbasestar.tool.taglib.validator.SBValidator
+        </validator-class>
 	</validator>
 
 	<tag>

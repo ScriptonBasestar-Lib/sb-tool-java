@@ -19,7 +19,7 @@ import javax.persistence.PrePersist;
 @DynamicUpdate
 @Getter
 @Setter
-public abstract class BSActiveEntityBase extends BSEntityBase {
+public abstract class SBActiveEntityBase extends SBEntityBase {
 
 	/**
 	 * 삭제 플래그
