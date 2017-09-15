@@ -1,6 +1,5 @@
 package com.scriptonbasestar.spring.security.util;
 
-import com.scriptonbasestar.spring.security.domain.SaltedUser;
 import lombok.AccessLevel;
 import lombok.NoArgsConstructor;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
@@ -8,8 +7,6 @@ import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
-
-import java.security.Principal;
 
 /**
  * @author archmagece
@@ -24,12 +21,22 @@ public final class SecurityMethodUtil {
 				.getAuthentication();
 	}
 
-	public static Principal getPrincipal() {
+	/**
+	 * PRINCIPAL java.lang.String, org.springframework.security.core.userdetails.UserDetails, java.security.Principal
+	 * @param <PRINCIPAL>
+	 * @return
+	 */
+	public static<PRINCIPAL>PRINCIPAL getPrincipal() {
 		Authentication authentication = getAuthentication();
 		if(authentication==null){
 			return null;
 		}
-		return (Principal)authentication.getPrincipal();
+		Object principal = authentication.getPrincipal();
+		try{
+			return (PRINCIPAL)principal;
+		}catch (ClassCastException e){
+			return null;
+		}
 	}
 
 	public static String getUsername() {
@@ -38,34 +45,6 @@ public final class SecurityMethodUtil {
 			return null;
 		}
 		return authentication.getName();
-	}
-
-	public static SaltedUser getSaltedUser() {
-		Authentication authentication = getAuthentication();
-		if(authentication==null){
-			return null;
-		}
-		Object principal = authentication.getPrincipal();
-		//or instanceof string
-		return principal instanceof SaltedUser ? ((SaltedUser) principal) : null;
-	}
-
-	public static Long getAccountId() {
-		Authentication authentication = getAuthentication();
-		if(authentication==null){
-			return null;
-		}
-		Object principal = authentication.getPrincipal();
-		return principal instanceof SaltedUser ? ((SaltedUser) principal).getAccountId() : null;
-	}
-
-	public static String getUserLocale() {
-		Authentication authentication = getAuthentication();
-		if(authentication==null){
-			return null;
-		}
-		Object principal = authentication.getPrincipal();
-		return principal instanceof SaltedUser ? ((SaltedUser) principal).getLocale() : null;
 	}
 
 	public static void loginProcess(UserDetailsService userDetailsService, String username){
