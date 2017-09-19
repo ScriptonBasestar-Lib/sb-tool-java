@@ -1,7 +1,14 @@
 dependencies {
 	compile project(":crypto")
-	compile "org.springframework.boot:spring-boot-starter-data-jpa:$spring_boot_version"
+	compile("org.springframework.boot:spring-boot-starter-data-jpa:$spring_boot_version"){
+		exclude group: 'org.hibernate', module: 'hibernate-core'
+		exclude group: 'org.hibernate', module: 'hibernate-entitymanager'
+		exclude group: 'org.hibernate', module: 'hibernate-envers'
+	}
 
+	compile("org.hibernate:hibernate-core:$hibernate_version")
+	compile("org.hibernate:hibernate-entitymanager:$hibernate_version")
+	compile("org.hibernate:hibernate-envers:$hibernate_version")
 
 	compile "org.projectlombok:lombok:$lombok_version"
 	//querydsl

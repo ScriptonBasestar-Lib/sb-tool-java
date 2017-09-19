@@ -17,7 +17,7 @@ public class EnumTuplizer extends PojoEntityTuplizer {
 	}
 
 	@Override
-	protected Instantiator buildInstantiator(PersistentClass persistentClass) {
+	protected Instantiator buildInstantiator(EntityMetamodel entityMetamodel, PersistentClass persistentClass) {
 		return new Instantiator() {
 			@Override
 			public Object instantiate(Serializable id) {

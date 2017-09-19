@@ -16,10 +16,16 @@ dependencies {
 	compile group: 'com.fasterxml.jackson.datatype', name: 'jackson-datatype-joda', version: '2.9.0'
 
 //	compile "org.springframework.boot:spring-boot-starter-thymeleaf:$spring_boot_version"
-	compile "org.apache.tiles:tiles-api:$tiles_version"
+	compile "org.apache.tiles:tiles-core:$tiles_version"
 	compile "org.apache.tiles:tiles-jsp:$tiles_version"
+	compile "org.apache.tiles:tiles-api:$tiles_version"
+	compile "org.apache.tiles:tiles-template:$tiles_version"
+	compile "org.apache.tiles:tiles-servlet:$tiles_version"
 	compile "org.apache.tiles:tiles-extras:$tiles_version"
 	compile "org.apache.tiles:tiles-el:$tiles_version"
+	compile "org.apache.tiles:tiles-extras:$tiles_version"
+	compile "org.apache.tiles:tiles-request-api:1.0.6"
+//	compile "org.apache.tiles:tiles-request-servlet:$tiles_version"
 
 	compile "com.google.code.gson:gson:$gson_version"
 	compile "org.jasypt:jasypt:$jasypt_version"

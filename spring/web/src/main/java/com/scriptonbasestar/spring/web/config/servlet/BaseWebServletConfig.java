@@ -213,26 +213,26 @@ public abstract class BaseWebServletConfig extends WebMvcConfigurerAdapter {
 	 *                Tiles
 	 * ***************************************
 	 */
-	@Bean
-	public TilesConfigurer tilesConfigurer() {
-		TilesConfigurer bean = new TilesConfigurer();
-		bean.setDefinitions("classpath:layout/layout.xml");
-		bean.setPreparerFactoryClass(org.springframework.web.servlet.view.tiles3.SpringBeanPreparerFactory.class);
-		return bean;
-	}
-
-	@Bean
-	public UrlBasedViewResolver tilesViewResolver() {
-		UrlBasedViewResolver bean = new UrlBasedViewResolver();
-		bean.setViewClass(org.springframework.web.servlet.view.tiles3.TilesView.class);
-		bean.setOrder(2);
-		return bean;
-	}
-
-	@Bean
-	public BeanNameViewResolver beanNameViewResolver() {
-		BeanNameViewResolver bean = new BeanNameViewResolver();
-		bean.setOrder(1);
-		return bean;
-	}
+//	@Bean
+//	public TilesConfigurer tilesConfigurer() {
+//		TilesConfigurer bean = new TilesConfigurer();
+//		bean.setDefinitions("classpath:layout/layout.xml");
+//		bean.setPreparerFactoryClass(org.springframework.web.servlet.view.tiles3.SpringBeanPreparerFactory.class);
+//		return bean;
+//	}
+//
+//	@Bean
+//	public UrlBasedViewResolver tilesViewResolver() {
+//		UrlBasedViewResolver bean = new UrlBasedViewResolver();
+//		bean.setViewClass(org.springframework.web.servlet.view.tiles3.TilesView.class);
+//		bean.setOrder(2);
+//		return bean;
+//	}
+//
+//	@Bean
+//	public BeanNameViewResolver beanNameViewResolver() {
+//		BeanNameViewResolver bean = new BeanNameViewResolver();
+//		bean.setOrder(1);
+//		return bean;
+//	}
 }
