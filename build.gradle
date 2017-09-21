@@ -88,6 +88,7 @@ allprojects {
 	task stage(dependsOn: ['build'])
 	build.mustRunAfter clean
 
+//	https://github.com/ReadyTalk/gradle-readytalk-js/blob/master/build.gradle
 	//	111
 //	repositories {
 //		flatDir {
@@ -131,15 +132,11 @@ allprojects {
 		key = project.hasProperty('bintrayApiKey') ? project.property('bintrayApiKey') : System.getenv('BINTRAY_API_KEY')
 		publications = ['MyPublication']
 		pkg {
-			repo = 'jvm-repo-snapshot'
+			repo = 'jvm-repo'
 			name = 'sb-tool-jvm'
-			desc = 'tool for jvm languages'
 			userOrg = "archmagece"
 			licenses = ['Apache-2.0']
 			vcsUrl = 'https://github.com/ScriptonBasestar-Lib/sb-tool-jvm.git'
-			labels = ['java', 'kotlin', 'groovy', 'gradle', 'library']
-			publicDownloadNumbers = true
-//			attributes= ['a': ['ay1', 'ay2'], 'b': ['bee'], c: 'cee'] //Optional package-level attributes
 			version {
 				name = project_version
 				desc = "released at ${new Date()} : $project_version"
