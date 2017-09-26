@@ -1,4 +1,4 @@
-package org.scriptonbasestar.spring.security.auth;
+package org.scriptonbasestar.spring.security.jwt;
 
 import lombok.Data;
 
