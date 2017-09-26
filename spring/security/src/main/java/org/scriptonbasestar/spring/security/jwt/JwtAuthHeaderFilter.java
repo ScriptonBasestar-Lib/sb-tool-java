@@ -22,6 +22,9 @@ public class JwtAuthHeaderFilter extends OncePerRequestFilter {
 	@Setter
 	private JwtAuthenticationManager authenticationManager;
 
+	@Setter
+	private JwtLoginSuccessHandler successHandler;
+
 	@Override
 	protected void doFilterInternal(HttpServletRequest request, HttpServletResponse response, FilterChain filterChain) throws ServletException, IOException {
 		String authHeader = request.getHeader("Authorization");
@@ -79,6 +82,9 @@ public class JwtAuthHeaderFilter extends OncePerRequestFilter {
 		request.setAttribute(SBClaimsDto.USER_ROLES, claims.getUserRoles());
 		SecurityContextHolder.getContext().setAuthentication(authResult);
 		//success handler
+		successHandler.onAuthenticationSuccess(request, response, authResult);
+
+		chain.doFilter(request, response);
 	}
 
 }
