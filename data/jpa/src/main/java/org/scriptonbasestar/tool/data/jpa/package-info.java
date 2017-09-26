@@ -1,0 +1,5 @@
+/**
+ * @author chaeeung.e
+ * @since 2017-09-06
+ */
+package org.scriptonbasestar.tool.data.jpa;
