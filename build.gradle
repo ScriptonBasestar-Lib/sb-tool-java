@@ -19,7 +19,7 @@ allprojects {
 	apply plugin: 'java'
 	apply plugin: 'groovy'
 	apply plugin: 'kotlin'
-	apply plugin: "kotlin-spring"
+	apply plugin: 'kotlin-spring'
 	apply plugin: 'scala'
 	apply plugin: 'eclipse'
 	apply plugin: 'idea'
@@ -67,9 +67,6 @@ allprojects {
 		jcenter()
 		maven {
 			url  "https://dl.bintray.com/archmagece/jvm-repo"
-		}
-		maven {
-			url  "https://dl.bintray.com/archmagece/jvm-repo-snapshot"
 		}
 		mavenLocal()
 	}
