@@ -6,6 +6,8 @@ import org.springframework.security.authentication.InternalAuthenticationService
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.AuthenticationException;
 import org.springframework.security.core.context.SecurityContextHolder;
+import org.springframework.security.web.authentication.AuthenticationFailureHandler;
+import org.springframework.security.web.authentication.AuthenticationSuccessHandler;
 import org.springframework.web.filter.OncePerRequestFilter;
 
 import javax.servlet.FilterChain;
@@ -21,26 +23,31 @@ import java.io.IOException;
 public class JwtAuthCookieFilter extends OncePerRequestFilter {
 
 	@Setter
+	private JwtAuthenticationManager authenticationManager;
+
+	@Setter
 	private String serviceName;
 
 	@Setter
 	private String signingKey;
 
 	@Setter
-	private SBFindAuthenticationHandler authenticationHandler;
+	private AuthenticationSuccessHandler successHandler;
+	@Setter
+	private AuthenticationFailureHandler failureHandler;
 
 	@Override
 	protected void doFilterInternal(HttpServletRequest request, HttpServletResponse response, FilterChain filterChain) throws ServletException, IOException {
-		SBClaimsDto claims = SBJwtCookieUtil.tokenFromCookie(request, serviceName, signingKey);
+		String token = SBJwtCookieUtil.tokenFromCookie(request, serviceName, signingKey);
 
-		if(claims==null){
+		if(token==null){
 			//로그인 실패
 			return;
 		}
 
 		Authentication authResult;
 		try {
-			authResult = new SBJwtAuthenticationToken(claims, authenticationHandler.authority(claims.getUserRoles()));
+			authResult = authenticationManager.authenticate(new SBJwtPreAuthenticateToken(token));
 		} catch (InternalAuthenticationServiceException failed) {
 			logger.error("An internal error occurred while trying to authenticate the user.", failed);
 			unsuccessfulAuthentication(request, response, failed);
@@ -70,6 +77,9 @@ public class JwtAuthCookieFilter extends OncePerRequestFilter {
 //			logger.debug("Delegating to authentication failure handler " + failureHandler);
 		}
 		//failed handler
+		if(failureHandler!=null){
+			failureHandler.onAuthenticationFailure(request, response, failed);
+		}
 	}
 
 	protected void successfulAuthentication(HttpServletRequest request,
@@ -86,6 +96,11 @@ public class JwtAuthCookieFilter extends OncePerRequestFilter {
 		request.setAttribute(SBClaimsDto.USER_ROLES, claims.getUserRoles());
 		SecurityContextHolder.getContext().setAuthentication(authResult);
 		//success handler
+		if(successHandler!=null){
+			successHandler.onAuthenticationSuccess(request, response, authResult);
+		}
+
+		chain.doFilter(request, response);
 	}
 
 }

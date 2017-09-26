@@ -31,7 +31,7 @@ public class JwtLoginSuccessHandler implements AuthenticationSuccessHandler {
 	@Override
 	public void onAuthenticationSuccess(HttpServletRequest request, HttpServletResponse response, Authentication authentication) throws IOException, ServletException {
 
-		if(!(authentication.getPrincipal() instanceof SBJwtAuthorizedUser)){
+		if(!(authentication instanceof SBJwtAuthenticationToken)){
 			throw new RuntimeException("알 수 없는 오류 - 로그인 관련 확인");
 		}
 		SBJwtAuthorizedUser user = (SBJwtAuthorizedUser) authentication.getPrincipal();

@@ -26,10 +26,19 @@ public class SBJwtCookieUtil {
 		response.addCookie(cookie);
 	}
 
-	public SBClaimsDto tokenFromCookie(HttpServletRequest request, String serviceName, String signingKey){
+	public SBClaimsDto claimFromCookie(HttpServletRequest request, String serviceName, String signingKey){
 		for(Cookie cookie : request.getCookies()){
 			if (cookie.getName().equals(serviceName)) {
 				return SBJwtUtil.getBody(signingKey, cookie.getValue());
+			}
+		}
+		return null;
+	}
+
+	public String tokenFromCookie(HttpServletRequest request, String serviceName, String signingKey){
+		for(Cookie cookie : request.getCookies()){
+			if (cookie.getName().equals(serviceName)) {
+				return cookie.getValue();
 			}
 		}
 		return null;

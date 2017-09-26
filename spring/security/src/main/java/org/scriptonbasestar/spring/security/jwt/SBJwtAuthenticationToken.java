@@ -11,22 +11,22 @@ import java.util.Collection;
  */
 public class SBJwtAuthenticationToken extends AbstractAuthenticationToken {
 
-	private static final String EMPTY_CREDENTIALS = "no-credentials";
+//	private static final String EMPTY_CREDENTIALS = "no-credentials";
 
-	public SBJwtAuthenticationToken(String credentials) {
+	public SBJwtAuthenticationToken() {
 		super(null);
 		this.principal = null;
+		this.credentials = null;
+	}
+
+	public SBJwtAuthenticationToken(SBJwtAuthorizedUser principal, SBClaimsDto credentials, Collection<? extends GrantedAuthority> authorities) {
+		super(authorities);
+		this.principal = principal;
 		this.credentials = credentials;
 	}
 
-	public SBJwtAuthenticationToken(SBClaimsDto principal, Collection<? extends GrantedAuthority> authorities) {
-		super(authorities);
-		this.principal = principal;
-		this.credentials = EMPTY_CREDENTIALS;
-	}
-
-	private final SBClaimsDto principal;
-	private final String credentials;
+	private final SBJwtAuthorizedUser principal;
+	private final SBClaimsDto credentials;
 
 	@Override
 	public Object getCredentials() {

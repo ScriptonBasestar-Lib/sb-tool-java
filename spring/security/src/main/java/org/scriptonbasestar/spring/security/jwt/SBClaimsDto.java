@@ -15,6 +15,10 @@ public class SBClaimsDto extends DefaultClaims {
 	public static final String USER_NICKNAME = "nname";
 	public static final String USER_USERNAME = "uname";
 	public static final String USER_ROLES = "roles";
+	/**
+	 * json 에서 전송은 하지않음 사이트에서 확인.
+	 */
+	public static final String USER_AUTHORITIES = "auths";
 
 	public SBClaimsDto(){
 		super();
@@ -25,7 +29,8 @@ public class SBClaimsDto extends DefaultClaims {
 
 	//user id
 	public Long getUserId(){
-		return get(USER_ID, Long.class);
+		return Long.parseLong(get(USER_ID).toString());
+//		return get(USER_ID, Long.class);
 	}
 
 	public void setUserId(long uid){
