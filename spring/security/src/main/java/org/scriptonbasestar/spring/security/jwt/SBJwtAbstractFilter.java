@@ -2,12 +2,14 @@ package org.scriptonbasestar.spring.security.jwt;
 
 import lombok.Setter;
 import org.scriptonbasestar.tool.core.exception.compiletime.SBTextExtractException;
+import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.InternalAuthenticationServiceException;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.AuthenticationException;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.web.authentication.AuthenticationFailureHandler;
 import org.springframework.security.web.authentication.AuthenticationSuccessHandler;
+import org.springframework.util.Assert;
 import org.springframework.web.filter.OncePerRequestFilter;
 
 import javax.servlet.FilterChain;
@@ -23,8 +25,10 @@ import java.io.IOException;
 public abstract class SBJwtAbstractFilter extends OncePerRequestFilter {
 
 	//not null
+	//직접넣지말고 ProviderManager.providers에 넣어.
+//	private AuthenticationManager authenticationManager;
 	@Setter
-	private JwtAuthenticationManager authenticationManager;
+	private SBJwtAuthenticationManager authenticationManager;
 
 	//not null
 	@Setter
@@ -43,6 +47,19 @@ public abstract class SBJwtAbstractFilter extends OncePerRequestFilter {
 	protected AuthenticationFailureHandler failureHandler;
 
 	@Override
+	protected void initFilterBean() throws ServletException {
+		super.initFilterBean();
+		try{
+			Assert.notNull(authenticationManager, "authenticationManager must not null");
+			Assert.notNull(serviceName, "serviceName must not null");
+			Assert.notNull(signingKey, "signingKey must not null");
+			Assert.notNull(jwtUserService, "jwtUserService must not null");
+		}catch (IllegalArgumentException e){
+			throw new ServletException(e.getMessage());
+		}
+	}
+
+	@Override
 	protected void doFilterInternal(HttpServletRequest request, HttpServletResponse response, FilterChain filterChain) throws ServletException, IOException {
 		String token = null;
 		try {
@@ -53,20 +70,17 @@ public abstract class SBJwtAbstractFilter extends OncePerRequestFilter {
 			return;
 		}
 
-		if (token == null) {
-			//로그인 실패
-			return;
-		}
-
 		Authentication authResult;
 		try {
 			authResult = authenticationManager.authenticate(new SBJwtPreAuthenticateToken(token));
 		} catch (InternalAuthenticationServiceException failed) {
 			logger.error("An internal error occurred while trying to authenticate the user.", failed);
 			unsuccessfulAuthentication(request, response, failed);
+			filterChain.doFilter(request, response);
 			return;
 		} catch (AuthenticationException failed) {
 			unsuccessfulAuthentication(request, response, failed);
+			filterChain.doFilter(request, response);
 			return;
 		}
 
@@ -76,6 +90,7 @@ public abstract class SBJwtAbstractFilter extends OncePerRequestFilter {
 //		}
 
 		successfulAuthentication(request, response, filterChain, authResult);
+//		filterChain.doFilter(request, response);
 	}
 
 	protected abstract String extractTokenString(HttpServletRequest request, HttpServletResponse response) throws SBTextExtractException;

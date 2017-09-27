@@ -38,19 +38,17 @@ public class SBJwtAuthHeaderFilter extends SBJwtAbstractFilter {
 		}
 		SBJwtAuthorizedUser user = (SBJwtAuthorizedUser) authResult.getPrincipal();
 
-		request.setAttribute(SBClaimsDto.USER_ID, user.getUserId());
-		request.setAttribute(SBClaimsDto.USER_USERNAME, user.getUsername());
-		request.setAttribute(SBClaimsDto.USER_NICKNAME, user.getNickname());
-		request.setAttribute(SBClaimsDto.USER_ROLES, user.getRoles());
-		request.setAttribute(SBClaimsDto.USER_AUTHORITIES, user.getAuthorities());
+		request.setAttribute(SBUserClaims.USER_ID, user.getUserId());
+		request.setAttribute(SBUserClaims.USER_USERNAME, user.getUsername());
+		request.setAttribute(SBUserClaims.USER_NICKNAME, user.getNickname());
+		request.setAttribute(SBUserClaims.USER_ROLES, user.getRoles());
+		request.setAttribute(SBUserClaims.USER_AUTHORITIES, user.getAuthorities());
 
 		SecurityContextHolder.getContext().setAuthentication(authResult);
 		//success handler
 		if (successHandler != null) {
 			successHandler.onAuthenticationSuccess(request, response, authResult);
 		}
-
-		chain.doFilter(request, response);
 	}
 
 }

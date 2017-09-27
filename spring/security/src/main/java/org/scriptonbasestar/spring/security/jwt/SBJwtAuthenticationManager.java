@@ -14,7 +14,7 @@ import java.util.UUID;
  * @author chaeeung.e
  * @since 2017-09-25
  */
-public class JwtAuthenticationManager implements AuthenticationManager {
+public class SBJwtAuthenticationManager implements AuthenticationManager {
 
 	@Setter
 	private String signingKey;
@@ -24,7 +24,10 @@ public class JwtAuthenticationManager implements AuthenticationManager {
 
 	@Override
 	public Authentication authenticate(Authentication authentication) throws AuthenticationException {
-		SBClaimsDto claims = SBJwtUtil.getBody(signingKey, authentication.getCredentials().toString());
+		if(authentication instanceof SBJwtAuthenticationToken){
+			return authentication;
+		}
+		SBUserClaims claims = SBJwtUtil.getBody(signingKey, authentication.getCredentials().toString());
 
 		Collection<GrantedAuthority> authorities = authenticationHandler.authority(claims.getUserRoles());
 		SBJwtAuthorizedUser user = new SBJwtAuthorizedUser(claims.getUserId(), claims.getUserNickname(), claims.getUserUsername(),

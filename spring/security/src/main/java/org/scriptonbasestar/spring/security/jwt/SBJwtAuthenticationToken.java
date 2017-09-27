@@ -11,14 +11,14 @@ import java.util.Collection;
  */
 public class SBJwtAuthenticationToken extends AbstractAuthenticationToken {
 
-	public SBJwtAuthenticationToken(SBJwtAuthorizedUser principal, SBClaimsDto credentials, Collection<? extends GrantedAuthority> authorities) {
+	public SBJwtAuthenticationToken(SBJwtAuthorizedUser principal, SBUserClaims credentials, Collection<? extends GrantedAuthority> authorities) {
 		super(authorities);
 		this.principal = principal;
 		this.credentials = credentials;
 	}
 
 	private final SBJwtAuthorizedUser principal;
-	private final SBClaimsDto credentials;
+	private final SBUserClaims credentials;
 
 	@Override
 	public Object getCredentials() {

@@ -12,13 +12,13 @@ import java.io.IOException;
  * @author chaeeung.e
  * @since 2017-09-27
  */
-public class JwtSavedRequestAwareAuthenticationSuccessHandler extends SavedRequestAwareAuthenticationSuccessHandler {
+public class SBJwtSavedRequestAwareAuthenticationSuccessHandler extends SavedRequestAwareAuthenticationSuccessHandler {
 
 	private final String serviceName;
 	private final String signingKey;
 	private final SBJwtUserService jwtUserService;
 
-	public JwtSavedRequestAwareAuthenticationSuccessHandler(String serviceName, String signingKey, SBJwtUserService jwtUserService) {
+	public SBJwtSavedRequestAwareAuthenticationSuccessHandler(String serviceName, String signingKey, SBJwtUserService jwtUserService) {
 		this.serviceName = serviceName;
 		this.signingKey = signingKey;
 		this.jwtUserService = jwtUserService;
@@ -26,10 +26,8 @@ public class JwtSavedRequestAwareAuthenticationSuccessHandler extends SavedReque
 
 	@Override
 	public void onAuthenticationSuccess(HttpServletRequest request, HttpServletResponse response, Authentication authentication) throws ServletException, IOException {
-		super.onAuthenticationSuccess(request, response, authentication);
-
 		SBJwtAuthorizedUser user = (SBJwtAuthorizedUser) authentication.getPrincipal();
-		SBClaimsDto claims = new SBClaimsDto();
+		SBUserClaims claims = new SBUserClaims();
 		claims.setUserId(user.getUserId());
 		claims.setUserNickname(user.getNickname());
 		claims.setUserUsername(user.getUsername());
@@ -39,5 +37,6 @@ public class JwtSavedRequestAwareAuthenticationSuccessHandler extends SavedReque
 		for (String domain : jwtUserService.findService(user.getUserId())) {
 			SBJwtCookieUtil.tokenToCookie(response, domain, serviceName, signingKey, claims);
 		}
+		super.onAuthenticationSuccess(request, response, authentication);
 	}
 }

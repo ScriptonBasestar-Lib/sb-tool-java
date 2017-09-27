@@ -9,7 +9,7 @@ import java.util.Collection;
  * @author chaeeung.e
  * @since 2017-09-19
  */
-public class SBClaimsDto extends DefaultClaims {
+public class SBUserClaims extends DefaultClaims {
 
 	public static final String USER_ID = "uid";
 	public static final String USER_NICKNAME = "nname";
@@ -20,11 +20,11 @@ public class SBClaimsDto extends DefaultClaims {
 	 */
 	public static final String USER_AUTHORITIES = "auths";
 
-	public SBClaimsDto() {
+	public SBUserClaims() {
 		super();
 	}
 
-	public SBClaimsDto(Claims claims) {
+	public SBUserClaims(Claims claims) {
 		super(claims);
 	}
 

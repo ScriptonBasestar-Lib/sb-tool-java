@@ -35,25 +35,23 @@ public class SBJwtAuthCookieFilter extends SBJwtAbstractFilter {
 		if (logger.isDebugEnabled()) {
 			logger.debug("Authentication success. Updating SecurityContextHolder to contain: " + authResult);
 		}
-		SBClaimsDto claims = (SBClaimsDto) authResult.getPrincipal();
-		request.setAttribute(SBClaimsDto.USER_ID, claims.getUserId());
-		request.setAttribute(SBClaimsDto.USER_USERNAME, claims.getUserUsername());
-		request.setAttribute(SBClaimsDto.USER_NICKNAME, claims.getUserNickname());
-		request.setAttribute(SBClaimsDto.USER_ROLES, claims.getUserRoles());
+		SBUserClaims claims = (SBUserClaims) authResult.getPrincipal();
+		request.setAttribute(SBUserClaims.USER_ID, claims.getUserId());
+		request.setAttribute(SBUserClaims.USER_USERNAME, claims.getUserUsername());
+		request.setAttribute(SBUserClaims.USER_NICKNAME, claims.getUserNickname());
+		request.setAttribute(SBUserClaims.USER_ROLES, claims.getUserRoles());
 
 //		Collection<GrantedAuthority> authorities = new HashSet<>();
 //		for(String auth : jwtUserService.findService(claims.getUserId())){
 //			authorities.add(new SimpleGrantedAuthority(auth));
 //		}
-//		request.setAttribute(SBClaimsDto.USER_AUTHORITIES, authorities);
-		request.setAttribute(SBClaimsDto.USER_AUTHORITIES, jwtUserService.findService(claims.getUserId()).stream().map(s -> new SimpleGrantedAuthority(s)).collect(Collectors.toSet()));
+//		request.setAttribute(SBUserClaims.USER_AUTHORITIES, authorities);
+		request.setAttribute(SBUserClaims.USER_AUTHORITIES, jwtUserService.findService(claims.getUserId()).stream().map(s -> new SimpleGrantedAuthority(s)).collect(Collectors.toSet()));
 
 		SecurityContextHolder.getContext().setAuthentication(authResult);
 		//success handler
 		if (successHandler != null) {
 			successHandler.onAuthenticationSuccess(request, response, authResult);
 		}
-
-		chain.doFilter(request, response);
 	}
 }

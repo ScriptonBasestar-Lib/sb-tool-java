@@ -18,14 +18,14 @@ public class SBJwtUtil {
 				.compact();
 	}
 
-	public static SBClaimsDto getBody(String signingKey, String token) {
+	public static SBUserClaims getBody(String signingKey, String token) {
 		Claims claims = Jwts.parser().setSigningKey(signingKey).parseClaimsJws(token).getBody();
-		return new SBClaimsDto(claims);
+		return new SBUserClaims(claims);
 	}
 
-	public static SBClaimsDto getBody(String signingKey, SBJwtHandler JwtHandler, String token) {
+	public static SBUserClaims getBody(String signingKey, SBJwtHandler JwtHandler, String token) {
 		Claims claims = Jwts.parser().setSigningKey(signingKey).parse(token, JwtHandler);
-		return new SBClaimsDto(claims);
+		return new SBUserClaims(claims);
 	}
 
 }

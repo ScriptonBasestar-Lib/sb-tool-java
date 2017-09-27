@@ -26,7 +26,7 @@ public class SBJwtCookieUtil {
 		response.addCookie(cookie);
 	}
 
-	public SBClaimsDto claimFromCookie(HttpServletRequest request, String serviceName, String signingKey) {
+	public SBUserClaims claimFromCookie(HttpServletRequest request, String serviceName, String signingKey) {
 		for (Cookie cookie : request.getCookies()) {
 			if (cookie.getName().equals(serviceName)) {
 				return SBJwtUtil.getBody(signingKey, cookie.getValue());
