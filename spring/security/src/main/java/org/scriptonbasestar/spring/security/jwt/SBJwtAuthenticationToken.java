@@ -11,14 +11,6 @@ import java.util.Collection;
  */
 public class SBJwtAuthenticationToken extends AbstractAuthenticationToken {
 
-//	private static final String EMPTY_CREDENTIALS = "no-credentials";
-
-	public SBJwtAuthenticationToken() {
-		super(null);
-		this.principal = null;
-		this.credentials = null;
-	}
-
 	public SBJwtAuthenticationToken(SBJwtAuthorizedUser principal, SBClaimsDto credentials, Collection<? extends GrantedAuthority> authorities) {
 		super(authorities);
 		this.principal = principal;

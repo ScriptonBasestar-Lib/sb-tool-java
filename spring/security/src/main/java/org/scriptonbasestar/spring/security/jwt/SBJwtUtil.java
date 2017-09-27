@@ -12,18 +12,18 @@ import lombok.experimental.UtilityClass;
 @UtilityClass
 public class SBJwtUtil {
 
-	public static String generateToken(String signingKey, Claims claims){
+	public static String generateToken(String signingKey, Claims claims) {
 		return Jwts.builder().signWith(SignatureAlgorithm.HS256, signingKey)
 				.setClaims(claims)
 				.compact();
 	}
 
-	public static SBClaimsDto getBody(String signingKey, String token){
+	public static SBClaimsDto getBody(String signingKey, String token) {
 		Claims claims = Jwts.parser().setSigningKey(signingKey).parseClaimsJws(token).getBody();
 		return new SBClaimsDto(claims);
 	}
 
-	public static SBClaimsDto getBody(String signingKey, SBJwtHandler JwtHandler, String token){
+	public static SBClaimsDto getBody(String signingKey, SBJwtHandler JwtHandler, String token) {
 		Claims claims = Jwts.parser().setSigningKey(signingKey).parse(token, JwtHandler);
 		return new SBClaimsDto(claims);
 	}

@@ -15,7 +15,7 @@ public class SBJwtHandler implements JwtHandler<SBClaimsDto> {
 	@Override
 	public SBClaimsDto onClaimsJwt(Jwt<Header, Claims> jwt) {
 		Claims claims = jwt.getBody();
-		claims.put(SBClaimsDto.USER_ID, new Long(((Integer)claims.get("uid")).intValue()));
+		claims.put(SBClaimsDto.USER_ID, new Long(((Integer) claims.get("uid")).intValue()));
 		return new SBClaimsDto();
 	}
 
@@ -27,7 +27,7 @@ public class SBJwtHandler implements JwtHandler<SBClaimsDto> {
 	@Override
 	public SBClaimsDto onClaimsJws(Jws<Claims> jws) {
 		Claims claims = jws.getBody();
-		claims.put(SBClaimsDto.USER_ID, new Long(((Integer)claims.get("uid")).intValue()));
+		claims.put(SBClaimsDto.USER_ID, new Long(((Integer) claims.get("uid")).intValue()));
 		return new SBClaimsDto(jws.getBody());
 	}
 }

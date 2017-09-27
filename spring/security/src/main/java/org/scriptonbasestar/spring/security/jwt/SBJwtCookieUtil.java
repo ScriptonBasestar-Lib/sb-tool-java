@@ -14,20 +14,20 @@ import javax.servlet.http.HttpServletResponse;
 @UtilityClass
 public class SBJwtCookieUtil {
 
-	public void tokenToCookie(HttpServletResponse response, String domain, String serviceName, String signingKey, Claims claims){
+	public void tokenToCookie(HttpServletResponse response, String domain, String serviceName, String signingKey, Claims claims) {
 		Cookie cookie = new Cookie(serviceName, SBJwtUtil.generateToken(signingKey, claims));
 		cookie.setHttpOnly(false);
 		cookie.setSecure(false);
 		cookie.setDomain(domain);
 		cookie.setPath("/");
 		//다음서버로 전송되기까지의 시간만
-		cookie.setMaxAge(30000*1000);
+		cookie.setMaxAge(30000 * 1000);
 //		cookie.setMaxAge(30*1000);
 		response.addCookie(cookie);
 	}
 
-	public SBClaimsDto claimFromCookie(HttpServletRequest request, String serviceName, String signingKey){
-		for(Cookie cookie : request.getCookies()){
+	public SBClaimsDto claimFromCookie(HttpServletRequest request, String serviceName, String signingKey) {
+		for (Cookie cookie : request.getCookies()) {
 			if (cookie.getName().equals(serviceName)) {
 				return SBJwtUtil.getBody(signingKey, cookie.getValue());
 			}
@@ -35,8 +35,8 @@ public class SBJwtCookieUtil {
 		return null;
 	}
 
-	public String tokenFromCookie(HttpServletRequest request, String serviceName, String signingKey){
-		for(Cookie cookie : request.getCookies()){
+	public String tokenFromCookie(HttpServletRequest request, String serviceName, String signingKey) {
+		for (Cookie cookie : request.getCookies()) {
 			if (cookie.getName().equals(serviceName)) {
 				return cookie.getValue();
 			}

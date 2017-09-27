@@ -14,7 +14,7 @@ import java.util.UUID;
  * @author chaeeung.e
  * @since 2017-09-25
  */
-public class JwtAuthenticationManager implements AuthenticationManager{
+public class JwtAuthenticationManager implements AuthenticationManager {
 
 	@Setter
 	private String signingKey;

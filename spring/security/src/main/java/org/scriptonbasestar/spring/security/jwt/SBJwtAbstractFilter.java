@@ -1,7 +1,7 @@
 package org.scriptonbasestar.spring.security.jwt;
 
 import lombok.Setter;
-import org.scriptonbasestar.spring.security.auth.SBFindAuthenticationHandler;
+import org.scriptonbasestar.tool.core.exception.compiletime.SBTextExtractException;
 import org.springframework.security.authentication.InternalAuthenticationServiceException;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.AuthenticationException;
@@ -18,29 +18,42 @@ import java.io.IOException;
 
 /**
  * @author chaeeung.e
- * @since 2017-09-19
+ * @since 2017-09-27
  */
-public class JwtAuthCookieFilter extends OncePerRequestFilter {
+public abstract class SBJwtAbstractFilter extends OncePerRequestFilter {
 
+	//not null
 	@Setter
 	private JwtAuthenticationManager authenticationManager;
 
+	//not null
 	@Setter
-	private String serviceName;
+	protected String serviceName;
+	//not null
+	@Setter
+	protected String signingKey;
+
+	//not null
+	@Setter
+	protected SBJwtUserService jwtUserService;
 
 	@Setter
-	private String signingKey;
-
+	protected AuthenticationSuccessHandler successHandler;
 	@Setter
-	private AuthenticationSuccessHandler successHandler;
-	@Setter
-	private AuthenticationFailureHandler failureHandler;
+	protected AuthenticationFailureHandler failureHandler;
 
 	@Override
 	protected void doFilterInternal(HttpServletRequest request, HttpServletResponse response, FilterChain filterChain) throws ServletException, IOException {
-		String token = SBJwtCookieUtil.tokenFromCookie(request, serviceName, signingKey);
+		String token = null;
+		try {
+			token = extractTokenString(request, response);
+		} catch (SBTextExtractException e) {
+//			e.printStackTrace();
+			filterChain.doFilter(request, response);
+			return;
+		}
 
-		if(token==null){
+		if (token == null) {
 			//로그인 실패
 			return;
 		}
@@ -65,6 +78,8 @@ public class JwtAuthCookieFilter extends OncePerRequestFilter {
 		successfulAuthentication(request, response, filterChain, authResult);
 	}
 
+	protected abstract String extractTokenString(HttpServletRequest request, HttpServletResponse response) throws SBTextExtractException;
+
 
 	protected void unsuccessfulAuthentication(HttpServletRequest request,
 											  HttpServletResponse response, AuthenticationException failed)
@@ -77,30 +92,12 @@ public class JwtAuthCookieFilter extends OncePerRequestFilter {
 //			logger.debug("Delegating to authentication failure handler " + failureHandler);
 		}
 		//failed handler
-		if(failureHandler!=null){
+		if (failureHandler != null) {
 			failureHandler.onAuthenticationFailure(request, response, failed);
 		}
 	}
 
-	protected void successfulAuthentication(HttpServletRequest request,
+	protected abstract void successfulAuthentication(HttpServletRequest request,
 											HttpServletResponse response, FilterChain chain, Authentication authResult)
-			throws IOException, ServletException {
-
-		if (logger.isDebugEnabled()) {
-			logger.debug("Authentication success. Updating SecurityContextHolder to contain: " + authResult);
-		}
-		SBClaimsDto claims = (SBClaimsDto) authResult.getPrincipal();
-		request.setAttribute(SBClaimsDto.USER_ID, claims.getUserId());
-		request.setAttribute(SBClaimsDto.USER_USERNAME, claims.getUserUsername());
-		request.setAttribute(SBClaimsDto.USER_NICKNAME, claims.getUserNickname());
-		request.setAttribute(SBClaimsDto.USER_ROLES, claims.getUserRoles());
-		SecurityContextHolder.getContext().setAuthentication(authResult);
-		//success handler
-		if(successHandler!=null){
-			successHandler.onAuthenticationSuccess(request, response, authResult);
-		}
-
-		chain.doFilter(request, response);
-	}
-
+			throws IOException, ServletException;
 }

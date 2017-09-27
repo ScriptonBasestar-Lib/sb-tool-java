@@ -3,7 +3,7 @@ package org.scriptonbasestar.spring.security.jwt;
 import io.jsonwebtoken.Claims;
 import io.jsonwebtoken.impl.DefaultClaims;
 
-import java.util.List;
+import java.util.Collection;
 
 /**
  * @author chaeeung.e
@@ -20,47 +20,48 @@ public class SBClaimsDto extends DefaultClaims {
 	 */
 	public static final String USER_AUTHORITIES = "auths";
 
-	public SBClaimsDto(){
+	public SBClaimsDto() {
 		super();
 	}
-	public SBClaimsDto(Claims claims){
+
+	public SBClaimsDto(Claims claims) {
 		super(claims);
 	}
 
 	//user id
-	public Long getUserId(){
+	public Long getUserId() {
 		return Long.parseLong(get(USER_ID).toString());
 //		return get(USER_ID, Long.class);
 	}
 
-	public void setUserId(long uid){
+	public void setUserId(long uid) {
 		setValue(USER_ID, uid);
 	}
 
 	//user nickname
-	public String getUserNickname(){
+	public String getUserNickname() {
 		return getString(USER_NICKNAME);
 	}
 
-	public void setUserNickname(String nname){
+	public void setUserNickname(String nname) {
 		setValue(USER_NICKNAME, nname);
 	}
 
 	//user username
-	public String getUserUsername(){
+	public String getUserUsername() {
 		return getString(USER_USERNAME);
 	}
 
-	public void setUserUsername(String uname){
+	public void setUserUsername(String uname) {
 		setValue(USER_USERNAME, uname);
 	}
 
 	//user roles
-	public List<String> getUserRoles(){
-		return get(USER_ROLES, List.class);
+	public Collection<String> getUserRoles() {
+		return get(USER_ROLES, Collection.class);
 	}
 
-	public void setUserRoles(List<String> userRoles){
+	public void setUserRoles(Collection<String> userRoles) {
 		setValue(USER_ROLES, userRoles);
 	}
 

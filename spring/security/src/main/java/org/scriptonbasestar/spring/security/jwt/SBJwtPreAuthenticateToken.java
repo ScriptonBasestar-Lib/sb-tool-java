@@ -8,10 +8,9 @@ import org.springframework.security.authentication.AbstractAuthenticationToken;
  */
 public class SBJwtPreAuthenticateToken extends AbstractAuthenticationToken {
 
-//	private static final String EMPTY_CREDENTIALS = "no-credentials";
-
 	/**
 	 * token
+	 *
 	 * @param credentials
 	 */
 	public SBJwtPreAuthenticateToken(String credentials) {
