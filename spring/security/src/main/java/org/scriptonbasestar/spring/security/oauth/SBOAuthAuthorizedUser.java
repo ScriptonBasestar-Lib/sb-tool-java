@@ -14,7 +14,7 @@ import java.util.Collection;
 public class SBOAuthAuthorizedUser extends SBAuthorizedUser {
 	//token info
 	private String accessToken;
-	public SBOAuthAuthorizedUser(Long userId, String nickname, String username, String password, Collection<String> roles, Collection<? extends GrantedAuthority> authorities) {
-		super(userId, nickname, username, password, roles, authorities);
+	public SBOAuthAuthorizedUser(Long userId, String nickname, String username, String password, Collection<? extends GrantedAuthority> authorities) {
+		super(userId, nickname, username, password, authorities);
 	}
 }

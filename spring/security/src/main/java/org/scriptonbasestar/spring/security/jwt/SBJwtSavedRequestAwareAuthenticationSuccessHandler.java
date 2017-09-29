@@ -1,5 +1,6 @@
 package org.scriptonbasestar.spring.security.jwt;
 
+import org.scriptonbasestar.spring.security.auth.SBJwtUserService;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.web.authentication.SavedRequestAwareAuthenticationSuccessHandler;
 
@@ -32,9 +33,9 @@ public class SBJwtSavedRequestAwareAuthenticationSuccessHandler extends SavedReq
 		claims.setUserNickname(user.getNickname());
 		claims.setUserUsername(user.getUsername());
 
-		claims.setUserRoles(user.getRoles());
+		claims.setUserRoles(jwtUserService.findRoles(user.getUserId()));
 
-		for (String domain : jwtUserService.findService(user.getUserId())) {
+		for (String domain : jwtUserService.findDomain(user.getUserId())) {
 			SBJwtCookieUtil.tokenToCookie(response, domain, serviceName, signingKey, claims);
 		}
 		super.onAuthenticationSuccess(request, response, authentication);

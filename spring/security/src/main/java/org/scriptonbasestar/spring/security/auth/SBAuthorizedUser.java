@@ -5,6 +5,7 @@ import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.userdetails.User;
 
 import java.util.Collection;
+import java.util.Map;
 
 /**
  * @author chaeeung.e
@@ -14,13 +15,11 @@ import java.util.Collection;
 public abstract class SBAuthorizedUser extends User{
 	private final Long userId;
 	private final String nickname;
-	private final Collection<String> roles;
 
-	protected SBAuthorizedUser(Long userId, String nickname, String username, String password, Collection<String> roles, Collection<? extends GrantedAuthority> authorities) {
+	protected SBAuthorizedUser(Long userId, String nickname, String username, String password, Collection<? extends GrantedAuthority> authorities) {
 		super(username, password, authorities);
 		this.userId = userId;
 		this.nickname = nickname;
-		this.roles = roles;
 	}
 
 }

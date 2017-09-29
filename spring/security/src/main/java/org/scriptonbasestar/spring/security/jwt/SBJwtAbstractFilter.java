@@ -2,7 +2,6 @@ package org.scriptonbasestar.spring.security.jwt;
 
 import lombok.Setter;
 import org.scriptonbasestar.tool.core.exception.compiletime.SBTextExtractException;
-import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.InternalAuthenticationServiceException;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.AuthenticationException;
@@ -25,7 +24,8 @@ import java.io.IOException;
 public abstract class SBJwtAbstractFilter extends OncePerRequestFilter {
 
 	//not null
-	//직접넣지말고 ProviderManager.providers에 넣어.
+	// 여기 있는것은 값이 직접 들어왔을때
+	// ProviderManager.providers에 있는것은
 //	private AuthenticationManager authenticationManager;
 	@Setter
 	private SBJwtAuthenticationManager authenticationManager;
@@ -36,10 +36,6 @@ public abstract class SBJwtAbstractFilter extends OncePerRequestFilter {
 	//not null
 	@Setter
 	protected String signingKey;
-
-	//not null
-	@Setter
-	protected SBJwtUserService jwtUserService;
 
 	@Setter
 	protected AuthenticationSuccessHandler successHandler;
@@ -53,7 +49,6 @@ public abstract class SBJwtAbstractFilter extends OncePerRequestFilter {
 			Assert.notNull(authenticationManager, "authenticationManager must not null");
 			Assert.notNull(serviceName, "serviceName must not null");
 			Assert.notNull(signingKey, "signingKey must not null");
-			Assert.notNull(jwtUserService, "jwtUserService must not null");
 		}catch (IllegalArgumentException e){
 			throw new ServletException(e.getMessage());
 		}
@@ -90,7 +85,7 @@ public abstract class SBJwtAbstractFilter extends OncePerRequestFilter {
 //		}
 
 		successfulAuthentication(request, response, filterChain, authResult);
-//		filterChain.doFilter(request, response);
+		filterChain.doFilter(request, response);
 	}
 
 	protected abstract String extractTokenString(HttpServletRequest request, HttpServletResponse response) throws SBTextExtractException;
@@ -112,7 +107,24 @@ public abstract class SBJwtAbstractFilter extends OncePerRequestFilter {
 		}
 	}
 
-	protected abstract void successfulAuthentication(HttpServletRequest request,
+	protected void successfulAuthentication(HttpServletRequest request,
 											HttpServletResponse response, FilterChain chain, Authentication authResult)
-			throws IOException, ServletException;
+			throws IOException, ServletException {
+
+		if (logger.isDebugEnabled()) {
+			logger.debug("Authentication success. Updating SecurityContextHolder to contain: " + authResult);
+		}
+		SBJwtAuthorizedUser user = (SBJwtAuthorizedUser) authResult.getPrincipal();
+
+		request.setAttribute(SBUserClaims.USER_ID, user.getUserId());
+		request.setAttribute(SBUserClaims.USER_USERNAME, user.getUsername());
+		request.setAttribute(SBUserClaims.USER_NICKNAME, user.getNickname());
+		request.setAttribute(SBUserClaims.USER_AUTHORITIES, user.getAuthorities());
+
+		SecurityContextHolder.getContext().setAuthentication(authResult);
+		//success handler
+		if (successHandler != null) {
+			successHandler.onAuthenticationSuccess(request, response, authResult);
+		}
+	}
 }

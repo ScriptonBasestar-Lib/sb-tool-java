@@ -10,7 +10,7 @@ import java.util.Collection;
  * @since 2017-09-25
  */
 public class SBJwtAuthorizedUser extends SBAuthorizedUser {
-	public SBJwtAuthorizedUser(Long userId, String nickname, String username, String password, Collection<String> roles, Collection<? extends GrantedAuthority> authorities) {
-		super(userId, nickname, username, password, roles, authorities);
+	public SBJwtAuthorizedUser(Long userId, String nickname, String username, String password, Collection<? extends GrantedAuthority> authorities) {
+		super(userId, nickname, username, password, authorities);
 	}
 }

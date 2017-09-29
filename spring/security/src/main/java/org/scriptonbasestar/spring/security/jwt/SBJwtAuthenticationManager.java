@@ -31,7 +31,7 @@ public class SBJwtAuthenticationManager implements AuthenticationManager {
 
 		Collection<GrantedAuthority> authorities = authenticationHandler.authority(claims.getUserRoles());
 		SBJwtAuthorizedUser user = new SBJwtAuthorizedUser(claims.getUserId(), claims.getUserNickname(), claims.getUserUsername(),
-				UUID.randomUUID().toString(), claims.getUserRoles(), authorities
+				UUID.randomUUID().toString(), authorities
 		);
 
 		return new SBJwtAuthenticationToken(user, claims, authorities);
