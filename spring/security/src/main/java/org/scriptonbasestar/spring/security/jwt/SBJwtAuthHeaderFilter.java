@@ -17,10 +17,10 @@ public class SBJwtAuthHeaderFilter extends SBJwtAbstractFilter {
 		if (authHeader == null) {
 			throw new SBTextExtractException("인증 헤더가 없습니다.");
 		}
-		if (!authHeader.startsWith("Bearer ")) {
+		if (!authHeader.matches("^(?i)Bearer\\s+.+")) {
 			throw new SBTextExtractException("JWT 인증 헤더가 아닙니다.");
 		}
-		return authHeader.split("Bearer ")[1];
+		return authHeader.split("(?i)Bearer\\s+")[1];
 	}
 
 }
