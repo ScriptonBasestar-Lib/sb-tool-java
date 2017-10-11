@@ -111,11 +111,42 @@ allprojects {
 	apply plugin: 'maven-publish'
 	apply plugin: 'com.jfrog.bintray'
 
+	def pomConfig = {
+		licenses {
+			license {
+				name "The Apache Software License, Version 2.0"
+				url "http://www.apache.org/licenses/LICENSE-2.0.txt"
+				distribution "repo"
+			}
+		}
+		developers {
+			developer {
+				id "archmagece"
+				name "archmagece"
+				email "archmagece@gmail.com"
+			}
+		}
+
+		scm {
+			url "https://github.com/solarconnect/solcon-file-service"
+		}
+	}
+
+	task sourcesJar(type: Jar) {
+		from sourceSets.main.java.srcDirs
+		classifier = 'sources'
+	}
+
+//	task javadocJar(type: Jar, dependsOn: javadoc) {
+//		classifier = 'javadoc'
+//		from javadoc.destinationDir
+//	}
+
 	publishing {
 		publications {
 			MyPublication(MavenPublication) {
 				from components.java
-//				artifact sourcesJar
+				artifact sourcesJar
 //				artifact javadocJar
 				groupId 'org.scriptonbasestar.tool'
 				artifactId project.name
