@@ -1,4 +1,4 @@
-package org.scriptonbasestar.spring.security.jwt;
+package org.scriptonbasestar.spring.security.jwt.filter;
 
 import org.scriptonbasestar.tool.core.exception.compiletime.SBTextExtractException;
 

@@ -4,6 +4,7 @@ import io.jsonwebtoken.Claims;
 import io.jsonwebtoken.Jwts;
 import io.jsonwebtoken.SignatureAlgorithm;
 import lombok.experimental.UtilityClass;
+import org.scriptonbasestar.spring.security.jwt.dto.SBAuthorizedUserClaims;
 
 /**
  * @author chaeeung.e
@@ -18,14 +19,14 @@ public class SBJwtUtil {
 				.compact();
 	}
 
-	public static SBUserClaims getBody(String signingKey, String token) {
+	public static SBAuthorizedUserClaims getBody(String signingKey, String token) {
 		Claims claims = Jwts.parser().setSigningKey(signingKey).parseClaimsJws(token).getBody();
-		return new SBUserClaims(claims);
+		return new SBAuthorizedUserClaims(claims, true, true, true, true);
 	}
 
-	public static SBUserClaims getBody(String signingKey, SBJwtHandler JwtHandler, String token) {
+	public static SBAuthorizedUserClaims getBody(String signingKey, SBJwtHandler JwtHandler, String token) {
 		Claims claims = Jwts.parser().setSigningKey(signingKey).parse(token, JwtHandler);
-		return new SBUserClaims(claims);
+		return new SBAuthorizedUserClaims(claims, true, true, true, true);
 	}
 
 }

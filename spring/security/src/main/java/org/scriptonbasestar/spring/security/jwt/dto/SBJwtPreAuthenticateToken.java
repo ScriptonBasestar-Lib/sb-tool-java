@@ -1,4 +1,4 @@
-package org.scriptonbasestar.spring.security.jwt;
+package org.scriptonbasestar.spring.security.jwt.dto;
 
 import org.springframework.security.authentication.AbstractAuthenticationToken;
 

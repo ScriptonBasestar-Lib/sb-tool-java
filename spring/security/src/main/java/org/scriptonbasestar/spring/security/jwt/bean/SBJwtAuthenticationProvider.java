@@ -1,5 +1,6 @@
-package org.scriptonbasestar.spring.security.jwt;
+package org.scriptonbasestar.spring.security.jwt.bean;
 
+import org.scriptonbasestar.spring.security.jwt.dto.SBJwtAuthenticationToken;
 import org.springframework.security.authentication.AuthenticationProvider;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.AuthenticationException;
@@ -10,7 +11,7 @@ import org.springframework.security.core.AuthenticationException;
  */
 public class SBJwtAuthenticationProvider implements AuthenticationProvider {
 
-	private SBJwtAuthenticationManager authenticationManager;
+	private final SBJwtAuthenticationManager authenticationManager;
 
 	public SBJwtAuthenticationProvider(SBJwtAuthenticationManager authenticationManager) {
 		this.authenticationManager = authenticationManager;

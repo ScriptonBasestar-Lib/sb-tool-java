@@ -1,6 +1,9 @@
-package org.scriptonbasestar.spring.security.jwt;
+package org.scriptonbasestar.spring.security.jwt.filter;
 
 import lombok.Setter;
+import org.scriptonbasestar.spring.security.jwt.dto.SBAuthorizedUserClaims;
+import org.scriptonbasestar.spring.security.jwt.bean.SBJwtAuthenticationManager;
+import org.scriptonbasestar.spring.security.jwt.dto.SBJwtPreAuthenticateToken;
 import org.scriptonbasestar.tool.core.exception.compiletime.SBTextExtractException;
 import org.springframework.security.authentication.InternalAuthenticationServiceException;
 import org.springframework.security.core.Authentication;
@@ -23,10 +26,6 @@ import java.io.IOException;
  */
 public abstract class SBJwtAbstractFilter extends OncePerRequestFilter {
 
-	//not null
-	// 여기 있는것은 값이 직접 들어왔을때
-	// ProviderManager.providers에 있는것은
-//	private AuthenticationManager authenticationManager;
 	@Setter
 	private SBJwtAuthenticationManager authenticationManager;
 
@@ -36,6 +35,9 @@ public abstract class SBJwtAbstractFilter extends OncePerRequestFilter {
 	//not null
 	@Setter
 	protected String signingKey;
+
+	@Setter
+	protected SBJwtSsoHandler sbJwtSsoHandler;
 
 	@Setter
 	protected AuthenticationSuccessHandler successHandler;
@@ -79,23 +81,18 @@ public abstract class SBJwtAbstractFilter extends OncePerRequestFilter {
 			return;
 		}
 
-		// Authentication success
-//		if (continueChainBeforeSuccessfulAuthentication) {
-//			filterChain.doFilter(request, response);
-//		}
-
-		successfulAuthentication(request, response, filterChain, authResult);
+		successfulAuthentication(request, response, authResult);
 		filterChain.doFilter(request, response);
 	}
 
 	protected abstract String extractTokenString(HttpServletRequest request, HttpServletResponse response) throws SBTextExtractException;
 
 
-	protected void unsuccessfulAuthentication(HttpServletRequest request,
-											  HttpServletResponse response, AuthenticationException failed)
+	protected void unsuccessfulAuthentication(HttpServletRequest request, HttpServletResponse response,
+											  AuthenticationException failed)
 			throws IOException, ServletException {
-		SecurityContextHolder.clearContext();
 
+		SecurityContextHolder.clearContext();
 		if (logger.isDebugEnabled()) {
 			logger.debug("Authentication request failed: " + failed.toString(), failed);
 			logger.debug("Updated SecurityContextHolder to contain null Authentication");
@@ -107,21 +104,27 @@ public abstract class SBJwtAbstractFilter extends OncePerRequestFilter {
 		}
 	}
 
-	protected void successfulAuthentication(HttpServletRequest request,
-											HttpServletResponse response, FilterChain chain, Authentication authResult)
+	protected void successfulAuthentication(HttpServletRequest request, HttpServletResponse response,
+											Authentication authResult)
 			throws IOException, ServletException {
 
 		if (logger.isDebugEnabled()) {
 			logger.debug("Authentication success. Updating SecurityContextHolder to contain: " + authResult);
 		}
-		SBJwtAuthorizedUser user = (SBJwtAuthorizedUser) authResult.getPrincipal();
+		SBAuthorizedUserClaims user = (SBAuthorizedUserClaims) authResult.getPrincipal();
 
-		request.setAttribute(SBUserClaims.USER_ID, user.getUserId());
-		request.setAttribute(SBUserClaims.USER_USERNAME, user.getUsername());
-		request.setAttribute(SBUserClaims.USER_NICKNAME, user.getNickname());
-		request.setAttribute(SBUserClaims.USER_AUTHORITIES, user.getAuthorities());
+		request.setAttribute(SBAuthorizedUserClaims.USER_ID, user.getUserId());
+		request.setAttribute(SBAuthorizedUserClaims.USER_USERNAME, user.getUsername());
+		request.setAttribute(SBAuthorizedUserClaims.USER_NICKNAME, user.getUserNickname());
+		request.setAttribute(SBAuthorizedUserClaims.USER_ROLES, user.getUserRoles());
+		request.setAttribute(SBAuthorizedUserClaims.USER_AUTHORITIES, user.getAuthorities());
 
 		SecurityContextHolder.getContext().setAuthentication(authResult);
+
+		if(sbJwtSsoHandler != null){
+			sbJwtSsoHandler.postProcessing(request, response, authResult);
+		}
+
 		//success handler
 		if (successHandler != null) {
 			successHandler.onAuthenticationSuccess(request, response, authResult);
