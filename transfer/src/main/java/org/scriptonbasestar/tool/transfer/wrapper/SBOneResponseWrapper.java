@@ -38,6 +38,12 @@ public class SBOneResponseWrapper<RESPONSE> {
 		return this;
 	}
 
+	private String code;
+	public SBOneResponseWrapper code(String code){
+		this.code = code;
+		return this;
+	}
+
 	private String message;
 	public SBOneResponseWrapper message(String message){
 		this.message = message;

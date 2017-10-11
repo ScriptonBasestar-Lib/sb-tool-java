@@ -39,6 +39,12 @@ public class SBListResponseWrapper<RESPONSE> {
 		return this;
 	}
 
+	private String code;
+	public SBListResponseWrapper code(String code){
+		this.code = code;
+		return this;
+	}
+
 	private String message;
 	public SBListResponseWrapper message(String message){
 		this.message = message;

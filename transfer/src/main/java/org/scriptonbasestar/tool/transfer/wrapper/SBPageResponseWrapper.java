@@ -40,6 +40,12 @@ public class SBPageResponseWrapper<RESPONSE> {
 		return this;
 	}
 
+	private String code;
+	public SBPageResponseWrapper code(String code){
+		this.code = code;
+		return this;
+	}
+
 	private String message;
 	public SBPageResponseWrapper message(String message){
 		this.message = message;

@@ -38,6 +38,12 @@ public class SBEmptyResponseWrapper {
 		return this;
 	}
 
+	private String code;
+	public SBEmptyResponseWrapper code(String code){
+		this.code = code;
+		return this;
+	}
+
 	private String message;
 	public SBEmptyResponseWrapper message(String message){
 		this.message = message;
