@@ -18,8 +18,8 @@ public class SBPageDto {
 		this.totalPages = (int)(totalElements / pageSize) + 1;
 	}
 
-	private int pageNo;
-	private int pageSize;
+	private int pageNo = 0;
+	private int pageSize = 10;
 
 	private long totalElements;
 	private int totalPages;

@@ -17,14 +17,22 @@ import java.util.Set;
 @EqualsAndHashCode
 public class SBPageResponseWrapper<RESPONSE> {
 
-	public static <RESPONSE_NEW>SBPageResponseWrapper create(){
-		return new SBPageResponseWrapper<RESPONSE_NEW>();
+	public static SBPageResponseWrapper create(){
+		return new SBPageResponseWrapper<>();
 	}
 
 //	@Setter(AccessLevel.PROTECTED)
 	private long leadTime;
 	public SBPageResponseWrapper<RESPONSE> leadTime(long leadTime) {
 		this.leadTime = leadTime;
+		return this;
+	}
+	public SBPageResponseWrapper leadTimeCalc(long start, long end) {
+		this.leadTime = end - start;
+		return this;
+	}
+	public SBPageResponseWrapper leadTimeCalc(long start) {
+		this.leadTime = System.currentTimeMillis() - start;
 		return this;
 	}
 

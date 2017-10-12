@@ -15,14 +15,22 @@ import java.util.Set;
 @EqualsAndHashCode
 public class SBOneResponseWrapper<RESPONSE> {
 
-	public static <RESPONSE_NEW>SBOneResponseWrapper create(){
-		return new SBOneResponseWrapper<RESPONSE_NEW>();
+	public static SBOneResponseWrapper create(){
+		return new SBOneResponseWrapper<>();
 	}
 
 //	@Setter(AccessLevel.PROTECTED)
 	private long leadTime;
 	public SBOneResponseWrapper<RESPONSE> leadTime(long leadTime) {
 		this.leadTime = leadTime;
+		return this;
+	}
+	public SBOneResponseWrapper leadTimeCalc(long start, long end) {
+		this.leadTime = end - start;
+		return this;
+	}
+	public SBOneResponseWrapper leadTimeCalc(long start) {
+		this.leadTime = System.currentTimeMillis() - start;
 		return this;
 	}
 

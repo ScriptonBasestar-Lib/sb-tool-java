@@ -25,6 +25,14 @@ public class SBEmptyResponseWrapper {
 		this.leadTime = leadTime;
 		return this;
 	}
+	public SBEmptyResponseWrapper leadTimeCalc(long start, long end) {
+		this.leadTime = end - start;
+		return this;
+	}
+	public SBEmptyResponseWrapper leadTimeCalc(long start) {
+		this.leadTime = System.currentTimeMillis() - start;
+		return this;
+	}
 
 	private boolean success = true;
 	public SBEmptyResponseWrapper fail() {

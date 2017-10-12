@@ -3,7 +3,6 @@ package org.scriptonbasestar.tool.transfer.wrapper
 import org.junit.Ignore
 import org.junit.Test
 import org.scriptonbasestar.tool.transfer.dto.CommonLongIdDto
-import org.springframework.web.multipart.MultipartRequest
 
 /**
  * @author chaeeung.e

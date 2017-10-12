@@ -16,17 +16,22 @@ import java.util.Set;
 @EqualsAndHashCode
 public class SBListResponseWrapper<RESPONSE> {
 
-	public static <RESPONSE_NEW>SBListResponseWrapper create(){
-		return new SBListResponseWrapper<RESPONSE_NEW>();
-	}
-	public static <RESPONSE_NEW>SBListResponseWrapper create(Class<RESPONSE_NEW> clazz){
-		return new SBListResponseWrapper<RESPONSE_NEW>();
+	public static SBListResponseWrapper create(){
+		return new SBListResponseWrapper<>();
 	}
 
 //	@Setter(AccessLevel.PROTECTED)
 	private long leadTime;
 	public SBListResponseWrapper<RESPONSE> leadTime(long leadTime) {
 		this.leadTime = leadTime;
+		return this;
+	}
+	public SBListResponseWrapper leadTimeCalc(long start, long end) {
+		this.leadTime = end - start;
+		return this;
+	}
+	public SBListResponseWrapper leadTimeCalc(long start) {
+		this.leadTime = System.currentTimeMillis() - start;
 		return this;
 	}
 
