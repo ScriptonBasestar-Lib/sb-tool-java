@@ -1,8 +1,6 @@
 package org.scriptonbasestar.tool.transfer.wrapper;
 
-import lombok.AccessLevel;
-import lombok.Data;
-import lombok.Setter;
+import lombok.*;
 import org.scriptonbasestar.tool.transfer.dto.SBPageDto;
 
 import java.util.Collection;
@@ -14,16 +12,18 @@ import java.util.Set;
  * @author archmagece
  * @since 2017-08-28
  */
-@Data
+@Getter
+@ToString
+@EqualsAndHashCode
 public class SBPageResponseWrapper<RESPONSE> {
 
 	public static <RESPONSE_NEW>SBPageResponseWrapper create(){
 		return new SBPageResponseWrapper<RESPONSE_NEW>();
 	}
 
-	@Setter(AccessLevel.PROTECTED)
+//	@Setter(AccessLevel.PROTECTED)
 	private long leadTime;
-	public SBPageResponseWrapper leadTime(long leadTime) {
+	public SBPageResponseWrapper<RESPONSE> leadTime(long leadTime) {
 		this.leadTime = leadTime;
 		return this;
 	}
@@ -35,19 +35,19 @@ public class SBPageResponseWrapper<RESPONSE> {
 	}
 
 	private String lang;
-	public SBPageResponseWrapper lang(String lang){
+	public SBPageResponseWrapper<RESPONSE> lang(String lang){
 		this.lang = lang;
 		return this;
 	}
 
 	private String code;
-	public SBPageResponseWrapper code(String code){
+	public SBPageResponseWrapper<RESPONSE> code(String code){
 		this.code = code;
 		return this;
 	}
 
 	private String message;
-	public SBPageResponseWrapper message(String message){
+	public SBPageResponseWrapper<RESPONSE> message(String message){
 		this.message = message;
 		return this;
 	}
@@ -61,7 +61,7 @@ public class SBPageResponseWrapper<RESPONSE> {
 	}
 
 	private SBPageDto page;
-	public SBPageResponseWrapper data(SBPageDto data){
+	public SBPageResponseWrapper<RESPONSE> data(SBPageDto data){
 		this.page = page;
 		return this;
 	}
