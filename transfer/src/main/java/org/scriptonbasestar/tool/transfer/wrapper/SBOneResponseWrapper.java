@@ -15,8 +15,8 @@ import java.util.Set;
 @Data
 public class SBOneResponseWrapper<RESPONSE> {
 
-	public static SBOneResponseWrapper create(){
-		return new SBOneResponseWrapper();
+	public static <RESPONSE_NEW>SBOneResponseWrapper create(){
+		return new SBOneResponseWrapper<RESPONSE_NEW>();
 	}
 
 	@Setter(AccessLevel.PROTECTED)
@@ -53,4 +53,9 @@ public class SBOneResponseWrapper<RESPONSE> {
 	protected Set<Map<String,String>> validationErrorSet = new HashSet<>();
 
 	private RESPONSE data;
+	public SBOneResponseWrapper data(RESPONSE data){
+		this.data = data;
+		return this;
+	}
+
 }

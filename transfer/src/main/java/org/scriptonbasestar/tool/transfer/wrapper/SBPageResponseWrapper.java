@@ -17,8 +17,8 @@ import java.util.Set;
 @Data
 public class SBPageResponseWrapper<RESPONSE> {
 
-	public static SBPageResponseWrapper create(){
-		return new SBPageResponseWrapper();
+	public static <RESPONSE_NEW>SBPageResponseWrapper create(){
+		return new SBPageResponseWrapper<RESPONSE_NEW>();
 	}
 
 	@Setter(AccessLevel.PROTECTED)
@@ -55,6 +55,15 @@ public class SBPageResponseWrapper<RESPONSE> {
 	protected Set<Map<String,String>> validationErrorSet = new HashSet<>();
 
 	private Collection<RESPONSE> data;
+	public SBPageResponseWrapper data(Collection<RESPONSE> data){
+		this.data = data;
+		return this;
+	}
+
 	private SBPageDto page;
+	public SBPageResponseWrapper data(SBPageDto data){
+		this.page = page;
+		return this;
+	}
 
 }
