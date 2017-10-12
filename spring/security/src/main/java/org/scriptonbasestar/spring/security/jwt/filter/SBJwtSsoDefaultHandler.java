@@ -18,19 +18,19 @@ public class SBJwtSsoDefaultHandler implements SBJwtSsoHandler {
 
 	private final String serviceName;
 	private final String signingKey;
-	private final SBFindUserAuthorityService jwtUserService;
+	private final SBFindUserAuthorityService findUserAuthorityService;
 
 	public SBJwtSsoDefaultHandler(String serviceName, String signingKey, SBFindUserAuthorityService jwtUserService) {
 		this.serviceName = serviceName;
 		this.signingKey = signingKey;
-		this.jwtUserService = jwtUserService;
+		this.findUserAuthorityService = jwtUserService;
 	}
 
 	@Override
 	public void postProcessing(HttpServletRequest request, HttpServletResponse response, Authentication authentication) {
 		SBAuthorizedUserClaims claims = (SBAuthorizedUserClaims) authentication.getPrincipal();
 
-		for (String domain : jwtUserService.findDomain(claims.getUserId())) {
+		for (String domain : findUserAuthorityService.findUserComponent(claims.getUserId())) {
 			SBJwtCookieUtil.tokenToCookie(response, domain, serviceName, signingKey, claims);
 		}
 	}

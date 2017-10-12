@@ -21,19 +21,20 @@ public class SBAuthorizedUserClaims extends DefaultClaims implements UserDetails
 	public static final String USER_ID = "uid";
 	public static final String USER_NICKNAME = "nnm";
 	public static final String USER_USERNAME = "unm";
-	public static final String USER_ROLES = "uro";
+//	public static final String USER_COMPONENT = "usc";
+	public static final String USER_ROLE = "ucr";
+//	public static final String USER_AUTHORITY = "uca";
 	//claims에는 포함하지 않고 사이트 파라미터용으로
-	public static final String USER_AUTHORITIES = "uau";
 	@Getter//override
-	private final Set<GrantedAuthority> authorities;
+	protected final Set<GrantedAuthority> authorities;
 	@Getter//override
-	private final boolean enabled;
+	protected final boolean enabled;
 	@Getter//override
-	private final boolean accountNonExpired;
+	protected final boolean accountNonExpired;
 	@Getter//override
-	private final boolean credentialsNonExpired;
+	protected final boolean credentialsNonExpired;
 	@Getter//override
-	private final boolean accountNonLocked;
+	protected final boolean accountNonLocked;
 	@Getter//override
 	private final String password = null;
 
@@ -110,8 +111,8 @@ public class SBAuthorizedUserClaims extends DefaultClaims implements UserDetails
 		return get(USER_ID, Long.class);
 	}
 
-	protected void setUserId(long userid) {
-		setValue(USER_ID, userid);
+	protected void setUserId(long userId) {
+		setValue(USER_ID, userId);
 	}
 
 	//user nickname
@@ -133,13 +134,22 @@ public class SBAuthorizedUserClaims extends DefaultClaims implements UserDetails
 		setValue(USER_USERNAME, username);
 	}
 
+	//user role
+	public String getUserRole() {
+		return get(USER_ROLE, String.class);
+	}
+
+	protected void setUserRole(String userRole) {
+		setValue(USER_ROLE, userRole);
+	}
+
 	//user roles
 	public Collection<String> getUserRoles() {
-		return get(USER_ROLES, Collection.class);
+		return get(USER_ROLE, Collection.class);
 	}
 
 	protected void setUserRoles(Collection<String> userRoles) {
-		setValue(USER_ROLES, userRoles);
+		setValue(USER_ROLE, userRoles);
 	}
 
 	@Override
@@ -155,9 +165,6 @@ public class SBAuthorizedUserClaims extends DefaultClaims implements UserDetails
 				) {
 			value = getDate(claimName);
 		}
-//		else if(USER_ROLES.equals(claimName)){
-//			value =
-//		}
 
 		if (requiredType == Date.class && value instanceof Long) {
 			value = new Date((Long) value);
@@ -177,12 +184,10 @@ public class SBAuthorizedUserClaims extends DefaultClaims implements UserDetails
 		Assert.notNull(authorities, "Cannot pass a null GrantedAuthority collection");
 		// Ensure array iteration order is predictable (as per
 		// UserDetails.getAuthorities() contract and SEC-717)
-		SortedSet<GrantedAuthority> sortedAuthorities = new TreeSet<GrantedAuthority>(
-				new AuthorityComparator());
+		SortedSet<GrantedAuthority> sortedAuthorities = new TreeSet<>(new AuthorityComparator());
 
 		for (GrantedAuthority grantedAuthority : authorities) {
-			Assert.notNull(grantedAuthority,
-					"GrantedAuthority list cannot contain any null elements");
+			Assert.notNull(grantedAuthority, "GrantedAuthority list cannot contain any null elements");
 			sortedAuthorities.add(grantedAuthority);
 		}
 
@@ -194,10 +199,8 @@ public class SBAuthorizedUserClaims extends DefaultClaims implements UserDetails
 		private static final long serialVersionUID = SpringSecurityCoreVersion.SERIAL_VERSION_UID;
 
 		public int compare(GrantedAuthority g1, GrantedAuthority g2) {
-			// Neither should ever be null as each entry is checked before adding it to
-			// the set.
-			// If the authority is null, it is a custom authority and should precede
-			// others.
+			// Neither should ever be null as each entry is checked before adding it to the set.
+			// If the findUserAuthority is null, it is a custom findUserAuthority and should precede others.
 			if (g2.getAuthority() == null) {
 				return -1;
 			}

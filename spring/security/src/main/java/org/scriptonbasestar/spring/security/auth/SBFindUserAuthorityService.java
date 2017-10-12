@@ -14,13 +14,13 @@ public interface SBFindUserAuthorityService {
 	 * SSO에 연동된 서비스 중 사용자에게 허용된 서비스 도메인
 	 * 추가2차 : 이번에 요청이 들어온 서비스
 	 *
-	 * @param id
+	 * @param userId
 	 * @return
 	 */
-	Collection<String> findDomain(Long id);
+	Collection<String> findUserComponent(Long userId);
 
-	Collection<String> findRoles(Long id);
+	Collection<String> findUserRole(Long componentId, Long userId);
 
-	Collection<GrantedAuthority> authority(Collection<String> roles);
+	Collection<GrantedAuthority> findUserAuthority(String roleName);
 
 }

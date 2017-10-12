@@ -35,12 +35,12 @@ public class IPRoleAuthenticationFilter
 				ServletException {
 
 		// before we allow the request to proceed, we'll first get the user's
-		// role
+		// findUserRole
 		// and see if it's an administrator
 		final Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
 		if (authentication != null && targetRole != null) {
 			boolean shouldCheck = false;
-			// look if the user is the target role
+			// look if the user is the target findUserRole
 			for (GrantedAuthority authority : authentication.getAuthorities()) {
 				if (authority.getAuthority().equals(
 						targetRole)) {
