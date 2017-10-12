@@ -115,7 +115,7 @@ public abstract class SBJwtAbstractFilter extends OncePerRequestFilter {
 
 		request.setAttribute(SBAuthorizedUserClaims.USER_ID, user.getUserId());
 		request.setAttribute(SBAuthorizedUserClaims.USER_USERNAME, user.getUsername());
-		request.setAttribute(SBAuthorizedUserClaims.USER_NICKNAME, user.getUserNickname());
+		request.setAttribute(SBAuthorizedUserClaims.USER_NICKNAME, user.getNickname());
 		request.setAttribute(SBAuthorizedUserClaims.USER_ROLES, user.getUserRoles());
 		request.setAttribute(SBAuthorizedUserClaims.USER_AUTHORITIES, user.getAuthorities());
 

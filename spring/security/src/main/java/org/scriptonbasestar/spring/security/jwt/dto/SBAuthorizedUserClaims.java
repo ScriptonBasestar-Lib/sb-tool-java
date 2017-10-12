@@ -40,20 +40,21 @@ public class SBAuthorizedUserClaims extends DefaultClaims implements UserDetails
 
 	public SBAuthorizedUserClaims(
 			Long userId,
-			String userNickname,
-			String userUsername,
+			String nickname,
+			String username,
 			Set<String> userRoles,
 			boolean enabled,
 			boolean accountNonExpired,
 			boolean credentialsNonExpired,
 			boolean accountNonLocked,
 			Collection<? extends GrantedAuthority> authorities) {
-		if (((userUsername == null) || "".equals(userUsername))) {
+		if (((username == null) || "".equals(username))) {
 			throw new IllegalArgumentException(
 					"Cannot pass null or empty values to constructor");
 		}
 		setUserId(userId);
-		setUserNickname(userNickname);
+		setNickname(nickname);
+		setUsername(username);
 		setUserRoles(userRoles);
 		this.enabled = enabled;
 		this.accountNonExpired = accountNonExpired;
@@ -64,19 +65,20 @@ public class SBAuthorizedUserClaims extends DefaultClaims implements UserDetails
 
 	public SBAuthorizedUserClaims(
 			Long userId,
-			String userNickname,
-			String userUsername,
+			String nickname,
+			String username,
 			Set<String> userRoles,
 			boolean enabled,
 			boolean accountNonExpired,
 			boolean credentialsNonExpired,
 			boolean accountNonLocked) {
-		if (((userUsername == null) || "".equals(userUsername))) {
+		if (((username == null) || "".equals(username))) {
 			throw new IllegalArgumentException(
 					"Cannot pass null or empty values to constructor");
 		}
 		setUserId(userId);
-		setUserNickname(userNickname);
+		setNickname(nickname);
+		setUsername(username);
 		setUserRoles(userRoles);
 		this.enabled = enabled;
 		this.accountNonExpired = accountNonExpired;
@@ -113,11 +115,11 @@ public class SBAuthorizedUserClaims extends DefaultClaims implements UserDetails
 	}
 
 	//user nickname
-	public String getUserNickname() {
+	public String getNickname() {
 		return getString(USER_NICKNAME);
 	}
 
-	protected void setUserNickname(String nickname) {
+	protected void setNickname(String nickname) {
 		setValue(USER_NICKNAME, nickname);
 	}
 
@@ -125,6 +127,10 @@ public class SBAuthorizedUserClaims extends DefaultClaims implements UserDetails
 	@Override
 	public String getUsername() {
 		return getString(USER_USERNAME);
+	}
+
+	protected void setUsername(String username){
+		setValue(USER_USERNAME, username);
 	}
 
 	//user roles
