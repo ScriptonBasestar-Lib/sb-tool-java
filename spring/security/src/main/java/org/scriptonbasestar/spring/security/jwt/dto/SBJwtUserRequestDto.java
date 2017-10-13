@@ -7,6 +7,9 @@ import lombok.Setter;
 /**
  * @author chaeeung.e
  * @since 2017-10-13
+ *
+ * jwt header 인증시 넣어준 값을
+ * spring request parameter 받아서 쓰는용도
  */
 @Data
 public class SBJwtUserRequestDto {
