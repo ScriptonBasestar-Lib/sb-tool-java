@@ -31,7 +31,7 @@ public class SBJwtAuthenticationManager implements AuthenticationManager {
 			return authentication;
 		}
 		SBAuthorizedUserClaims claims = SBJwtUtil.getBody(signingKey, authentication.getCredentials().toString());
-		Collection<GrantedAuthority> authorities = findUserAuthorityService.findUserAuthority(claims.getUserRole());
+		Collection<GrantedAuthority> authorities = findUserAuthorityService.findGrantedAuthority(claims.getUserRole());
 
 		return new SBJwtAuthenticationToken(claims, authorities);
 	}

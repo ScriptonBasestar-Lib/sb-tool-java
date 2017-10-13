@@ -19,8 +19,11 @@ public interface SBFindUserAuthorityService {
 	 */
 	Collection<String> findUserComponent(Long userId);
 
-	Collection<String> findUserRole(Long componentId, Long userId);
+	Collection<GrantedAuthority> findGrantedAuthority(String ... roles);
 
-	Collection<GrantedAuthority> findUserAuthority(String roleName);
+	Collection<String> findUserRole(Long userId);
+
+	Collection<String> findUserPrincipal(String roleName);
+
 
 }

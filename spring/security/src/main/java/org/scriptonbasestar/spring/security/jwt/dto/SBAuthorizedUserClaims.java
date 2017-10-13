@@ -200,7 +200,7 @@ public class SBAuthorizedUserClaims extends DefaultClaims implements UserDetails
 
 		public int compare(GrantedAuthority g1, GrantedAuthority g2) {
 			// Neither should ever be null as each entry is checked before adding it to the set.
-			// If the findUserAuthority is null, it is a custom findUserAuthority and should precede others.
+			// If the findGrantedAuthority is null, it is a custom findGrantedAuthority and should precede others.
 			if (g2.getAuthority() == null) {
 				return -1;
 			}
