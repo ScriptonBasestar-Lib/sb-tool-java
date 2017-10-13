@@ -22,8 +22,8 @@ public class SBAuthorizedUserClaims extends DefaultClaims implements UserDetails
 	public static final String USER_NICKNAME = "nnm";
 	public static final String USER_USERNAME = "unm";
 //	public static final String USER_COMPONENT = "usc";
-	public static final String USER_ROLE = "ucr";
-//	public static final String USER_AUTHORITY = "uca";
+	public static final String USER_ROLE = "uro";
+	public static final String USER_PRINCIPAL = "upr";
 	//claims에는 포함하지 않고 사이트 파라미터용으로
 	@Getter//override
 	protected final Set<GrantedAuthority> authorities;
@@ -134,15 +134,6 @@ public class SBAuthorizedUserClaims extends DefaultClaims implements UserDetails
 		setValue(USER_USERNAME, username);
 	}
 
-	//user role
-	public String getUserRole() {
-		return get(USER_ROLE, String.class);
-	}
-
-	protected void setUserRole(String userRole) {
-		setValue(USER_ROLE, userRole);
-	}
-
 	//user roles
 	public Collection<String> getUserRoles() {
 		return get(USER_ROLE, Collection.class);
@@ -151,6 +142,15 @@ public class SBAuthorizedUserClaims extends DefaultClaims implements UserDetails
 	protected void setUserRoles(Collection<String> userRoles) {
 		setValue(USER_ROLE, userRoles);
 	}
+
+//	//user principals
+//	public Collection<String> getUserPrincipals() {
+//		return get(USER_PRINCIPAL, Collection.class);
+//	}
+//
+//	protected void setUserPrincipals(Collection<String> userRoles) {
+//		setValue(USER_PRINCIPAL, userRoles);
+//	}
 
 	@Override
 	public <T> T get(String claimName, Class<T> requiredType) {
