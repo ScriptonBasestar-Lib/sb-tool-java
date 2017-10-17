@@ -23,7 +23,9 @@ public interface SBFindUserAuthorityService {
 
 	Collection<String> findUserRole(Long userId);
 
-	Collection<String> findUserPrincipal(String roleName);
+	Collection<String> findUserPrincipal(Long userId);
+
+	Collection<String> findPrincipalByRoleName(String roleName);
 
 
 }
