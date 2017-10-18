@@ -1,8 +1,6 @@
 package org.scriptonbasestar.tool.transfer.wrapper;
 
-import lombok.AccessLevel;
-import lombok.Data;
-import lombok.Setter;
+import lombok.*;
 
 import java.util.Collection;
 import java.util.HashSet;
@@ -13,17 +11,27 @@ import java.util.Set;
  * @author archmagece
  * @since 2017-08-25
  */
-@Data
+@Getter
+@ToString
+@EqualsAndHashCode
 public class SBListResponseWrapper<RESPONSE> {
 
 	public static SBListResponseWrapper create(){
-		return new SBListResponseWrapper();
+		return new SBListResponseWrapper<>();
 	}
 
-	@Setter(AccessLevel.PROTECTED)
+//	@Setter(AccessLevel.PROTECTED)
 	private long leadTime;
 	public SBListResponseWrapper<RESPONSE> leadTime(long leadTime) {
 		this.leadTime = leadTime;
+		return this;
+	}
+	public SBListResponseWrapper leadTimeCalc(long start, long end) {
+		this.leadTime = end - start;
+		return this;
+	}
+	public SBListResponseWrapper leadTimeCalc(long start) {
+		this.leadTime = System.currentTimeMillis() - start;
 		return this;
 	}
 
@@ -38,13 +46,19 @@ public class SBListResponseWrapper<RESPONSE> {
 	}
 
 	private String lang;
-	public SBListResponseWrapper lang(String lang){
+	public SBListResponseWrapper<RESPONSE> lang(String lang){
 		this.lang = lang;
 		return this;
 	}
 
+	private String code;
+	public SBListResponseWrapper<RESPONSE> code(String code){
+		this.code = code;
+		return this;
+	}
+
 	private String message;
-	public SBListResponseWrapper message(String message){
+	public SBListResponseWrapper<RESPONSE> message(String message){
 		this.message = message;
 		return this;
 	}
@@ -52,5 +66,9 @@ public class SBListResponseWrapper<RESPONSE> {
 	protected Set<Map<String,String>> validationErrorSet = new HashSet<>();
 
 	private Collection<RESPONSE> data;
+	public SBListResponseWrapper<RESPONSE> data(Collection<RESPONSE> data){
+		this.data = data;
+		return this;
+	}
 
 }

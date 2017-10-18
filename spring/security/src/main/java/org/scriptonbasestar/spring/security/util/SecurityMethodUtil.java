@@ -56,4 +56,8 @@ public final class SecurityMethodUtil {
 		SecurityContextHolder.getContext().setAuthentication(new UsernamePasswordAuthenticationToken(userDetails, null, userDetails.getAuthorities()));
 	}
 
+	public static void logoutProcess(){
+		SecurityContextHolder.clearContext();
+	}
+
 }

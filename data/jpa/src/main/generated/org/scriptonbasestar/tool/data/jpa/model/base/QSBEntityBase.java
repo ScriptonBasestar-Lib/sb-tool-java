@@ -15,7 +15,7 @@ import com.querydsl.core.types.Path;
 @Generated("com.querydsl.codegen.SupertypeSerializer")
 public class QSBEntityBase extends EntityPathBase<SBEntityBase> {
 
-    private static final long serialVersionUID = 1989849638L;
+    private static final long serialVersionUID = 2066608483L;
 
     public static final QSBEntityBase sBEntityBase = new QSBEntityBase("sBEntityBase");
 
