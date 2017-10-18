@@ -29,6 +29,10 @@ public class SBPageResponseWrapper<RESPONSE> {
 	}
 
 	private boolean success = true;
+	public SBPageResponseWrapper<RESPONSE> success(boolean success) {
+		this.success = success;
+		return this;
+	}
 	public SBPageResponseWrapper<RESPONSE> fail() {
 		success = false;
 		return this;

@@ -27,6 +27,10 @@ public class SBOneResponseWrapper<RESPONSE> {
 	}
 
 	private boolean success = true;
+	public SBOneResponseWrapper<RESPONSE> success(boolean success) {
+		this.success = success;
+		return this;
+	}
 	public SBOneResponseWrapper<RESPONSE> fail() {
 		success = false;
 		return this;

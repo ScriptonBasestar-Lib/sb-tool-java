@@ -27,6 +27,10 @@ public class SBEmptyResponseWrapper {
 	}
 
 	private boolean success = true;
+	public SBEmptyResponseWrapper success(boolean success) {
+		this.success = success;
+		return this;
+	}
 	public SBEmptyResponseWrapper fail() {
 		success = false;
 		return this;

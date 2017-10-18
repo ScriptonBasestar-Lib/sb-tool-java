@@ -28,6 +28,10 @@ public class SBListResponseWrapper<RESPONSE> {
 	}
 
 	private boolean success = true;
+	public SBListResponseWrapper<RESPONSE> success(boolean success) {
+		this.success = success;
+		return this;
+	}
 	public SBListResponseWrapper<RESPONSE> fail() {
 		success = false;
 		return this;
