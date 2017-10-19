@@ -28,6 +28,9 @@ public class SBJwtCookieUtil {
 	}
 
 	public SBAuthorizedUserClaims claimFromCookie(HttpServletRequest request, String serviceName, String signingKey) {
+		if(request.getCookies()==null){
+			return null;
+		}
 		for (Cookie cookie : request.getCookies()) {
 			if (cookie.getName().equals(serviceName)) {
 				return SBJwtUtil.getBody(signingKey, cookie.getValue());
@@ -37,6 +40,9 @@ public class SBJwtCookieUtil {
 	}
 
 	public String tokenFromCookie(HttpServletRequest request, String serviceName, String signingKey) {
+		if(request.getCookies()==null){
+			return null;
+		}
 		for (Cookie cookie : request.getCookies()) {
 			if (cookie.getName().equals(serviceName)) {
 				return cookie.getValue();
