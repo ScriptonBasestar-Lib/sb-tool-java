@@ -1,10 +1,14 @@
 package org.scriptonbasestar.spring.security
 
+import io.jsonwebtoken.Claims
 import io.jsonwebtoken.Jwts
 import io.jsonwebtoken.SignatureAlgorithm
 import org.junit.Test
 import org.scriptonbasestar.spring.security.jwt.dto.SBAuthorizedUserClaims
 import org.scriptonbasestar.tool.collection.builder.MapBuilder
+import org.scriptonbasestar.tool.collection.builder.SetBuilder
+import org.springframework.security.core.GrantedAuthority
+import org.springframework.security.core.authority.SimpleGrantedAuthority
 
 /**
  * @author chaeeung.e
@@ -12,18 +16,25 @@ import org.scriptonbasestar.tool.collection.builder.MapBuilder
  */
 class SBUserClaimsTest {
 
-	private static final String SIGNING_KEY = "jr092j0309r203rj032"
+	private static final String SIGNING_KEY = "u90rtf2w903eptrfiu29o34eitrf02i0tr5f2i0wq"
 
 	@Test
 	void 'token serialization - deserialization test'() {
-		SBAuthorizedUserClaims claims = new SBAuthorizedUserClaims()
+		Claims claims = new SBAuthorizedUserClaims(
+				1L,
+				"nick0",
+				"user0",
+				SetBuilder.create(String.class).add("ROLE_RESOURCE_USER").build(),
+				true,true,true,true,
+				SetBuilder.create(GrantedAuthority.class).add(new SimpleGrantedAuthority("ROLE_RESOURCE_USER")).build()
+		)
 //		Map<String,String[]> userRoles = new HashMap<>()
 //		userRoles.put("ROLE_BRIDGE_USER", ["AUTH_READ","AUTH_WRITE","AUTH_EXECUTE"])
-		claims.put("uro", MapBuilder.create(String.class, String[].class).add("ROLE_BRIDGE_USER", ["AUTH_READ","AUTH_WRITE","AUTH_EXECUTE"]).build())
 
 		String token = Jwts.builder().signWith(SignatureAlgorithm.HS256, SIGNING_KEY)
-				.setClaims(claims)
+				.setClaims(claims).asType()
 				.compact()
+		println(token)
 
 		claims = Jwts.parser().setSigningKey(SIGNING_KEY).parseClaimsJws(token).getBody()
 		println(claims)
