@@ -21,18 +21,18 @@ class SBUserClaimsTest {
 	@Test
 	void 'token serialization - deserialization test'() {
 		Claims claims = new SBAuthorizedUserClaims(
-				1L,
-				"nick0",
-				"user0",
-				SetBuilder.create(String.class).add("ROLE_RESOURCE_USER").build(),
-				true,true,true,true,
-				SetBuilder.create(GrantedAuthority.class).add(new SimpleGrantedAuthority("ROLE_RESOURCE_USER")).build()
+				-1,
+				"MASTER",
+				"MASTER",
+				SetBuilder.create(String.class).add("ROLE_RESOURCE_MASTER").build(),
+				true,true,true,true
+//				SetBuilder.create(GrantedAuthority.class).add(new SimpleGrantedAuthority("ROLE_RESOURCE_USER")).build()
 		)
 //		Map<String,String[]> userRoles = new HashMap<>()
 //		userRoles.put("ROLE_BRIDGE_USER", ["AUTH_READ","AUTH_WRITE","AUTH_EXECUTE"])
 
 		String token = Jwts.builder().signWith(SignatureAlgorithm.HS256, SIGNING_KEY)
-				.setClaims(claims).asType()
+				.setClaims(claims)
 				.compact()
 		println(token)
 
