@@ -2,7 +2,7 @@ package org.scriptonbasestar.spring.security.jwt;
 
 import io.jsonwebtoken.Claims;
 import lombok.experimental.UtilityClass;
-import org.scriptonbasestar.spring.security.jwt.dto.SBAuthorizedUserClaims;
+import org.scriptonbasestar.spring.security.jwt.dto.SBUserClaims;
 
 import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServletRequest;
@@ -27,7 +27,7 @@ public class SBJwtCookieUtil {
 		response.addCookie(cookie);
 	}
 
-	public SBAuthorizedUserClaims claimFromCookie(HttpServletRequest request, String serviceName, String signingKey) {
+	public SBUserClaims claimFromCookie(HttpServletRequest request, String serviceName, String signingKey) {
 		if(request.getCookies()==null){
 			return null;
 		}

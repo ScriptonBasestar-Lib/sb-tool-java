@@ -25,11 +25,11 @@ public class SBOneResponseWrapper<RESPONSE> {
 		this.leadTime = leadTime;
 		return this;
 	}
-	public SBOneResponseWrapper leadTimeCalc(long start, long end) {
+	public SBOneResponseWrapper<RESPONSE> leadTimeCalc(long start, long end) {
 		this.leadTime = end - start;
 		return this;
 	}
-	public SBOneResponseWrapper leadTimeCalc(long start) {
+	public SBOneResponseWrapper<RESPONSE> leadTimeCalc(long start) {
 		this.leadTime = System.currentTimeMillis() - start;
 		return this;
 	}

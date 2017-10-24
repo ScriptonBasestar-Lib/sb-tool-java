@@ -9,6 +9,9 @@ import org.springframework.security.util.SimpleMethodInvocation
 import java.lang.reflect.Method
 
 /**
+ * 어노테이션으로 이용하던 hasRole() hasAuthority() 등등의 명령을 여기서 이용할 수 있도록 지원
+ * 차후 string 이 아니라 그냥 method 형태로 쓸 수 있도록 수정.
+ *
  * @author chaeeung.e
  * @since 2017-10-16
  */

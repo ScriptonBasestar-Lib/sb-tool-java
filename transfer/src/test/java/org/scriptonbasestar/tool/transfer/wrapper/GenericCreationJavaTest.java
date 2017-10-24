@@ -15,13 +15,13 @@ public class GenericCreationJavaTest {
 		return wr;
 	}
 	SBListResponseWrapper<CommonLongIdDto> upload3() {
-		SBListResponseWrapper<CommonLongIdDto> wr = SBListResponseWrapper.create();
+		SBListResponseWrapper<CommonLongIdDto> wr = SBListResponseWrapper.<CommonLongIdDto>create();
 		return wr;
 	}
 
 	@Test
 	@Ignore
-	void test(){
+	public void test(){
 		upload1();
 		upload3();
 	}

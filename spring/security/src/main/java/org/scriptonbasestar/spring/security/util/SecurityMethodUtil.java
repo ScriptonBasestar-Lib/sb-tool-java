@@ -2,6 +2,9 @@ package org.scriptonbasestar.spring.security.util;
 
 import lombok.AccessLevel;
 import lombok.NoArgsConstructor;
+import org.scriptonbasestar.spring.security.SignedUsernamePasswordAuthenticationToken;
+import org.springframework.security.authentication.AuthenticationManager;
+import org.springframework.security.authentication.AuthenticationProvider;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
@@ -23,40 +26,57 @@ public final class SecurityMethodUtil {
 
 	/**
 	 * PRINCIPAL java.lang.String, org.springframework.security.core.userdetails.UserDetails, java.security.Principal
+	 *
 	 * @param <PRINCIPAL>
 	 * @return
 	 */
-	public static<PRINCIPAL>PRINCIPAL getPrincipal() {
+	public static <PRINCIPAL> PRINCIPAL getPrincipal() {
 		Authentication authentication = getAuthentication();
-		if(authentication==null){
+		if (authentication == null) {
 			return null;
 		}
 		Object principal = authentication.getPrincipal();
-		try{
-			return (PRINCIPAL)principal;
-		}catch (ClassCastException e){
+		try {
+			return (PRINCIPAL) principal;
+		} catch (ClassCastException e) {
 			return null;
 		}
 	}
 
 	public static String getUsername() {
 		Authentication authentication = getAuthentication();
-		if(authentication==null){
+		if (authentication == null) {
 			return null;
 		}
 		return authentication.getName();
 	}
 
-	public static void loginProcess(UserDetailsService userDetailsService, String username){
+	/**
+	 * @param authenticationManager
+	 * @param authentication        ex) SignedUsernamePasswordAuthenticationToken
+	 */
+	public static void loginProcess(AuthenticationManager authenticationManager, Authentication authentication) {
+		SecurityContextHolder.getContext().setAuthentication(authenticationManager.authenticate(authentication));
+	}
+
+	/**
+	 * @param authenticationProvider
+	 * @param authentication         ex) UsernamePasswordAuthenticationToken
+	 */
+	public static void loginProcess(AuthenticationProvider authenticationProvider, Authentication authentication) {
+		authenticationProvider.authenticate(authentication);
+	}
+
+	public static void loginProcess(UserDetailsService userDetailsService, String username) {
 		UserDetails userDetails = userDetailsService.loadUserByUsername(username);
 		SecurityContextHolder.getContext().setAuthentication(new UsernamePasswordAuthenticationToken(userDetails, null, userDetails.getAuthorities()));
 	}
 
-	public static void loginProcess(UserDetails userDetails){
+	public static void loginProcess(UserDetails userDetails) {
 		SecurityContextHolder.getContext().setAuthentication(new UsernamePasswordAuthenticationToken(userDetails, null, userDetails.getAuthorities()));
 	}
 
-	public static void logoutProcess(){
+	public static void logoutProcess() {
 		SecurityContextHolder.clearContext();
 	}
 

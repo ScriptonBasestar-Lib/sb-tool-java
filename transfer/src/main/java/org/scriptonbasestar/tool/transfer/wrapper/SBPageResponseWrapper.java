@@ -17,8 +17,8 @@ import java.util.Set;
 @EqualsAndHashCode
 public class SBPageResponseWrapper<RESPONSE> {
 
-	public static SBPageResponseWrapper create(){
-		return new SBPageResponseWrapper<>();
+	public static <RESPONSE>SBPageResponseWrapper <RESPONSE>create(){
+		return new SBPageResponseWrapper<RESPONSE>();
 	}
 
 //	@Setter(AccessLevel.PROTECTED)
@@ -27,11 +27,11 @@ public class SBPageResponseWrapper<RESPONSE> {
 		this.leadTime = leadTime;
 		return this;
 	}
-	public SBPageResponseWrapper leadTimeCalc(long start, long end) {
+	public SBPageResponseWrapper<RESPONSE> leadTimeCalc(long start, long end) {
 		this.leadTime = end - start;
 		return this;
 	}
-	public SBPageResponseWrapper leadTimeCalc(long start) {
+	public SBPageResponseWrapper<RESPONSE> leadTimeCalc(long start) {
 		this.leadTime = System.currentTimeMillis() - start;
 		return this;
 	}
@@ -67,7 +67,7 @@ public class SBPageResponseWrapper<RESPONSE> {
 	protected Set<Map<String,String>> validationErrorSet = new HashSet<>();
 
 	private Collection<RESPONSE> data;
-	public SBPageResponseWrapper data(Collection<RESPONSE> data){
+	public SBPageResponseWrapper<RESPONSE> data(Collection<RESPONSE> data){
 		this.data = data;
 		return this;
 	}

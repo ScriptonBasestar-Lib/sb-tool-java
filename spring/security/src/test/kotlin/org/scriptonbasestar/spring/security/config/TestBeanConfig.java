@@ -1,4 +1,4 @@
-package org.scriptonbasestar.spring.security.config.root;
+package org.scriptonbasestar.spring.security.config;
 
 import lombok.extern.slf4j.Slf4j;
 import org.jasypt.encryption.pbe.StandardPBEStringEncryptor;
@@ -12,7 +12,7 @@ import org.springframework.context.annotation.Configuration;
  */
 @Slf4j
 @Configuration
-public class BaseBeanConfig {
+public class TestBeanConfig {
 	@Bean
 	public EnvironmentStringPBEConfig EnvironmentVariablesConfiguration() {
 		EnvironmentStringPBEConfig conf = new EnvironmentStringPBEConfig();

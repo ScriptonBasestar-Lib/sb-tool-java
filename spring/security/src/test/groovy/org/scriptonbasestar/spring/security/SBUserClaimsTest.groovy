@@ -4,11 +4,8 @@ import io.jsonwebtoken.Claims
 import io.jsonwebtoken.Jwts
 import io.jsonwebtoken.SignatureAlgorithm
 import org.junit.Test
-import org.scriptonbasestar.spring.security.jwt.dto.SBAuthorizedUserClaims
-import org.scriptonbasestar.tool.collection.builder.MapBuilder
+import org.scriptonbasestar.spring.security.jwt.dto.SBUserClaims
 import org.scriptonbasestar.tool.collection.builder.SetBuilder
-import org.springframework.security.core.GrantedAuthority
-import org.springframework.security.core.authority.SimpleGrantedAuthority
 
 /**
  * @author chaeeung.e
@@ -20,7 +17,7 @@ class SBUserClaimsTest {
 
 	@Test
 	void 'token serialization - deserialization test'() {
-		Claims claims = new SBAuthorizedUserClaims(
+		Claims claims = new SBUserClaims(
 				-1,
 				"MASTER",
 				"MASTER",

@@ -10,8 +10,6 @@ import javax.crypto.KeyGenerator
  */
 class SCCredentialTest {
 
-
-
 	@Test
 	void 'des encrypt-decrypt test'(){
 		def keyGenerator = KeyGenerator.getInstance("DES")

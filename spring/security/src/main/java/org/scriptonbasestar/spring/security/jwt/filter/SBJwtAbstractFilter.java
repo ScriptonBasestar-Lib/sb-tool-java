@@ -1,7 +1,7 @@
 package org.scriptonbasestar.spring.security.jwt.filter;
 
 import lombok.Setter;
-import org.scriptonbasestar.spring.security.jwt.dto.SBAuthorizedUserClaims;
+import org.scriptonbasestar.spring.security.jwt.dto.SBUserClaims;
 import org.scriptonbasestar.spring.security.jwt.bean.SBJwtAuthenticationManager;
 import org.scriptonbasestar.spring.security.jwt.dto.SBJwtPreAuthenticateToken;
 import org.scriptonbasestar.tool.core.exception.compiletime.SBTextExtractException;
@@ -36,8 +36,8 @@ public abstract class SBJwtAbstractFilter extends OncePerRequestFilter {
 	@Setter
 	protected String signingKey;
 
-	@Setter
-	protected SBJwtSsoHandler sbJwtSsoHandler;
+//	@Setter
+//	protected SBJwtSsoHandler sbJwtSsoHandler;
 
 	@Setter
 	protected AuthenticationSuccessHandler successHandler;
@@ -111,18 +111,18 @@ public abstract class SBJwtAbstractFilter extends OncePerRequestFilter {
 		if (logger.isDebugEnabled()) {
 			logger.debug("Authentication success. Updating SecurityContextHolder to contain: " + authResult);
 		}
-		SBAuthorizedUserClaims user = (SBAuthorizedUserClaims) authResult.getPrincipal();
+		SBUserClaims user = (SBUserClaims) authResult.getPrincipal();
 
-		request.setAttribute(SBAuthorizedUserClaims.USER_ID, user.getUserId());
-		request.setAttribute(SBAuthorizedUserClaims.USER_USERNAME, user.getUsername());
-		request.setAttribute(SBAuthorizedUserClaims.USER_NICKNAME, user.getNickname());
-		request.setAttribute(SBAuthorizedUserClaims.USER_ROLE, user.getUserRoles());
+		request.setAttribute(SBUserClaims.USER_ID, user.getUserId());
+		request.setAttribute(SBUserClaims.USER_USERNAME, user.getUsername());
+		request.setAttribute(SBUserClaims.USER_NICKNAME, user.getNickname());
+		request.setAttribute(SBUserClaims.USER_ROLE, user.getUserRoles());
 
 		SecurityContextHolder.getContext().setAuthentication(authResult);
 
-		if(sbJwtSsoHandler != null){
-			sbJwtSsoHandler.postProcessing(request, response, authResult);
-		}
+//		if(sbJwtSsoHandler != null){
+//			sbJwtSsoHandler.postProcessing(request, response, authResult);
+//		}
 
 		//success handler
 		if (successHandler != null) {

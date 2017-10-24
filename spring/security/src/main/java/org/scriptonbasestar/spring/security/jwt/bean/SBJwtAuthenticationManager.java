@@ -2,7 +2,7 @@ package org.scriptonbasestar.spring.security.jwt.bean;
 
 import org.scriptonbasestar.spring.security.auth.SBFindUserAuthorityService;
 import org.scriptonbasestar.spring.security.jwt.NoRoleAuthenticationException;
-import org.scriptonbasestar.spring.security.jwt.dto.SBAuthorizedUserClaims;
+import org.scriptonbasestar.spring.security.jwt.dto.SBUserClaims;
 import org.scriptonbasestar.spring.security.jwt.SBJwtUtil;
 import org.scriptonbasestar.spring.security.jwt.dto.SBJwtAuthenticationToken;
 import org.springframework.security.authentication.AuthenticationManager;
@@ -31,7 +31,7 @@ public class SBJwtAuthenticationManager implements AuthenticationManager {
 		if(authentication instanceof SBJwtAuthenticationToken){
 			return authentication;
 		}
-		SBAuthorizedUserClaims claims = SBJwtUtil.getBody(signingKey, authentication.getCredentials().toString());
+		SBUserClaims claims = SBJwtUtil.getBody(signingKey, authentication.getCredentials().toString());
 		if(claims.getUserRoles()==null){
 			throw new NoRoleAuthenticationException("No roles for service..");
 		}

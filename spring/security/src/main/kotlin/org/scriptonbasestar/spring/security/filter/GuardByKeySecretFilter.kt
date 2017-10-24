@@ -8,6 +8,7 @@ import javax.servlet.http.HttpServletRequest
 import javax.servlet.http.HttpServletResponse
 
 /**
+ * http header에서 (AUTH_CODE : XJFOWIEFOIEW) 형태로 파라미터를 받아서 접근권한체크
  * @author chaeeung.e
  * @since 2017-10-11
  */

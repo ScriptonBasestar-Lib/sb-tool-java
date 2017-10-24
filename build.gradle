@@ -72,8 +72,7 @@ allprojects {
 	}
 
 	dependencies{
-		compileOnly "org.codehaus.groovy:groovy-all:$groovy_version"
-		testCompileOnly "org.codehaus.groovy:groovy-all:$groovy_version"
+		compile "org.codehaus.groovy:groovy-all:$groovy_version"
 		compileOnly "org.projectlombok:lombok:$lombok_version"
 		testCompileOnly "org.projectlombok:lombok:$lombok_version"
 

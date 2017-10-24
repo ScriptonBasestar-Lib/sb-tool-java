@@ -14,16 +14,14 @@ import java.util.*;
 
 /**
  * @author chaeeung.e
- * @since 2017-10-23
+ * @since 2017-09-19
  */
-public class SBAuthorizedMachineClaims extends DefaultClaims implements UserDetails {
-
-	//SERVICE_NAME
+public class SBUserClaims extends DefaultClaims implements UserDetails {
 
 	public static final String USER_ID = "uid";
 	public static final String USER_NICKNAME = "nnm";
 	public static final String USER_USERNAME = "unm";
-	//	public static final String USER_COMPONENT = "usc";
+//	public static final String USER_COMPONENT = "usc";
 	public static final String USER_ROLE = "uro";
 	public static final String USER_PRINCIPAL = "upr";
 	//claims에는 포함하지 않고 사이트 파라미터용으로
@@ -41,7 +39,7 @@ public class SBAuthorizedMachineClaims extends DefaultClaims implements UserDeta
 	private final String password = null;
 
 
-	public SBAuthorizedMachineClaims(
+	public SBUserClaims(
 			Long userId,
 			String nickname,
 			String username,
@@ -66,7 +64,7 @@ public class SBAuthorizedMachineClaims extends DefaultClaims implements UserDeta
 		this.authorities = Collections.unmodifiableSet(sortAuthorities(authorities));
 	}
 
-	public SBAuthorizedMachineClaims(
+	public SBUserClaims(
 			Long userId,
 			String nickname,
 			String username,
@@ -90,7 +88,7 @@ public class SBAuthorizedMachineClaims extends DefaultClaims implements UserDeta
 		this.authorities = Collections.EMPTY_SET;
 	}
 
-	public SBAuthorizedMachineClaims(
+	public SBUserClaims(
 			Claims claims,
 			boolean enabled,
 			boolean accountNonExpired,
@@ -186,7 +184,7 @@ public class SBAuthorizedMachineClaims extends DefaultClaims implements UserDeta
 		Assert.notNull(authorities, "Cannot pass a null GrantedAuthority collection");
 		// Ensure array iteration order is predictable (as per
 		// UserDetails.getAuthorities() contract and SEC-717)
-		SortedSet<GrantedAuthority> sortedAuthorities = new TreeSet<>(new SBAuthorizedMachineClaims.AuthorityComparator());
+		SortedSet<GrantedAuthority> sortedAuthorities = new TreeSet<>(new AuthorityComparator());
 
 		for (GrantedAuthority grantedAuthority : authorities) {
 			Assert.notNull(grantedAuthority, "GrantedAuthority list cannot contain any null elements");

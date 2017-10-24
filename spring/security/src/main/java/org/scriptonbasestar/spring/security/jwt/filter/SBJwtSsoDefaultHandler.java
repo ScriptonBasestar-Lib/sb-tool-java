@@ -2,7 +2,7 @@ package org.scriptonbasestar.spring.security.jwt.filter;
 
 import org.scriptonbasestar.spring.security.auth.SBFindUserAuthorityService;
 import org.scriptonbasestar.spring.security.jwt.SBJwtCookieUtil;
-import org.scriptonbasestar.spring.security.jwt.dto.SBAuthorizedUserClaims;
+import org.scriptonbasestar.spring.security.jwt.dto.SBUserClaims;
 import org.springframework.security.core.Authentication;
 
 import javax.servlet.http.HttpServletRequest;
@@ -28,7 +28,7 @@ public class SBJwtSsoDefaultHandler implements SBJwtSsoHandler {
 
 	@Override
 	public void postProcessing(HttpServletRequest request, HttpServletResponse response, Authentication authentication) {
-		SBAuthorizedUserClaims claims = (SBAuthorizedUserClaims) authentication.getPrincipal();
+		SBUserClaims claims = (SBUserClaims) authentication.getPrincipal();
 
 		for (String domain : findUserAuthorityService.findUserComponent(claims.getUserId())) {
 			SBJwtCookieUtil.tokenToCookie(response, domain, serviceName, signingKey, claims);
