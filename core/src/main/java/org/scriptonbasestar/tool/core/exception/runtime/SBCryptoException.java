@@ -1,7 +1,7 @@
 package org.scriptonbasestar.tool.core.exception.runtime;
 
 /**
- * @author chaeeung.e
+ * @author archmagece
  * @since 2017-09-07
  */
 public class SBCryptoException extends SBRuntimeBaseException {

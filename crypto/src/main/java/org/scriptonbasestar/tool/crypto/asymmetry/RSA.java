@@ -1,7 +1,7 @@
 package org.scriptonbasestar.tool.crypto.asymmetry;
 
 /**
-` * @author archmagece
+ * @author archmagece
  * @since 2017-09-07
  */
 public class RSA {

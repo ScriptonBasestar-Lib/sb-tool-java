@@ -5,7 +5,7 @@ import org.junit.Test;
 import org.scriptonbasestar.tool.transfer.dto.CommonLongIdDto;
 
 /**
- * @author chaeeung.e
+ * @author archmagece
  * @since 2017-10-12
  */
 public class GenericCreationJavaTest {
