@@ -4,7 +4,7 @@ import javax.crypto.Cipher
 import javax.crypto.SecretKey
 
 /**
- * @author chaeeung.e
+ * @author archmagece
  * @since 2017-10-19
  */
 class SBCredentialDecoder {

@@ -12,7 +12,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 
 /**
- * @author chaeeung.e
+ * @author archmagece
  * @since 2017-09-07
  */
 public class SymmetryUserType implements UserType, Serializable {

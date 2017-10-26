@@ -8,7 +8,7 @@ import javax.servlet.http.HttpServletRequest
 import javax.servlet.http.HttpServletResponse
 
 /**
- * @author chaeeung.e
+ * @author archmagece
  * @since 2017-10-11
  */
 class GuardByKeySecretFilter : OncePerRequestFilter() {

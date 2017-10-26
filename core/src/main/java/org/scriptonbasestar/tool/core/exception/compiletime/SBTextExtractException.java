@@ -1,7 +1,7 @@
 package org.scriptonbasestar.tool.core.exception.compiletime;
 
 /**
- * @author chaeeung.e
+ * @author archmagece
  * @since 2017-09-27
  */
 public class SBTextExtractException extends SBBaseException {

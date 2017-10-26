@@ -13,7 +13,7 @@ import java.io.Serializable;
 import java.util.*;
 
 /**
- * @author chaeeung.e
+ * @author archmagece
  * @since 2017-09-19
  */
 public class SBAuthorizedUserClaims extends DefaultClaims implements UserDetails {

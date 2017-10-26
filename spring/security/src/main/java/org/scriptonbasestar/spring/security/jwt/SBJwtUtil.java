@@ -7,7 +7,7 @@ import lombok.experimental.UtilityClass;
 import org.scriptonbasestar.spring.security.jwt.dto.SBAuthorizedUserClaims;
 
 /**
- * @author chaeeung.e
+ * @author archmagece
  * @since 2017-09-19
  */
 @UtilityClass

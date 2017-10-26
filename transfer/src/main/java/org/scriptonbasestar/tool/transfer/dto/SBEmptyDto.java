@@ -6,7 +6,7 @@ import lombok.NoArgsConstructor;
 import java.io.Serializable;
 
 /**
- * @author chaeeung.e
+ * @author archmagece
  * @since 2017-09-06
  */
 public class SBEmptyDto implements Serializable {

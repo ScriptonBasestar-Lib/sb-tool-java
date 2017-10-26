@@ -7,7 +7,7 @@ import javax.servlet.http.HttpServletRequest;
 import java.util.Collection;
 
 /**
- * @author chaeeung.e
+ * @author archmagece
  * @since 2017-10-12
  */
 @UtilityClass

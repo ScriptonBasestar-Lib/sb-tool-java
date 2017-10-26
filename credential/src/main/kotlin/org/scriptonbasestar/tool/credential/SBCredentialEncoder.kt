@@ -5,7 +5,7 @@ import javax.crypto.KeyGenerator
 import javax.crypto.SecretKey
 
 /**
- * @author chaeeung.e
+ * @author archmagece
  * @since 2017-10-19
  * 기본옵션 des + base64
  */

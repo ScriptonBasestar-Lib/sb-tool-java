@@ -11,7 +11,7 @@ import org.springframework.security.core.GrantedAuthority
 import org.springframework.security.core.authority.SimpleGrantedAuthority
 
 /**
- * @author chaeeung.e
+ * @author archmagece
  * @since 2017-09-28
  */
 class SBUserClaimsTest {
