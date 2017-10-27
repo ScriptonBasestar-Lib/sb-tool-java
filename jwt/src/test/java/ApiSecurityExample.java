@@ -29,23 +29,21 @@ public class ApiSecurityExample {
 			System.out.println(result_payload);
 
 			System.out.println("=============== signature ===============");
-			String result_signature = hmacDecoder(signature);
+			String result_signature = hmacDecoder(secret);
 			System.out.println(result_signature);
-			String result_signature2 = new String(Base64.decodeBase64(signature));
-			System.out.println(result_signature2);
+
+			System.out.println(result_signature.equals(signature));
 		}
 		catch (Exception e){
 			System.out.println("Error");
 		}
 	}
 
-	public static String hmacDecoder(String secret, String message) throws NoSuchAlgorithmException, InvalidKeyException {
+	static String hmacDecoder(String secret) throws NoSuchAlgorithmException, InvalidKeyException {
 		Mac sha256_HMAC = Mac.getInstance("HmacSHA256");
 		SecretKeySpec secret_key = new SecretKeySpec(secret.getBytes(), "HmacSHA256");
 		sha256_HMAC.init(secret_key);
 
-		String hash = Base64.encodeBase64String(sha256_HMAC.doFinal(message.getBytes()));
-		System.out.println(hash);
-		return hash;
+		return Base64.encodeBase64String(sha256_HMAC.doFinal(String.format("%s.%s", header, payload).getBytes()));
 	}
 }
