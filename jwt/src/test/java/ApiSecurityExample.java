@@ -21,8 +21,10 @@ public class ApiSecurityExample {
 	public static void main(String[] args) {
 		try {
 			System.out.println("=============== header ===============");
-			String result_header = new String(Base64.decodeBase64(header));
-			System.out.println(result_header);
+			String result_header1 = new String(Base64.decodeBase64(header));
+			String result_header2 = new String(java.util.Base64.getDecoder().decode(header));
+			System.out.println(result_header1);
+			System.out.println(result_header2);
 
 			System.out.println("=============== result ===============");
 			String result_payload = new String(Base64.decodeBase64(payload));
@@ -35,7 +37,7 @@ public class ApiSecurityExample {
 			System.out.println(result_signature.equals(signature));
 		}
 		catch (Exception e){
-			System.out.println("Error");
+			System.err.println("Error");
 		}
 	}
 
