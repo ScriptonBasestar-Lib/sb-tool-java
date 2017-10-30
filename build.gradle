@@ -2,7 +2,7 @@ buildscript {
 	repositories {
 		jcenter()
 		maven {
-			url "https://plugins.gradle.org/m2/"
+			url 'https://plugins.gradle.org/m2/'
 		}
 	}
 	dependencies {
@@ -25,7 +25,7 @@ allprojects {
 	apply plugin: 'idea'
 
 	[compileJava, compileTestJava]*.options*.encoding = 'UTF-8'
-	group "org.scriptonbasestar.tool"
+	group 'org.scriptonbasestar.tool'
 	version = project_version
 	sourceCompatibility = java_version
 	targetCompatibility = java_version
@@ -53,7 +53,7 @@ allprojects {
 			println "${project.name}"
 		}
 	}
-	task "create-dirs" {
+	task 'create-dirs' {
 		doLast {
 			sourceSets*.java.srcDirs*.each { it.mkdirs() }
 			sourceSets*.resources.srcDirs*.each { it.mkdirs() }
@@ -66,7 +66,7 @@ allprojects {
 		mavenCentral()
 		jcenter()
 		maven {
-			url  "https://dl.bintray.com/archmagece/jvm-repo"
+			url 'https://dl.bintray.com/archmagece/jvm-repo'
 		}
 		mavenLocal()
 	}
@@ -113,21 +113,21 @@ allprojects {
 	def pomConfig = {
 		licenses {
 			license {
-				name "The Apache Software License, Version 2.0"
-				url "http://www.apache.org/licenses/LICENSE-2.0.txt"
-				distribution "repo"
+				name 'The Apache Software License, Version 2.0'
+				url 'http://www.apache.org/licenses/LICENSE-2.0.txt'
+				distribution 'repo'
 			}
 		}
 		developers {
 			developer {
-				id "archmagece"
-				name "archmagece"
-				email "archmagece@gmail.com"
+				id 'archmagece'
+				name 'archmagece'
+				email 'archmagece@gmail.com'
 			}
 		}
 
 		scm {
-			url "https://github.com/solarconnect/solcon-file-service"
+			url 'https://github.com/solarconnect/solcon-file-service'
 		}
 	}
 
@@ -161,7 +161,7 @@ allprojects {
 		pkg {
 			repo = 'jvm-repo'
 			name = 'sb-tool-jvm'
-			userOrg = "archmagece"
+			userOrg = 'archmagece'
 			licenses = ['Apache-2.0']
 			vcsUrl = 'https://github.com/ScriptonBasestar-Lib/sb-tool-jvm.git'
 			version {
