@@ -1,7 +1,7 @@
 package org.scriptonbasestar.spring.security
 
 /**
- * @author chaeeung.e
+ * @author archmagece
  * @since 2017-10-10
  */
 class SBBearerTest {

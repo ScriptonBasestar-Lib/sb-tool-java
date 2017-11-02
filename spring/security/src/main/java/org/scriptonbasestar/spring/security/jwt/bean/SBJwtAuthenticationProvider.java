@@ -6,7 +6,7 @@ import org.springframework.security.core.Authentication;
 import org.springframework.security.core.AuthenticationException;
 
 /**
- * @author chaeeung.e
+ * @author archmagece
  * @since 2017-09-27
  */
 public class SBJwtAuthenticationProvider implements AuthenticationProvider {

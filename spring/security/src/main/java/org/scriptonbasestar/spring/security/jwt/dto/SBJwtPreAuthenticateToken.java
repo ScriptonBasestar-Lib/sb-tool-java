@@ -3,7 +3,7 @@ package org.scriptonbasestar.spring.security.jwt.dto;
 import org.springframework.security.authentication.AbstractAuthenticationToken;
 
 /**
- * @author chaeeung.e
+ * @author archmagece
  * @since 2017-09-26
  */
 public class SBJwtPreAuthenticateToken extends AbstractAuthenticationToken {

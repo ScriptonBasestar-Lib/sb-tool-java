@@ -6,7 +6,7 @@ import org.springframework.security.core.GrantedAuthority;
 import java.util.Collection;
 
 /**
- * @author chaeeung.e
+ * @author archmagece
  * @since 2017-09-21
  */
 public class SBJwtAuthenticationToken extends AbstractAuthenticationToken {

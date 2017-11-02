@@ -1,7 +1,7 @@
 package org.scriptonbasestar.tool.crypto.password;
 
 /**
- * @author chaeeung.e
+ * @author archmagece
  * @since 2017-09-07
  */
 public class Bcrypt implements SBPasswordEncoder{

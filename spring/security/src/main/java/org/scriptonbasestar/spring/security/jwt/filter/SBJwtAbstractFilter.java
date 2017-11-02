@@ -21,7 +21,7 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
 /**
- * @author chaeeung.e
+ * @author archmagece
  * @since 2017-09-27
  */
 public abstract class SBJwtAbstractFilter extends OncePerRequestFilter {

@@ -9,7 +9,7 @@ import org.springframework.security.util.SimpleMethodInvocation
 import java.lang.reflect.Method
 
 /**
- * @author chaeeung.e
+ * @author archmagece
  * @since 2017-10-16
  */
 class SecurityCheckService(private val expressionHandler: MethodSecurityExpressionHandler) {

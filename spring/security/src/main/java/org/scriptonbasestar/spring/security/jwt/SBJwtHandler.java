@@ -4,7 +4,7 @@ import io.jsonwebtoken.*;
 import org.scriptonbasestar.spring.security.jwt.dto.SBAuthorizedUserClaims;
 
 /**
- * @author chaeeung.e
+ * @author archmagece
  * @since 2017-09-21
  */
 public class SBJwtHandler implements JwtHandler<SBAuthorizedUserClaims> {

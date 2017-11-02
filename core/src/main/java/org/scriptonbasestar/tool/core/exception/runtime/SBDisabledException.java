@@ -1,7 +1,7 @@
 package org.scriptonbasestar.tool.core.exception.runtime;
 
 /**
- * @author chaeeung.e
+ * @author archmagece
  * @since 2017-09-07
  *
  * 사용하면 안되는것들..

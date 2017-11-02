@@ -1,7 +1,7 @@
 package org.scriptonbasestar.spring.security.jwt.finder;
 
 /**
- * @author chaeeung.e
+ * @author archmagece
  * @since 2017-10-12
  */
 public interface SBConsumerFinderService {

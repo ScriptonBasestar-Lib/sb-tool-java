@@ -6,7 +6,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 /**
- * @author chaeeung.e
+ * @author archmagece
  * @since 2017-09-19
  */
 public class SBJwtAuthHeaderFilter extends SBJwtAbstractFilter {

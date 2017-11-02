@@ -13,7 +13,7 @@ import java.sql.SQLException;
 import java.sql.Types;
 
 /**
- * @author chaeeung.e
+ * @author archmagece
  * @since 2017-09-20
  */
 public class BCryptUserType implements UserType, Serializable {

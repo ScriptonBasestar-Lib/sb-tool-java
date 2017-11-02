@@ -5,7 +5,7 @@ import org.junit.Test
 import javax.crypto.KeyGenerator
 
 /**
- * @author chaeeung.e
+ * @author archmagece
  * @since 2017-10-19
  */
 class SCCredentialTest {

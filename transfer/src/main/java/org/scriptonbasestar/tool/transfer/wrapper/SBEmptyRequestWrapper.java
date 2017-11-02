@@ -3,7 +3,7 @@ package org.scriptonbasestar.tool.transfer.wrapper;
 import lombok.Data;
 
 /**
- * @author chaeeung.e
+ * @author archmagece
  * @since 2017-09-06
  */
 @Data

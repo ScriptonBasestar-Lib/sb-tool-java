@@ -1,7 +1,7 @@
 package org.scriptonbasestar.tool.crypto.encoding;
 
 /**
- * @author chaeeung.e
+ * @author archmagece
  * @since 2017-09-07
  *
  * byte[] => Base64, HexDecimal
