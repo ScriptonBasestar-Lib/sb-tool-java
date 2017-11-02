@@ -1,5 +1,7 @@
 package org.scriptonbasestar.tool.collection.builder;
 
+import org.scriptonbasestar.tool.core.reflection.ReflectionUtil;
+
 import java.util.HashMap;
 import java.util.Map;
 
@@ -37,6 +39,11 @@ public final class MapBuilder<K, V> {
 		this.map.putAll(map);
 		return this;
 	}
+
+//	public MapBuilder<K, V> add(Object object) {
+//		ReflectionUtil
+//		return this;
+//	}
 
 	public Map<K, V> build() {
 		return this.map;
