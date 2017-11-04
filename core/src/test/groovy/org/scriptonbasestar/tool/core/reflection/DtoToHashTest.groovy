@@ -20,8 +20,8 @@ class DtoToHashTest {
 		animal.name = "고양이"
 		animal.height = 150
 		animal.weight = 30
-		println(ReflectionUtil.fieldNames(animal))
-		println(ReflectionUtil.mappingFieldDto2Map(animal))
+		println(ReflectionUtil.extractFieldNames(animal))
+		println(ReflectionUtil.mappingDtoField2Map(animal))
 	}
 
 	@Test
@@ -30,7 +30,7 @@ class DtoToHashTest {
 		animal.name = "고양이"
 		animal.height = 150
 		animal.weight = 30
-		println(ReflectionUtil.getterNames(animal))
+		println(ReflectionUtil.extractGetterNames(animal))
 		println(ReflectionUtil.mappingGetterDto2Map(animal))
 	}
 }
