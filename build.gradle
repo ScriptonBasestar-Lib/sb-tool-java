@@ -153,7 +153,7 @@ allprojects {
 		pkg {
 			repo = 'jvm-repo'
 			name = 'sb-tool-jvm'
-            userOrg = 'archmagece'
+			userOrg = 'archmagece'
 			licenses = ['Apache-2.0']
 			vcsUrl = 'https://github.com/ScriptonBasestar-Lib/sb-tool-jvm.git'
 			version {
