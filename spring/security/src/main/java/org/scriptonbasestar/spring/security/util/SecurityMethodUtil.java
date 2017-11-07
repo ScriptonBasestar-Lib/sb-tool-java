@@ -1,4 +1,4 @@
-package org.scriptonbasestar.spring.security.jwt.util;
+package org.scriptonbasestar.spring.security.util;
 
 import lombok.experimental.UtilityClass;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
