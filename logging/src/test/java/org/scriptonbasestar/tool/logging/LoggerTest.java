@@ -12,29 +12,29 @@ public class LoggerTest {
 
 	@Test
 	public void warn_test(){
-		Logger.setLogLevel(LogLevelType.WARN);
+		ConsoleLogger.setLogLevel(LogLevelType.WARN);
 		loggerPrint();
 	}
 
 	@Test
 	public void info_test(){
-		Logger.setLogLevel(LogLevelType.INFO);
+		ConsoleLogger.setLogLevel(LogLevelType.INFO);
 		loggerPrint();
 	}
 
 	@Test
 	public void debug_test(){
-		Logger.setLogLevel(LogLevelType.DEBUG);
+		ConsoleLogger.setLogLevel(LogLevelType.DEBUG);
 		loggerPrint();
 	}
 
 	private void loggerPrint(){
-		Logger.fatal("fatal");
-		Logger.error("error");
-		Logger.warn("warn");
-		Logger.info("info");
-		Logger.debug("debug");
-		Logger.trace("trace");
+		ConsoleLogger.fatal("fatal");
+		ConsoleLogger.error("error");
+		ConsoleLogger.warn("warn");
+		ConsoleLogger.info("info");
+		ConsoleLogger.debug("debug");
+		ConsoleLogger.trace("trace");
 	}
 
 }
