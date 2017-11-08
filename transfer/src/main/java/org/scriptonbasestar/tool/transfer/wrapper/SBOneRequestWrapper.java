@@ -7,7 +7,7 @@ import lombok.Data;
  * @since 2017-09-06
  */
 @Data
-public class SBEmptyRequestWrapper {
+public class SBOneRequestWrapper {
 	private String lang;
 	private String nonce;
 	private Long requestAt;
