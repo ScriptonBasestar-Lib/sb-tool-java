@@ -7,12 +7,13 @@ import java.io.PrintWriter;
  * @author archmagece
  * @since 2017-01-22 10
  */
-public class Logger {
+public class ConsoleLogger {
 
 	private static LogLevelType logLevel;
 	private static String LOG_FORMAT = "%s ";
+
 	public static void setLogLevel(LogLevelType logLevel) {
-		Logger.logLevel = logLevel;
+		ConsoleLogger.logLevel = logLevel;
 	}
 
 	private static PrintWriter printWriter = new PrintWriter(new OutputStreamWriter(System.out));
@@ -73,7 +74,7 @@ public class Logger {
 
 
 	private static void write(LogLevelType logLevel, String message) {
-		if (Logger.logLevel.ordinal() >= logLevel.ordinal()) {
+		if (ConsoleLogger.logLevel.ordinal() >= logLevel.ordinal()) {
 			synchronized (printWriter) {
 				printWriter.format(LOG_FORMAT, logLevel);
 				printWriter.write(message);
@@ -84,7 +85,7 @@ public class Logger {
 	}
 
 	private static void format(LogLevelType logLevel, String message, Object... args) {
-		if (Logger.logLevel.ordinal() >= logLevel.ordinal()) {
+		if (ConsoleLogger.logLevel.ordinal() >= logLevel.ordinal()) {
 
 		}
 		synchronized (printWriter) {
@@ -94,7 +95,6 @@ public class Logger {
 			printWriter.flush();
 		}
 	}
-
 
 
 	public static void destructor() {
