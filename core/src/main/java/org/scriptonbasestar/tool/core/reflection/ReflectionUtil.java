@@ -166,18 +166,24 @@ public class ReflectionUtil {
 
 
 	public static Map<String, Object> mappingDtoField2Map(Object source){
-		Map<String, Object> result = new HashMap<>();
+		Map<String, Object> resultMap = new HashMap<>();
+		return mappingDtoField2Map(source, resultMap);
+	}
+	public static Map<String, Object> mappingDtoField2Map(Object source, Map<String,Object> resultMap){
 		for(String fieldName : extractFieldNames(source)){
-			result.put(fieldName, getValue(source, fieldName));
+			resultMap.put(fieldName, getValue(source, fieldName));
 		}
-		return result;
+		return resultMap;
 	}
 
 	public static Map<String, Object> mappingGetterDto2Map(Object source){
-		Map<String, Object> result = new HashMap<>();
+		Map<String, Object> resultMap = new HashMap<>();
+		return mappingGetterDto2Map(source, resultMap);
+	}
+	public static Map<String, Object> mappingGetterDto2Map(Object source, Map<String, Object> resultMap){
 		for(Method m : extractGetterMethods(source)){
 			try {
-				result.put(createFieldName(m.getName()), m.invoke(source));
+				resultMap.put(createFieldName(m.getName()), m.invoke(source));
 			} catch (IllegalAccessException e) {
 				e.printStackTrace();
 				throw new SBReflectionException("NoSuchFieldException is occurred");
@@ -186,7 +192,7 @@ public class ReflectionUtil {
 				throw new SBReflectionException("NoSuchFieldException is occurred");
 			}
 		}
-		return result;
+		return resultMap;
 	}
 //	public static Map<String, Object> mappingGetterDto2Map(Object source){
 //		Method[] methods = source.getClass().getMethods();
