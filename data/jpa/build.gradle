@@ -7,16 +7,17 @@ dependencies {
 	}
 
 	compile "org.apache.commons:commons-lang3:$commons_lang3_version"
+	compile "org.jodd:jodd-core:$jodd_core_version"
 
-	compile("org.hibernate:hibernate-core:$hibernate_version")
-	compile("org.hibernate:hibernate-entitymanager:$hibernate_version")
-	compile("org.hibernate:hibernate-envers:$hibernate_version")
+	compile "org.hibernate:hibernate-core:$hibernate_version"
+	compile "org.hibernate:hibernate-entitymanager:$hibernate_version"
+	compile "org.hibernate:hibernate-envers:$hibernate_version"
 
 	compile "org.projectlombok:lombok:$lombok_version"
 	//querydsl
-	compile ("com.querydsl:querydsl-core:$querydsl_version")
-	compile ("com.querydsl:querydsl-apt:$querydsl_version")
-	compile ("com.querydsl:querydsl-jpa:$querydsl_version")
+	compile "com.querydsl:querydsl-core:$querydsl_version"
+	compile "com.querydsl:querydsl-apt:$querydsl_version"
+	compile "com.querydsl:querydsl-jpa:$querydsl_version"
 }
 
 

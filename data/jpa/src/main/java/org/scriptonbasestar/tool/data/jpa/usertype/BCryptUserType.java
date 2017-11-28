@@ -1,53 +1,72 @@
 package org.scriptonbasestar.tool.data.jpa.usertype;
 
+import jodd.util.BCrypt;
 import org.hibernate.HibernateException;
 import org.hibernate.engine.spi.SharedSessionContractImplementor;
+import org.hibernate.usertype.ParameterizedType;
 import org.hibernate.usertype.UserType;
-import org.scriptonbasestar.tool.crypto.password.Bcrypt;
-import org.scriptonbasestar.tool.crypto.password.SBPasswordEncoder;
 
 import java.io.Serializable;
+import java.nio.charset.Charset;
+import java.nio.charset.IllegalCharsetNameException;
+import java.nio.charset.UnsupportedCharsetException;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Types;
+import java.util.Properties;
+import java.util.regex.Pattern;
 
 /**
  * @author archmagece
  * @since 2017-09-20
  */
-public class BCryptUserType implements UserType, Serializable {
+public class BCryptUserType implements UserType, ParameterizedType {
 
-	private final SBPasswordEncoder encoder;
+	public static final String TYPE = "kr.solarconnect.domain.hibernate.BCryptUserType";
 
-	private static final int type = Types.VARCHAR;
+	public static final String PARAM_CHARSET = "charset";
 
-	public BCryptUserType(){
-		this(new Bcrypt());
+	public static final Charset DEFAULT_CHARSET = Charset.forName("UTF8");
+
+	public static final int SQL_TYPE = Types.VARCHAR;
+
+	public static final Pattern BCRYPTED_PASSWORD_PATTERN = Pattern.compile("^\\$2a\\$\\d{2}\\$.*");
+
+	protected Charset charset;
+
+	public void setParameterValues(final Properties properties) {
+		if (properties != null) {
+			String tmp = properties.getProperty(PARAM_CHARSET);
+			if (tmp != null) {
+				try {
+					charset = Charset.forName(tmp);
+				} catch (IllegalCharsetNameException x) {
+					throw new HibernateException("Unsupported character set " + tmp + ": " + x.getMessage(), x);
+				} catch (UnsupportedCharsetException x) {
+					throw new HibernateException("Unsupported character set " + tmp + ": " + x.getMessage(), x);
+				}
+			}
+		}
+		if (charset == null) {
+			charset = DEFAULT_CHARSET;
+		}
 	}
 
-	public BCryptUserType(SBPasswordEncoder encoder){
-		this.encoder = encoder;
-	}
-
-	@Override
 	public int[] sqlTypes() {
-		return new int[]{Types.VARCHAR};
+		return new int[] {SQL_TYPE};
 	}
 
-	@Override
 	public Class returnedClass() {
 		return String.class;
 	}
 
-	@Override
-	public boolean equals(Object x, Object y) throws HibernateException {
-		return x.equals(y);
+	public boolean equals(final Object o, final Object o1) throws HibernateException {
+		return o == o1 || (o != null && o.equals(o1));
 	}
 
-	@Override
-	public int hashCode(Object x) throws HibernateException {
-		return x.hashCode();
+	public int hashCode(final Object o) throws HibernateException {
+		return o.hashCode();
 	}
 
 	@Override
@@ -58,35 +77,32 @@ public class BCryptUserType implements UserType, Serializable {
 
 	@Override
 	public void nullSafeSet(PreparedStatement st, Object value, int index, SharedSessionContractImplementor session) throws HibernateException, SQLException {
-		if(value==null){
-			st.setNull(index, type);
+		if (value == null) {
+			st.setNull(index, SQL_TYPE);
+		} else if (BCRYPTED_PASSWORD_PATTERN.matcher(value.toString()).matches()) {
+			st.setString(index, value.toString());
 		} else {
-			st.setString(index, encoder.encrypt(value.toString()));
+			st.setString(index, BCrypt.hashpw(value.toString(), BCrypt.gensalt()));
 		}
 	}
 
-	@Override
-	public Object deepCopy(Object value) throws HibernateException {
-		return value;
+	public Object deepCopy(final Object o) throws HibernateException {
+		return o;
 	}
 
-	@Override
 	public boolean isMutable() {
 		return false;
 	}
 
-	@Override
-	public Serializable disassemble(Object value) throws HibernateException {
-		return (Serializable) value;
+	public Serializable disassemble(final Object o) throws HibernateException {
+		return (Serializable)o;
 	}
 
-	@Override
-	public Object assemble(Serializable cached, Object owner) throws HibernateException {
-		return cached;
+	public Object assemble(final Serializable serializable, final Object o) throws HibernateException {
+		return serializable;
 	}
 
-	@Override
-	public Object replace(Object original, Object target, Object owner) throws HibernateException {
+	public Object replace(final Object original, final Object target, final Object owner) throws HibernateException {
 		return original;
 	}
 }
