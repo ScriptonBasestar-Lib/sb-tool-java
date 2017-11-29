@@ -23,7 +23,7 @@ import java.util.regex.Pattern;
  */
 public class BCryptUserType implements UserType, ParameterizedType {
 
-	public static final String TYPE = "kr.solarconnect.domain.hibernate.BCryptUserType";
+	public static final String TYPE = "org.scriptonbasestar.tool.data.jpa.usertype.BCryptUserType";
 
 	public static final String PARAM_CHARSET = "charset";
 
@@ -35,9 +35,9 @@ public class BCryptUserType implements UserType, ParameterizedType {
 
 	protected Charset charset;
 
-	public void setParameterValues(final Properties properties) {
-		if (properties != null) {
-			String tmp = properties.getProperty(PARAM_CHARSET);
+	public void setParameterValues(final Properties parameters) {
+		if (parameters != null) {
+			String tmp = parameters.getProperty(PARAM_CHARSET);
 			if (tmp != null) {
 				try {
 					charset = Charset.forName(tmp);

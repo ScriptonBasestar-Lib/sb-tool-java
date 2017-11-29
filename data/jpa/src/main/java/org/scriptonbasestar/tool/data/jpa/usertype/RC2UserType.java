@@ -24,9 +24,9 @@ import java.util.Properties;
  * @author archmagece
  * @since 2017-09-07
  */
-public class SymmetryUserType implements UserType, ParameterizedType {
+public class RC2UserType implements UserType, ParameterizedType {
 
-	public static final String TYPE = "org.scriptonbasestar.tool.data.jpa.usertype.SymmetryUserType";
+	public static final String TYPE = "org.scriptonbasestar.tool.data.jpa.usertype.RC2UserType";
 
 	public static final String PARAM_CHARSET = "charset";
 
