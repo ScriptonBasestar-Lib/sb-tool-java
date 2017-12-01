@@ -23,7 +23,7 @@ import java.util.Date;
 @Getter
 @Setter
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
-public abstract class SBWorkLogBase extends SBLogEntityBase {
+public abstract class SBWorkLogBase extends SBLogEntityRootBase {
 
 	protected SBWorkLogBase(Date startTime, Date endTime, Long itemCount, boolean isSuccess) {
 		this.startTime = startTime;
