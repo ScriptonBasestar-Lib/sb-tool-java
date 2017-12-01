@@ -90,7 +90,7 @@ public class SymmetryUserType implements UserType, ParameterizedType {
 	@Override
 	public void nullSafeSet(PreparedStatement st, Object value, int index, SharedSessionContractImplementor session) throws HibernateException, SQLException {
 		try {
-			StringType.INSTANCE.nullSafeSet(st, byteEncryptor.encrypt(((String) value).getBytes()), index, session);
+			StringType.INSTANCE.nullSafeSet(st,StringUtils.newStringUtf8(byteEncryptor.encrypt(((String) value).getBytes())), index, session);
 		} catch (Exception ex) {
 			throw new HibernateException("암호화를 수행하는데 실패했습니다.", ex);
 		}

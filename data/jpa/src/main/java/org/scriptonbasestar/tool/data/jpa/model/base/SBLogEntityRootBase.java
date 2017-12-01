@@ -4,44 +4,43 @@ import com.google.common.base.MoreObjects;
 import lombok.AccessLevel;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
+import lombok.Setter;
 import org.hibernate.annotations.DynamicInsert;
 import org.hibernate.annotations.DynamicUpdate;
 
 import javax.persistence.*;
+import javax.validation.constraints.Size;
 import java.io.Serializable;
 import java.util.Date;
 
-/**
- * @author archmagece
- * @since 2014. 7. 30.
- */
 @Getter
 @MappedSuperclass
 @DynamicInsert
 @DynamicUpdate
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
-public abstract class SBEntityBase implements Serializable {
+public abstract class SBLogEntityRootBase implements Serializable {
 
-	//	@Temporal(TemporalType.TIMESTAMP)
-	@Column(nullable = false, insertable = true, updatable = false)
+	@Id
+	@GeneratedValue(strategy = GenerationType.AUTO)
+//	@Transient
+	private Long id;
+
+	@Column(nullable = false, updatable = false)
 	@Temporal(TemporalType.DATE)
 	private Date createdAt;
 
-	//	@Temporal(TemporalType.TIMESTAMP)
-	@Column(nullable = false, insertable = true, updatable = true)
-	@Temporal(TemporalType.DATE)
-	private Date updatedAt;
+	/**
+	 * 설명
+	 */
+	@Setter
+	@Size(min = 2, max = 2000)
+	@Column(length = 2000)
+	protected String description;
 
 
 	@PrePersist
 	protected void onCreate() {
-		this.createdAt = this.updatedAt = new Date();
-//		this.active = true;
-	}
-
-	@PreUpdate
-	protected void onUpdate() {
-		this.updatedAt = new Date();
+		this.createdAt = new Date();
 	}
 
 	@Override
