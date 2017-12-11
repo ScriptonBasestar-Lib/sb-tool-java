@@ -37,8 +37,9 @@ public class SBPageResponseWrapper<RESPONSE> {
 	}
 
 	private boolean success = true;
-	public SBPageResponseWrapper<RESPONSE> success(boolean success) {
-		this.success = success;
+	public SBPageResponseWrapper<RESPONSE> success(Collection<RESPONSE> data) {
+		this.data = data;
+		this.success = true;
 		return this;
 	}
 	public SBPageResponseWrapper<RESPONSE> fail() {
@@ -67,15 +68,15 @@ public class SBPageResponseWrapper<RESPONSE> {
 	protected Set<Map<String,String>> validationErrorSet = new HashSet<>();
 
 	private Collection<RESPONSE> data;
+	private SBPageDto page;
 	public SBPageResponseWrapper<RESPONSE> data(Collection<RESPONSE> data){
 		this.data = data;
+		this.page = new SBPageDto();
 		return this;
 	}
-
-	private SBPageDto page;
-	public SBPageResponseWrapper<RESPONSE> data(SBPageDto data){
+	public SBPageResponseWrapper<RESPONSE> data(Collection<RESPONSE> data, SBPageDto page){
+		this.data = data;
 		this.page = page;
 		return this;
 	}
-
 }

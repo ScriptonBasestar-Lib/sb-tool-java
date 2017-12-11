@@ -35,8 +35,8 @@ public class SBEmptyResponseWrapper {
 	}
 
 	private boolean success = true;
-	public SBEmptyResponseWrapper success(boolean success) {
-		this.success = success;
+	public SBEmptyResponseWrapper success() {
+		this.success = true;
 		return this;
 	}
 	public SBEmptyResponseWrapper fail() {
@@ -50,6 +50,16 @@ public class SBEmptyResponseWrapper {
 		return this;
 	}
 
+	/**
+	 * 1000: success
+	 * error
+	 * 3000: validation
+	 * 4000: input
+	 * 5000: server
+	 * 6000: database
+	 * 7000: network
+	 * 9000: unknown
+	 */
 	private String code;
 	public SBEmptyResponseWrapper code(String code){
 		this.code = code;
