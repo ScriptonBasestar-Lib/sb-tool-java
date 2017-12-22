@@ -28,20 +28,24 @@ public class ResourceReader {
 	 * @return
 	 * @throws IOException
 	 */
-	public static String resourcePath(Object clazz, String filePathToAppend) throws IOException {
+	public static String resourcePath(Object clazz, String filePathToAppend) {
 		return resourcePath(clazz.getClass(), filePathToAppend);
 	}
 
-	public static String resourcePath(Class<?> clazz, String filePathToAppend) throws IOException {
+	public static String resourcePath(Class<?> clazz, String filePathToAppend) {
 		return new File(clazz.getProtectionDomain().getCodeSource().getLocation().getPath(), filePathToAppend).getPath();
 	}
 
-	public static InputStream resourceInputStream(Class<?> clazz, String filePathToAppend) throws IOException {
+//	public static InputStream resourceInputStream(Class<?> clazz, String filePathToAppend) throws IOException {
+//
+//		String resourcePath = clazz.getProtectionDomain().getCodeSource().getLocation().getPath() + filePathToAppend;
+//		File file = new File(resourcePath);
+//		InputStream inputStream = new BufferedInputStream(new FileInputStream(file));
+//		return inputStream;
+//	}
 
-		String resourcePath = clazz.getProtectionDomain().getCodeSource().getLocation().getPath() + filePathToAppend;
-		File file = new File(resourcePath);
-		InputStream inputStream = new BufferedInputStream(new FileInputStream(file));
-		return inputStream;
+	public static InputStream resourceInputStream(Class<?> clazz, String filePathToAppend) throws IOException {
+		return clazz.getClassLoader().getResourceAsStream(filePathToAppend);
 	}
 
 	/**
