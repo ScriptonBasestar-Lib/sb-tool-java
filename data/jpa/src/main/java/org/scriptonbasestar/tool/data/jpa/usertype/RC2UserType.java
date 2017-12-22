@@ -1,6 +1,7 @@
 package org.scriptonbasestar.tool.data.jpa.usertype;
 
 import com.google.common.base.Objects;
+import org.apache.commons.codec.binary.Hex;
 import org.apache.commons.codec.binary.StringUtils;
 import org.hibernate.HibernateException;
 import org.hibernate.engine.spi.SharedSessionContractImplementor;
@@ -81,6 +82,9 @@ public class RC2UserType implements UserType, ParameterizedType {
 	public Object nullSafeGet(ResultSet rs, String[] names, SharedSessionContractImplementor session, Object owner) throws HibernateException, SQLException {
 		try {
 			String hexStr = StringType.INSTANCE.nullSafeGet(rs, names[0], session);
+			if(hexStr==null){
+				return null;
+			}
 			return StringUtils.newStringUtf8(byteEncryptor.decrypt(hexStr.getBytes()));
 		} catch (Exception ex) {
 			throw new HibernateException("암호화를 복원하는데 실패했습니다.", ex);
@@ -90,7 +94,11 @@ public class RC2UserType implements UserType, ParameterizedType {
 	@Override
 	public void nullSafeSet(PreparedStatement st, Object value, int index, SharedSessionContractImplementor session) throws HibernateException, SQLException {
 		try {
-			StringType.INSTANCE.nullSafeSet(st, byteEncryptor.encrypt(((String) value).getBytes()), index, session);
+			if(value==null){
+				StringType.INSTANCE.nullSafeSet(st, null, index, session);
+			}else{
+				StringType.INSTANCE.nullSafeSet(st, Hex.encodeHexString(byteEncryptor.encrypt(((String) value).getBytes("UTF-8"))), index, session);
+			}
 		} catch (Exception ex) {
 			throw new HibernateException("암호화를 수행하는데 실패했습니다.", ex);
 		}
