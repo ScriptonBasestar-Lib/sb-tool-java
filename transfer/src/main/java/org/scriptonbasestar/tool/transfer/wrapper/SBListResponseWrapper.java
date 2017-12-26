@@ -36,6 +36,10 @@ public class SBListResponseWrapper<RESPONSE> {
 	}
 
 	private boolean success = true;
+	public SBListResponseWrapper<RESPONSE> success() {
+		this.success = true;
+		return this;
+	}
 	public SBListResponseWrapper<RESPONSE> success(Collection<RESPONSE> data) {
 		this.data = data;
 		this.success = true;
