@@ -33,7 +33,7 @@ allprojects {
 	apply plugin: 'idea'
 
 	[compileJava, compileTestJava]*.options*.encoding = 'UTF-8'
-	group project_group
+	group = project_group
 	version = project_version
 	sourceCompatibility = java_version
 	targetCompatibility = java_version

@@ -15,8 +15,8 @@ import java.util.Set;
 @EqualsAndHashCode
 public class SBOneResponseWrapper<RESPONSE> {
 
-	public static SBOneResponseWrapper create(){
-		return new SBOneResponseWrapper<>();
+	public static <RESPONSE>SBOneResponseWrapper <RESPONSE>create(){
+		return new SBOneResponseWrapper<RESPONSE>();
 	}
 
 //	@Setter(AccessLevel.PROTECTED)
