@@ -16,7 +16,7 @@ class WrapperTest {
 		println(wrapper1_1)
 		println(wrapper1_2)
 
-		var wrapper2_1 = SBListResponseWrapper.create().data(SetBuilder.create<Long>().add(3).build()).success()
+		var wrapper2_1 = SBListResponseWrapper.create<Long>().data(SetBuilder.create<Long>().add(3).build()).success()
 //		var wrapper2_2 :SBListResponseWrapper<String> = SBListResponseWrapper.create().data(SetBuilder.create<String>().add("ddd").build()).success(true)
 		println(wrapper2_1)
 //		println(wrapper2_2)

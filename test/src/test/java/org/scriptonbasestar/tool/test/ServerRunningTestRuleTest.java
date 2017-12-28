@@ -1,6 +1,7 @@
 package org.scriptonbasestar.tool.test;
 
 import lombok.extern.slf4j.Slf4j;
+import org.junit.Ignore;
 import org.junit.Test;
 import org.springframework.security.crypto.codec.Base64;
 
@@ -22,6 +23,7 @@ import java.security.NoSuchAlgorithmException;
  */
 @Slf4j
 public class ServerRunningTestRuleTest {
+	@Ignore
 	@Test
 	public void test() throws NoSuchPaddingException, NoSuchAlgorithmException, UnsupportedEncodingException, InvalidAlgorithmParameterException, InvalidKeyException, BadPaddingException, IllegalBlockSizeException {
 		System.out.println(new String(Base64.decode("3q4tgq34tg==".getBytes())));
