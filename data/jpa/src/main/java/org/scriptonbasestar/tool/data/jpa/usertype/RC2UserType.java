@@ -85,7 +85,7 @@ public class RC2UserType implements UserType, ParameterizedType {
 			if(hexStr==null){
 				return null;
 			}
-			return StringUtils.newStringUtf8(byteEncryptor.decrypt(hexStr.getBytes()));
+			return StringUtils.newStringUtf8(byteEncryptor.decrypt(Hex.decodeHex(hexStr.toCharArray())));
 		} catch (Exception ex) {
 			throw new HibernateException("암호화를 복원하는데 실패했습니다.", ex);
 		}
