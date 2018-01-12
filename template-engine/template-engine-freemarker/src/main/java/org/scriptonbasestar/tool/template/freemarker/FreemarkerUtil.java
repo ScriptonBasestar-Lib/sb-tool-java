@@ -1,11 +1,10 @@
-package org.beansugar.sso.web.user.beanutil.freemarker;
+package org.scriptonbasestar.tool.template.freemarker;
 
 import freemarker.template.Configuration;
 import freemarker.template.Template;
 import freemarker.template.TemplateException;
 import freemarker.template.TemplateExceptionHandler;
-import org.beansugar.tool.core.prop.ResourceReader;
-import org.springframework.stereotype.Service;
+import org.scriptonbasestar.tool.core.prop.ResourceReader;
 
 import java.io.File;
 import java.io.IOException;
@@ -15,7 +14,6 @@ import java.io.Writer;
 /**
  * Created by archmagece on 2016-04-22.
  */
-@Service
 public class FreemarkerUtil {
 
 	Configuration cfg;

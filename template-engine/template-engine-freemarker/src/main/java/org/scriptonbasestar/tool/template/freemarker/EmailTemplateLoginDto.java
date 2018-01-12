@@ -1,4 +1,4 @@
-package org.beansugar.sso.web.user.beanutil.freemarker;
+package org.scriptonbasestar.tool.template.freemarker;
 
 import lombok.Data;
 
