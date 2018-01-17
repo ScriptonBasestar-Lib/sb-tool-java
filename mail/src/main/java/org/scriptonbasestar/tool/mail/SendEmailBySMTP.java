@@ -13,14 +13,14 @@ import java.util.Properties;
  * @since 2014. 11. 14.
  */
 @Slf4j
-public class SendEmail {
+public class SendEmailBySMTP {
 
 	private final String username;
 	private final String password;
 
 	Properties props;
 
-	public SendEmail(String username, String password, String smtpHost, String smtpPort) {
+	public SendEmailBySMTP(String username, String password, String smtpHost, String smtpPort) {
 		this.username = username;
 		this.password = password;
 

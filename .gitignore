@@ -11,3 +11,6 @@ repo/
 
 # java
 .class
+
+# credentials
+**/credentials/*.json
