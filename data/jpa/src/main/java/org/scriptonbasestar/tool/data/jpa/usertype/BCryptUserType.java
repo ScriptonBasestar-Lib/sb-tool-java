@@ -1,6 +1,6 @@
 package org.scriptonbasestar.tool.data.jpa.usertype;
 
-import jodd.util.BCrypt;
+import jodd.util.crypt.BCrypt;
 import org.hibernate.HibernateException;
 import org.hibernate.engine.spi.SharedSessionContractImplementor;
 import org.hibernate.usertype.ParameterizedType;
