@@ -6,5 +6,5 @@ dependencies {
 
 	compile "com.google.api-client:google-api-client:$google_api_ver"
 	compile "com.google.oauth-client:google-oauth-client-jetty:$google_api_ver"
-	compile "com.google.apis:google-api-services-gmail:$gmail_api_ver"
+	compile "com.google.apis:google-api-services-gmail:$google_gmail_api_ver"
 }

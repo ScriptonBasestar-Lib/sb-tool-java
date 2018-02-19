@@ -4,6 +4,7 @@ import lombok.experimental.UtilityClass;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
+import org.springframework.security.core.userdetails.User;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 
@@ -26,7 +27,7 @@ public final class SecurityMethodUtil {
 	 * @param <PRINCIPAL>
 	 * @return
 	 */
-	public static<PRINCIPAL>PRINCIPAL getPrincipal() {
+	public static<PRINCIPAL extends User>PRINCIPAL getPrincipal() {
 		Authentication authentication = getAuthentication();
 		if(authentication==null){
 			return null;
