@@ -2,6 +2,8 @@ package org.scriptonbasestar.spring.security
 
 import org.jasypt.encryption.pbe.StandardPBEStringEncryptor
 import org.jasypt.encryption.pbe.config.EnvironmentStringPBEConfig
+import org.springframework.context.annotation.Bean
+import org.springframework.context.annotation.Configuration
 
 /**
  * @author archmagece

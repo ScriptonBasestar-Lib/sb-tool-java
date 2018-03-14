@@ -2,7 +2,7 @@ package org.scriptonbasestar.spring.security.filter;
 
 import lombok.Getter;
 import lombok.Setter;
-import org.beansugar.base.spring.security.SignedUsernamePasswordAuthenticationToken;
+import org.scriptonbasestar.spring.security.SignedUsernamePasswordAuthenticationToken;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.AuthenticationException;
 import org.springframework.security.web.authentication.AbstractAuthenticationProcessingFilter;
