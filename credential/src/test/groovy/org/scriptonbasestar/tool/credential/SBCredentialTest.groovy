@@ -8,7 +8,7 @@ import javax.crypto.KeyGenerator
  * @author archmagece
  * @since 2017-10-19
  */
-class SCCredentialTest {
+class SBCredentialTest {
 
 	@Test
 	void 'des encrypt-decrypt test'(){
