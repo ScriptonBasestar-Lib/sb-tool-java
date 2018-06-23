@@ -11,9 +11,9 @@ import java.util.Set;
  * @author archmagece
  * @since 2017-08-25
  */
-@Getter
-@ToString
-@EqualsAndHashCode
+@Data
+@NoArgsConstructor
+@AllArgsConstructor
 public class SBListResponseWrapper<RESPONSE> {
 
 	public static <RESPONSE>SBListResponseWrapper <RESPONSE>create(){

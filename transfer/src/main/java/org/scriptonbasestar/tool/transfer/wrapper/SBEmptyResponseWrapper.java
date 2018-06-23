@@ -1,8 +1,6 @@
 package org.scriptonbasestar.tool.transfer.wrapper;
 
-import lombok.AccessLevel;
-import lombok.Data;
-import lombok.Setter;
+import lombok.*;
 
 import java.util.HashSet;
 import java.util.Map;
@@ -13,6 +11,8 @@ import java.util.Set;
  * @since 2017-08-25
  */
 @Data
+@NoArgsConstructor
+@AllArgsConstructor
 public class SBEmptyResponseWrapper {
 
 	public static SBEmptyResponseWrapper create(){

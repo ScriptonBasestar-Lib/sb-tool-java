@@ -1,8 +1,6 @@
 package org.scriptonbasestar.tool.transfer.wrapper;
 
-import lombok.EqualsAndHashCode;
-import lombok.Getter;
-import lombok.ToString;
+import lombok.*;
 
 import java.util.Collection;
 import java.util.HashSet;
@@ -13,9 +11,9 @@ import java.util.Set;
  * @author archmagece
  * @since 2017-08-25
  */
-@Getter
-@ToString
-@EqualsAndHashCode
+@Data
+@NoArgsConstructor
+@AllArgsConstructor
 public class SBMapResponseWrapper<RESPONSE_ID, RESPONSE_DATA> {
 
 	public static <RESPONSE_ID, RESPONSE_DATA>SBMapResponseWrapper<RESPONSE_ID, RESPONSE_DATA> create(){
