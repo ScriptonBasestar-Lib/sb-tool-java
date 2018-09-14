@@ -5,18 +5,29 @@
 	<modelVersion>4.0.0</modelVersion>
 	<parent>
 		<groupId>kr.scripton.tools</groupId>
-		<artifactId>sb-tools-logback</artifactId>
+		<artifactId>sb-tools-java</artifactId>
 		<!--suppress MavenPropertyInParent -->
 		<version>${revision}</version>
 	</parent>
 
-	<artifactId>sb-tools-logback-core</artifactId>
+	<artifactId>sb-tools-avro</artifactId>
 
 	<dependencies>
 		<!-- this project -->
 		<dependency>
 			<groupId>kr.scripton.tools</groupId>
 			<artifactId>sb-tools-core</artifactId>
+		</dependency>
+
+		<dependency>
+			<groupId>org.apache.avro</groupId>
+			<artifactId>avro</artifactId>
+			<version>${avro_version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.avro</groupId>
+			<artifactId>avro-ipc</artifactId>
+			<version>${avro_version}</version>
 		</dependency>
 	</dependencies>
 </project>

@@ -5,12 +5,12 @@
 	<modelVersion>4.0.0</modelVersion>
 	<parent>
 		<groupId>kr.scripton.tools</groupId>
-		<artifactId>sb-tools-logback</artifactId>
+		<artifactId>sb-tools-java</artifactId>
 		<!--suppress MavenPropertyInParent -->
 		<version>${revision}</version>
 	</parent>
 
-	<artifactId>sb-tools-logback-core</artifactId>
+	<artifactId>sb-tools-threading</artifactId>
 
 	<dependencies>
 		<!-- this project -->
@@ -18,5 +18,7 @@
 			<groupId>kr.scripton.tools</groupId>
 			<artifactId>sb-tools-core</artifactId>
 		</dependency>
+
+		<!--testCompile "commons-net:commons-net:$commons_net_version"-->
 	</dependencies>
 </project>

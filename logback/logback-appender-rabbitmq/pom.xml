@@ -2,25 +2,21 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0"
 		 xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 		 xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
-	<parent>
-		<groupId>org.beansugar.tool</groupId>
-		<artifactId>sb-tool-logback</artifactId>
-		<version>sb-tool-201703-1-RELEASE</version>
-	</parent>
 	<modelVersion>4.0.0</modelVersion>
+	<parent>
+		<groupId>kr.scripton.tools</groupId>
+		<artifactId>sb-tools-logback</artifactId>
+		<!--suppress MavenPropertyInParent -->
+		<version>${revision}</version>
+	</parent>
 
-	<artifactId>logback-appender-rabbitmq</artifactId>
+	<artifactId>sb-tools-logback-rabbitmq</artifactId>
 
 	<dependencies>
-		<!-- spring,rabbit -->
+		<!-- this project -->
 		<dependency>
-			<groupId>org.springframework.amqp</groupId>
-			<artifactId>spring-rabbit</artifactId>
-		</dependency>
-		<dependency>
-			<groupId>org.beansugar.tool</groupId>
-			<artifactId>logback-appender-core</artifactId>
+			<groupId>kr.scripton.tools</groupId>
+			<artifactId>sb-tools-core</artifactId>
 		</dependency>
 	</dependencies>
-
 </project>

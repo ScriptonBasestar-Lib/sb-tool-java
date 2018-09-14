@@ -1,7 +1,0 @@
-dependencies {
-	compile project(':core')
-	compile project(':collection')
-
-	testCompile "commons-net:commons-net:$commons_net_version"
-	compile "javax.validation:validation-api:$javax_validation_version"
-}

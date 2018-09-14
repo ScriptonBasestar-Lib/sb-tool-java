@@ -5,12 +5,12 @@
 	<modelVersion>4.0.0</modelVersion>
 	<parent>
 		<groupId>kr.scripton.tools</groupId>
-		<artifactId>sb-tools-logback</artifactId>
+		<artifactId>sb-tools-java</artifactId>
 		<!--suppress MavenPropertyInParent -->
 		<version>${revision}</version>
 	</parent>
 
-	<artifactId>sb-tools-logback-core</artifactId>
+	<artifactId>sb-tools-taglib</artifactId>
 
 	<dependencies>
 		<!-- this project -->
@@ -20,3 +20,7 @@
 		</dependency>
 	</dependencies>
 </project>
+
+	<!--compile "org.apache.commons:commons-lang3:$commons_lang3_version"-->
+	<!--compile "javax.servlet.jsp:javax.servlet.jsp-api:$javax_jsp_version"-->
+	<!--compile "org.springframework.boot:spring-boot-starter-web:$spring_boot_version"-->

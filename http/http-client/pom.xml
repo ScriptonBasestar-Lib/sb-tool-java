@@ -5,18 +5,23 @@
 	<modelVersion>4.0.0</modelVersion>
 	<parent>
 		<groupId>kr.scripton.tools</groupId>
-		<artifactId>sb-tools-logback</artifactId>
+		<artifactId>sb-tools-http</artifactId>
 		<!--suppress MavenPropertyInParent -->
 		<version>${revision}</version>
 	</parent>
 
-	<artifactId>sb-tools-logback-core</artifactId>
+	<artifactId>sb-tools-http-client</artifactId>
 
 	<dependencies>
 		<!-- this project -->
 		<dependency>
 			<groupId>kr.scripton.tools</groupId>
 			<artifactId>sb-tools-core</artifactId>
+		</dependency>
+
+		<dependency>
+			<groupId>org.apache.httpcomponents</groupId>
+			<artifactId>httpclient</artifactId>
 		</dependency>
 	</dependencies>
 </project>

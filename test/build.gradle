@@ -1,5 +1,0 @@
-dependencies {
-	compile project(':core')
-
-	compile "junit:junit:$junit_version"
-}

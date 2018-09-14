@@ -5,12 +5,12 @@
 	<modelVersion>4.0.0</modelVersion>
 	<parent>
 		<groupId>kr.scripton.tools</groupId>
-		<artifactId>sb-tools-logback</artifactId>
+		<artifactId>sb-tools-java</artifactId>
 		<!--suppress MavenPropertyInParent -->
 		<version>${revision}</version>
 	</parent>
 
-	<artifactId>sb-tools-logback-core</artifactId>
+	<artifactId>sb-tools-crypto</artifactId>
 
 	<dependencies>
 		<!-- this project -->
@@ -18,5 +18,20 @@
 			<groupId>kr.scripton.tools</groupId>
 			<artifactId>sb-tools-core</artifactId>
 		</dependency>
+
+		<dependency>
+			<groupId>com.google.code.gson</groupId>
+			<artifactId>gson</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>commons-codec</groupId>
+			<artifactId>commons-codec</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.jasypt</groupId>
+			<artifactId>jasypt</artifactId>
+			<version>${jasypt_version}</version>
+		</dependency>
+
 	</dependencies>
 </project>
