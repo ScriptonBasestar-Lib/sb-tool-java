@@ -1,4 +1,3 @@
-# sb-tool-jvm
-jvm 라이브러리 java, groovy, scala, kotlin
+# sb-tool-java
 
-버전의존성 있어서 아무프로젝트에나 사용불가
+javav 라이브러리 및 연습코드 및 퍼담아놓은코드
