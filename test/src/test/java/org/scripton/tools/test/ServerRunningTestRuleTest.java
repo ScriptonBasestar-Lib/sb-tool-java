@@ -1,4 +1,4 @@
-package org.scriptonbasestar.tool.test;
+package org.scripton.tools.test;
 
 import lombok.extern.slf4j.Slf4j;
 import org.junit.Ignore;

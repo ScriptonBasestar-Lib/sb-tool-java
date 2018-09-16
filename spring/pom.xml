@@ -13,6 +13,12 @@
 	<artifactId>sb-tools-spring</artifactId>
 	<packaging>pom</packaging>
 
+	<modules>
+		<module>spring-api</module>
+		<module>spring-security</module>
+		<module>spring-web</module>
+	</modules>
+
 	<dependencies>
 		<!-- this project -->
 		<dependency>

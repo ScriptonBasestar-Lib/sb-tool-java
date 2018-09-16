@@ -13,6 +13,11 @@
 	<artifactId>sb-tools-data</artifactId>
 	<packaging>pom</packaging>
 
+	<modules>
+		<module>data-jpa</module>
+		<module>data-mongo</module>
+	</modules>
+
 	<dependencies>
 		<!-- this project -->
 		<dependency>

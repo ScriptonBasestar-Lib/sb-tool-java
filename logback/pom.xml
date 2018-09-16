@@ -13,6 +13,14 @@
 	<artifactId>sb-tools-logback</artifactId>
 	<packaging>pom</packaging>
 
+	<modules>
+		<module>logback-amqp</module>
+		<module>logback-core</module>
+		<module>logback-mongodb</module>
+		<module>logback-rabbitmq</module>
+		<module>logback-slack</module>
+	</modules>
+
 	<dependencies>
 		<!-- this project -->
 		<dependency>

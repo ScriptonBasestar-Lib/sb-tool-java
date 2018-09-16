@@ -13,6 +13,12 @@
 	<artifactId>sb-tools-http</artifactId>
 	<packaging>pom</packaging>
 
+	<modules>
+		<module>http-client</module>
+		<module>http-core</module>
+		<module>http-server</module>
+	</modules>
+
 	<dependencies>
 		<!-- this project -->
 		<dependency>

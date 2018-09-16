@@ -13,6 +13,10 @@
 	<artifactId>sb-tools-template</artifactId>
 	<packaging>pom</packaging>
 
+	<modules>
+		<module>template-freemarker</module>
+	</modules>
+
 	<dependencies>
 		<!-- this project -->
 		<dependency>

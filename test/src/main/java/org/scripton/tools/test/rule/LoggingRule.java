@@ -1,4 +1,4 @@
-package org.scriptonbasestar.tool.test.rule;
+package org.scripton.tools.test.rule;
 
 import org.junit.rules.TestRule;
 import org.junit.runner.Description;

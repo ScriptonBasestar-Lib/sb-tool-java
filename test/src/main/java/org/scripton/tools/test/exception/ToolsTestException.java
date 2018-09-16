@@ -1,4 +1,4 @@
-package org.scriptonbasestar.tool.test.exception;
+package org.scripton.tools.test.exception;
 
 
 import org.scriptonbasestar.tool.core.exception.runtime.SBRuntimeBaseException;
