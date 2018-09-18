@@ -10,15 +10,17 @@
 		<version>${revision}</version>
 	</parent>
 
-	<artifactId>sb-tools-spring-api</artifactId>
+	<artifactId>sb-tools-spring-web</artifactId>
 
 	<dependencies>
 		<!-- this project -->
 		<dependency>
 			<groupId>kr.scripton.tools</groupId>
-			<artifactId>sb-tools-core</artifactId>
+			<artifactId>sb-tools-transfer</artifactId>
+			<version>${revision}</version>
 		</dependency>
 
+		<!--TODO pull request 하고 삭제-->
 		<dependency>
 			<groupId>org.springframework.mobile</groupId>
 			<artifactId>spring-mobile-device</artifactId>
@@ -27,12 +29,25 @@
 		<dependency>
 			<groupId>com.fasterxml.jackson.datatype</groupId>
 			<artifactId>jackson-datatype-joda</artifactId>
-			<version>2.9.6</version>
+			<version>${jackson_fastxml_version}</version>
 		</dependency>
 
 		<dependency>
-			<groupId></groupId>
-			<artifactId></artifactId>
+			<groupId>org.jasypt</groupId>
+			<artifactId>jasypt</artifactId>
+			<version>${jasypt_version}</version>
+		</dependency>
+		<!--<dependency>-->
+			<!--<groupId>org.springframework.boot</groupId>-->
+			<!--<artifactId>spring-boot-starter-web</artifactId>-->
+		<!--</dependency>-->
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-webmvc</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>com.google.code.gson</groupId>
+			<artifactId>gson</artifactId>
 		</dependency>
 	</dependencies>
 </project>

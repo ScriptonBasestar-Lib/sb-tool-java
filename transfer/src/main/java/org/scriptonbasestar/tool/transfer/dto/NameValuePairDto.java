@@ -1,7 +1,6 @@
 package org.scriptonbasestar.tool.transfer.dto;
 
 import lombok.Data;
-import lombok.NoArgsConstructor;
 
 import javax.validation.constraints.NotNull;
 import java.io.Serializable;
@@ -14,7 +13,6 @@ import java.io.Serializable;
  * for message find One
  */
 @Data
-@NoArgsConstructor
 public class NameValuePairDto implements Serializable {
 
 	/**

@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package org.beansugar.base.web.taglibs;
+package org.scriptonbasestar.tool.taglib.tag;
 
 import lombok.Setter;
 import org.apache.commons.lang3.StringEscapeUtils;

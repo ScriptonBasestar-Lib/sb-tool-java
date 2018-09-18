@@ -1,8 +1,6 @@
 package org.scriptonbasestar.tool.data.mongo.model.inner.model;
 
-import lombok.AccessLevel;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import lombok.*;
 import org.springframework.data.annotation.PersistenceConstructor;
 
 import java.io.Serializable;
@@ -12,8 +10,9 @@ import java.util.Date;
  * @author archmagece
  * @since 2015-06-02-16
  */
-@Data
+//@Document
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
+@Data
 public class DateTimeScopeInnerModel implements Serializable {
 	@PersistenceConstructor
 	public DateTimeScopeInnerModel(Date fromDate, Date toDate) {

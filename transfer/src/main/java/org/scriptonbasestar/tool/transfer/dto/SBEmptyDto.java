@@ -1,8 +1,5 @@
 package org.scriptonbasestar.tool.transfer.dto;
 
-import lombok.Data;
-import lombok.NoArgsConstructor;
-
 import java.io.Serializable;
 
 /**

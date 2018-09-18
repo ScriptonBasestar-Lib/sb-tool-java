@@ -1,6 +1,0 @@
-dependencies {
-	compile project (':http:http-core')
-
-	compile "joda-time:joda-time:$joda_version"
-	compile "com.thoughtworks.xstream:xstream:$xstream_version"
-}

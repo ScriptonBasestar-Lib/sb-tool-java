@@ -16,7 +16,15 @@
 		<!-- this project -->
 		<dependency>
 			<groupId>kr.scripton.tools</groupId>
-			<artifactId>sb-tools-core</artifactId>
+			<artifactId>sb-tools-http-core</artifactId>
+			<version>${revision}</version>
 		</dependency>
+
+		<dependency>
+			<groupId>com.thoughtworks.xstream</groupId>
+			<artifactId>xstream</artifactId>
+			<version>${xstream_version}</version>
+		</dependency>
+		<!--compile "joda-time:joda-time:$joda_version"-->
 	</dependencies>
 </project>

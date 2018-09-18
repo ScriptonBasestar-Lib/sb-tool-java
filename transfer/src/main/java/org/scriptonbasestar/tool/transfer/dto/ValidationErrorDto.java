@@ -12,7 +12,8 @@ import java.util.List;
 @Data
 public class ValidationErrorDto {
 	private final List<FieldErrorDto> fieldErrors = new ArrayList<>();
-	public void addFieldError(String path, String message){
+
+	public void addFieldError(String path, String message) {
 		fieldErrors.add(new FieldErrorDto(path, message));
 	}
 }

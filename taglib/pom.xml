@@ -18,9 +18,37 @@
 			<groupId>kr.scripton.tools</groupId>
 			<artifactId>sb-tools-core</artifactId>
 		</dependency>
+		<dependency>
+			<groupId>kr.scripton.tools</groupId>
+			<artifactId>sb-tools-collection</artifactId>
+			<version>${revision}</version>
+		</dependency>
+
+		<dependency>
+			<groupId>org.apache.commons</groupId>
+			<artifactId>commons-lang3</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>javax.servlet</groupId>
+			<artifactId>javax.servlet-api</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>javax.servlet.jsp</groupId>
+			<artifactId>javax.servlet.jsp-api</artifactId>
+			<version>${javax_jsp_version}</version>
+			<scope>provided</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-messaging</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-context</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-webmvc</artifactId>
+		</dependency>
 	</dependencies>
 </project>
-
-	<!--compile "org.apache.commons:commons-lang3:$commons_lang3_version"-->
-	<!--compile "javax.servlet.jsp:javax.servlet.jsp-api:$javax_jsp_version"-->
-	<!--compile "org.springframework.boot:spring-boot-starter-web:$spring_boot_version"-->

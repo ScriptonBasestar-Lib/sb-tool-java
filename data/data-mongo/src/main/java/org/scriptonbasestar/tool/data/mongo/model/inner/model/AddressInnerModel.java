@@ -1,8 +1,6 @@
 package org.scriptonbasestar.tool.data.mongo.model.inner.model;
 
-import lombok.AccessLevel;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import lombok.*;
 import org.springframework.data.annotation.PersistenceConstructor;
 
 import java.io.Serializable;
@@ -12,8 +10,8 @@ import java.io.Serializable;
  * @since 2015-06-02-11
  */
 //@Document
-@Data
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
+@Data
 public class AddressInnerModel implements Serializable {
 	@PersistenceConstructor
 	public AddressInnerModel(String country, String state, String city, String detail, String formattedAddress) {

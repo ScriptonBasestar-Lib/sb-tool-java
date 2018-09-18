@@ -13,10 +13,6 @@
 	<artifactId>sb-tools-logback-core</artifactId>
 
 	<dependencies>
-		<!-- this project -->
-		<dependency>
-			<groupId>kr.scripton.tools</groupId>
-			<artifactId>sb-tools-core</artifactId>
-		</dependency>
+
 	</dependencies>
 </project>

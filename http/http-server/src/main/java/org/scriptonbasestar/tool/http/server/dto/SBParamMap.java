@@ -8,9 +8,9 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.Set;
 
-@Data
 //@NoArgsConstructor
-//@lombok.AllArgsConstructor
+//@AllArgsConstructor
+@Data
 public class SBParamMap {
 
 	public SBParam[] params;

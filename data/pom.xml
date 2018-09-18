@@ -28,6 +28,10 @@
 			<groupId>kr.scripton.tools</groupId>
 			<artifactId>sb-tools-validation</artifactId>
 		</dependency>
+		<dependency>
+			<groupId>kr.scripton.tools</groupId>
+			<artifactId>sb-tools-crypto</artifactId>
+		</dependency>
 
 		<dependency>
 			<groupId>org.hibernate.javax.persistence</groupId>

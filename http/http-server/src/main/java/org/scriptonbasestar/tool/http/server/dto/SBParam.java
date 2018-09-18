@@ -1,10 +1,11 @@
 package org.scriptonbasestar.tool.http.server.dto;
 
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
-@Data
 //@NoArgsConstructor
-//@lombok.AllArgsConstructor
+//@AllArgsConstructor
+@Data
 public class SBParam {
 
 	public String name;

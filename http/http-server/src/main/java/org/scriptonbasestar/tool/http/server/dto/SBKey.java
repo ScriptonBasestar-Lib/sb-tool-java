@@ -1,6 +1,8 @@
 package org.scriptonbasestar.tool.http.server.dto;
 
+import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 /**
  * 파라미터 전달받는 값들.. 대분류, 중분류, api명
@@ -8,9 +10,9 @@ import lombok.Data;
  * @author archmagece@gmail.com
  *
  */
-@Data
 //@NoArgsConstructor
-//@lombok.AllArgsConstructor
+//@AllArgsConstructor
+@Data
 public class SBKey {
 	public String category1;
 	public String category2;

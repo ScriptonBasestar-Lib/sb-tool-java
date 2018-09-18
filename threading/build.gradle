@@ -1,3 +1,0 @@
-dependencies {
-	testCompile "commons-net:commons-net:$commons_net_version"
-}

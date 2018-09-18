@@ -17,7 +17,6 @@
 		<module>logback-amqp</module>
 		<module>logback-core</module>
 		<module>logback-mongodb</module>
-		<module>logback-rabbitmq</module>
 		<module>logback-slack</module>
 	</modules>
 
@@ -26,6 +25,11 @@
 		<dependency>
 			<groupId>kr.scripton.tools</groupId>
 			<artifactId>sb-tools-core</artifactId>
+		</dependency>
+
+		<dependency>
+			<groupId>com.google.code.gson</groupId>
+			<artifactId>gson</artifactId>
 		</dependency>
 	</dependencies>
 </project>

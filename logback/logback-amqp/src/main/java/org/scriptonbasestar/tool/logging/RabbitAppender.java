@@ -30,7 +30,7 @@ public class RabbitAppender extends UnsynchronizedAppenderBase<ILoggingEvent> {
 	private Connection connection;
 	private Channel channel;
 	private String replyQueueName;
-	private QueueingConsumer consumer;
+	private Consumer consumer;
 
 	private Gson gson = new Gson();
 
@@ -48,7 +48,7 @@ public class RabbitAppender extends UnsynchronizedAppenderBase<ILoggingEvent> {
 		this.channel = connection.createChannel();
 
 		this.replyQueueName = channel.queueDeclare().getQueue();
-		this.consumer = new QueueingConsumer(channel);
+		this.consumer = new DefaultConsumer(channel);
 		this.channel.basicConsume(replyQueueName, true, consumer);
 	}
 

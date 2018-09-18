@@ -19,6 +19,11 @@
 			<artifactId>sb-tools-core</artifactId>
 		</dependency>
 
-		<!--testCompile "commons-net:commons-net:$commons_net_version"-->
+		<dependency>
+			<groupId>commons-net</groupId>
+			<artifactId>commons-net</artifactId>
+			<version>${commons_net_version}</version>
+			<scope>test</scope>
+		</dependency>
 	</dependencies>
 </project>

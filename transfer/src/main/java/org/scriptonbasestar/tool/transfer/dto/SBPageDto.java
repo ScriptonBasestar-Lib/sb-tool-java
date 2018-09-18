@@ -7,15 +7,15 @@ import lombok.NoArgsConstructor;
  * @author archmagece
  * @since 2017-08-30
  */
-@Data
 @NoArgsConstructor
+@Data
 public class SBPageDto {
 
-	public SBPageDto(int pageNo, int pageSize, long totalElements){
+	public SBPageDto(int pageNo, int pageSize, long totalElements) {
 		this.pageNo = pageNo;
 		this.pageSize = pageSize;
 		this.totalElements = totalElements;
-		this.totalPages = (int)(totalElements / pageSize) + 1;
+		this.totalPages = (int) (totalElements / pageSize) + 1;
 	}
 
 	private int pageNo = 0;

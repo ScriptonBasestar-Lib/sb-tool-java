@@ -1,8 +1,6 @@
 package org.scriptonbasestar.tool.data.mongo.model.inner.model;
 
-import lombok.AccessLevel;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import lombok.*;
 import org.scriptonbasestar.tool.core.type.WeekdayType;
 import org.springframework.data.annotation.PersistenceConstructor;
 
@@ -14,8 +12,9 @@ import java.io.Serializable;
  * @author archmagece
  * @since 2015-06-01-18
  */
-@Data
+//@Document
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
+@Data
 public class PeakTimeInnerModel implements Serializable {
 	@PersistenceConstructor
 	public PeakTimeInnerModel(WeekdayType weekday, int from, int to) {

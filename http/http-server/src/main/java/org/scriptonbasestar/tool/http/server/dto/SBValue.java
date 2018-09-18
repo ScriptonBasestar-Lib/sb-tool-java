@@ -9,9 +9,9 @@ import org.scriptonbasestar.tool.http.server.VALUE_TYPE;
  * @author archmagece@gmail.com
  *
  */
-@Data
 //@NoArgsConstructor
-//@lombok.AllArgsConstructor
+//@AllArgsConstructor
+@Data
 public class SBValue {
 	public VALUE_TYPE type;
 	public String tblname;

@@ -12,9 +12,9 @@ import java.io.Serializable;
  * @author archmagece
  * @since 2015-06-06
  */
-@Data
-@AllArgsConstructor
 @NoArgsConstructor
+@AllArgsConstructor
+@Data
 public class CommonIdNameValueDto implements Serializable {
 
 	public CommonIdNameValueDto(Long id, String name) {

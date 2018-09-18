@@ -13,12 +13,6 @@
 	<artifactId>sb-tools-data-jpa</artifactId>
 
 	<dependencies>
-		<!-- this project -->
-		<dependency>
-			<groupId>kr.scripton.tools</groupId>
-			<artifactId>sb-tools-core</artifactId>
-		</dependency>
-
 		<dependency>
 			<groupId>org.apache.commons</groupId>
 			<artifactId>commons-lang3</artifactId>
@@ -26,6 +20,7 @@
 		<dependency>
 			<groupId>org.jodd</groupId>
 			<artifactId>jodd-core</artifactId>
+			<version>${jodd_core_version}</version>
 		</dependency>
 
 		<dependency>
@@ -54,5 +49,4 @@
 			<artifactId>querydsl-jpa</artifactId>
 		</dependency>
 	</dependencies>
-	<!--querydsl-->
 </project>

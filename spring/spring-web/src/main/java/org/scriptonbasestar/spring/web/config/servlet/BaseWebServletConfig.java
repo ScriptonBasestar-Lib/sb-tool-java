@@ -19,14 +19,9 @@ import org.springframework.web.multipart.commons.CommonsMultipartResolver;
 import org.springframework.web.servlet.config.annotation.*;
 import org.springframework.web.servlet.i18n.LocaleChangeInterceptor;
 import org.springframework.web.servlet.i18n.SessionLocaleResolver;
-import org.springframework.web.servlet.mvc.annotation.AnnotationMethodHandlerAdapter;
-import org.springframework.web.servlet.mvc.annotation.DefaultAnnotationHandlerMapping;
+import org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter;
 import org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping;
-import org.springframework.web.servlet.mvc.support.ControllerClassNameHandlerMapping;
-import org.springframework.web.servlet.view.BeanNameViewResolver;
 import org.springframework.web.servlet.view.InternalResourceViewResolver;
-import org.springframework.web.servlet.view.UrlBasedViewResolver;
-import org.springframework.web.servlet.view.tiles3.TilesConfigurer;
 
 import java.nio.charset.Charset;
 import java.util.List;
@@ -46,7 +41,7 @@ import java.util.List;
 		}
 )
 @Configuration
-public abstract class BaseWebServletConfig extends WebMvcConfigurerAdapter {
+public abstract class BaseWebServletConfig extends WebMvcConfigurationSupport {
 
 	protected abstract long getMultipartResolverUploadSize();
 
@@ -144,12 +139,12 @@ public abstract class BaseWebServletConfig extends WebMvcConfigurerAdapter {
 		registry.addResourceHandler("/resource/**").addResourceLocations("/resource/");
 	}
 
-	@Bean
-	public ControllerClassNameHandlerMapping controllerClassNameHandlerMapping(){
-		ControllerClassNameHandlerMapping bean = new ControllerClassNameHandlerMapping();
-		bean.setInterceptors(new Object[]{localeChangeInterceptor()});
-		return bean;
-	}
+//	@Bean
+//	public ControllerClassNameHandlerMapping controllerClassNameHandlerMapping(){
+//		ControllerClassNameHandlerMapping bean = new ControllerClassNameHandlerMapping();
+//		bean.setInterceptors(new Object[]{localeChangeInterceptor()});
+//		return bean;
+//	}
 
 	///view resolver
 	@Bean
@@ -167,45 +162,17 @@ public abstract class BaseWebServletConfig extends WebMvcConfigurerAdapter {
 	 * ***************************************
 	 */
 	@Bean
+	public RequestMappingHandlerAdapter annotationMethodHandlerAdapter(){
+		RequestMappingHandlerAdapter bean = new RequestMappingHandlerAdapter();
+//		bean.setAlwaysUseFullPath(true);
+		return bean;
+	}
+	@Bean
 	public RequestMappingHandlerMapping handlerMapping() {
 		RequestMappingHandlerMapping bean = new RequestMappingHandlerMapping();
 		bean.setAlwaysUseFullPath(true);
 		return bean;
 	}
-	//	@Bean
-//	public DefaultAnnotationHandlerMapping defaultAnnotationHandlerMapping() {
-//		DefaultAnnotationHandlerMapping bean = new DefaultAnnotationHandlerMapping();
-//		bean.setAlwaysUseFullPath(true);
-//		return bean;
-//	}
-//	@Bean
-//	public RequestMappingHandlerMapping defaultAnnotationHandlerMapping() {
-//		return new RequestMappingHandlerMapping();
-//	}
-	public AnnotationMethodHandlerAdapter annotationMethodHandlerAdapter(){
-		AnnotationMethodHandlerAdapter bean = new AnnotationMethodHandlerAdapter();
-		bean.setAlwaysUseFullPath(true);
-		return bean;
-	}
-	public DefaultAnnotationHandlerMapping defaultAnnotationHandlerMapping(){
-		DefaultAnnotationHandlerMapping bean = new DefaultAnnotationHandlerMapping();
-		bean.setAlwaysUseFullPath(true);
-		return bean;
-	}
-//	@Bean
-//	public AnnotationMethodHandlerAdapter annotationMethodHandlerAdapter() {
-//		AnnotationMethodHandlerAdapter bean = new AnnotationMethodHandlerAdapter();
-//		bean.setAlwaysUseFullPath(true);
-//		List<HttpMessageConverter> params = new ArrayList<>();
-//		params.add(stringHttpMessageConverter());
-////		bean.setMessageConverters();
-//		return bean;
-//	}
-//	@Bean
-//	public RequestMappingHandlerAdapter annotationMethodHandlerAdapter() {
-//		return new RequestMappingHandlerAdapter();
-//	}
-
 
 	/*
 	 * ***************************************
