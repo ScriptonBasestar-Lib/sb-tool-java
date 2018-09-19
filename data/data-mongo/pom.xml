@@ -6,8 +6,7 @@
 	<parent>
 		<groupId>kr.scripton.tools</groupId>
 		<artifactId>sb-tools-data</artifactId>
-		<!--suppress MavenPropertyInParent -->
-		<version>${revision}</version>
+		<version>sb-tools-20180914-DEV</version>
 	</parent>
 
 	<artifactId>sb-tools-data-mongo</artifactId>

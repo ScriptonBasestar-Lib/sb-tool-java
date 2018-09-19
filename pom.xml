@@ -6,7 +6,7 @@
 	<groupId>kr.scripton.tools</groupId>
 	<artifactId>sb-tools-java</artifactId>
 	<packaging>pom</packaging>
-	<version>${revision}</version>
+	<version>sb-tools-20180914-DEV</version>
 
 	<modules>
 		<module>avro</module>
@@ -29,8 +29,7 @@
 	</modules>
 
 	<properties>
-		<revision>sb-tools-20180914-BUILD-SNAPSHOT</revision>
-		<java-version>1.8</java-version>
+		<java_version>1.8</java_version>
 		<maven.compiler.source>1.8</maven.compiler.source>
 		<maven.compiler.target>1.8</maven.compiler.target>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -49,15 +48,27 @@
 		<springboot_version>2.0.5.RELEASE</springboot_version>
 	</properties>
 
-	<distributionManagement>
-		<!--<repository>-->
-			<!--<id>bintray-archmagece-jvm-repo</id>-->
-			<!--<url>https://bintray.com/archmagece/jvm-repo</url>-->
-		<!--</repository>-->
-		<snapshotRepository>
+	<repositories>
+		<repository>
 			<id>bintray-archmagece-jvm-repo</id>
 			<url>https://dl.bintray.com/archmagece/jvm-repo</url>
-		</snapshotRepository>
+		</repository>
+		<repository>
+			<id>central</id>
+			<url>http://repo1.maven.org/maven2</url>
+		</repository>
+		<repository>
+			<id>bintray</id>
+			<url>https://jcenter.bintray.com</url>
+		</repository>
+	</repositories>
+
+	<distributionManagement>
+		<repository>
+			<id>bintray-archmagece-jvm-repo</id>
+			<name>archmagece-jvm-repo</name>
+			<url>https://api.bintray.com/maven/archmagece/jvm-repo/sb-tools-java/;publish=1</url>
+		</repository>
 	</distributionManagement>
 
 	<dependencies>
@@ -113,17 +124,17 @@
 			<dependency>
 				<groupId>kr.scripton.tools</groupId>
 				<artifactId>sb-tools-core</artifactId>
-				<version>${revision}</version>
+				<version>sb-tools-20180914-DEV</version>
 			</dependency>
 			<dependency>
 				<groupId>kr.scripton.tools</groupId>
 				<artifactId>sb-tools-validation</artifactId>
-				<version>${revision}</version>
+				<version>sb-tools-20180914-DEV</version>
 			</dependency>
 			<dependency>
 				<groupId>kr.scripton.tools</groupId>
 				<artifactId>sb-tools-crypto</artifactId>
-				<version>${revision}</version>
+				<version>sb-tools-20180914-DEV</version>
 			</dependency>
 
 			<dependency>
@@ -148,14 +159,5 @@
 			<!--</dependency>-->
 		</dependencies>
 	</dependencyManagement>
-
-	<build>
-		<plugins>
-			<plugin>
-				<groupId>org.apache.maven.plugins</groupId>
-				<artifactId>maven-compiler-plugin</artifactId>
-			</plugin>
-		</plugins>
-	</build>
 
 </project>

@@ -7,7 +7,7 @@
 		<groupId>kr.scripton.tools</groupId>
 		<artifactId>sb-tools-logback</artifactId>
 		<!--suppress MavenPropertyInParent -->
-		<version>${revision}</version>
+		<version>sb-tools-20180914-DEV</version>
 	</parent>
 
 	<artifactId>sb-tools-logback-mongodb</artifactId>
@@ -17,7 +17,7 @@
 		<dependency>
 			<groupId>kr.scripton.tools</groupId>
 			<artifactId>sb-tools-logback-core</artifactId>
-			<version>${revision}</version>
+			<version>sb-tools-20180914-DEV</version>
 		</dependency>
 
 		<dependency>

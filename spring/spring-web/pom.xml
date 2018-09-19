@@ -7,7 +7,7 @@
 		<groupId>kr.scripton.tools</groupId>
 		<artifactId>sb-tools-spring</artifactId>
 		<!--suppress MavenPropertyInParent -->
-		<version>${revision}</version>
+		<version>sb-tools-20180914-DEV</version>
 	</parent>
 
 	<artifactId>sb-tools-spring-web</artifactId>
@@ -17,7 +17,7 @@
 		<dependency>
 			<groupId>kr.scripton.tools</groupId>
 			<artifactId>sb-tools-transfer</artifactId>
-			<version>${revision}</version>
+			<version>sb-tools-20180914-DEV</version>
 		</dependency>
 
 		<!--TODO pull request 하고 삭제-->
