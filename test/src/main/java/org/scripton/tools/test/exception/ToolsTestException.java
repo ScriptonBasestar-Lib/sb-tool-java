@@ -1,7 +1,7 @@
 package org.scripton.tools.test.exception;
 
 
-import org.scriptonbasestar.tool.core.exception.runtime.SBRuntimeBaseException;
+import org.scriptonbasestar.tool.core.exception.SBRuntimeBaseException;
 
 /**
  * @Author archmagece

@@ -1,4 +1,4 @@
-package org.scriptonbasestar.tool.core.exception.runtime.data;
+package org.scriptonbasestar.tool.core.exception.data;
 
 /**
  * @Author archmagece

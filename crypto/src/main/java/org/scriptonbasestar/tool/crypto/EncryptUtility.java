@@ -1,7 +1,7 @@
 package org.scriptonbasestar.tool.crypto;
 
 import org.apache.commons.codec.binary.Base64;
-import org.scriptonbasestar.tool.core.exception.runtime.SBCryptoException;
+import org.scriptonbasestar.tool.core.exception.SBCryptoException;
 
 import javax.crypto.BadPaddingException;
 import javax.crypto.Cipher;

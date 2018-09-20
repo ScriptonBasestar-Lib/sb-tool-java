@@ -2,7 +2,7 @@ package org.scriptonbasestar.tool.collection.joiner;
 
 
 import org.scriptonbasestar.tool.core.check.Check;
-import org.scriptonbasestar.tool.core.exception.runtime.SBBadParameterException;
+import org.scriptonbasestar.tool.core.exception.SBBadParameterException;
 
 import java.util.ArrayList;
 import java.util.Collection;

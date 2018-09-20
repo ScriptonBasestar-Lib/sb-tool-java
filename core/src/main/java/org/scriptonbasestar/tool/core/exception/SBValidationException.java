@@ -1,4 +1,4 @@
-package org.scriptonbasestar.tool.core.exception.runtime;
+package org.scriptonbasestar.tool.core.exception;
 
 
 /**

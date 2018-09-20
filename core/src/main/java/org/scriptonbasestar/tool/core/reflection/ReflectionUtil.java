@@ -2,7 +2,7 @@ package org.scriptonbasestar.tool.core.reflection;
 
 import lombok.AccessLevel;
 import lombok.NoArgsConstructor;
-import org.scriptonbasestar.tool.core.exception.runtime.SBReflectionException;
+import org.scriptonbasestar.tool.core.exception.SBReflectionException;
 import org.scriptonbasestar.tool.core.util.StringUtil;
 
 import java.lang.reflect.Field;

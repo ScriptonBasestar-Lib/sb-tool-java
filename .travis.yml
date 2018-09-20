@@ -1,6 +1,10 @@
 sudo: false
 language: java
 
+env:
+	global:
+	- CODECOV_TOKEN=:uuid-repo-token
+
 dist:
   - trusty
 
@@ -11,6 +15,8 @@ script:
   - export JDK8_HOME=$(jdk_switcher home oraclejdk8)
 #  - export JDK9_HOME=/usr/lib/jvm/java-9-oracle
 #  - test -d "${JDK9_HOME}" || export JDK9_HOME=$(jdk_switcher home oraclejdk8)
+  - ./mvn package
+  - mvn cobertura:cobertura
 
 before_cache:
   - rm -f  $HOME/.gradle/caches/modules-2/modules-2.lock
@@ -29,9 +35,6 @@ matrix:
 #        - JDK=9
 
 install: /bin/true
-
-script:
-  - ./gradlew build -x test
 
 after_success:
   - bash <(curl -s https://codecov.io/bash)

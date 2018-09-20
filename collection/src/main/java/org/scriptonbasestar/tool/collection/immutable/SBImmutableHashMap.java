@@ -1,6 +1,6 @@
 package org.scriptonbasestar.tool.collection.immutable;
 
-import org.scriptonbasestar.tool.core.exception.runtime.SBDisabledException;
+import org.scriptonbasestar.tool.core.exception.SBDisabledException;
 
 import java.util.HashMap;
 import java.util.Map;

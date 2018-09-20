@@ -4,7 +4,7 @@
 		 xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 	<parent>
-		<groupId>kr.scripton.tools</groupId>
+		<groupId>org.scriptonbasestar.tools</groupId>
 		<artifactId>sb-tools-java</artifactId>
 		<!--suppress MavenPropertyInParent -->
 		<version>sb-tools-20180914-DEV</version>
@@ -22,7 +22,7 @@
 	<dependencies>
 		<!-- this project -->
 		<dependency>
-			<groupId>kr.scripton.tools</groupId>
+			<groupId>org.scriptonbasestar.tools</groupId>
 			<artifactId>sb-tools-core</artifactId>
 		</dependency>
 

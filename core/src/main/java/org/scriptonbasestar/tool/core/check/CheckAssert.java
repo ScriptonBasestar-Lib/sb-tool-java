@@ -1,7 +1,6 @@
 package org.scriptonbasestar.tool.core.check;
 
-import lombok.AccessLevel;
-import lombok.NoArgsConstructor;
+import lombok.experimental.UtilityClass;
 
 import java.util.Collection;
 
@@ -9,7 +8,7 @@ import java.util.Collection;
  * @author archmagece
  * @since 2015-05-30
  */
-@NoArgsConstructor(access = AccessLevel.PRIVATE)
+@UtilityClass
 public final class CheckAssert {
 
 	/*

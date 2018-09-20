@@ -1,6 +1,6 @@
-package org.scriptonbasestar.tool.core.exception.runtime.network;
+package org.scriptonbasestar.tool.core.exception.network;
 
-import org.scriptonbasestar.tool.core.exception.runtime.SBRuntimeBaseException;
+import org.scriptonbasestar.tool.core.exception.SBRuntimeBaseException;
 
 /**
  * @Author archmagece

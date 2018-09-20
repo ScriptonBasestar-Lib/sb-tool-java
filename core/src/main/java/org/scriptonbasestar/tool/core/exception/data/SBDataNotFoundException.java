@@ -1,6 +1,4 @@
-package org.scriptonbasestar.tool.core.exception.runtime.data;
-
-import org.scriptonbasestar.tool.core.type.ErrorType;
+package org.scriptonbasestar.tool.core.exception.data;
 
 /**
  * @Author archmagece

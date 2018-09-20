@@ -3,7 +3,7 @@
 		 xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 
-	<groupId>kr.scripton.tools</groupId>
+	<groupId>org.scriptonbasestar.tools</groupId>
 	<artifactId>sb-tools-java</artifactId>
 	<packaging>pom</packaging>
 	<version>sb-tools-20180914-DEV</version>
@@ -122,17 +122,17 @@
 	<dependencyManagement>
 		<dependencies>
 			<dependency>
-				<groupId>kr.scripton.tools</groupId>
+				<groupId>org.scriptonbasestar.tools</groupId>
 				<artifactId>sb-tools-core</artifactId>
 				<version>sb-tools-20180914-DEV</version>
 			</dependency>
 			<dependency>
-				<groupId>kr.scripton.tools</groupId>
+				<groupId>org.scriptonbasestar.tools</groupId>
 				<artifactId>sb-tools-validation</artifactId>
 				<version>sb-tools-20180914-DEV</version>
 			</dependency>
 			<dependency>
-				<groupId>kr.scripton.tools</groupId>
+				<groupId>org.scriptonbasestar.tools</groupId>
 				<artifactId>sb-tools-crypto</artifactId>
 				<version>sb-tools-20180914-DEV</version>
 			</dependency>
@@ -159,5 +159,22 @@
 			<!--</dependency>-->
 		</dependencies>
 	</dependencyManagement>
+
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.codehaus.mojo</groupId>
+				<artifactId>cobertura-maven-plugin</artifactId>
+				<version>2.7</version>
+				<configuration>
+					<formats>
+						<format>html</format>
+						<format>xml</format>
+					</formats>
+					<check />
+				</configuration>
+			</plugin>
+		</plugins>
+	</build>
 
 </project>

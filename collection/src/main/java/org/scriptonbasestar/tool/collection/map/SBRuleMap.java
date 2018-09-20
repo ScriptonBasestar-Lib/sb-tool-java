@@ -1,6 +1,6 @@
 package org.scriptonbasestar.tool.collection.map;
 
-import org.scriptonbasestar.tool.core.exception.runtime.SBBadParameterException;
+import org.scriptonbasestar.tool.core.exception.SBBadParameterException;
 import org.scriptonbasestar.tool.core.type.ElementRuleOption;
 
 import java.util.HashMap;

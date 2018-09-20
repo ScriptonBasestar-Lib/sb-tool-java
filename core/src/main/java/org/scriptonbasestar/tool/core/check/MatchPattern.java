@@ -1,9 +1,12 @@
 package org.scriptonbasestar.tool.core.check;
 
+import lombok.experimental.UtilityClass;
+
 /**
  * @author archmagece
  * @since 2015-05-10
  */
+@UtilityClass
 public final class MatchPattern {
 	public static String username = "^[a-z0-9_-]{3,16}$";
 	public static String password = "^[a-z0-9_-]{6,18}$";
