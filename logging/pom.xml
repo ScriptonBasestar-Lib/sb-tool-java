@@ -7,7 +7,7 @@
 		<groupId>org.scriptonbasestar.tools</groupId>
 		<artifactId>sb-tools-java</artifactId>
 		<!--suppress MavenPropertyInParent -->
-		<version>sb-tools-20180914-DEV</version>
+		<version>sb-tools-20180921-DEV</version>
 	</parent>
 
 	<artifactId>sb-tools-logging</artifactId>

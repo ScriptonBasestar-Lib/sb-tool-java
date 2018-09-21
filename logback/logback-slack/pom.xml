@@ -7,7 +7,7 @@
 		<groupId>org.scriptonbasestar.tools</groupId>
 		<artifactId>sb-tools-logback</artifactId>
 		<!--suppress MavenPropertyInParent -->
-		<version>sb-tools-20180914-DEV</version>
+		<version>sb-tools-20180921-DEV</version>
 	</parent>
 
 	<artifactId>sb-tools-logback-slack</artifactId>
@@ -17,7 +17,7 @@
 		<dependency>
 			<groupId>org.scriptonbasestar.tools</groupId>
 			<artifactId>sb-tools-logback-core</artifactId>
-			<version>sb-tools-20180914-DEV</version>
+			<version>sb-tools-20180921-DEV</version>
 		</dependency>
 	</dependencies>
 </project>
