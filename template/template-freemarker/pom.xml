@@ -7,7 +7,7 @@
 		<groupId>org.scriptonbasestar.tools</groupId>
 		<artifactId>sb-tools-template</artifactId>
 		<!--suppress MavenPropertyInParent -->
-		<version>sb-tools-20180921-DEV</version>
+		<version>sb-tools-20181005-1-DEV</version>
 	</parent>
 
 	<artifactId>sb-tools-template-freemarker</artifactId>
