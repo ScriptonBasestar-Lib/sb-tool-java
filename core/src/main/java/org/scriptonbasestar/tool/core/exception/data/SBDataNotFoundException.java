@@ -3,17 +3,15 @@ package org.scriptonbasestar.tool.core.exception.data;
 /**
  * @Author archmagece
  * @CreatedAt 2016-12-07 18
+ * <p>
+ * 데이터 없을 때
  */
 public class SBDataNotFoundException extends SBDataException {
-
-//	public static final String ERROR_CODE = "D-0004";
-//	public static final ErrorType ERROR_TYPE = ErrorType.DATA;
-//	private static final String DEFAULT_MESSAGE = "sb data not found exception";
-
-	public SBDataNotFoundException(String message) {
-		super(message);
+	public SBDataNotFoundException(String code, String message) {
+		super(code, message);
 	}
-	public SBDataNotFoundException(String message, Throwable e) {
-		super(message, e);
+
+	public SBDataNotFoundException(String code, String message, Throwable e) {
+		super(code, message, e);
 	}
 }

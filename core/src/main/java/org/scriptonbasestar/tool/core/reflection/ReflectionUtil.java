@@ -117,7 +117,7 @@ public class ReflectionUtil {
 				throw new SBReflectionException("NoSuchFieldException is occurred");
 			} catch (IllegalAccessException e) {
 				e.printStackTrace();
-				throw new SBReflectionException("NoSuchFieldException is occurred");
+				throw new SBReflectionException("IllegalAccessException is occurred");
 			}
 		}
 		return target;
@@ -143,7 +143,7 @@ public class ReflectionUtil {
 			throw new SBReflectionException("NoSuchFieldException is occurred");
 		} catch (IllegalAccessException e) {
 			e.printStackTrace();
-			throw new SBReflectionException("NoSuchFieldException is occurred");
+			throw new SBReflectionException("IllegalAccessException is occurred");
 		}
 	}
 
@@ -160,7 +160,7 @@ public class ReflectionUtil {
 			throw new SBReflectionException("NoSuchFieldException is occurred");
 		} catch (IllegalAccessException e) {
 			e.printStackTrace();
-			throw new SBReflectionException("NoSuchFieldException is occurred");
+			throw new SBReflectionException("IllegalAccessException is occurred");
 		}
 	}
 
@@ -186,10 +186,10 @@ public class ReflectionUtil {
 				resultMap.put(createFieldName(m.getName()), m.invoke(source));
 			} catch (IllegalAccessException e) {
 				e.printStackTrace();
-				throw new SBReflectionException("NoSuchFieldException is occurred");
+				throw new SBReflectionException("IllegalAccessException is occurred");
 			} catch (InvocationTargetException e) {
 				e.printStackTrace();
-				throw new SBReflectionException("NoSuchFieldException is occurred");
+				throw new SBReflectionException("InvocationTargetException is occurred");
 			}
 		}
 		return resultMap;

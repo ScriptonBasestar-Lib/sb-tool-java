@@ -7,7 +7,7 @@
 		<groupId>org.scriptonbasestar.tools</groupId>
 		<artifactId>sb-tools-spring</artifactId>
 		<!--suppress MavenPropertyInParent -->
-		<version>sb-tools-20181005-1-DEV</version>
+		<version>sb-tools-20181010-1-DEV</version>
 	</parent>
 
 	<artifactId>sb-tools-spring-web</artifactId>
@@ -17,7 +17,7 @@
 		<dependency>
 			<groupId>org.scriptonbasestar.tools</groupId>
 			<artifactId>sb-tools-transfer</artifactId>
-			<version>sb-tools-20181005-1-DEV</version>
+			<version>sb-tools-20181010-1-DEV</version>
 		</dependency>
 
 		<!--TODO pull request 하고 삭제-->

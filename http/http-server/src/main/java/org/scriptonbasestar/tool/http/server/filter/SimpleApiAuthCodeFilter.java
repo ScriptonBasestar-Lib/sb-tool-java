@@ -1,7 +1,7 @@
 package org.scriptonbasestar.tool.http.server.filter;
 
 import org.apache.http.HttpHeaders;
-import org.scriptonbasestar.tool.core.exception.SBAuthenticationException;
+import org.scriptonbasestar.tool.core.exception.auth.SBAuthenticationException;
 
 import javax.servlet.*;
 import javax.servlet.http.HttpServletRequest;
@@ -39,7 +39,7 @@ public class SimpleApiAuthCodeFilter implements Filter {
 			}
 		}
 		//헤더가 없거나 코드값이 틀리면 접근금지
-		throw new SBAuthenticationException("API auth failed. code is wrong or empty");
+		throw new SBAuthenticationException("fail", "API auth failed. code is wrong or empty");
 	}
 
 	@Override

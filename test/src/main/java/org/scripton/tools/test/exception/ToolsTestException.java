@@ -9,7 +9,7 @@ import org.scriptonbasestar.tool.core.exception.SBRuntimeBaseException;
  */
 public class ToolsTestException extends SBRuntimeBaseException {
 
-	public ToolsTestException(String message) {
-		super(message);
+	public ToolsTestException(String code, String message) {
+		super(code, message);
 	}
 }

@@ -5,10 +5,11 @@ package org.scriptonbasestar.tool.core.exception.data;
  * @CreatedAt 2016-12-07 18
  */
 public class SBDataAccessException extends SBDataException {
-	public SBDataAccessException(String message) {
-		super(message);
+	public SBDataAccessException(String code, String message) {
+		super(code, message);
 	}
-	public SBDataAccessException(String message, Throwable e) {
-		super(message, e);
+
+	public SBDataAccessException(String code, String message, Throwable e) {
+		super(code, message, e);
 	}
 }

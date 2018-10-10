@@ -7,7 +7,7 @@
 		<groupId>org.scriptonbasestar.tools</groupId>
 		<artifactId>sb-tools-http</artifactId>
 		<!--suppress MavenPropertyInParent -->
-		<version>sb-tools-20181005-1-DEV</version>
+		<version>sb-tools-20181010-1-DEV</version>
 	</parent>
 
 	<artifactId>sb-tools-http-server</artifactId>
@@ -17,7 +17,7 @@
 		<dependency>
 			<groupId>org.scriptonbasestar.tools</groupId>
 			<artifactId>sb-tools-http-core</artifactId>
-			<version>sb-tools-20181005-1-DEV</version>
+			<version>sb-tools-20181010-1-DEV</version>
 		</dependency>
 
 		<dependency>
