@@ -1,5 +1,6 @@
 package org.scriptonbasestar.tool.core.prop;
 
+import lombok.experimental.UtilityClass;
 import org.scriptonbasestar.tool.core.check.Check;
 
 import java.io.IOException;
@@ -12,6 +13,7 @@ import java.util.Properties;
  * <p>
  * jar파일내에 포함된 설정파일을 이용해서 프로퍼티 만드는 메서드들
  */
+@UtilityClass
 public class SBPropertiesUtil {
 
 	/**
@@ -26,7 +28,7 @@ public class SBPropertiesUtil {
 	 * @return
 	 */
 	public static Properties propertiesMaker(Class clazz, String... paths) {
-		Check.notNullOrEmpty(paths, "null or empty");
+		Check.notEmpty(paths, "must not null or empty");
 		InputStream[] inputStreamArr = new InputStream[paths.length];
 		for (int i = 0; i < paths.length; i++) {
 			inputStreamArr[i] = clazz.getClassLoader().getResourceAsStream(paths[i]);

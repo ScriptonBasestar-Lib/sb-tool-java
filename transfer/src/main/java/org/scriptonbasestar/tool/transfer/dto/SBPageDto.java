@@ -7,8 +7,8 @@ import lombok.NoArgsConstructor;
  * @author archmagece
  * @since 2017-08-30
  */
-@NoArgsConstructor
 @Data
+@NoArgsConstructor
 public class SBPageDto {
 
 	public SBPageDto(int pageNo, int pageSize, long totalElements) {

@@ -12,9 +12,9 @@ import java.util.Set;
  * @author archmagece
  * @since 2017-08-28
  */
-@AllArgsConstructor
-@NoArgsConstructor
 @Data
+@NoArgsConstructor
+@AllArgsConstructor
 public class SBPageResponseWrapper<RESPONSE> {
 
 	public static <RESPONSE>SBPageResponseWrapper <RESPONSE>create(){

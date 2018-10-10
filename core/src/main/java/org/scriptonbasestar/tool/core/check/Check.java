@@ -36,61 +36,58 @@ public final class Check {
 		return a;
 	}
 
-	public static String notNullOrEmptyString(String a, String message) {
-		if (a != null && !a.trim().isEmpty()) {
-			return a;
-		}
-		throw new IllegalArgumentException(message);
-	}
-
-	public static <T> T[] notNullOrEmpty(T[] a, String message) {
+	public static <T> T[] notEmpty(T[] a, String message) {
 		if (a != null && a.length > 0) {
 			return a;
 		}
 		throw new IllegalArgumentException(message);
 	}
 
-	public static void notNullOrEmpty(Collection a, String message) {
+	public static <T> Collection<T> notEmpty(Collection<T> a, String message) {
 		if (a != null && !a.isEmpty()) {
-			return;
+			return a;
 		}
 		throw new IllegalArgumentException(message);
 	}
 
 	/*
-	======================= should =======================
+	======================= must =======================
 	 */
-	public static void shouldTrue(boolean a, String message) {
-		if (a) {
-			return;
+	public static boolean mustEqualValue(boolean source, boolean compare, String message) {
+		if (source==compare) {
+			return source;
+		}
+		throw new IllegalArgumentException(message);
+	}
+	public static long mustEqualValue(long source, long compare, String message) {
+		if (source==compare) {
+			return source;
+		}
+		throw new IllegalArgumentException(message);
+	}
+	public static double mustEqualValue(double source, double compare, String message) {
+		if (source==compare) {
+			return source;
+		}
+		throw new IllegalArgumentException(message);
+	}
+	public static byte mustEqualValue(byte source, byte compare, String message) {
+		if (source==compare) {
+			return source;
+		}
+		throw new IllegalArgumentException(message);
+	}
+	public static String mustEqualValue(String source, String compare, String message) {
+		if (source.equals(compare)) {
+			return source;
 		}
 		throw new IllegalArgumentException(message);
 	}
 
-	public static void shouldFalse(boolean a, String message) {
-		if (!a) {
-			return;
-		}
-		throw new IllegalArgumentException(message);
-	}
 
 	/*
 	======================= Pattern =======================
 	 */
-	public static void urlDomainPattern(String a, String message) {
-		if (a != null && a.matches(MatchPattern.urlDomainHttp)) {
-			return;
-		}
-		throw new IllegalArgumentException(message);
-	}
-
-	public static void urlCustomPattern(String a, String message) {
-		if (a != null && a.matches(MatchPattern.urlCustom)) {
-			return;
-		}
-		throw new IllegalArgumentException(message);
-	}
-
 	public static void customPattern(String a, String pattern, String message) {
 		if (a != null && a.matches(pattern)) {
 			return;

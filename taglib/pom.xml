@@ -7,7 +7,7 @@
 		<groupId>org.scriptonbasestar.tools</groupId>
 		<artifactId>sb-tools-java</artifactId>
 		<!--suppress MavenPropertyInParent -->
-		<version>sb-tools-20181010-1-DEV</version>
+		<version>sb-tools-20181010-2-DEV</version>
 	</parent>
 
 	<artifactId>sb-tools-taglib</artifactId>
@@ -21,7 +21,7 @@
 		<dependency>
 			<groupId>org.scriptonbasestar.tools</groupId>
 			<artifactId>sb-tools-collection</artifactId>
-			<version>sb-tools-20181010-1-DEV</version>
+			<version>sb-tools-20181010-2-DEV</version>
 		</dependency>
 
 		<dependency>

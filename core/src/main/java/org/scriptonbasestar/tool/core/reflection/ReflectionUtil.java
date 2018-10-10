@@ -3,7 +3,7 @@ package org.scriptonbasestar.tool.core.reflection;
 import lombok.AccessLevel;
 import lombok.NoArgsConstructor;
 import org.scriptonbasestar.tool.core.exception.SBReflectionException;
-import org.scriptonbasestar.tool.core.util.StringUtil;
+import org.scriptonbasestar.tool.core.util.SBStringUtil;
 
 import java.lang.reflect.Field;
 import java.lang.reflect.InvocationTargetException;
@@ -58,7 +58,7 @@ public class ReflectionUtil {
 		for (Field field : fields) {
 			//java this$0
 			//groovy [name, height, weight, $staticClassInfo, __$stMC, metaClass, $staticClassInfo$, $callSiteArray]
-			if (StringUtil.isStartsWith(field.getName(), "$", "__$", "metaClass", "this$0")) {
+			if (SBStringUtil.isStartsWith(field.getName(), "$", "__$", "metaClass", "this$0")) {
 				continue;
 			}
 			fieldNames.add(field.getName());
@@ -71,7 +71,7 @@ public class ReflectionUtil {
 		Set<String> resultGetterNames = new HashSet<>();
 		for (Method m : methods) {
 			String name = m.getName();
-			if(StringUtil.isStartsWith(name, "getClass", "getProperty", "getMetaClass")) {
+			if(SBStringUtil.isStartsWith(name, "getClass", "getProperty", "getMetaClass")) {
 				continue;
 			}
 			if (name.startsWith("get") || name.startsWith("is")) {
@@ -86,7 +86,7 @@ public class ReflectionUtil {
 		Set<Method> resultMethods = new HashSet<>();
 		for (Method m : methods) {
 			String name = m.getName();
-			if(StringUtil.isStartsWith(name, "getClass", "getProperty", "getMetaClass")) {
+			if(SBStringUtil.isStartsWith(name, "getClass", "getProperty", "getMetaClass")) {
 				continue;
 			}
 			if (name.startsWith("get") || name.startsWith("is")) {

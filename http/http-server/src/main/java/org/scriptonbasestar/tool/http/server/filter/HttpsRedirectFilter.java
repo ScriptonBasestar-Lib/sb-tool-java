@@ -32,8 +32,8 @@ public class HttpsRedirectFilter implements Filter {
 	@Override
 	public void init(FilterConfig filterConfig) throws ServletException {
 		this.filterConfig = filterConfig;
-		Check.notNullOrEmptyString(filterConfig.getInitParameter("toProtocol"), "protocol must not null or empty");
-		Check.notNullOrEmptyString(filterConfig.getInitParameter("toPort"), "port must not null or empty");
+		Check.notEmptyString(filterConfig.getInitParameter("toProtocol"), "protocol must not null or empty");
+		Check.notEmptyString(filterConfig.getInitParameter("toPort"), "port must not null or empty");
 		this.toProtocol = filterConfig.getInitParameter("toProtocol");
 		this.toPort = Integer.parseInt(filterConfig.getInitParameter("toProtocol"));
 	}
