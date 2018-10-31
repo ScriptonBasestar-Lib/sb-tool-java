@@ -1,7 +1,5 @@
 package org.scriptonbasestar.tool.core.exception.network;
 
-import org.scriptonbasestar.tool.core.exception.SBRuntimeBaseException;
-
 /**
  * @Author archmagece
  * @CreatedAt 2016-12-07 18
