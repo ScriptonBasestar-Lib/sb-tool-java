@@ -4,18 +4,15 @@ import org.jasypt.encryption.pbe.StandardPBEByteEncryptor;
 
 /**
  * @author archmagece
- * @since 2017-09-07
- * <p>
- * https://en.wikipedia.org/wiki/RC2
- * PBEwithSHA1andRC2_40
+ * @since 2018-12-07
  */
-public class RC2 implements SBSymmetryService {
+public class SymmetryServiceImpl implements ISBSymmetryService {
 
 	private final StandardPBEByteEncryptor byteEncryptor;
 
-	public RC2(String password){
+	public SymmetryServiceImpl(SymmetryAlgorithm symmetryAlgorithm, String password){
 		byteEncryptor = new StandardPBEByteEncryptor();
-		byteEncryptor.setAlgorithm("PBEwithSHA1andRC2_40");
+		byteEncryptor.setAlgorithm(symmetryAlgorithm.getVal());
 		byteEncryptor.setPassword(password);
 		byteEncryptor.initialize();
 	}

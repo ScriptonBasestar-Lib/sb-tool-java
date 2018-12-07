@@ -1,22 +1,30 @@
 import org.apache.commons.codec.binary.Hex
 import org.apache.commons.codec.binary.StringUtils
+import org.junit.Assert
 import org.junit.Test
-import org.scriptonbasestar.tool.crypto.symmetry.RC2
-import org.scriptonbasestar.tool.crypto.symmetry.SBSymmetryService
+import org.scriptonbasestar.tool.crypto.symmetry.SymmetryAlgorithm
+import org.scriptonbasestar.tool.crypto.symmetry.SymmetryServiceImpl
+import org.scriptonbasestar.tool.crypto.symmetry.ISBSymmetryService
 
 class EncryptTest {
 	@Test
 	void rc2test(){
-		SBSymmetryService byteEncryptor = new RC2("r390prifk0p2i03082")
-		byte[] bytesIn = byteEncryptor.encrypt("test".getBytes("UTF-8"))
-		println(bytesIn)
-//		println(StringUtils.newStringUtf8(bytesIn))
-		def hexByte = Hex.encodeHexString(bytesIn)
-		println(hexByte)
+		String stringIn = "testtext111"
+		println("stringIn string: $stringIn")
+		byte[] bytesIn = stringIn.getBytes("UTF-8")
+		println("bytesIn byte[]: $bytesIn")
 
-		println(Hex.decodeHex(hexByte.chars))
-		byte[] bytesOut = byteEncryptor.decrypt(Hex.decodeHex(hexByte.chars))
-		println(bytesOut)
-		println(StringUtils.newStringUtf8(bytesOut))
+		ISBSymmetryService byteEncryptor = new SymmetryServiceImpl(SymmetryAlgorithm.RC2_40, "r390prifk0p2i03082")
+		byte[] bytesEncrypted = byteEncryptor.encrypt(bytesIn)
+		println("bytesEncrypted byte[]:  $bytesEncrypted")
+		println("bytesEncrypted 변환 string: ${Hex.encodeHexString(bytesEncrypted)}")
+
+		byte[] bytesDecrypted = byteEncryptor.decrypt(bytesEncrypted)
+		println("bytesDecrypted byte[]: $bytesDecrypted")
+		String stringDecrypted = StringUtils.newStringUtf8(bytesDecrypted)
+		println("stringDecrypted string: $stringDecrypted")
+
+		Assert.assertArrayEquals(bytesIn, bytesDecrypted)
+		Assert.assertEquals(stringIn, stringDecrypted)
 	}
 }

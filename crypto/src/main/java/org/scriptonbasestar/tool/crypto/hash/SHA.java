@@ -4,7 +4,7 @@ package org.scriptonbasestar.tool.crypto.hash;
  * @author archmagece
  * @since 2017-09-07
  *
- * Secure Hash Algorithm
+ * Secure Hash SymmetryAlgorithm
  * https://ko.wikipedia.org/wiki/SHA
  *
  * SHA-1
