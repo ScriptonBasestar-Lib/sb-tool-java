@@ -16,10 +16,11 @@ import java.util.Date;
  */
 @Getter
 @CompoundIndexes({
-		@CompoundIndex(name = "log_idx", def = "{'timestamp': -1, 'level': 1, 'logger': 1, 'thread': 1}")
+	@CompoundIndex(name = "log_idx", def = "{'timestamp': -1, 'level': 1, 'logger': 1, 'thread': 1}")
 })
 @MappedSuperclass
-public abstract class MongoLoggingBaseModel extends MongoDateModel {
+public abstract class MongoLoggingBaseModel
+	extends MongoDateModel {
 
 	@Id
 	private String id;
@@ -46,11 +47,11 @@ public abstract class MongoLoggingBaseModel extends MongoDateModel {
 
 	protected MoreObjects.ToStringHelper buildStringHelper() {
 		return super.buildStringHelper()
-				.add("id", id)
-				.add("timestamp", timestamp)
-				.add("level", level)
-				.add("logger", logger)
-				.add("thread", thread)
-				.add("message", message);
+					.add("id", id)
+					.add("timestamp", timestamp)
+					.add("level", level)
+					.add("logger", logger)
+					.add("thread", thread)
+					.add("message", message);
 	}
 }

@@ -1,8 +1,8 @@
 package org.scriptonbasestar.tool.http.client;
 
 import lombok.extern.slf4j.Slf4j;
-import org.scriptonbasestar.tool.http.client.rest.http.WebReader;
 import org.junit.Test;
+import org.scriptonbasestar.tool.http.client.rest.http.WebReader;
 
 /**
  * @athor archmagece
@@ -22,7 +22,7 @@ public class WebReaderTest {
 	 *
 	 */
 	@Test
-	public void test(){
+	public void test() {
 		System.setProperty("jsse.enableSNIExtension", "false");
 		String page = WebReader.readPage("https://webtest.pizzahut.co.kr/", "UTF-8", false);
 //		String page = WebReader.readPage("https://github.com/", "UTF-8", false);

@@ -13,7 +13,8 @@ import java.util.Map;
 /**
  * ver 1.4.5 Converter is deprecated
  */
-public class MapEntryConverter implements Converter {
+public class MapEntryConverter
+	implements Converter {
 
 	public boolean canConvert(Class clazz) {
 		return AbstractMap.class.isAssignableFrom(clazz);

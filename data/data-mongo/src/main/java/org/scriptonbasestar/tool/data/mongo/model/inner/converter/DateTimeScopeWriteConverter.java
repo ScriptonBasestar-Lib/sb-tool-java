@@ -10,12 +10,13 @@ import org.springframework.data.convert.WritingConverter;
  * Created by archmagece on 2015-10-01.
  */
 @WritingConverter
-public class DateTimeScopeWriteConverter implements Converter<DateTimeScopeInnerModel, DBObject> {
+public class DateTimeScopeWriteConverter
+	implements Converter<DateTimeScopeInnerModel, DBObject> {
 	@Override
 	public DBObject convert(DateTimeScopeInnerModel source) {
 		return source == null ? null :
-				new BasicDBObject()
-						.append("fromDate", source.getFromDate())
-						.append("toDate", source.getToDate());
+			new BasicDBObject()
+				.append("fromDate", source.getFromDate())
+				.append("toDate", source.getToDate());
 	}
 }

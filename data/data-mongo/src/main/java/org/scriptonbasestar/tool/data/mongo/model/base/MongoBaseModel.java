@@ -12,7 +12,8 @@ import java.io.Serializable;
  */
 @Getter
 @MappedSuperclass
-public abstract class MongoBaseModel implements Serializable {
+public abstract class MongoBaseModel
+	implements Serializable {
 
 	@Override
 	public String toString() {

@@ -6,11 +6,12 @@ import org.jasypt.encryption.pbe.StandardPBEByteEncryptor;
  * @author archmagece
  * @since 2018-12-07
  */
-public class SymmetryServiceImpl implements ISBSymmetryService {
+public class SymmetryServiceImpl
+	implements ISBSymmetryService {
 
 	private final StandardPBEByteEncryptor byteEncryptor;
 
-	public SymmetryServiceImpl(SymmetryAlgorithm symmetryAlgorithm, String password){
+	public SymmetryServiceImpl(SymmetryAlgorithm symmetryAlgorithm, String password) {
 		byteEncryptor = new StandardPBEByteEncryptor();
 		byteEncryptor.setAlgorithm(symmetryAlgorithm.getVal());
 		byteEncryptor.setPassword(password);

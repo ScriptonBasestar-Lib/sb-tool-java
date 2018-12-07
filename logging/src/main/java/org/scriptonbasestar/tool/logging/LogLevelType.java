@@ -12,5 +12,6 @@ public enum LogLevelType {
 	INFO,
 	DEBUG,
 	TRACE,
-	ALL,;
+	ALL,
+	;
 }

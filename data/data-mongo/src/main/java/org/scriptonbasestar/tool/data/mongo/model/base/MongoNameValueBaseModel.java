@@ -14,7 +14,8 @@ import javax.persistence.MappedSuperclass;
 
 @Getter
 @MappedSuperclass
-public abstract class MongoNameValueBaseModel extends MongoDateModel {
+public abstract class MongoNameValueBaseModel
+	extends MongoDateModel {
 
 	@Id
 	private String id;
@@ -32,8 +33,8 @@ public abstract class MongoNameValueBaseModel extends MongoDateModel {
 
 	protected MoreObjects.ToStringHelper buildStringHelper() {
 		return super.buildStringHelper()
-				.add("id", id)
-				.add("name", name)
-				.add("value", value);
+					.add("id", id)
+					.add("name", name)
+					.add("value", value);
 	}
 }

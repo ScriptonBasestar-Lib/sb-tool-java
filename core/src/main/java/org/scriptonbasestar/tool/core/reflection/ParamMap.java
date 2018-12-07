@@ -14,10 +14,10 @@ import java.util.Set;
  * @author archmagece
  */
 public class ParamMap
-		extends
-		LinkedHashMap<String, Object>
-		implements
-		Serializable {
+	extends
+	LinkedHashMap<String, Object>
+	implements
+	Serializable {
 
 	private Set<Object> beanSet = null;
 
@@ -54,11 +54,11 @@ public class ParamMap
 	// --/생성자--//
 	// --맵--//
 	public void beanToMap(Object pbean)
-			throws
-			IntrospectionException,
-			IllegalArgumentException,
-			IllegalAccessException,
-			InvocationTargetException {
+		throws
+		IntrospectionException,
+		IllegalArgumentException,
+		IllegalAccessException,
+		InvocationTargetException {
 
 		Method[] methods = pbean.getClass().getMethods();
 
@@ -72,10 +72,10 @@ public class ParamMap
 	}
 
 	public void beanFromMap(Object pbean)
-			throws
-			IllegalArgumentException,
-			IllegalAccessException,
-			InvocationTargetException {
+		throws
+		IllegalArgumentException,
+		IllegalAccessException,
+		InvocationTargetException {
 
 		beanSet.add(pbean);
 
@@ -88,10 +88,10 @@ public class ParamMap
 	}
 
 	public <T> T tBeanFromMap(T pbean)
-			throws
-			IllegalArgumentException,
-			IllegalAccessException,
-			InvocationTargetException {
+		throws
+		IllegalArgumentException,
+		IllegalAccessException,
+		InvocationTargetException {
 
 		// if(!beanSet.contains(pbean)){
 		// return null;
@@ -143,10 +143,10 @@ public class ParamMap
 	// --/키워드값셋
 
 	public Set<Object> getBeans()
-			throws
-			IllegalArgumentException,
-			IllegalAccessException,
-			InvocationTargetException {
+		throws
+		IllegalArgumentException,
+		IllegalAccessException,
+		InvocationTargetException {
 		Set<Object> result = new HashSet<Object>();
 		for (Object o : beanSet) {
 			result.add(tBeanFromMap(o));

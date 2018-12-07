@@ -38,7 +38,7 @@ public final class Joiner<ITEM> {
 		this.toAppend = toAppend;
 	}
 
-	public static <ITEM>Joiner on(String separator) {
+	public static <ITEM> Joiner on(String separator) {
 		return new Joiner<ITEM>(separator);
 	}
 
@@ -51,7 +51,7 @@ public final class Joiner<ITEM> {
 		return this;
 	}
 
-	public Joiner <ITEM>append(Collection<ITEM> entities) {
+	public Joiner<ITEM> append(Collection<ITEM> entities) {
 		this.toAppend.addAll(entities);
 		return this;
 	}

@@ -10,7 +10,7 @@ import org.scriptonbasestar.tool.transfer.wrapper.SBListResponseWrapper
  */
 class WrapperTest {
 	@Test
-	fun wrapperCreationTest(){
+	fun wrapperCreationTest() {
 		var wrapper1_1 = SBListResponseWrapper<Long>().data(SetBuilder.create<Long>().add(3).build()).success()
 		var wrapper1_2 = SBListResponseWrapper<String>().data(SetBuilder.create<String>().add("ddd").build()).success()
 		println(wrapper1_1)

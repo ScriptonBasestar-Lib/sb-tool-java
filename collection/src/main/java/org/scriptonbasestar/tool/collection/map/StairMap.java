@@ -13,7 +13,8 @@ import java.util.HashMap;
  * 일단 퍼포먼스 생각안함. 코딩편의성
  * 스레드 데인저
  */
-public class StairMap<K extends Serializable, V extends Serializable> extends HashMap<K, StairMap> {
+public class StairMap<K extends Serializable, V extends Serializable>
+	extends HashMap<K, StairMap> {
 
 	//맨 꽁지는 맵을 안가지고있으니까 그냥 값을 들고있으라고... 5단계 4단계 등.. 단계를 제한하는 경우 씀
 	public V value;
@@ -38,6 +39,7 @@ public class StairMap<K extends Serializable, V extends Serializable> extends Ha
 	 *
 	 * @param key
 	 * @param value
+	 *
 	 * @return
 	 */
 	@Override
@@ -52,6 +54,7 @@ public class StairMap<K extends Serializable, V extends Serializable> extends Ha
 	 * 따라가면서 키 가진놈 다 지우기
 	 *
 	 * @param key
+	 *
 	 * @return
 	 */
 	public StairMap removeAllRecursively(K key) {

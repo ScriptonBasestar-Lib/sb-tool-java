@@ -84,6 +84,7 @@ public class TreeNode<E> {
 	 * links[0]이 아닌 links[startNo]가 parent값
 	 *
 	 * @param plink
+	 *
 	 * @return
 	 */
 	public boolean setParent(TreeNode<E> plink) {
@@ -104,6 +105,7 @@ public class TreeNode<E> {
 	 * links[0]이 아닌 links[startNo]가 parent값
 	 *
 	 * @param index
+	 *
 	 * @return
 	 */
 	public boolean setParent(int index) {
@@ -119,6 +121,7 @@ public class TreeNode<E> {
 	 *
 	 * @param index
 	 * @param link
+	 *
 	 * @return
 	 */
 	public TreeNode<E> put(int index, TreeNode<E> link) {
@@ -136,6 +139,7 @@ public class TreeNode<E> {
 	 * 인덱스 번호 이용해서 노드 꺼내기
 	 *
 	 * @param index
+	 *
 	 * @return
 	 */
 	public TreeNode<E> get(int index) {

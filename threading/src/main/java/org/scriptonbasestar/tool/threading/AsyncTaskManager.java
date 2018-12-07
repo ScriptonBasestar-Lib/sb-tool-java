@@ -6,14 +6,12 @@ import java.util.Queue;
 import java.util.concurrent.*;
 
 /**
- * @since 2014-02-11
- * @author archamgece@gmail.com
- *
- * @see IAsyncExecuteMethod 를 구현해야함
- *
- *
  * @param <Request>
  * @param <Response>
+ *
+ * @author archamgece@gmail.com
+ * @see IAsyncExecuteMethod 를 구현해야함
+ * @since 2014-02-11
  */
 
 public final class AsyncTaskManager<Request, Response> {
@@ -27,15 +25,15 @@ public final class AsyncTaskManager<Request, Response> {
 	private final int threadIdleCountLimit;
 	private final int tryCountLimit;
 
-	public AsyncTaskManager(IAsyncExecuteMethod<Request, Response> executeMethod){
+	public AsyncTaskManager(IAsyncExecuteMethod<Request, Response> executeMethod) {
 		this(executeMethod, Runtime.getRuntime().availableProcessors());
 	}
 
-	public AsyncTaskManager(IAsyncExecuteMethod<Request, Response> executeMethod, int NUMBER_OF_THREAD){
+	public AsyncTaskManager(IAsyncExecuteMethod<Request, Response> executeMethod, int NUMBER_OF_THREAD) {
 		this(executeMethod, NUMBER_OF_THREAD, 10, 3);
 	}
 
-	public AsyncTaskManager(IAsyncExecuteMethod<Request, Response> executeMethod, int NUMBER_OF_THREAD, int threadIdleCountLimit, int tryCountLimit){
+	public AsyncTaskManager(IAsyncExecuteMethod<Request, Response> executeMethod, int NUMBER_OF_THREAD, int threadIdleCountLimit, int tryCountLimit) {
 		this.executeMethod = executeMethod;
 		this.executor = Executors.newFixedThreadPool(NUMBER_OF_THREAD);
 		this.threadIdleCountLimit = threadIdleCountLimit;
@@ -44,14 +42,16 @@ public final class AsyncTaskManager<Request, Response> {
 
 	/**
 	 * 여기서만 사용되는 것.
+	 *
 	 * @param <Request>
 	 */
 	@Data
-	private static class RequestRetrier<Request>{
-		public RequestRetrier(Request request){
+	private static class RequestRetrier<Request> {
+		public RequestRetrier(Request request) {
 			this.request = request;
 			this.tryCnt = 0;
 		}
+
 		private Request request;
 		private int tryCnt;
 	}
@@ -59,34 +59,40 @@ public final class AsyncTaskManager<Request, Response> {
 	/**
 	 * MainRunner 여기서 실행되는 클래스
 	 */
-	private class MainRunner implements Callable<Response> {
+	private class MainRunner
+		implements Callable<Response> {
 		final RequestRetrier<Request> requestRetrier;
-		public MainRunner(RequestRetrier<Request> requestRetrier){
+
+		public MainRunner(RequestRetrier<Request> requestRetrier) {
 			this.requestRetrier = requestRetrier;
 		}
+
 		@Override
 		public Response call() {
-			try{
-				requestRetrier.setTryCnt(requestRetrier.getTryCnt()+1);
+			try {
+				requestRetrier.setTryCnt(requestRetrier.getTryCnt() + 1);
 				return executeMethod.call(requestRetrier.getRequest());
-			}catch (Exception e){
+			} catch (Exception e) {
 				requestRetriers.add(requestRetrier);
 				return null;
 			}
 		}
 	}
 
-	private class FutureRunner implements Runnable{
+	private class FutureRunner
+		implements Runnable {
 		final Future<Response> future;
-		public FutureRunner(Future<Response> future){
+
+		public FutureRunner(Future<Response> future) {
 			this.future = future;
 		}
+
 		@Override
 		public void run() {
 			try {
 //				Response response = this.future.access();
 //				responses.add(response);
-				if(this.future.isDone()){
+				if (this.future.isDone()) {
 					responses.add(this.future.get());
 				}
 			} catch (InterruptedException e) {
@@ -99,24 +105,25 @@ public final class AsyncTaskManager<Request, Response> {
 
 	Thread thread = new Thread(new Runnable() {
 		int endCount = 0;
+
 		@Override
 		public void run() {
-			while(true) {
-				while(!responses.isEmpty()){
+			while (true) {
+				while (!responses.isEmpty()) {
 					Response response = responses.remove();
 					executeMethod.afterCall(response);
 				}
-				while(!requestRetriers.isEmpty()){
+				while (!requestRetriers.isEmpty()) {
 					RequestRetrier<Request> requestRetrier = requestRetriers.remove();
-					if(requestRetrier == null){
+					if (requestRetrier == null) {
 						continue;
 					}
 					//FAIL tryCnt 3이상인 경우 실패
-					if(requestRetrier.getTryCnt()<tryCountLimit){
+					if (requestRetrier.getTryCnt() < tryCountLimit) {
 						execute(requestRetrier);
 					}
 				}
-				if(threadIdleCountLimit > endCount++){
+				if (threadIdleCountLimit > endCount++) {
 //					break;
 					endCount = 0;
 					try {
@@ -148,10 +155,10 @@ public final class AsyncTaskManager<Request, Response> {
 		executor.execute(new FutureRunner(future));
 
 		//after work
-		if(!thread.isAlive() || thread.isInterrupted()){
-			try{
+		if (!thread.isAlive() || thread.isInterrupted()) {
+			try {
 				thread.start();
-			}catch (Exception e){
+			} catch (Exception e) {
 				e.printStackTrace();
 			}
 		}

@@ -11,7 +11,7 @@ import org.scriptonbasestar.tool.transfer.dto.CommonLongIdDto
 class GenericCreationTest {
 
 	fun upload1(): SBListResponseWrapper<CommonLongIdDto> {
-		var wr : SBListResponseWrapper<CommonLongIdDto> = SBListResponseWrapper<CommonLongIdDto>().code("cococode").fail()
+		var wr: SBListResponseWrapper<CommonLongIdDto> = SBListResponseWrapper<CommonLongIdDto>().code("cococode").fail()
 		return wr
 	}
 //	fun upload2(): SBListResponseWrapper<CommonLongIdDto> {
@@ -21,7 +21,7 @@ class GenericCreationTest {
 
 	@Test
 	@Ignore
-	fun test(){
+	fun test() {
 		upload1()
 //		upload2()
 	}

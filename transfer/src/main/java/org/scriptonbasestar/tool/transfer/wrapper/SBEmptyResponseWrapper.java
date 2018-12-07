@@ -15,37 +15,43 @@ import java.util.Set;
 @AllArgsConstructor
 public class SBEmptyResponseWrapper {
 
-	public static SBEmptyResponseWrapper create(){
+	public static SBEmptyResponseWrapper create() {
 		return new SBEmptyResponseWrapper();
 	}
 
 	@Setter(AccessLevel.PROTECTED)
 	private long leadTime;
+
 	public SBEmptyResponseWrapper leadTime(long leadTime) {
 		this.leadTime = leadTime;
 		return this;
 	}
+
 	public SBEmptyResponseWrapper leadTimeCalc(long start, long end) {
 		this.leadTime = end - start;
 		return this;
 	}
+
 	public SBEmptyResponseWrapper leadTimeCalc(long start) {
 		this.leadTime = System.currentTimeMillis() - start;
 		return this;
 	}
 
 	private boolean success = true;
+
 	public SBEmptyResponseWrapper success() {
 		this.success = true;
 		return this;
 	}
+
 	public SBEmptyResponseWrapper fail() {
 		success = false;
 		return this;
 	}
 
 	private String lang;
-	public SBEmptyResponseWrapper lang(String lang){
+
+	public SBEmptyResponseWrapper lang(String lang) {
 		this.lang = lang;
 		return this;
 	}
@@ -61,17 +67,19 @@ public class SBEmptyResponseWrapper {
 	 * 9000: unknown
 	 */
 	private String code;
-	public SBEmptyResponseWrapper code(String code){
+
+	public SBEmptyResponseWrapper code(String code) {
 		this.code = code;
 		return this;
 	}
 
 	private String message;
-	public SBEmptyResponseWrapper message(String message){
+
+	public SBEmptyResponseWrapper message(String message) {
 		this.message = message;
 		return this;
 	}
 
-	protected Set<Map<String,String>> validationErrorSet = new HashSet<>();
+	protected Set<Map<String, String>> validationErrorSet = new HashSet<>();
 
 }

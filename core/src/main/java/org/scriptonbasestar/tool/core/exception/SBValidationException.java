@@ -7,7 +7,8 @@ package org.scriptonbasestar.tool.core.exception;
  * <p>
  * validation 오류
  */
-public class SBValidationException extends SBRuntimeBaseException {
+public class SBValidationException
+	extends SBRuntimeBaseException {
 	public SBValidationException(String code, String message) {
 		super(code, message);
 	}

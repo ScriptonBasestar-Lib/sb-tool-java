@@ -18,7 +18,7 @@ public class ExtractorTest {
 
 	@Data
 	@AllArgsConstructor
-	public static class TestUser{
+	public static class TestUser {
 		private Long id;
 		private String name;
 		private String mobile;

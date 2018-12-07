@@ -43,7 +43,7 @@ public class ApiNameMapManager {
 		return eventManager;
 	}
 
-//	public SBValue access(SBKey key) throws ParamValidator{
+	//	public SBValue access(SBKey key) throws ParamValidator{
 	public SBValue get(SBKey key) {
 		return map1.get(key);
 	}
@@ -51,8 +51,8 @@ public class ApiNameMapManager {
 	public List<SBParamMap> get2(SBKey key) {
 		return map2.get(key);
 	}
-	
-	public Set<SBKey> keySet(){
+
+	public Set<SBKey> keySet() {
 		return map1.keySet();
 	}
 }

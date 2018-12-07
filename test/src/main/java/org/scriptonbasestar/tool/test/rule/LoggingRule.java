@@ -8,9 +8,11 @@ import org.junit.runners.model.Statement;
  * @Author archmagece
  * @CreatedAt 2016-10-11 19
  */
-public class LoggingRule implements TestRule {
+public class LoggingRule
+	implements TestRule {
 
-	public class LoggingStatement extends Statement {
+	public class LoggingStatement
+		extends Statement {
 
 		private final Statement statement;
 

@@ -9,7 +9,8 @@ import java.io.IOException;
  * @author archmagece
  * @since 2017-09-05
  */
-public class SimpleCorsFilter implements Filter{
+public class SimpleCorsFilter
+	implements Filter {
 	@Override
 	public void init(FilterConfig filterConfig) throws ServletException {
 	}

@@ -15,7 +15,8 @@ import java.io.Serializable;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-public class CommonLongIdNameDto implements Serializable {
+public class CommonLongIdNameDto
+	implements Serializable {
 	@NotNull
 	private Long id;
 	@NotNull

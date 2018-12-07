@@ -14,12 +14,12 @@ import org.springframework.stereotype.Service;
 @Slf4j
 @Configuration
 @ComponentScan(
-		includeFilters = {
-				@ComponentScan.Filter(value = {Service.class}, type = FilterType.ANNOTATION)
-		},
-		excludeFilters = {
-				@ComponentScan.Filter(value = {Configuration.class}, type = FilterType.ANNOTATION)
-		}
+	includeFilters = {
+		@ComponentScan.Filter(value = {Service.class}, type = FilterType.ANNOTATION)
+	},
+	excludeFilters = {
+		@ComponentScan.Filter(value = {Configuration.class}, type = FilterType.ANNOTATION)
+	}
 )
 @Import({BaseApiRootBeanConfig.class})
 public abstract class BaseApiRootConfig {

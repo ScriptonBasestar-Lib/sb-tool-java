@@ -9,10 +9,12 @@ import java.util.List;
  */
 public class DocFromValidator<T> {
 	private List<T> dtos;
-	public DocFromValidator(){
-		this.dtos = new ArrayList<>(); 
+
+	public DocFromValidator() {
+		this.dtos = new ArrayList<>();
 	}
-	public String create(){
+
+	public String create() {
 		return null;
 	}
 }

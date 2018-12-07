@@ -20,7 +20,8 @@ import javax.validation.constraints.Size;
 @DynamicInsert
 @DynamicUpdate
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
-public abstract class SBCodeEntityBase extends SBDataEntityBase {
+public abstract class SBCodeEntityBase
+	extends SBDataEntityBase {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
@@ -53,9 +54,9 @@ public abstract class SBCodeEntityBase extends SBDataEntityBase {
 	@Override
 	protected MoreObjects.ToStringHelper buildStringHelper() {
 		return super.buildStringHelper()
-			.add("id", id)
-			.add("code", code)
-			.add("name", name)
-			.add("description", description);
+					.add("id", id)
+					.add("code", code)
+					.add("name", name)
+					.add("description", description);
 	}
 }

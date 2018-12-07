@@ -61,7 +61,9 @@ import java.util.List;
  * @see ArgumentTag
  */
 @SuppressWarnings("serial")
-public class MessageAppender extends HtmlEscapingAwareTag implements ArgumentAware {
+public class MessageAppender
+	extends HtmlEscapingAwareTag
+	implements ArgumentAware {
 
 	/**
 	 * Default separator for splitting an arguments String: a comma (",")
@@ -81,7 +83,8 @@ public class MessageAppender extends HtmlEscapingAwareTag implements ArgumentAwa
 	 */
 	@Setter
 	private String code;
-	public void codes(String ... codes){
+
+	public void codes(String... codes) {
 		this.code = Joiner.on(".").append(codes).join();
 	}
 
@@ -96,6 +99,7 @@ public class MessageAppender extends HtmlEscapingAwareTag implements ArgumentAwa
 	/**
 	 * Set the separator to use for splitting an arguments String.
 	 * Default is a comma (",").
+	 *
 	 * @see #setArguments
 	 */
 	@Setter
@@ -112,6 +116,7 @@ public class MessageAppender extends HtmlEscapingAwareTag implements ArgumentAwa
 	/**
 	 * Set PageContext attribute name under which to expose
 	 * a variable that contains the resolved message.
+	 *
 	 * @see #setScope
 	 * @see javax.servlet.jsp.PageContext#setAttribute
 	 */
@@ -121,6 +126,7 @@ public class MessageAppender extends HtmlEscapingAwareTag implements ArgumentAwa
 	/**
 	 * Set the scope to export the variable to.
 	 * Default is SCOPE_PAGE ("page").
+	 *
 	 * @see #setVar
 	 * @see org.springframework.web.util.TagUtils#SCOPE_PAGE
 	 * @see javax.servlet.jsp.PageContext#setAttribute
@@ -153,6 +159,7 @@ public class MessageAppender extends HtmlEscapingAwareTag implements ArgumentAwa
 	/**
 	 * Resolves the message, escapes it if demanded,
 	 * and writes it to the page (or exposes it as variable).
+	 *
 	 * @see #resolveMessage()
 	 * @see org.springframework.web.util.HtmlUtils#htmlEscape(String)
 	 * @see org.springframework.web.util.JavaScriptUtils#javaScriptEscape(String)
@@ -172,17 +179,14 @@ public class MessageAppender extends HtmlEscapingAwareTag implements ArgumentAwa
 			// Expose as variable, if demanded, else write to the page.
 			if (this.var != null) {
 				pageContext.setAttribute(this.var, msg, TagUtils.getScope(this.scope));
-			}
-			else {
+			} else {
 				writeMessage(msg);
 			}
 
 			return EVAL_PAGE;
-		}
-		catch (IOException ex) {
+		} catch (IOException ex) {
 			throw new JspTagException(ex.getMessage(), ex);
-		}
-		catch (NoSuchMessageException ex) {
+		} catch (NoSuchMessageException ex) {
 			throw new JspTagException(getNoSuchMessageExceptionDescription(ex));
 		}
 	}
@@ -214,18 +218,17 @@ public class MessageAppender extends HtmlEscapingAwareTag implements ArgumentAwa
 			Object[] argumentsArray = resolveArguments(this.arguments);
 			if (!this.nestedArguments.isEmpty()) {
 				argumentsArray = appendArguments(argumentsArray,
-						this.nestedArguments.toArray());
+					this.nestedArguments.toArray());
 			}
 
 			if (this.text != null) {
 				// We have a fallback text to consider.
 				return messageSource.getMessage(
-						this.code.toString(), argumentsArray, this.text, getRequestContext().getLocale());
-			}
-			else {
+					this.code.toString(), argumentsArray, this.text, getRequestContext().getLocale());
+			} else {
 				// We have no fallback text to consider.
 				return messageSource.getMessage(
-						this.code.toString(), argumentsArray, getRequestContext().getLocale());
+					this.code.toString(), argumentsArray, getRequestContext().getLocale());
 			}
 		}
 
@@ -245,39 +248,36 @@ public class MessageAppender extends HtmlEscapingAwareTag implements ArgumentAwa
 
 	/**
 	 * Resolve the given arguments Object into an arguments array.
+	 *
 	 * @param arguments the specified arguments Object
+	 *
 	 * @return the resolved arguments as array
+	 *
 	 * @throws JspException if argument conversion failed
 	 * @see #setArguments
 	 */
 	protected Object[] resolveArguments(Object arguments) throws JspException {
 		if (arguments instanceof String) {
 			String[] stringArray =
-					StringUtils.delimitedListToStringArray((String) arguments, this.argumentSeparator);
+				StringUtils.delimitedListToStringArray((String) arguments, this.argumentSeparator);
 			if (stringArray.length == 1) {
 				Object argument = stringArray[0];
 				if (argument != null && argument.getClass().isArray()) {
 					return ObjectUtils.toObjectArray(argument);
+				} else {
+					return new Object[]{argument};
 				}
-				else {
-					return new Object[] {argument};
-				}
-			}
-			else {
+			} else {
 				return stringArray;
 			}
-		}
-		else if (arguments instanceof Object[]) {
+		} else if (arguments instanceof Object[]) {
 			return (Object[]) arguments;
-		}
-		else if (arguments instanceof Collection) {
+		} else if (arguments instanceof Collection) {
 			return ((Collection<?>) arguments).toArray();
-		}
-		else if (arguments != null) {
+		} else if (arguments != null) {
 			// Assume a single argument object.
-			return new Object[] {arguments};
-		}
-		else {
+			return new Object[]{arguments};
+		} else {
 			return null;
 		}
 	}
@@ -285,7 +285,9 @@ public class MessageAppender extends HtmlEscapingAwareTag implements ArgumentAwa
 	/**
 	 * Write the message to the page.
 	 * <p>Can be overridden in subclasses, e.g. for testing purposes.
+	 *
 	 * @param msg the message to write
+	 *
 	 * @throws IOException if writing failed
 	 */
 	protected void writeMessage(String msg) throws IOException {

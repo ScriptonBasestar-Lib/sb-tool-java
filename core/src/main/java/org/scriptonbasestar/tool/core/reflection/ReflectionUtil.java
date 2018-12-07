@@ -8,7 +8,10 @@ import org.scriptonbasestar.tool.core.util.SBStringUtil;
 import java.lang.reflect.Field;
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
-import java.util.*;
+import java.util.HashMap;
+import java.util.HashSet;
+import java.util.Map;
+import java.util.Set;
 
 /**
  * @author archmagece
@@ -43,11 +46,11 @@ public class ReflectionUtil {
 	public static String createFieldName(String getterName) {
 		StringBuilder sb = new StringBuilder(getterName);
 		if (getterName.startsWith("get")) {
-			sb.delete(0,3);
-			sb.setCharAt(0,Character.toLowerCase(sb.charAt(0)));
-		}else if(getterName.startsWith("is")){
-			sb.delete(0,2);
-			sb.setCharAt(0,Character.toLowerCase(sb.charAt(0)));
+			sb.delete(0, 3);
+			sb.setCharAt(0, Character.toLowerCase(sb.charAt(0)));
+		} else if (getterName.startsWith("is")) {
+			sb.delete(0, 2);
+			sb.setCharAt(0, Character.toLowerCase(sb.charAt(0)));
 		}
 		return sb.toString();
 	}
@@ -71,7 +74,7 @@ public class ReflectionUtil {
 		Set<String> resultGetterNames = new HashSet<>();
 		for (Method m : methods) {
 			String name = m.getName();
-			if(SBStringUtil.isStartsWith(name, "getClass", "getProperty", "getMetaClass")) {
+			if (SBStringUtil.isStartsWith(name, "getClass", "getProperty", "getMetaClass")) {
 				continue;
 			}
 			if (name.startsWith("get") || name.startsWith("is")) {
@@ -86,7 +89,7 @@ public class ReflectionUtil {
 		Set<Method> resultMethods = new HashSet<>();
 		for (Method m : methods) {
 			String name = m.getName();
-			if(SBStringUtil.isStartsWith(name, "getClass", "getProperty", "getMetaClass")) {
+			if (SBStringUtil.isStartsWith(name, "getClass", "getProperty", "getMetaClass")) {
 				continue;
 			}
 			if (name.startsWith("get") || name.startsWith("is")) {
@@ -129,6 +132,7 @@ public class ReflectionUtil {
 	 *
 	 * @param source
 	 * @param fieldName
+	 *
 	 * @return
 	 */
 	public static <T> T getValue(Object source, String fieldName) {
@@ -165,23 +169,25 @@ public class ReflectionUtil {
 	}
 
 
-	public static Map<String, Object> mappingDtoField2Map(Object source){
+	public static Map<String, Object> mappingDtoField2Map(Object source) {
 		Map<String, Object> resultMap = new HashMap<>();
 		return mappingDtoField2Map(source, resultMap);
 	}
-	public static Map<String, Object> mappingDtoField2Map(Object source, Map<String,Object> resultMap){
-		for(String fieldName : extractFieldNames(source)){
+
+	public static Map<String, Object> mappingDtoField2Map(Object source, Map<String, Object> resultMap) {
+		for (String fieldName : extractFieldNames(source)) {
 			resultMap.put(fieldName, getValue(source, fieldName));
 		}
 		return resultMap;
 	}
 
-	public static Map<String, Object> mappingGetterDto2Map(Object source){
+	public static Map<String, Object> mappingGetterDto2Map(Object source) {
 		Map<String, Object> resultMap = new HashMap<>();
 		return mappingGetterDto2Map(source, resultMap);
 	}
-	public static Map<String, Object> mappingGetterDto2Map(Object source, Map<String, Object> resultMap){
-		for(Method m : extractGetterMethods(source)){
+
+	public static Map<String, Object> mappingGetterDto2Map(Object source, Map<String, Object> resultMap) {
+		for (Method m : extractGetterMethods(source)) {
 			try {
 				resultMap.put(createFieldName(m.getName()), m.invoke(source));
 			} catch (IllegalAccessException e) {

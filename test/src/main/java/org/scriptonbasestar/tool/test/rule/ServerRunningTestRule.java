@@ -14,10 +14,12 @@ import java.net.URLConnection;
  * @Author archmagece
  * @CreatedAt 2016-10-11 19
  */
-public class ServerRunningTestRule implements TestRule {
+public class ServerRunningTestRule
+	implements TestRule {
 
 	private final String serverUrl;
-	public ServerRunningTestRule(String serverUrl ){
+
+	public ServerRunningTestRule(String serverUrl) {
 		this.serverUrl = serverUrl;
 	}
 

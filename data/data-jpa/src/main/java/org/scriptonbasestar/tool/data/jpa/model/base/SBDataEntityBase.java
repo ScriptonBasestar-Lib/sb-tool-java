@@ -21,7 +21,8 @@ import java.util.Date;
 @DynamicInsert
 @DynamicUpdate
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
-public abstract class SBDataEntityBase implements Serializable {
+public abstract class SBDataEntityBase
+	implements Serializable {
 
 	/**
 	 * 블라인드처리 등의 용도.

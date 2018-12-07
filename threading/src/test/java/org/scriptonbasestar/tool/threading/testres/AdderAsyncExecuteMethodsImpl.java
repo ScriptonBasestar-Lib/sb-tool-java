@@ -6,7 +6,8 @@ import org.scriptonbasestar.tool.threading.IAsyncExecuteMethod;
  * @author : archmagece@gmail.com
  * @since: 2014-02-11 20:34
  */
-public class AdderAsyncExecuteMethodsImpl implements IAsyncExecuteMethod<RequestDto, ResponseDto> {
+public class AdderAsyncExecuteMethodsImpl
+	implements IAsyncExecuteMethod<RequestDto, ResponseDto> {
 	@Override
 	public void beforeCall(RequestDto requestVo) {
 		System.out.println("AdderAsyncExecuteMethodsImpl beforeCall -################# requestVo");
@@ -18,7 +19,7 @@ public class AdderAsyncExecuteMethodsImpl implements IAsyncExecuteMethod<Request
 		System.out.println("AdderAsyncExecuteMethodsImpl call -****************** RequestDto, ResponseDto");
 		System.out.println(requestVo);
 		ResponseDto responseVo = new ResponseDto();
-		responseVo.val = requestVo.val+1;
+		responseVo.val = requestVo.val + 1;
 		System.out.println(responseVo);
 		return responseVo;  //To change body of implemented methods use File | Settings | File Templates.
 	}

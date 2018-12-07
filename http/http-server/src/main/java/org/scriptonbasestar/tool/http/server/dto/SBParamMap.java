@@ -17,38 +17,41 @@ public class SBParamMap {
 	public boolean essential;
 	public SELECTION_TYPE selectionType;
 
-	public SBParamMap(SBParam[] params, boolean essential, SELECTION_TYPE selection_type){
+	public SBParamMap(SBParam[] params, boolean essential, SELECTION_TYPE selection_type) {
 		this.params = params;
 		this.essential = essential;
 		this.selectionType = selection_type;
 	}
 
-	public static SBParamMap create(SBParam[] params, boolean essencial, SELECTION_TYPE selectionType){
+	public static SBParamMap create(SBParam[] params, boolean essencial, SELECTION_TYPE selectionType) {
 		return new SBParamMap(params, essencial, selectionType);
 	}
-	public static SBParamMap create(String names, boolean essencial, SELECTION_TYPE selectionType){
+
+	public static SBParamMap create(String names, boolean essencial, SELECTION_TYPE selectionType) {
 		return new SBParamMap(SBParam.createList(names), essencial, selectionType);
 	}
-	public static List<SBParamMap> list(SBParamMap...keys){
+
+	public static List<SBParamMap> list(SBParamMap... keys) {
 		return new ArrayList<SBParamMap>(Arrays.asList(keys));
 	}
 
-	public int containParamsCount(String ... names){
+	public int containParamsCount(String... names) {
 		int cnt = 0;
-		for(SBParam param : params){
-			for(String name : names){
-				if(param.name.equals(name)){
+		for (SBParam param : params) {
+			for (String name : names) {
+				if (param.name.equals(name)) {
 					cnt++;
 				}
 			}
 		}
 		return cnt;
 	}
-	public int containParamsCount(Set<String> names){
+
+	public int containParamsCount(Set<String> names) {
 		int cnt = 0;
-		for(SBParam param : params){
-			for(String name : names){
-				if(param.name.equals(name)){
+		for (SBParam param : params) {
+			for (String name : names) {
+				if (param.name.equals(name)) {
 					cnt++;
 				}
 			}

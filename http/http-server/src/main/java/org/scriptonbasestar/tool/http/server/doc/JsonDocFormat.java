@@ -14,14 +14,16 @@ import java.util.List;
  */
 @Data
 @NoArgsConstructor(access = AccessLevel.PRIVATE)
-public final class JsonDocFormat<T>{
+public final class JsonDocFormat<T> {
 	private List<T> samples = new ArrayList<>();
-	public static<T> JsonDocFormat<T> c(T ... tArr){
+
+	public static <T> JsonDocFormat<T> c(T... tArr) {
 		JsonDocFormat obj = new JsonDocFormat();
 		return obj.a(tArr);
 	}
-	public JsonDocFormat<T> a(T ... tArr){
-		for(T t : tArr){
+
+	public JsonDocFormat<T> a(T... tArr) {
+		for (T t : tArr) {
 			this.samples.add(t);
 		}
 		return this;

@@ -11,7 +11,8 @@ import java.util.Date;
  * @since 2015-08-10-13
  */
 @Data
-public class LoggingDto implements Serializable {
+public class LoggingDto
+	implements Serializable {
 
 	private String message;
 	private String logger;

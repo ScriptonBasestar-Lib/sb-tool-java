@@ -5,7 +5,8 @@ import ch.qos.logback.core.UnsynchronizedAppenderBase;
 
 import java.util.concurrent.LinkedBlockingDeque;
 
-public class MongoDBBufferedAppender extends UnsynchronizedAppenderBase<ILoggingEvent> {
+public class MongoDBBufferedAppender
+	extends UnsynchronizedAppenderBase<ILoggingEvent> {
 
 	private MongoDBConnectionSource connectionSource = null;
 	private LinkedBlockingDeque<ILoggingEvent> queue;

@@ -11,15 +11,16 @@ import org.springframework.data.convert.WritingConverter;
  * @since 2015-06-02-17
  */
 @WritingConverter
-public class AddressWriteConverter implements Converter<AddressInnerModel, DBObject> {
+public class AddressWriteConverter
+	implements Converter<AddressInnerModel, DBObject> {
 	@Override
 	public DBObject convert(AddressInnerModel source) {
 		return source == null ? null :
-				new BasicDBObject()
-						.append("country", source.getCountry())
-						.append("state", source.getState())
-						.append("city", source.getCity())
-						.append("detail", source.getDetail())
-						.append("zipCode", source.getZipCode());
+			new BasicDBObject()
+				.append("country", source.getCountry())
+				.append("state", source.getState())
+				.append("city", source.getCity())
+				.append("detail", source.getDetail())
+				.append("zipCode", source.getZipCode());
 	}
 }

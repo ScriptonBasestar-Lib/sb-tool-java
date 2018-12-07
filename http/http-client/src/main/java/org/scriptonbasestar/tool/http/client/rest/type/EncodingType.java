@@ -7,7 +7,8 @@ import lombok.Getter;
  * @since: 2014-03-06 11:30
  */
 public enum EncodingType {
-	UTF8("UTF-8"), EUCKR("EUC-KR");
+	UTF8("UTF-8"),
+	EUCKR("EUC-KR");
 
 	@Getter
 	String encoding;

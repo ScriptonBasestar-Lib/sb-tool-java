@@ -14,7 +14,8 @@ import java.util.Collection;
  * 데이터를 전달하는 프로토콜
  */
 @Data
-public final class DataObject<DATA extends Serializable> extends ADataObject<DATA> {
+public final class DataObject<DATA extends Serializable>
+	extends ADataObject<DATA> {
 
 	private DataObject() {
 		this.results = new ArrayList<>();

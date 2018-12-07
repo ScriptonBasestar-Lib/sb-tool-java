@@ -30,15 +30,15 @@ public class MongoDBConnectionSource {
 					try {
 						final Mongo mongo = new MongoClient(new MongoClientURI(uri));
 						dbCollection = mongo.getDB(dbName)
-								.getCollection(collection);
+											.getCollection(collection);
 						Runtime.getRuntime().addShutdownHook(
-								new Thread(new Runnable() {
+							new Thread(new Runnable() {
 
-									@Override
-									public void run() {
-										mongo.close();
-									}
-								}, "mongo shutdown"));
+								@Override
+								public void run() {
+									mongo.close();
+								}
+							}, "mongo shutdown"));
 					} catch (MongoException mongoException) {
 						mongoException.printStackTrace();
 					}

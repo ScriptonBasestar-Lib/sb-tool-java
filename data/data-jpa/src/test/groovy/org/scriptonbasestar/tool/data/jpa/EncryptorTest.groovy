@@ -2,22 +2,23 @@ package org.scriptonbasestar.tool.data.jpa
 
 import org.apache.commons.codec.binary.Hex
 import org.apache.commons.codec.binary.StringUtils
-import org.scriptonbasestar.tool.crypto.symmetry.SymmetryServiceImpl
 import org.scriptonbasestar.tool.crypto.symmetry.ISBSymmetryService
+import org.scriptonbasestar.tool.crypto.symmetry.SymmetryServiceImpl
 
 String DEFAULT_PASSWORD = "r390prifk0p2i03082"
 String PLAIN_STRING_SAMPLE = "안녕 한글아"
 
-def "utf-8 encrypt decrypt test"(PLAIN_STRING_SAMPLE){
+def "utf-8 encrypt decrypt test"(PLAIN_STRING_SAMPLE) {
 	byte[] barrPlain = StringUtils.getBytesUtf8(PLAIN_STRING_SAMPLE)
 	println(barrPlain)
 	String recovered = StringUtils.newStringUtf8(barrPlain)
 	println(recovered)
 }
+
 "utf-8 encrypt decrypt test"(PLAIN_STRING_SAMPLE)
 
 
-def "rc2test"(DEFAULT_PASSWORD, PLAIN_STRING_SAMPLE){
+def "rc2test"(DEFAULT_PASSWORD, PLAIN_STRING_SAMPLE) {
 	final ISBSymmetryService byteEncryptor = new SymmetryServiceImpl(DEFAULT_PASSWORD)
 
 	//byte[] barrPlain = StringUtils.getBytesUtf8(PLAIN_STRING_SAMPLE)
@@ -42,5 +43,6 @@ def "rc2test"(DEFAULT_PASSWORD, PLAIN_STRING_SAMPLE){
 	println(StringUtils.newStringUtf8(barrDecrypted))
 	//println(new String(barrDecrypted))
 }
+
 "rc2test"(DEFAULT_PASSWORD, PLAIN_STRING_SAMPLE)
 

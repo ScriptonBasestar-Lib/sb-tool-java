@@ -18,8 +18,11 @@ import java.lang.annotation.*;
 @NotNull(message = "~ must not null")
 @ReportAsSingleViolation
 public @interface SBStringLimiter {
-	String [] limitationStrings();
+	String[] limitationStrings();
+
 	String message() default "~ is not acceptable";
+
 	Class<?>[] groups() default {};
+
 	Class<? extends Payload>[] payload() default {};
 }

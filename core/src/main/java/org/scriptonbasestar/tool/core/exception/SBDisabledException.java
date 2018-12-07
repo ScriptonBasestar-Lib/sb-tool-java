@@ -6,7 +6,8 @@ package org.scriptonbasestar.tool.core.exception;
  * <p>
  * 서비스의 금지항목 접근시
  */
-public class SBDisabledException extends SBRuntimeBaseException {
+public class SBDisabledException
+	extends SBRuntimeBaseException {
 	public SBDisabledException(String code, String message) {
 		super(code, message);
 	}

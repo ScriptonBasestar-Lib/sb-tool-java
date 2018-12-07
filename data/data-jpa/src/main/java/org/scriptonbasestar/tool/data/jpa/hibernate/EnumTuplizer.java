@@ -11,7 +11,8 @@ import java.io.Serializable;
  * @author : archmagece@gmail.com
  * @since: 2013-07-21 15:15
  */
-public class EnumTuplizer extends PojoEntityTuplizer {
+public class EnumTuplizer
+	extends PojoEntityTuplizer {
 	public EnumTuplizer(EntityMetamodel entityMetamodel, PersistentClass mappedEntity) {
 		super(entityMetamodel, mappedEntity);
 	}

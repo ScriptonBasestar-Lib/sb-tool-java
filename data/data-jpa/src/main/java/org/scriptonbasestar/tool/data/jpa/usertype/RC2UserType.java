@@ -8,9 +8,9 @@ import org.hibernate.engine.spi.SharedSessionContractImplementor;
 import org.hibernate.type.StringType;
 import org.hibernate.usertype.ParameterizedType;
 import org.hibernate.usertype.UserType;
+import org.scriptonbasestar.tool.crypto.symmetry.ISBSymmetryService;
 import org.scriptonbasestar.tool.crypto.symmetry.SymmetryAlgorithm;
 import org.scriptonbasestar.tool.crypto.symmetry.SymmetryServiceImpl;
-import org.scriptonbasestar.tool.crypto.symmetry.ISBSymmetryService;
 
 import java.io.Serializable;
 import java.nio.charset.Charset;
@@ -26,7 +26,8 @@ import java.util.Properties;
  * @author archmagece
  * @since 2017-09-07
  */
-public class RC2UserType implements UserType, ParameterizedType {
+public class RC2UserType
+	implements UserType, ParameterizedType {
 
 	public static final String TYPE = "org.scriptonbasestar.tool.data.jpa.usertype.RC2UserType";
 	public static final String PARAM_CHARSET = "charset";

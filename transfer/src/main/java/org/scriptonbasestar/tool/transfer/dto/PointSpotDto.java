@@ -11,7 +11,8 @@ import java.io.Serializable;
  * @since 2015-05-27-18
  */
 @Data
-public class PointSpotDto implements Serializable {
+public class PointSpotDto
+	implements Serializable {
 	public PointSpotDto(double x, double y) {
 		this.x = x;
 		this.y = y;

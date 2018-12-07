@@ -11,24 +11,24 @@ import org.junit.Test;
 public class LoggerTest {
 
 	@Test
-	public void warn_test(){
+	public void warn_test() {
 		ConsoleLogger.setLogLevel(LogLevelType.WARN);
 		loggerPrint();
 	}
 
 	@Test
-	public void info_test(){
+	public void info_test() {
 		ConsoleLogger.setLogLevel(LogLevelType.INFO);
 		loggerPrint();
 	}
 
 	@Test
-	public void debug_test(){
+	public void debug_test() {
 		ConsoleLogger.setLogLevel(LogLevelType.DEBUG);
 		loggerPrint();
 	}
 
-	private void loggerPrint(){
+	private void loggerPrint() {
 		ConsoleLogger.fatal("fatal");
 		ConsoleLogger.error("error");
 		ConsoleLogger.warn("warn");

@@ -15,7 +15,8 @@ import java.util.Date;
  * @with sb-tool-java
  * @since 2015-08-10-13
  */
-public class AmqpJsonAppender extends UnsynchronizedAppenderBase<ILoggingEvent> {
+public class AmqpJsonAppender
+	extends UnsynchronizedAppenderBase<ILoggingEvent> {
 
 	@Setter
 	private String hostname;
@@ -32,7 +33,8 @@ public class AmqpJsonAppender extends UnsynchronizedAppenderBase<ILoggingEvent> 
 //	}
 
 	AmqpJsonConnectionSource amqpConnectionSource = null;
-	public void setAmqpJsonConnectionSource(AmqpJsonConnectionSource amqpConnectionSource){
+
+	public void setAmqpJsonConnectionSource(AmqpJsonConnectionSource amqpConnectionSource) {
 		this.template = amqpConnectionSource.rabbitTemplate();
 		this.amqpConnectionSource = amqpConnectionSource;
 	}

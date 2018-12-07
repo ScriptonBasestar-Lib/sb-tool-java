@@ -17,7 +17,8 @@ import java.util.Set;
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-public class CommonGenericIdsDto<TypeOfId> implements Serializable {
+public class CommonGenericIdsDto<TypeOfId>
+	implements Serializable {
 	@NotNull
 	@Size(min = 1)
 	private Set<TypeOfId> ids;

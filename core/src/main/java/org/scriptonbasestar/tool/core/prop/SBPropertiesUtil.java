@@ -25,6 +25,7 @@ public class SBPropertiesUtil {
 	 *
 	 * @param clazz .jar 파일내에 있는 클래스 암꺼나 가능.하지만 설정파일을 사용 권장
 	 * @param paths .jar 파일내에서의  .properties 파일 경로
+	 *
 	 * @return
 	 */
 	public static Properties propertiesMaker(Class clazz, String... paths) {
@@ -43,6 +44,7 @@ public class SBPropertiesUtil {
 	 * .properties 파일의 InputStream 을 입력해서 Properties 받음
 	 *
 	 * @param inputStreams .properties 파일을 읽은 InputStream
+	 *
 	 * @return
 	 */
 	public static Properties propertiesMaker(InputStream... inputStreams) {
@@ -54,6 +56,7 @@ public class SBPropertiesUtil {
 	 *
 	 * @param prop         기 생성된 Properties 인스턴스
 	 * @param inputStreams .properties 파일의 InputStream
+	 *
 	 * @return
 	 */
 	public static Properties propertiesMaker(Properties prop, InputStream... inputStreams) {

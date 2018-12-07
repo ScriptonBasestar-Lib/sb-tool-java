@@ -12,7 +12,8 @@ import java.util.Map;
  * @CreatedAt 2016-12-19 16
  */
 @NoArgsConstructor(access = AccessLevel.PRIVATE)
-public class SBDefinedStringMap extends HashMap<String, String> {
+public class SBDefinedStringMap
+	extends HashMap<String, String> {
 
 	private SBRuleMap elementRule;
 

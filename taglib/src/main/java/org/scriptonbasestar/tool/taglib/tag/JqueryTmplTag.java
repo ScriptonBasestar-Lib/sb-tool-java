@@ -14,7 +14,8 @@ import java.io.StringWriter;
  * @author archmagece
  * @since 2014. 9. 5.
  */
-public class JqueryTmplTag extends SimpleTagSupport {
+public class JqueryTmplTag
+	extends SimpleTagSupport {
 	private final static String outputBody = "<script id=\"%s\" type=\"%s\">%s</script>";
 
 	@Getter
@@ -31,7 +32,7 @@ public class JqueryTmplTag extends SimpleTagSupport {
 
 		StringWriter sw = new StringWriter();
 		JspFragment body = getJspBody();
-		if(body!=null){
+		if (body != null) {
 			body.invoke(sw);
 		}
 		out.print(String.format(outputBody, id, type, sw.toString()));

@@ -13,7 +13,8 @@ import java.io.Serializable;
  * for message find One
  */
 @Data
-public class NameValuePairDto implements Serializable {
+public class NameValuePairDto
+	implements Serializable {
 
 	/**
 	 * @param name  name

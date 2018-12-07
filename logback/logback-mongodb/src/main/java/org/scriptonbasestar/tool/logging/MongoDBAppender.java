@@ -6,7 +6,8 @@ import com.mongodb.BasicDBObject;
 
 import java.util.Date;
 
-public class MongoDBAppender extends UnsynchronizedAppenderBase<ILoggingEvent> {
+public class MongoDBAppender
+	extends UnsynchronizedAppenderBase<ILoggingEvent> {
 
 	private MongoDBConnectionSource connectionSource = null;
 	private String hostname;

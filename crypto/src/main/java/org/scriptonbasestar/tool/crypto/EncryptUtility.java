@@ -17,7 +17,7 @@ import java.security.spec.AlgorithmParameterSpec;
 
 public class EncryptUtility {
 
-	public final static byte[] ivBytes = { 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00 };
+	public final static byte[] ivBytes = {0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00};
 
 	public static final String AES_Encode(String source, String AESKEY) {
 		String rtnValue = "";
@@ -47,7 +47,7 @@ public class EncryptUtility {
 			throw new SBCryptoException("K2노스페이스 오류", e);
 		}
 
-		return rtnValue ;
+		return rtnValue;
 	}
 
 	public static final String AES_Decode(String source, String AESKEY) {
@@ -77,6 +77,6 @@ public class EncryptUtility {
 			throw new SBCryptoException("K2노스페이스 오류", e);
 		}
 
-		return rtnValue ;
+		return rtnValue;
 	}
 }

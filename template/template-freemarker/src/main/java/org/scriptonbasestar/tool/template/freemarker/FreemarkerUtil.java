@@ -17,6 +17,7 @@ import java.io.Writer;
 public class FreemarkerUtil {
 
 	Configuration cfg;
+
 	public FreemarkerUtil() throws IOException {
 		// Create your Configuration instance, and specify if up to what FreeMarker
 		// version (here 2.3.24) do you want to apply the fixes that are not 100%
@@ -25,7 +26,7 @@ public class FreemarkerUtil {
 
 		// Specify the source where the template files come from. Here I set a
 		// plain directory for it, but non-file-system sources are possible too:
-		cfg.setDirectoryForTemplateLoading(new File(ResourceReader.resourceRootPath(FreemarkerUtil.class)+"/email"));
+		cfg.setDirectoryForTemplateLoading(new File(ResourceReader.resourceRootPath(FreemarkerUtil.class) + "/email"));
 
 		// Set the preferred charset template files are stored in. UTF-8 is
 		// a good choice in most applications:
@@ -39,21 +40,21 @@ public class FreemarkerUtil {
 //		cfg.setTesetLogTemplateExceptions(false);
 	}
 
-//	public String makeTemplate(String templateName, Map<String, Object> root) throws IOException, TemplateException {
+	//	public String makeTemplate(String templateName, Map<String, Object> root) throws IOException, TemplateException {
 	public String makeTemplate(String templateName, Object root) throws IOException, TemplateException {
-		        /* ------------------------------------------------------------------------ */
-        /* You usually do these for MULTIPLE TIMES in the application life-cycle:   */
+		/* ------------------------------------------------------------------------ */
+		/* You usually do these for MULTIPLE TIMES in the application life-cycle:   */
 
-        /* Create a data-model */
+		/* Create a data-model */
 //		Map<String,Object> root = new HashMap();
 //		root.put("signupUrl", "Big Joe");
 //		root.put("code", "Big Joe");
 //		root.put("link", "Big Joe");
 //		root.put("exit", "Big Joe");
 
-        /* Get the template (uses cache internally) */
+		/* Get the template (uses cache internally) */
 //		Template temp = cfg.getTemplate("email-test.html");
-		Template temp = cfg.getTemplate(templateName+".html");
+		Template temp = cfg.getTemplate(templateName + ".html");
 
 		Writer out = new StringWriter();
 		temp.process(root, out);

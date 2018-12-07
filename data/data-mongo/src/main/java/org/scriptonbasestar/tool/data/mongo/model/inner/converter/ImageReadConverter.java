@@ -9,14 +9,15 @@ import org.springframework.data.convert.ReadingConverter;
  * Created by archmagece on 2015-10-01.
  */
 @ReadingConverter
-public class ImageReadConverter implements Converter<DBObject, ImageInnerModel> {
+public class ImageReadConverter
+	implements Converter<DBObject, ImageInnerModel> {
 	@Override
 	public ImageInnerModel convert(DBObject source) {
 		return new ImageInnerModel(
-				(String) source.get("path"),
-				(String) source.get("name"),
-				(String) source.get("extension"),
-				(Long) source.get("size")
+			(String) source.get("path"),
+			(String) source.get("name"),
+			(String) source.get("extension"),
+			(Long) source.get("size")
 		);
 	}
 }

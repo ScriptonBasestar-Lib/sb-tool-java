@@ -15,7 +15,8 @@ import java.io.Serializable;
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-public class CommonGenericIdDto<TypeOfId> implements Serializable {
+public class CommonGenericIdDto<TypeOfId>
+	implements Serializable {
 	@NotNull
 	private TypeOfId id;
 }

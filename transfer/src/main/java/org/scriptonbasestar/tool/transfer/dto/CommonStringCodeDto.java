@@ -15,7 +15,8 @@ import java.io.Serializable;
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-public class CommonStringCodeDto implements Serializable {
+public class CommonStringCodeDto
+	implements Serializable {
 	@NotNull
 	@Size(min = 1)
 	private String code;

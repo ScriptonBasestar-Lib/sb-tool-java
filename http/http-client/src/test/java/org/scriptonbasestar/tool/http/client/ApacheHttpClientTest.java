@@ -3,7 +3,6 @@ package org.scriptonbasestar.tool.http.client;
 import org.apache.http.client.config.RequestConfig;
 import org.apache.http.impl.client.CloseableHttpClient;
 import org.apache.http.impl.client.HttpClientBuilder;
-import org.apache.http.impl.client.HttpClients;
 import org.apache.http.impl.conn.PoolingHttpClientConnectionManager;
 
 /**
@@ -19,9 +18,6 @@ public class ApacheHttpClientTest {
 
 		return httpClientBuilder.build();
 	}
-
-
-
 
 
 }

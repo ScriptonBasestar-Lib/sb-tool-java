@@ -16,7 +16,8 @@ import java.util.Date;
  */
 @Getter
 @MappedSuperclass
-public abstract class MongoDateModel extends MongoBaseModel {
+public abstract class MongoDateModel
+	extends MongoBaseModel {
 
 	@Indexed(direction = IndexDirection.DESCENDING)
 	@DateTimeFormat(iso = DateTimeFormat.ISO.DATE_TIME)
@@ -35,7 +36,7 @@ public abstract class MongoDateModel extends MongoBaseModel {
 
 	protected MoreObjects.ToStringHelper buildStringHelper() {
 		return super.buildStringHelper()
-				.add("createdAt", createdAt)
-				.add("updatedAt", updatedAt);
+					.add("createdAt", createdAt)
+					.add("updatedAt", updatedAt);
 	}
 }

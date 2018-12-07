@@ -16,7 +16,8 @@ import java.io.Serializable;
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-public class CommonStringIdDto implements Serializable {
+public class CommonStringIdDto
+	implements Serializable {
 	@NotNull
 	@Size(min = 1)
 	private String id;

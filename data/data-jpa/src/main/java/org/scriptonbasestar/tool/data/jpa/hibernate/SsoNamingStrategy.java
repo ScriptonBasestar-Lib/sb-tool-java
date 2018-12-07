@@ -6,7 +6,8 @@ import org.hibernate.cfg.ImprovedNamingStrategy;
  * @author archmagece
  * @since 2015-06-06
  */
-public class SsoNamingStrategy extends ImprovedNamingStrategy {
+public class SsoNamingStrategy
+	extends ImprovedNamingStrategy {
 
 	private static final String PLURAL_SUFFIX = "s";
 
@@ -14,6 +15,7 @@ public class SsoNamingStrategy extends ImprovedNamingStrategy {
 	 * Transforms class names to table names by using the described naming conventions.
 	 *
 	 * @param className
+	 *
 	 * @return The constructed table name.
 	 */
 	@Override

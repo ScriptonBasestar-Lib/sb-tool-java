@@ -13,7 +13,9 @@ public class ResourceReader {
 	 * 리소스 root 경로 찾기
 	 *
 	 * @param clazz
+	 *
 	 * @return
+	 *
 	 * @throws IOException
 	 */
 	public static String resourceRootPath(Class<?> clazz) throws IOException {
@@ -25,7 +27,9 @@ public class ResourceReader {
 	 *
 	 * @param clazz
 	 * @param filePathToAppend
+	 *
 	 * @return
+	 *
 	 * @throws IOException
 	 */
 	public static String resourcePath(Object clazz, String filePathToAppend) {
@@ -53,7 +57,9 @@ public class ResourceReader {
 	 *
 	 * @param clazz
 	 * @param filePathToAppend
+	 *
 	 * @return
+	 *
 	 * @throws IOException
 	 */
 	public static String resourceString(Class<?> clazz, String filePathToAppend) throws IOException {
@@ -75,6 +81,7 @@ public class ResourceReader {
 	 *
 	 * @param is
 	 * @param encoding
+	 *
 	 * @return
 	 */
 	private static String stringFromInputStream(InputStream is, String encoding) {

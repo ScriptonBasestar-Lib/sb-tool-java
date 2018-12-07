@@ -13,11 +13,13 @@ import java.io.StringWriter;
  * @author archmagece
  * @since 2014. 9. 5.
  */
-public class PropTag extends SimpleTagSupport {
+public class PropTag
+	extends SimpleTagSupport {
 
-//	@Setter
+	//	@Setter
 	private PropGetter prop;
-	public PropTag(PropGetter prop){
+
+	public PropTag(PropGetter prop) {
 		this.prop = prop;
 	}
 
@@ -27,7 +29,7 @@ public class PropTag extends SimpleTagSupport {
 
 		StringWriter sw = new StringWriter();
 		JspFragment body = getJspBody();
-		if(body!=null){
+		if (body != null) {
 			body.invoke(sw);
 		}
 //		sw.toString() == name

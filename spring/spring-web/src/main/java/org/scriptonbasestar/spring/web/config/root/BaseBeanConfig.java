@@ -20,6 +20,7 @@ public class BaseBeanConfig {
 		conf.setPasswordEnvName("APP_ENCRYPTION_PASSWORD");
 		return conf;
 	}
+
 	@Bean
 	public StandardPBEStringEncryptor ConfigurationEncryptor() {
 		StandardPBEStringEncryptor encryptor = new StandardPBEStringEncryptor();

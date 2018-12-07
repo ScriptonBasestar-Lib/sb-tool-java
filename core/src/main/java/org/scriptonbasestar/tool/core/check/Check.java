@@ -27,6 +27,7 @@ public final class Check {
 	 *
 	 * @param a
 	 * @param message
+	 *
 	 * @return
 	 */
 	public static String notEmptyString(String a, String message) {
@@ -54,29 +55,33 @@ public final class Check {
 	======================= must =======================
 	 */
 	public static boolean mustEqualValue(boolean source, boolean compare, String message) {
-		if (source==compare) {
+		if (source == compare) {
 			return source;
 		}
 		throw new IllegalArgumentException(message);
 	}
+
 	public static long mustEqualValue(long source, long compare, String message) {
-		if (source==compare) {
+		if (source == compare) {
 			return source;
 		}
 		throw new IllegalArgumentException(message);
 	}
+
 	public static double mustEqualValue(double source, double compare, String message) {
-		if (source==compare) {
+		if (source == compare) {
 			return source;
 		}
 		throw new IllegalArgumentException(message);
 	}
+
 	public static byte mustEqualValue(byte source, byte compare, String message) {
-		if (source==compare) {
+		if (source == compare) {
 			return source;
 		}
 		throw new IllegalArgumentException(message);
 	}
+
 	public static String mustEqualValue(String source, String compare, String message) {
 		if (source.equals(compare)) {
 			return source;

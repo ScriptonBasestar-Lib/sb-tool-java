@@ -4,7 +4,8 @@ import javax.validation.ConstraintValidator;
 import javax.validation.ConstraintValidatorContext;
 import java.nio.charset.Charset;
 
-public class ByteSizeLimitValidator implements ConstraintValidator<ByteSizeLimit,String> {
+public class ByteSizeLimitValidator
+	implements ConstraintValidator<ByteSizeLimit, String> {
 
 	private int min;
 	private int max;

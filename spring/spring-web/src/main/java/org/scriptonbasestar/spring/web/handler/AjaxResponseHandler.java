@@ -10,7 +10,8 @@ import org.springframework.web.method.support.ModelAndViewContainer;
  * @author archmagece
  */
 @Slf4j
-public class AjaxResponseHandler implements HandlerMethodReturnValueHandler {
+public class AjaxResponseHandler
+	implements HandlerMethodReturnValueHandler {
 
 	@Override
 	public boolean supportsReturnType(MethodParameter returnType) {

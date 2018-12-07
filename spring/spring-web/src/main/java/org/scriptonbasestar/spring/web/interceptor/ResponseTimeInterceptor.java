@@ -10,7 +10,8 @@ import org.springframework.web.context.request.WebRequestInterceptor;
  * @author archmagece
  */
 @Slf4j
-public class ResponseTimeInterceptor implements WebRequestInterceptor {
+public class ResponseTimeInterceptor
+	implements WebRequestInterceptor {
 //	@Override
 //	public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler) throws Exception {
 //		request.setAttribute("com.scriptonbasestar.request.startTime", System.currentTimeMillis());
@@ -28,7 +29,7 @@ public class ResponseTimeInterceptor implements WebRequestInterceptor {
 
 	@Override
 	public void postHandle(WebRequest request, ModelMap model) throws Exception {
-		long responseTime = System.currentTimeMillis ()-(long)request.getAttribute("com.scriptonbasestar.request.startTime", RequestAttributes.SCOPE_REQUEST);
+		long responseTime = System.currentTimeMillis() - (long) request.getAttribute("com.scriptonbasestar.request.startTime", RequestAttributes.SCOPE_REQUEST);
 //		model.put("responseTime", responseTime);
 	}
 

@@ -17,7 +17,8 @@ import java.io.*;
  * FIXME thread safe하지 않아서 수정필요.
  */
 @Slf4j
-public class AsyncSendFile implements IAsyncExecuteMethod<UploadInfo, Boolean> {
+public class AsyncSendFile
+	implements IAsyncExecuteMethod<UploadInfo, Boolean> {
 
 	private final FTPClient ftp;
 
@@ -26,7 +27,7 @@ public class AsyncSendFile implements IAsyncExecuteMethod<UploadInfo, Boolean> {
 	private final String username;
 	private final String password;
 
-	public AsyncSendFile(String hostname, int port,  String username, String password){
+	public AsyncSendFile(String hostname, int port, String username, String password) {
 		this.hostname = hostname;
 		this.port = port;
 		this.username = username;
@@ -49,10 +50,11 @@ public class AsyncSendFile implements IAsyncExecuteMethod<UploadInfo, Boolean> {
 	int controlKeepAliveReplyTimeout = -1;
 	boolean printHash = false;
 	boolean hidden = false;
+
 	@Override
 	public Boolean call(UploadInfo uploadInfo) {
-		while(true){
-			if(!connect()){
+		while (true) {
+			if (!connect()) {
 				try {
 					Thread.sleep(1000);
 				} catch (InterruptedException e) {
@@ -97,7 +99,7 @@ public class AsyncSendFile implements IAsyncExecuteMethod<UploadInfo, Boolean> {
 
 	private boolean connect() {
 		try {
-			if(ftp.isConnected()){
+			if (ftp.isConnected()) {
 				return true;
 			}
 
@@ -114,8 +116,7 @@ public class AsyncSendFile implements IAsyncExecuteMethod<UploadInfo, Boolean> {
 				log.error("FTP server refused connection.");
 				return false;
 			}
-			if (!ftp.login(username, password))
-			{
+			if (!ftp.login(username, password)) {
 				ftp.logout();
 			}
 			// 명령어 보여주는 리스너
@@ -136,9 +137,10 @@ public class AsyncSendFile implements IAsyncExecuteMethod<UploadInfo, Boolean> {
 		return true;
 	}
 
-	private static CopyStreamListener createListener(){
-		return new CopyStreamListener(){
+	private static CopyStreamListener createListener() {
+		return new CopyStreamListener() {
 			private long megsTotal = 0;
+
 			@Override
 			public void bytesTransferred(CopyStreamEvent event) {
 				bytesTransferred(event.getTotalBytesTransferred(), event.getBytesTransferred(), event.getStreamSize());

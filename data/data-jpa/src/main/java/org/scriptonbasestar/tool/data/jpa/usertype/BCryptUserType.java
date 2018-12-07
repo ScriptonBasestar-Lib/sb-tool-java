@@ -21,7 +21,8 @@ import java.util.regex.Pattern;
  * @author archmagece
  * @since 2017-09-20
  */
-public class BCryptUserType implements UserType, ParameterizedType {
+public class BCryptUserType
+	implements UserType, ParameterizedType {
 
 	public static final String TYPE = "org.scriptonbasestar.tool.data.jpa.usertype.BCryptUserType";
 

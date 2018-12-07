@@ -9,7 +9,8 @@ import org.springframework.web.servlet.support.AbstractAnnotationConfigDispatche
 import javax.servlet.*;
 import java.util.Map;
 
-public abstract class BaseWebInitializer extends AbstractAnnotationConfigDispatcherServletInitializer {
+public abstract class BaseWebInitializer
+	extends AbstractAnnotationConfigDispatcherServletInitializer {
 
 	@Override
 	public void onStartup(ServletContext servletContext) throws ServletException {

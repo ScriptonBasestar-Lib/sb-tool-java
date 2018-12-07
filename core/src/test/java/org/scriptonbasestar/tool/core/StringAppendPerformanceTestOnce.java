@@ -5,7 +5,7 @@ import org.junit.Test;
 /**
  * @author chaeeung.e
  * @since 2017-11-02
- *
+ * <p>
  * 문자열 합치는 코드. 혹시나 해서 돌려봄
  */
 public class StringAppendPerformanceTestOnce {
@@ -33,34 +33,37 @@ public class StringAppendPerformanceTestOnce {
 	}
 
 	public static final String formatString = "get%s%s";
+
 	public static String createGetterName3(String name) {
 		return String.format(formatString, name.substring(0, 1).toUpperCase(), name.substring(1));
 	}
 
 	@Test
-	public void test(){
-		for(int i=0;i<10000000;i++){
+	public void test() {
+		for (int i = 0; i < 10000000; i++) {
 			createGetterName("name");
 		}
 	}
+
 	@Test
-	public void test1(){
-		for(int i=0;i<10000000;i++){
+	public void test1() {
+		for (int i = 0; i < 10000000; i++) {
 			createGetterName1("name");
 //			createGetterName1_1(new String("name"));
 		}
 	}
+
 	@Test
-	public void test2(){
-		for(int i=0;i<10000000;i++){
+	public void test2() {
+		for (int i = 0; i < 10000000; i++) {
 			createGetterName2("name");
 //			createGetterName1_2(new String("name"));
 		}
 	}
 
 	@Test
-	public void test3(){
-		for(int i=0;i<1000000;i++){
+	public void test3() {
+		for (int i = 0; i < 1000000; i++) {
 			createGetterName3("name");
 		}
 	}

@@ -14,7 +14,8 @@ import java.util.Map;
  */
 @Slf4j
 //public class AccessLogInterceptor extends HandlerInterceptorAdapter {
-public class AccessLogInterceptor implements WebRequestInterceptor {
+public class AccessLogInterceptor
+	implements WebRequestInterceptor {
 
 //	@Override
 //	public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler) throws Exception {
@@ -24,10 +25,10 @@ public class AccessLogInterceptor implements WebRequestInterceptor {
 
 	@Override
 	public void preHandle(WebRequest request) throws Exception {
-		Map<String,String> map = new HashMap<>();
+		Map<String, String> map = new HashMap<>();
 		Iterator<String> itr = request.getHeaderNames();
 		String key;
-		while(itr.hasNext()){
+		while (itr.hasNext()) {
 			key = itr.next();
 			map.put(key, request.getHeader(key));
 		}

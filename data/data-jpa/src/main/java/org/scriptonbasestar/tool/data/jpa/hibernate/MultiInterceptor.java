@@ -14,7 +14,8 @@ import java.util.Iterator;
 import java.util.List;
 import java.util.concurrent.FutureTask;
 
-public class MultiInterceptor extends EmptyInterceptor {
+public class MultiInterceptor
+	extends EmptyInterceptor {
 
 	private static final Logger log = LoggerFactory.getLogger(MultiInterceptor.class);
 	private static final boolean isTraceEnabled = log.isTraceEnabled();

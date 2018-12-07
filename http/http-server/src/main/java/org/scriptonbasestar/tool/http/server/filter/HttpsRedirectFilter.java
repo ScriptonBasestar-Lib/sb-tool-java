@@ -13,7 +13,8 @@ import java.io.IOException;
  * redirect filter.. http 접속을 https로 튕겨낼 때 사용
  * 보통은 http서버에서 처리하겠지만 그게 곤란할 경우
  */
-public class HttpsRedirectFilter implements Filter {
+public class HttpsRedirectFilter
+	implements Filter {
 	private FilterConfig filterConfig;
 
 	private String toProtocol;
@@ -24,7 +25,7 @@ public class HttpsRedirectFilter implements Filter {
 //		this.toPort = 443;
 //	}
 
-	public HttpsRedirectFilter(String toProtocol, int toPort){
+	public HttpsRedirectFilter(String toProtocol, int toPort) {
 		this.toProtocol = toProtocol;
 		this.toPort = toPort;
 	}
@@ -73,6 +74,6 @@ public class HttpsRedirectFilter implements Filter {
 
 	@Override
 	public void destroy() {
-		if(this.filterConfig != null) this.filterConfig = null;
+		if (this.filterConfig != null) this.filterConfig = null;
 	}
 }

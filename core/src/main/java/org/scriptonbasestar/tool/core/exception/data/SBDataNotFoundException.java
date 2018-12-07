@@ -6,7 +6,8 @@ package org.scriptonbasestar.tool.core.exception.data;
  * <p>
  * 데이터 없을 때
  */
-public class SBDataNotFoundException extends SBDataException {
+public class SBDataNotFoundException
+	extends SBDataException {
 	public SBDataNotFoundException(String code, String message) {
 		super(code, message);
 	}

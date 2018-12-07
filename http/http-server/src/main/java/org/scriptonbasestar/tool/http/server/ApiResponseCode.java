@@ -15,6 +15,7 @@ public enum ApiResponseCode {
 	BAD_APINUMBER(1006);
 
 	private int value;
+
 	ApiResponseCode(int value) {
 		this.value = value;
 	}

@@ -37,7 +37,9 @@ public class RestObject {
 	/**
 	 * @param httpMethod
 	 * @param urlString
+	 *
 	 * @return
+	 *
 	 * @throws MalformedURLException
 	 * @throws IOException
 	 */

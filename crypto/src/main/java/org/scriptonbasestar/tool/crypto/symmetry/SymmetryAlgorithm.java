@@ -3,12 +3,11 @@ package org.scriptonbasestar.tool.crypto.symmetry;
 import lombok.Getter;
 
 /**
- *
  * DIGEST ALGORITHMS:   [MD2, MD5, SHA, SHA-256, SHA-384, SHA-512]
  * PBE ALGORITHMS:      [PBEWITHMD5ANDDES, PBEWITHMD5ANDTRIPLEDES, PBEWITHSHA1ANDDESEDE, PBEWITHSHA1ANDRC2_40]
- *
+ * <p>
  * https://sourceforge.net/p/jasypt/bugs/32/
- *
+ * <p>
  * PBEWITHHMACSHA1ANDAES_128
  * PBEWITHHMACSHA1ANDAES_256
  * PBEWITHHMACSHA224ANDAES_128
@@ -19,7 +18,7 @@ import lombok.Getter;
  * PBEWITHHMACSHA384ANDAES_256
  * PBEWITHHMACSHA512ANDAES_128
  * PBEWITHHMACSHA512ANDAES_256
- *
+ * <p>
  * A. Without JCE jars installed:
  * PBEWITHHMACSHA1ANDAES_128       NOT_POSSIBLE_DECRYPT
  * PBEWITHHMACSHA1ANDAES_256       NOT_POSSIBLE
@@ -38,7 +37,7 @@ import lombok.Getter;
  * PBEWITHSHA1ANDRC2_40            OK
  * PBEWITHSHA1ANDRC4_128           OK
  * PBEWITHSHA1ANDRC4_40            OK
- *
+ * <p>
  * B. With JCE jars installed:
  * PBEWITHHMACSHA1ANDAES_128 NOT_POSSIBLE_DECRYPT
  * PBEWITHHMACSHA1ANDAES_256 NOT_POSSIBLE_DECRYPT
@@ -59,7 +58,7 @@ import lombok.Getter;
  * PBEWITHSHA1ANDRC4_40 OK
  */
 public enum SymmetryAlgorithm {
-//	AES(""),
+	//	AES(""),
 //	Aria("Aria"),
 	DES("PBEWITHMD5ANDDES"),
 	TripleDES("PBEWITHMD5ANDTRIPLEDES"),

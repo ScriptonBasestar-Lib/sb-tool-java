@@ -68,7 +68,7 @@ public class SendEmailBySMTP {
 		}
 	}
 
-	private Session createSession(){
+	private Session createSession() {
 		Session session = Session.getInstance(props, new Authenticator() {
 			protected PasswordAuthentication getPasswordAuthentication() {
 				return new PasswordAuthentication(username, password);

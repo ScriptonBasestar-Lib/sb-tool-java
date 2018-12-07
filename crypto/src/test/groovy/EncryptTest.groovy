@@ -2,13 +2,13 @@ import org.apache.commons.codec.binary.Hex
 import org.apache.commons.codec.binary.StringUtils
 import org.junit.Assert
 import org.junit.Test
+import org.scriptonbasestar.tool.crypto.symmetry.ISBSymmetryService
 import org.scriptonbasestar.tool.crypto.symmetry.SymmetryAlgorithm
 import org.scriptonbasestar.tool.crypto.symmetry.SymmetryServiceImpl
-import org.scriptonbasestar.tool.crypto.symmetry.ISBSymmetryService
 
 class EncryptTest {
 	@Test
-	void rc2test(){
+	void rc2test() {
 		String stringIn = "testtext111"
 		println("stringIn string: $stringIn")
 		byte[] bytesIn = stringIn.getBytes("UTF-8")

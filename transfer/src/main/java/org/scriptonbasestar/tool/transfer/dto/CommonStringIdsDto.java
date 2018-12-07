@@ -17,7 +17,8 @@ import java.util.Set;
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-public class CommonStringIdsDto implements Serializable {
+public class CommonStringIdsDto
+	implements Serializable {
 	@NotNull
 	@Size(min = 1)
 	private Set<String> ids;

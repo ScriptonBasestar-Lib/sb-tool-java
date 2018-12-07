@@ -18,11 +18,11 @@ import java.util.*
 
 //@RunWith(Cucumber::class)
 //@CucumberOptions()
-class FilterTest : En{
+class FilterTest : En {
 
-	fun test(){
+	fun test() {
 //	init{
-		Given("I have {int} cukes in my belly"){ int1: Int ->
+		Given("I have {int} cukes in my belly") { int1: Int ->
 			// Write code here that turns the phrase above into concrete actions
 //			throw PendingException()
 //			int1 = 42
@@ -30,17 +30,17 @@ class FilterTest : En{
 			println(int1)
 		}
 
-		When("I wait {int} hour"){ int1: Int ->
+		When("I wait {int} hour") { int1: Int ->
 			// Write code here that turns the phrase above into concrete actions
 //			throw PendingException()
 			1
 		}
 
-		Then("my belly should growl"){
+		Then("my belly should growl") {
 			// Write code here that turns the phrase above into concrete actions
 //			throw PendingException()
 			2
-			when(true).thenReturn()
+			when (true).thenReturn()
 		}
 	}
 

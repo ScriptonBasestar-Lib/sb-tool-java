@@ -24,7 +24,9 @@ public class Extractor {
 	 * @param fieldName
 	 * @param <ITEM>
 	 * @param <RESULT>
+	 *
 	 * @return
+	 *
 	 * @throws NoSuchMethodException
 	 * @throws InvocationTargetException
 	 * @throws IllegalAccessException

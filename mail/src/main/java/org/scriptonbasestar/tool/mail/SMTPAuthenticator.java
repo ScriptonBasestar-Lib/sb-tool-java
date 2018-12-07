@@ -6,7 +6,8 @@ import lombok.Setter;
 import javax.mail.Authenticator;
 import javax.mail.PasswordAuthentication;
 
-public class SMTPAuthenticator extends Authenticator {
+public class SMTPAuthenticator
+	extends Authenticator {
 
 	@Getter
 	@Setter

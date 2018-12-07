@@ -6,7 +6,8 @@ package org.scriptonbasestar.tool.core.exception;
  * <p>
  * 암호화 과정에서 발생하는 예외
  */
-public class SBCryptoException extends SBRuntimeBaseException {
+public class SBCryptoException
+	extends SBRuntimeBaseException {
 	public SBCryptoException(String code, String message) {
 		super(code, message);
 	}

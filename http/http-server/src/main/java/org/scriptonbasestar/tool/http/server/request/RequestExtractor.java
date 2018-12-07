@@ -16,6 +16,7 @@ public final class RequestExtractor {
 	 * ip 가져오기.
 	 *
 	 * @param request
+	 *
 	 * @return
 	 */
 	public static String getClientIP(HttpServletRequest request) {

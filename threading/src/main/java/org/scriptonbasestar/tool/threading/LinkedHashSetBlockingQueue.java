@@ -6,9 +6,9 @@
  * to you under the Apache License, Version 2.0 (the
  * "License"); you may not use this file except in compliance
  * with the License.  You may obtain a copy of the License at
- *
- *     http://www.apache.org/licenses/LICENSE-2.0
- *
+ * <p>
+ * http://www.apache.org/licenses/LICENSE-2.0
+ * <p>
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -35,7 +35,9 @@ import java.util.concurrent.locks.ReentrantLock;
  *
  * http://marmotta.apache.org/ 에서 펌
  */
-public class LinkedHashSetBlockingQueue<E> extends AbstractQueue<E> implements BlockingQueue<E> {
+public class LinkedHashSetBlockingQueue<E>
+	extends AbstractQueue<E>
+	implements BlockingQueue<E> {
 
 	private int capacity = Integer.MAX_VALUE;
 
@@ -78,7 +80,7 @@ public class LinkedHashSetBlockingQueue<E> extends AbstractQueue<E> implements B
 		try {
 			if (count.get() < capacity) {
 				final boolean wasAdded = enqueue(e);
-				c = wasAdded?count.getAndIncrement():count.get();
+				c = wasAdded ? count.getAndIncrement() : count.get();
 				if (c + 1 < capacity)
 					notFull.signal();
 			}
@@ -103,7 +105,7 @@ public class LinkedHashSetBlockingQueue<E> extends AbstractQueue<E> implements B
 				notFull.await();
 			}
 			final boolean wasAdded = enqueue(e);
-			c = wasAdded?count.getAndIncrement():count.get();
+			c = wasAdded ? count.getAndIncrement() : count.get();
 			if (c + 1 < capacity)
 				notFull.signal();
 		} finally {
@@ -129,7 +131,7 @@ public class LinkedHashSetBlockingQueue<E> extends AbstractQueue<E> implements B
 				nanos = notFull.awaitNanos(nanos);
 			}
 			final boolean wasAdded = enqueue(e);
-			c = wasAdded?count.getAndIncrement():count.get();
+			c = wasAdded ? count.getAndIncrement() : count.get();
 			if (c + 1 < capacity)
 				notFull.signal();
 		} finally {
@@ -196,7 +198,7 @@ public class LinkedHashSetBlockingQueue<E> extends AbstractQueue<E> implements B
 
 	@Override
 	public int drainTo(Collection<? super E> c) {
-		return drainTo(c,Integer.MAX_VALUE);
+		return drainTo(c, Integer.MAX_VALUE);
 	}
 
 	@Override
@@ -211,7 +213,7 @@ public class LinkedHashSetBlockingQueue<E> extends AbstractQueue<E> implements B
 		try {
 			int n = Math.min(maxElements, count.get());
 			Iterator<E> it = delegate.iterator();
-			for(int i=0; i<n && it.hasNext(); i++) {
+			for (int i = 0; i < n && it.hasNext(); i++) {
 				E x = it.next();
 				c.add(x);
 			}
@@ -257,7 +259,7 @@ public class LinkedHashSetBlockingQueue<E> extends AbstractQueue<E> implements B
 		takeLock.lock();
 		try {
 			Iterator<E> it = delegate.iterator();
-			if(it.hasNext()) {
+			if (it.hasNext()) {
 				return it.next();
 			} else {
 				return null;
@@ -291,7 +293,6 @@ public class LinkedHashSetBlockingQueue<E> extends AbstractQueue<E> implements B
 			return x;
 		}
 	}
-
 
 
 	/**
@@ -342,7 +343,7 @@ public class LinkedHashSetBlockingQueue<E> extends AbstractQueue<E> implements B
 	 */
 	boolean isFullyLocked() {
 		return (putLock.isHeldByCurrentThread() &&
-				takeLock.isHeldByCurrentThread());
+			takeLock.isHeldByCurrentThread());
 	}
 
 	@Override
@@ -395,8 +396,8 @@ public class LinkedHashSetBlockingQueue<E> extends AbstractQueue<E> implements B
 
 		fullyLock();
 		try {
-			if(delegate.remove(o)) {
-				if(count.getAndDecrement() == capacity) {
+			if (delegate.remove(o)) {
+				if (count.getAndDecrement() == capacity) {
 					notFull.signal();
 				}
 				return true;

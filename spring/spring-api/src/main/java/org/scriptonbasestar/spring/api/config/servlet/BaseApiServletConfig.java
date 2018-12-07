@@ -11,7 +11,6 @@ import org.springframework.http.converter.StringHttpMessageConverter;
 import org.springframework.http.converter.json.MappingJackson2HttpMessageConverter;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.ControllerAdvice;
-import org.springframework.web.method.support.HandlerMethodReturnValueHandler;
 import org.springframework.web.servlet.config.annotation.DefaultServletHandlerConfigurer;
 import org.springframework.web.servlet.config.annotation.EnableWebMvc;
 import org.springframework.web.servlet.config.annotation.InterceptorRegistry;
@@ -31,22 +30,23 @@ import java.util.List;
 @Slf4j
 @EnableWebMvc
 @ComponentScan(
-		includeFilters = {
-				@ComponentScan.Filter(value = {Controller.class, ControllerAdvice.class}, type = FilterType.ANNOTATION)
-		},
-		excludeFilters = {
-				@ComponentScan.Filter(value = {Configuration.class}, type = FilterType.ANNOTATION)
-		}
+	includeFilters = {
+		@ComponentScan.Filter(value = {Controller.class, ControllerAdvice.class}, type = FilterType.ANNOTATION)
+	},
+	excludeFilters = {
+		@ComponentScan.Filter(value = {Configuration.class}, type = FilterType.ANNOTATION)
+	}
 )
 @Configuration
-public abstract class BaseApiServletConfig extends WebMvcConfigurerAdapter {
+public abstract class BaseApiServletConfig
+	extends WebMvcConfigurerAdapter {
 
 	@Override
 	public void configureDefaultServletHandling(DefaultServletHandlerConfigurer configurer) {
 		configurer.enable();
 	}
 
-//	@Autowired
+	//	@Autowired
 //	private AccessLogInterceptor accessLogInterceptor;
 	@Autowired
 	private LocaleChangeInterceptor localeChangeInterceptor;

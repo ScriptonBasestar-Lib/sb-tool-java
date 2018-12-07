@@ -1,7 +1,5 @@
 package org.scriptonbasestar.tool.http.client;
 
-import org.apache.http.impl.client.HttpClients;
-
 /**
  * @author archmagece
  * @since 2017-09-01

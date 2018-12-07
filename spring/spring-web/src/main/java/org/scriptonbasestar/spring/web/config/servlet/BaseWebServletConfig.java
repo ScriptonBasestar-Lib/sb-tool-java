@@ -33,15 +33,16 @@ import java.util.List;
 @Slf4j
 @EnableWebMvc
 @ComponentScan(
-		includeFilters = {
-				@ComponentScan.Filter(value = {Controller.class, ControllerAdvice.class}, type = FilterType.ANNOTATION)
-		},
-		excludeFilters = {
-				@ComponentScan.Filter(value = {Configuration.class}, type = FilterType.ANNOTATION)
-		}
+	includeFilters = {
+		@ComponentScan.Filter(value = {Controller.class, ControllerAdvice.class}, type = FilterType.ANNOTATION)
+	},
+	excludeFilters = {
+		@ComponentScan.Filter(value = {Configuration.class}, type = FilterType.ANNOTATION)
+	}
 )
 @Configuration
-public abstract class BaseWebServletConfig extends WebMvcConfigurationSupport {
+public abstract class BaseWebServletConfig
+	extends WebMvcConfigurationSupport {
 
 	protected abstract long getMultipartResolverUploadSize();
 
@@ -50,7 +51,7 @@ public abstract class BaseWebServletConfig extends WebMvcConfigurationSupport {
 		configurer.enable();
 	}
 
-//	@Bean
+	//	@Bean
 //	public ResponseTimeInterceptor responseTimeInterceptor(){
 //		return new ResponseTimeInterceptor();
 //	}
@@ -59,7 +60,7 @@ public abstract class BaseWebServletConfig extends WebMvcConfigurationSupport {
 //		return new AccessLogInterceptor();
 //	}
 	@Bean
-	public LocaleChangeInterceptor localeChangeInterceptor(){
+	public LocaleChangeInterceptor localeChangeInterceptor() {
 		return new LocaleChangeInterceptor();
 	}
 
@@ -86,7 +87,7 @@ public abstract class BaseWebServletConfig extends WebMvcConfigurationSupport {
 	}
 
 	@Bean
-	public ModelAttributeMethodProcessor modelAttributeMethodProcessor(){
+	public ModelAttributeMethodProcessor modelAttributeMethodProcessor() {
 		return new ModelAttributeMethodProcessor(true);
 	}
 
@@ -118,7 +119,7 @@ public abstract class BaseWebServletConfig extends WebMvcConfigurationSupport {
 //	}
 
 	@Bean
-	public MappingJackson2HttpMessageConverter mappingJackson2HttpMessageConverter(){
+	public MappingJackson2HttpMessageConverter mappingJackson2HttpMessageConverter() {
 		MappingJackson2HttpMessageConverter bean = new MappingJackson2HttpMessageConverter();
 		ObjectMapper objectMapper = new ObjectMapper();
 		objectMapper.registerModule(new JodaModule());
@@ -162,11 +163,12 @@ public abstract class BaseWebServletConfig extends WebMvcConfigurationSupport {
 	 * ***************************************
 	 */
 	@Bean
-	public RequestMappingHandlerAdapter annotationMethodHandlerAdapter(){
+	public RequestMappingHandlerAdapter annotationMethodHandlerAdapter() {
 		RequestMappingHandlerAdapter bean = new RequestMappingHandlerAdapter();
 //		bean.setAlwaysUseFullPath(true);
 		return bean;
 	}
+
 	@Bean
 	public RequestMappingHandlerMapping handlerMapping() {
 		RequestMappingHandlerMapping bean = new RequestMappingHandlerMapping();

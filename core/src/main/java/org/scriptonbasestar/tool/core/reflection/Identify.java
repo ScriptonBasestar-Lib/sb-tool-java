@@ -30,9 +30,9 @@ public class Identify {
 	}
 
 	public static void setStringNulField(Class<?> vo)
-			throws
-			NoSuchFieldException,
-			IllegalAccessException {
+		throws
+		NoSuchFieldException,
+		IllegalAccessException {
 		for (Field f : vo.getFields()) {
 			f.set(vo, "0.00");
 		}

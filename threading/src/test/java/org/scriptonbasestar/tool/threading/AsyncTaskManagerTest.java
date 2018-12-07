@@ -1,14 +1,14 @@
 package org.scriptonbasestar.tool.threading;
 
+import org.junit.Test;
 import org.scriptonbasestar.tool.threading.testres.AdderAsyncExecuteMethodsImpl;
 import org.scriptonbasestar.tool.threading.testres.RequestDto;
 import org.scriptonbasestar.tool.threading.testres.ResponseDto;
-import org.junit.Test;
 
 /**
  * @Author: archmagece
  * @Since: 2014-02-11 15:36
- *
+ * <p>
  * 이거보고 쓰면 돼
  */
 public class AsyncTaskManagerTest {
@@ -23,7 +23,7 @@ public class AsyncTaskManagerTest {
 	@Test
 	public void test() throws InterruptedException {
 		asyncTaskManager = new AsyncTaskManager(new AdderAsyncExecuteMethodsImpl());
-		for(int i=0;i<100;i++){
+		for (int i = 0; i < 100; i++) {
 			RequestDto requestVo = new RequestDto();
 			asyncTaskManager.execute(requestVo);
 		}
@@ -32,12 +32,12 @@ public class AsyncTaskManagerTest {
 	}
 
 	@Test
-	public void threadAlreadyRunTest(){
+	public void threadAlreadyRunTest() {
 		Thread thread = new Thread(new Runnable() {
 			@Override
 			public void run() {
 				try {
-					while(true){
+					while (true) {
 						System.out.println("runrunrun");
 						Thread.sleep(1000);
 					}

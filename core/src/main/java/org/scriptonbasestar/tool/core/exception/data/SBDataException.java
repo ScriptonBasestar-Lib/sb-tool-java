@@ -8,7 +8,8 @@ import org.scriptonbasestar.tool.core.exception.SBRuntimeBaseException;
  * <p>
  * 데이터 관련 예외처리
  */
-public class SBDataException extends SBRuntimeBaseException {
+public class SBDataException
+	extends SBRuntimeBaseException {
 	public SBDataException(String code, String message) {
 		super(code, message);
 	}

@@ -7,7 +7,8 @@ import ch.qos.logback.core.UnsynchronizedAppenderBase;
  * @author archmagece
  * @date 2017-06-30
  */
-public class SlackAppender extends UnsynchronizedAppenderBase<ILoggingEvent> {
+public class SlackAppender
+	extends UnsynchronizedAppenderBase<ILoggingEvent> {
 	@Override
 	protected void append(ILoggingEvent iLoggingEvent) {
 

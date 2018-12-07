@@ -32,7 +32,7 @@ public class ServerRunningTestRuleTest {
 		String value;
 
 		String keyString = "34y34ygh3q";
-		String initialVectorString= "3yh3qyh3";
+		String initialVectorString = "3yh3qyh3";
 		MessageDigest md5 = MessageDigest.getInstance("MD5");
 		SecretKeySpec key = new SecretKeySpec(md5.digest(keyString.getBytes("UTF8")), "AES");
 		IvParameterSpec initalVector = new IvParameterSpec(md5.digest(initialVectorString.getBytes("UTF8")));

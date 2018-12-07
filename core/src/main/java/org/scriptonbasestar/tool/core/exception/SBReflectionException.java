@@ -6,7 +6,8 @@ package org.scriptonbasestar.tool.core.exception;
  * <p>
  * Reflection 사용시.
  */
-public class SBReflectionException extends SBRuntimeBaseException {
+public class SBReflectionException
+	extends SBRuntimeBaseException {
 	public SBReflectionException(String code, String message) {
 		super(code, message);
 	}

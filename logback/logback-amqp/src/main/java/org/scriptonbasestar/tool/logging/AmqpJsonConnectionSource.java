@@ -21,7 +21,7 @@ import java.nio.charset.Charset;
  */
 public class AmqpJsonConnectionSource {
 
-//	@Getter
+	//	@Getter
 	@Setter
 	private String host = null;
 
@@ -55,8 +55,9 @@ public class AmqpJsonConnectionSource {
 	private String deliveryMode = "NON_PERSISTENT";
 
 	private CachingConnectionFactory connectionFactory = null;
-	private ConnectionFactory connectionFactory(){
-		if(connectionFactory==null){
+
+	private ConnectionFactory connectionFactory() {
+		if (connectionFactory == null) {
 			connectionFactory = new CachingConnectionFactory();
 			connectionFactory.setHost(this.host);
 			connectionFactory.setUsername("guest");
@@ -66,7 +67,7 @@ public class AmqpJsonConnectionSource {
 		return connectionFactory;
 	}
 
-	private RabbitAdmin rabbitAdmin(){
+	private RabbitAdmin rabbitAdmin() {
 		// set up the queue, exchange, binding on the broker
 		RabbitAdmin admin = new RabbitAdmin(connectionFactory);
 		Queue queue = new Queue(exchangeName);
@@ -82,8 +83,9 @@ public class AmqpJsonConnectionSource {
 	}
 
 	private RabbitTemplate template = null;
+
 	public synchronized RabbitTemplate rabbitTemplate() {
-		if(template == null){
+		if (template == null) {
 //			rabbitAdmin();
 			template = new RabbitTemplate(connectionFactory());
 			template.setExchange(exchangeName);

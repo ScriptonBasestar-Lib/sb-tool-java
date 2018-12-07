@@ -16,7 +16,8 @@ import java.util.concurrent.TimeoutException;
  * @with sb-tool-java
  * @since 2015-08-10-13
  */
-public class RabbitAppender extends UnsynchronizedAppenderBase<ILoggingEvent> {
+public class RabbitAppender
+	extends UnsynchronizedAppenderBase<ILoggingEvent> {
 
 	@Setter
 	private String hostname;
@@ -66,9 +67,9 @@ public class RabbitAppender extends UnsynchronizedAppenderBase<ILoggingEvent> {
 		String corrId = UUID.randomUUID().toString();
 
 		AMQP.BasicProperties replyProps = new AMQP.BasicProperties.Builder()
-				.correlationId(corrId)
-				.replyTo(replyQueueName)
-				.build();
+			.correlationId(corrId)
+			.replyTo(replyQueueName)
+			.build();
 
 		String message = gson.toJson(requestData);
 		try {

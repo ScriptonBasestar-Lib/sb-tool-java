@@ -2,11 +2,10 @@ import javax.crypto.*;
 import java.security.InvalidKeyException;
 import java.security.NoSuchAlgorithmException;
 
-public class JEncryption2
-{
+public class JEncryption2 {
 	public static void main(String[] argv) {
 
-		try{
+		try {
 			KeyGenerator keygenerator = KeyGenerator.getInstance("DES");
 			SecretKey myDesKey = keygenerator.generateKey();
 
@@ -35,15 +34,15 @@ public class JEncryption2
 
 			System.out.println("Text Decryted : " + new String(textDecrypted));
 
-		}catch(NoSuchAlgorithmException e){
+		} catch (NoSuchAlgorithmException e) {
 			e.printStackTrace();
-		}catch(NoSuchPaddingException e){
+		} catch (NoSuchPaddingException e) {
 			e.printStackTrace();
-		}catch(InvalidKeyException e){
+		} catch (InvalidKeyException e) {
 			e.printStackTrace();
-		}catch(IllegalBlockSizeException e){
+		} catch (IllegalBlockSizeException e) {
 			e.printStackTrace();
-		}catch(BadPaddingException e){
+		} catch (BadPaddingException e) {
 			e.printStackTrace();
 		}
 

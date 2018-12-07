@@ -12,7 +12,8 @@ import java.io.IOException;
  * @author archmagece
  * @since 2017-08-30
  */
-public class SimpleApiAuthCodeFilter implements Filter {
+public class SimpleApiAuthCodeFilter
+	implements Filter {
 
 	private String serverAuthKey;
 	private int serverAuthKeyLength = 0;
@@ -20,7 +21,7 @@ public class SimpleApiAuthCodeFilter implements Filter {
 
 	@Override
 	public void init(FilterConfig filterConfig) throws ServletException {
-		serverAuthKey = filterConfig.getInitParameter("auth-key").trim()+" ";
+		serverAuthKey = filterConfig.getInitParameter("auth-key").trim() + " ";
 		serverAuthKeyLength = serverAuthKey.length();
 		serverAuthCode = filterConfig.getInitParameter("auth-code").trim();
 	}
@@ -31,9 +32,9 @@ public class SimpleApiAuthCodeFilter implements Filter {
 		HttpServletResponse response = (HttpServletResponse) servletResponse;
 
 		String header = request.getHeader(HttpHeaders.AUTHORIZATION);
-		if(header != null && header.startsWith(serverAuthKey)){
+		if (header != null && header.startsWith(serverAuthKey)) {
 			String serverAuthCodeParam = header.substring(serverAuthKeyLength);
-			if(serverAuthCodeParam.trim().contentEquals(serverAuthCodeParam)){
+			if (serverAuthCodeParam.trim().contentEquals(serverAuthCodeParam)) {
 				filterChain.doFilter(request, response);
 				return;
 			}

@@ -14,6 +14,7 @@ public class GenericCreationJavaTest {
 		SBListResponseWrapper<CommonLongIdDto> wr = new SBListResponseWrapper<CommonLongIdDto>().code("cococode").fail();
 		return wr;
 	}
+
 	SBListResponseWrapper<CommonLongIdDto> upload3() {
 		SBListResponseWrapper<CommonLongIdDto> wr = SBListResponseWrapper.<CommonLongIdDto>create();
 		return wr;
@@ -21,7 +22,7 @@ public class GenericCreationJavaTest {
 
 	@Test
 	@Ignore
-	public void test(){
+	public void test() {
 		upload1();
 		upload3();
 	}

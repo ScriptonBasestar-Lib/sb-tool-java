@@ -6,5 +6,6 @@ package org.scriptonbasestar.tool.crypto.symmetry;
  */
 public interface ISBSymmetryService {
 	byte[] encrypt(byte[] plainTextBytes);
+
 	byte[] decrypt(byte[] encryptedStringBytes);
 }

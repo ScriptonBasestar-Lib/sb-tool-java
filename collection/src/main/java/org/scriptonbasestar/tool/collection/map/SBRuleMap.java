@@ -9,7 +9,8 @@ import java.util.HashMap;
  * @Author archmagece
  * @CreatedAt 2016-12-19 18
  */
-public final class SBRuleMap extends HashMap<String, ElementRuleOption> {
+public final class SBRuleMap
+	extends HashMap<String, ElementRuleOption> {
 
 	private final boolean defaultAllow;
 

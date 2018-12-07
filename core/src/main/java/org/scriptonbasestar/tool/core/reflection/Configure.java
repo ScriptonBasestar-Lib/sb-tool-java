@@ -7,11 +7,11 @@ import java.util.LinkedHashMap;
 
 public class Configure {
 	public static LinkedHashMap<String, Object> dtoData2Map(Object bean)
-			throws
-			IntrospectionException,
-			IllegalArgumentException,
-			IllegalAccessException,
-			InvocationTargetException {
+		throws
+		IntrospectionException,
+		IllegalArgumentException,
+		IllegalAccessException,
+		InvocationTargetException {
 
 		LinkedHashMap<String, Object> map = new LinkedHashMap<String, Object>();
 		Method[] methods = bean.getClass().getMethods();
@@ -41,11 +41,11 @@ public class Configure {
 
 
 	public static ParamMap dtoData2ParamMap(Object bean)
-			throws
-			IntrospectionException,
-			IllegalArgumentException,
-			IllegalAccessException,
-			InvocationTargetException {
+		throws
+		IntrospectionException,
+		IllegalArgumentException,
+		IllegalAccessException,
+		InvocationTargetException {
 
 		ParamMap map = new ParamMap();
 		Method[] methods = bean.getClass().getMethods();
@@ -74,11 +74,11 @@ public class Configure {
 	}
 
 	public static <T> T dtoDataFromMap(Class<T> clazz, LinkedHashMap<String, Object> map)
-			throws
-			IllegalArgumentException,
-			IllegalAccessException,
-			InvocationTargetException,
-			InstantiationException {
+		throws
+		IllegalArgumentException,
+		IllegalAccessException,
+		InvocationTargetException,
+		InstantiationException {
 		// T bean = null;
 		T bean = clazz.newInstance();
 		Method[] methods = bean.getClass().getMethods();

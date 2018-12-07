@@ -15,7 +15,8 @@ import javax.servlet.jsp.tagext.Tag;
  * @with sb-tool-java
  * @since 2014-09-11-16
  */
-public class BodyTagSample extends BodyTagSupport {
+public class BodyTagSample
+	extends BodyTagSupport {
 
 	private final static String outputBody = "<script id=\"%s\" type=\"%s\">%s</script>";
 
@@ -50,18 +51,18 @@ public class BodyTagSample extends BodyTagSupport {
 	public int doEndTag() throws JspException {
 		try {
 			JspWriter out = pageContext.getOut();
-			BodyContent bodyc=getBodyContent();
+			BodyContent bodyc = getBodyContent();
 			System.out.println("===========================");
 			System.out.println(bodyc);
 			System.out.println("===========================");
 			String body = null;
-			if(getBodyContent()==null){
+			if (getBodyContent() == null) {
 				body = "";
-			}else{
+			} else {
 				body = getBodyContent().getString();
 			}
 
-			out.print(String.format(outputBody, id, type,body));
+			out.print(String.format(outputBody, id, type, body));
 		} catch (Exception e) {
 			e.printStackTrace();
 //			throw new JspException(e.getMessage());

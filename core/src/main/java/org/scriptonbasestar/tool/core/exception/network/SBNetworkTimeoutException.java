@@ -6,7 +6,8 @@ package org.scriptonbasestar.tool.core.exception.network;
  * <p>
  * 네트워크에서 타임아웃 발생시
  */
-public class SBNetworkTimeoutException extends SBNetworkException {
+public class SBNetworkTimeoutException
+	extends SBNetworkException {
 	public SBNetworkTimeoutException(String code, String message) {
 		super(code, message);
 	}

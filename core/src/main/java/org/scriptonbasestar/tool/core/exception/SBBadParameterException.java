@@ -6,7 +6,8 @@ package org.scriptonbasestar.tool.core.exception;
  * <p>
  * 의도하지 않은 파라미터 입력시
  */
-public class SBBadParameterException extends SBRuntimeBaseException {
+public class SBBadParameterException
+	extends SBRuntimeBaseException {
 	public SBBadParameterException(String code, String message) {
 		super(code, message);
 	}

@@ -10,16 +10,18 @@ import java.io.IOException;
 import java.util.regex.Pattern;
 
 
-public class HardKeyPassFilter implements Filter {
+public class HardKeyPassFilter
+	implements Filter {
 
-	public HardKeyPassFilter(String secretKey, String ... ignorePatterns) {
+	public HardKeyPassFilter(String secretKey, String... ignorePatterns) {
 		this.secretKey = secretKey;
 
 		this.ignorePatterns = new Pattern[ignorePatterns.length];
-		for(int i=0;i<ignorePatterns.length;i++){
+		for (int i = 0; i < ignorePatterns.length; i++) {
 			this.ignorePatterns[i] = Pattern.compile(ignorePatterns[i]);
 		}
 	}
+
 	private final String secretKey;
 	private final Pattern[] ignorePatterns;
 
@@ -34,8 +36,8 @@ public class HardKeyPassFilter implements Filter {
 	@Override
 	public void doFilter(ServletRequest servletRequest, ServletResponse servletResponse, FilterChain filterChain) throws IOException, ServletException {
 		HttpServletRequest request = (HttpServletRequest) servletRequest;
-		for(Pattern pattern : this.ignorePatterns){
-			if(pattern.matcher(request.getRequestURI()).matches()){
+		for (Pattern pattern : this.ignorePatterns) {
+			if (pattern.matcher(request.getRequestURI()).matches()) {
 				filterChain.doFilter(servletRequest, servletResponse);
 				return;
 			}
@@ -48,7 +50,7 @@ public class HardKeyPassFilter implements Filter {
 		if (secret == null || secret.isEmpty()) {
 			response.setStatus(HttpServletResponse.SC_FORBIDDEN);
 			return;
-		}else if(!secret.equals(secretKey)){
+		} else if (!secret.equals(secretKey)) {
 			response.setStatus(HttpServletResponse.SC_FORBIDDEN);
 			return;
 		}

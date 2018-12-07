@@ -9,7 +9,8 @@ import lombok.Getter;
  * 모든 SB Exception은 Runtime.
  * SBException의 BaseException
  */
-public abstract class SBRuntimeBaseException extends RuntimeException {
+public abstract class SBRuntimeBaseException
+	extends RuntimeException {
 
 	@Getter
 	protected final String code;

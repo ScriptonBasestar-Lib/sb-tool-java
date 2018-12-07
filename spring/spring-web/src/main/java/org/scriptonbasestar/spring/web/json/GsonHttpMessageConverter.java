@@ -19,31 +19,32 @@ import java.nio.charset.Charset;
  * @author archmagece
  * @since 2015-06-12-10
  */
-public class GsonHttpMessageConverter<RES extends Serializable> extends AbstractHttpMessageConverter<RES> {
+public class GsonHttpMessageConverter<RES extends Serializable>
+	extends AbstractHttpMessageConverter<RES> {
 
 	private Gson gson = new Gson();
 
 	public static final Charset DEFAULT_CHARSET = Charset.forName("UTF-8");
 
-	public GsonHttpMessageConverter(){
+	public GsonHttpMessageConverter() {
 		super(new MediaType("application", "json", DEFAULT_CHARSET));
 	}
 
 	@Override
 	protected RES readInternal(Class<? extends RES> clazz,
-								  HttpInputMessage inputMessage) throws IOException, HttpMessageNotReadableException {
+							   HttpInputMessage inputMessage) throws IOException, HttpMessageNotReadableException {
 
-		Type listType = new TypeToken<SBListResponseWrapper<RES>>(){}.getType();
+		Type listType = new TypeToken<SBListResponseWrapper<RES>>() {}.getType();
 //		StringBuilder sb = new StringBuilder();
 //		byte[] b = new byte[4096];
 //		for (int n; (n = inputMessage.getBody().read(b)) != -1;) {
 //			sb.append(new String(b, 0, n));
 //		}
 //		String sss = sb.toString();
-		try{
+		try {
 			RES obj = gson.fromJson(convertStreamToString(inputMessage.getBody()), listType);
 			return obj;
-		}catch(JsonSyntaxException e){
+		} catch (JsonSyntaxException e) {
 			throw new HttpMessageNotReadableException("Could not read JSON: " + e.getMessage(), e);
 		}
 
@@ -51,7 +52,7 @@ public class GsonHttpMessageConverter<RES extends Serializable> extends Abstract
 
 	@Override
 	protected boolean supports(Class<?> clazz) {
-		if(SBListResponseWrapper.class == clazz){
+		if (SBListResponseWrapper.class == clazz) {
 			return true;
 		}
 		return false;
@@ -65,12 +66,12 @@ public class GsonHttpMessageConverter<RES extends Serializable> extends Abstract
 	}
 
 	public String convertStreamToString(InputStream is) throws IOException {
-        /*
-         * To convert the InputStream to String we use the Reader.read(char[]
-         * buffer) method. We iterate until the Reader return -1 which means
-         * there's no more data to read. We use the StringWriter class to
-         * produce the string.
-         */
+		/*
+		 * To convert the InputStream to String we use the Reader.read(char[]
+		 * buffer) method. We iterate until the Reader return -1 which means
+		 * there's no more data to read. We use the StringWriter class to
+		 * produce the string.
+		 */
 		if (is != null) {
 			Writer writer = new StringWriter();
 

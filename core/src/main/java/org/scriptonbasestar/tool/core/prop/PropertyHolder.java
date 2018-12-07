@@ -10,7 +10,8 @@ import java.util.Map;
  * @author archmagece
  * @since 2014. 11. 16.
  */
-public class PropertyHolder implements Serializable {
+public class PropertyHolder
+	implements Serializable {
 	private Map<String, Object> setting = new HashMap<>();
 
 	@Setter
@@ -35,6 +36,7 @@ public class PropertyHolder implements Serializable {
 	public <Type> Type get(String key) {
 		return (Type) setting.get(key);
 	}
+
 	public <Type> Type get(Class<Type> clazz, String key) {
 		return (Type) setting.get(key);
 	}

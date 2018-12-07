@@ -6,5 +6,6 @@ package org.scriptonbasestar.tool.crypto.password;
  */
 public interface SBPasswordEncoder {
 	String encrypt(String plainString);
+
 	boolean equalThat(String encryptedString, String plainString);
 }

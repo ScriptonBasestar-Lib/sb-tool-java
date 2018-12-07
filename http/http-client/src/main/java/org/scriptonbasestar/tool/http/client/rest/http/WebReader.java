@@ -53,7 +53,7 @@ public class WebReader {
 					while (field != null && !field.equals("")) {
 						field = urlC.getHeaderField(n);
 						Header += urlC.getHeaderFieldKey(n) + "=" + field
-								+ "\n";
+							+ "\n";
 						n++;
 					}
 				}

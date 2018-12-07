@@ -8,7 +8,8 @@ import org.scriptonbasestar.tool.core.exception.SBRuntimeBaseException;
  * <p>
  * 네트워크 관련 예외처리.
  */
-public class SBNetworkException extends SBRuntimeBaseException {
+public class SBNetworkException
+	extends SBRuntimeBaseException {
 	public SBNetworkException(String code, String message) {
 		super(code, message);
 	}

@@ -15,7 +15,8 @@ import java.io.Serializable;
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-public class CommonIdNameValueDto implements Serializable {
+public class CommonIdNameValueDto
+	implements Serializable {
 
 	public CommonIdNameValueDto(Long id, String name) {
 		this.id = id;

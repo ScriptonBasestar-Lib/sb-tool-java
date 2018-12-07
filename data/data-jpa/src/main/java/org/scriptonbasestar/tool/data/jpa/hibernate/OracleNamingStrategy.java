@@ -18,7 +18,8 @@ package org.scriptonbasestar.tool.data.jpa.hibernate;
 
 import org.hibernate.cfg.ImprovedNamingStrategy;
 
-public class OracleNamingStrategy extends ImprovedNamingStrategy {
+public class OracleNamingStrategy
+	extends ImprovedNamingStrategy {
 
 	private static final long serialVersionUID = -5499015346115407402L;
 

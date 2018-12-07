@@ -7,34 +7,37 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class EaseParam {
-	
+
 	public Map<String, Object> map;
-	public EaseParam(){
+
+	public EaseParam() {
 		map = new HashMap<String, Object>();
 	}
-	public EaseParam(Map<String, Object> map){
+
+	public EaseParam(Map<String, Object> map) {
 		this.map = map;
 	}
 
-	public static EaseParam create(){
+	public static EaseParam create() {
 		return new EaseParam();
 	}
-	public static EaseParam create(Map<String, Object> map){
+
+	public static EaseParam create(Map<String, Object> map) {
 		return new EaseParam(map);
 	}
 
-	private void init(){
+	private void init() {
 //		for(SBParam bsParam : bsParamMap.params){
 //			
 //		}
 	}
 
-	public EaseParam addAll(Map<String, Object> map){
+	public EaseParam addAll(Map<String, Object> map) {
 		this.map.putAll(map);
 		return this;
 	}
 
-	public EaseParam time(String stime, String etime) throws ParseException{
+	public EaseParam time(String stime, String etime) throws ParseException {
 		DateFormat format = new SimpleDateFormat("yyyyMMdd");
 		this.map.put("stime", format.parseObject(stime));
 		this.map.put("etime", format.parseObject(etime));
