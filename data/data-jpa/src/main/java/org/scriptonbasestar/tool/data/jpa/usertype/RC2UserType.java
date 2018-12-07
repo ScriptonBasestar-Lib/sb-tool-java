@@ -8,8 +8,9 @@ import org.hibernate.engine.spi.SharedSessionContractImplementor;
 import org.hibernate.type.StringType;
 import org.hibernate.usertype.ParameterizedType;
 import org.hibernate.usertype.UserType;
-import org.scriptonbasestar.tool.crypto.symmetry.RC2;
-import org.scriptonbasestar.tool.crypto.symmetry.SBSymmetryService;
+import org.scriptonbasestar.tool.crypto.symmetry.SymmetryAlgorithm;
+import org.scriptonbasestar.tool.crypto.symmetry.SymmetryServiceImpl;
+import org.scriptonbasestar.tool.crypto.symmetry.ISBSymmetryService;
 
 import java.io.Serializable;
 import java.nio.charset.Charset;
@@ -28,16 +29,21 @@ import java.util.Properties;
 public class RC2UserType implements UserType, ParameterizedType {
 
 	public static final String TYPE = "org.scriptonbasestar.tool.data.jpa.usertype.RC2UserType";
-
 	public static final String PARAM_CHARSET = "charset";
-
 	public static final Charset DEFAULT_CHARSET = Charset.forName("UTF8");
-
 	public static final int SQL_TYPE = Types.VARCHAR;
 
-	private final SBSymmetryService byteEncryptor = new RC2("r390prifk0p2i03082");
+	private final ISBSymmetryService byteEncryptor;
 
 	protected Charset charset;
+
+	public RC2UserType() {
+		this("r390prifk0p2i03082");
+	}
+
+	public RC2UserType(String password) {
+		byteEncryptor = new SymmetryServiceImpl(SymmetryAlgorithm.RC2_40, password);
+	}
 
 	@Override
 	public void setParameterValues(Properties parameters) {
@@ -60,7 +66,7 @@ public class RC2UserType implements UserType, ParameterizedType {
 
 	@Override
 	public int[] sqlTypes() {
-		return new int[] { StringType.INSTANCE.sqlType() };
+		return new int[]{StringType.INSTANCE.sqlType()};
 	}
 
 	@Override
@@ -82,7 +88,7 @@ public class RC2UserType implements UserType, ParameterizedType {
 	public Object nullSafeGet(ResultSet rs, String[] names, SharedSessionContractImplementor session, Object owner) throws HibernateException, SQLException {
 		try {
 			String hexStr = StringType.INSTANCE.nullSafeGet(rs, names[0], session);
-			if(hexStr==null){
+			if (hexStr == null) {
 				return null;
 			}
 			return StringUtils.newStringUtf8(byteEncryptor.decrypt(Hex.decodeHex(hexStr.toCharArray())));
@@ -94,9 +100,9 @@ public class RC2UserType implements UserType, ParameterizedType {
 	@Override
 	public void nullSafeSet(PreparedStatement st, Object value, int index, SharedSessionContractImplementor session) throws HibernateException, SQLException {
 		try {
-			if(value==null){
+			if (value == null) {
 				StringType.INSTANCE.nullSafeSet(st, null, index, session);
-			}else{
+			} else {
 				StringType.INSTANCE.nullSafeSet(st, Hex.encodeHexString(byteEncryptor.encrypt(((String) value).getBytes("UTF-8"))), index, session);
 			}
 		} catch (Exception ex) {

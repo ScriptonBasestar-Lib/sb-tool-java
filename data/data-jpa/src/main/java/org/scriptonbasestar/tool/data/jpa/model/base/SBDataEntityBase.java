@@ -21,7 +21,7 @@ import java.util.Date;
 @DynamicInsert
 @DynamicUpdate
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
-public abstract class SBDataEntityRootBase implements Serializable {
+public abstract class SBDataEntityBase implements Serializable {
 
 	/**
 	 * 블라인드처리 등의 용도.
@@ -48,6 +48,7 @@ public abstract class SBDataEntityRootBase implements Serializable {
 	protected void onUpdate() {
 		this.updatedAt = new Date();
 	}
+
 
 	@Override
 	public String toString() {

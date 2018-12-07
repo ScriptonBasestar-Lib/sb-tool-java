@@ -54,7 +54,7 @@ public class BCryptUserType implements UserType, ParameterizedType {
 	}
 
 	public int[] sqlTypes() {
-		return new int[] {SQL_TYPE};
+		return new int[]{SQL_TYPE};
 	}
 
 	public Class returnedClass() {
@@ -95,7 +95,7 @@ public class BCryptUserType implements UserType, ParameterizedType {
 	}
 
 	public Serializable disassemble(final Object o) throws HibernateException {
-		return (Serializable)o;
+		return (Serializable) o;
 	}
 
 	public Object assemble(final Serializable serializable, final Object o) throws HibernateException {

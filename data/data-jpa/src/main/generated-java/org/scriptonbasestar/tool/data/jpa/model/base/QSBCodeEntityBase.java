@@ -19,7 +19,7 @@ public class QSBCodeEntityBase extends EntityPathBase<SBCodeEntityBase> {
 
     public static final QSBCodeEntityBase sBCodeEntityBase = new QSBCodeEntityBase("sBCodeEntityBase");
 
-    public final QSBDataEntityRootBase _super = new QSBDataEntityRootBase(this);
+    public final QSBDataEntityBase _super = new QSBDataEntityBase(this);
 
     public final StringPath code = createString("code");
 

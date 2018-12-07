@@ -18,11 +18,10 @@ import java.util.Date;
 @DynamicInsert
 @DynamicUpdate
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
-public abstract class SBLogEntityRootBase implements Serializable {
+public abstract class SBLogEntityBase implements Serializable {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
-//	@Transient
 	private Long id;
 
 	@Column(nullable = false, updatable = false)

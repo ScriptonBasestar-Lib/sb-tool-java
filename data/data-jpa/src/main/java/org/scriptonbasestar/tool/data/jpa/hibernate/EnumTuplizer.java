@@ -23,8 +23,8 @@ public class EnumTuplizer extends PojoEntityTuplizer {
 			public Object instantiate(Serializable id) {
 				try {
 					return Enum.valueOf(
-							(Class) persistentClass.getClass().getClassLoader().loadClass(persistentClass.getClassName()),
-							(String) id
+						(Class) persistentClass.getClass().getClassLoader().loadClass(persistentClass.getClassName()),
+						(String) id
 					);
 				} catch (ClassNotFoundException e) {
 					throw new AssertionError(e);

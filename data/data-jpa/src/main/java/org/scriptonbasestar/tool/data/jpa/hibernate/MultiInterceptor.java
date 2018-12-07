@@ -24,8 +24,11 @@ public class MultiInterceptor extends EmptyInterceptor {
 	@Setter
 	private List<Interceptor> interceptors = Lists.newArrayList();
 
-	/** Instantiates a new Multi interceptor. */
-	public MultiInterceptor() { }
+	/**
+	 * Instantiates a new Multi interceptor.
+	 */
+	public MultiInterceptor() {
+	}
 
 	/**
 	 * Instantiates a new Multi interceptor.

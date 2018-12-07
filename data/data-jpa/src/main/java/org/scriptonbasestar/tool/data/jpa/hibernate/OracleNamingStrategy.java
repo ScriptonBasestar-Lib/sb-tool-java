@@ -20,25 +20,25 @@ import org.hibernate.cfg.ImprovedNamingStrategy;
 
 public class OracleNamingStrategy extends ImprovedNamingStrategy {
 
-    private static final long serialVersionUID = -5499015346115407402L;
+	private static final long serialVersionUID = -5499015346115407402L;
 
-    @Override
-    public String classToTableName(String className) {
-        return super.classToTableName(className).toUpperCase();
-    }
+	@Override
+	public String classToTableName(String className) {
+		return super.classToTableName(className).toUpperCase();
+	}
 
-    @Override
-    public String propertyToColumnName(String propertyName) {
-        return super.propertyToColumnName(propertyName).toUpperCase();
-    }
+	@Override
+	public String propertyToColumnName(String propertyName) {
+		return super.propertyToColumnName(propertyName).toUpperCase();
+	}
 
-    @Override
-    public String tableName(String tableName) {
-        return super.tableName(tableName).toUpperCase();
-    }
+	@Override
+	public String tableName(String tableName) {
+		return super.tableName(tableName).toUpperCase();
+	}
 
-    @Override
-    public String columnName(String columnName) {
-        return super.columnName(columnName).toUpperCase();
-    }
+	@Override
+	public String columnName(String columnName) {
+		return super.columnName(columnName).toUpperCase();
+	}
 }

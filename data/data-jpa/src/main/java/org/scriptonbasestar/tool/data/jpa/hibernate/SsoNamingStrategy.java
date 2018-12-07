@@ -12,8 +12,9 @@ public class SsoNamingStrategy extends ImprovedNamingStrategy {
 
 	/**
 	 * Transforms class names to table names by using the described naming conventions.
+	 *
 	 * @param className
-	 * @return  The constructed table name.
+	 * @return The constructed table name.
 	 */
 	@Override
 	public String classToTableName(String className) {

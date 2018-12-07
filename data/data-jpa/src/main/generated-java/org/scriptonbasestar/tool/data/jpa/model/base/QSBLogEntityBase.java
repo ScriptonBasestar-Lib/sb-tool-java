@@ -10,14 +10,14 @@ import com.querydsl.core.types.Path;
 
 
 /**
- * QSBLogEntityRootBase is a Querydsl query type for SBLogEntityRootBase
+ * QSBLogEntityBase is a Querydsl query type for SBLogEntityBase
  */
 @Generated("com.querydsl.codegen.SupertypeSerializer")
-public class QSBLogEntityRootBase extends EntityPathBase<SBLogEntityRootBase> {
+public class QSBLogEntityBase extends EntityPathBase<SBLogEntityBase> {
 
-    private static final long serialVersionUID = 2093727051L;
+    private static final long serialVersionUID = -645397175L;
 
-    public static final QSBLogEntityRootBase sBLogEntityRootBase = new QSBLogEntityRootBase("sBLogEntityRootBase");
+    public static final QSBLogEntityBase sBLogEntityBase = new QSBLogEntityBase("sBLogEntityBase");
 
     public final DatePath<java.util.Date> createdAt = createDate("createdAt", java.util.Date.class);
 
@@ -25,16 +25,16 @@ public class QSBLogEntityRootBase extends EntityPathBase<SBLogEntityRootBase> {
 
     public final NumberPath<Long> id = createNumber("id", Long.class);
 
-    public QSBLogEntityRootBase(String variable) {
-        super(SBLogEntityRootBase.class, forVariable(variable));
+    public QSBLogEntityBase(String variable) {
+        super(SBLogEntityBase.class, forVariable(variable));
     }
 
-    public QSBLogEntityRootBase(Path<? extends SBLogEntityRootBase> path) {
+    public QSBLogEntityBase(Path<? extends SBLogEntityBase> path) {
         super(path.getType(), path.getMetadata());
     }
 
-    public QSBLogEntityRootBase(PathMetadata metadata) {
-        super(SBLogEntityRootBase.class, metadata);
+    public QSBLogEntityBase(PathMetadata metadata) {
+        super(SBLogEntityBase.class, metadata);
     }
 
 }
