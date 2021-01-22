@@ -27,9 +27,9 @@
 	</modules>
 
 	<properties>
-		<java_version>11</java_version>
-		<maven.compiler.source>11</maven.compiler.source>
-		<maven.compiler.target>11</maven.compiler.target>
+		<java_version>1.8</java_version>
+		<maven.compiler.source>1.8</maven.compiler.source>
+		<maven.compiler.target>1.8</maven.compiler.target>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
 
@@ -38,7 +38,7 @@
 		<avro_version>1.10.1</avro_version>
 		<jasypt_version>1.9.3</jasypt_version>
 		<commons_net_version>3.7.2</commons_net_version>
-		<jodd_core_version>6.0.4</jodd_core_version>
+		<jodd_core_version>5.3.0</jodd_core_version>
 		<jackson_fastxml_version>2.12.1</jackson_fastxml_version>
 		<xstream_version>1.4.15</xstream_version>
 		<javax_jsp_version>2.3.3</javax_jsp_version>
@@ -144,6 +144,12 @@
 			</dependency>
 
 			<dependency>
+				<groupId>org.hibernate.javax.persistence</groupId>
+				<artifactId>hibernate-jpa-2.1-api</artifactId>
+				<version>1.0.2.Final</version>
+			</dependency>
+
+			<dependency>
 				<groupId>com.google.guava</groupId>
 				<artifactId>guava</artifactId>
 				<version>${guava_version}</version>
@@ -190,23 +196,19 @@
 			</plugin>
 
 			<plugin>
-				<groupId>org.codehaus.gmaven</groupId>
-				<artifactId>gmaven-plugin</artifactId>
-				<version>1.5</version>
-				<configuration>
-					<providerSelection>${java_version}</providerSelection>
-				</configuration>
-				<executions>
-					<execution>
-						<goals>
-							<goal>generateStubs</goal>
-							<goal>compile</goal>
-							<goal>generateTestStubs</goal>
-							<goal>testCompile</goal>
-						</goals>
-					</execution>
-				</executions>
+				<groupId>org.codehaus.gmavenplus</groupId>
+				<artifactId>gmavenplus-plugin</artifactId>
+				<version>1.12.1</version>
 			</plugin>
+
+<!--			<plugin>-->
+<!--				<groupId>org.apache.maven.plugins</groupId>-->
+<!--				<artifactId>maven-compiler-plugin</artifactId>-->
+<!--				<version>3.8.0</version>-->
+<!--				<configuration>-->
+<!--					<release>${java_version}</release>-->
+<!--				</configuration>-->
+<!--			</plugin>-->
 		</plugins>
 	</build>
 

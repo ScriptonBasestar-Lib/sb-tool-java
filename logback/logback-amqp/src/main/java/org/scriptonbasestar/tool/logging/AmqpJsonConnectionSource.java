@@ -90,7 +90,7 @@ public class AmqpJsonConnectionSource {
 			template = new RabbitTemplate(connectionFactory());
 			template.setExchange(exchangeName);
 			template.setRoutingKey(routingKeyPattern);
-			template.setQueue(exchangeType);
+			template.setDefaultReceiveQueue(exchangeType);
 			template.setMessageConverter(jsonMessageConverter());
 		}
 		return template;
