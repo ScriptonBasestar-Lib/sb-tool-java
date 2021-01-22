@@ -62,10 +62,15 @@
 	</repositories>
 
 	<distributionManagement>
+<!--		<repository>-->
+<!--			<id>bintray-archmagece-jvm-repo</id>-->
+<!--			<name>archmagece-jvm-repo</name>-->
+<!--			<url>https://api.bintray.com/maven/archmagece/jvm-repo/sb-tools-java/;publish=1</url>-->
+<!--		</repository>-->
 		<repository>
-			<id>bintray-archmagece-jvm-repo</id>
-			<name>archmagece-jvm-repo</name>
-			<url>https://api.bintray.com/maven/archmagece/jvm-repo/sb-tools-java/;publish=1</url>
+			<id>github</id>
+			<name>GitHub OWNER Apache Maven Packages</name>
+			<url>https://maven.pkg.github.com/ScriptonBasestar-toolbox/sb-tools-java</url>
 		</repository>
 	</distributionManagement>
 
