@@ -6,7 +6,7 @@
 	<groupId>org.scriptonbasestar.tools</groupId>
 	<artifactId>sb-tools-java</artifactId>
 	<packaging>pom</packaging>
-	<version>sb-tools-20181207-1-DEV</version>
+	<version>sb-tools-20200122-1-DEV</version>
 
 	<modules>
 		<module>collection</module>
@@ -27,23 +27,23 @@
 	</modules>
 
 	<properties>
-		<java_version>1.8</java_version>
-		<maven.compiler.source>1.8</maven.compiler.source>
-		<maven.compiler.target>1.8</maven.compiler.target>
+		<java_version>11</java_version>
+		<maven.compiler.source>11</maven.compiler.source>
+		<maven.compiler.target>11</maven.compiler.target>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
 
 		<!-- project -->
-		<guava_version>26.0-jre</guava_version>
-		<avro_version>1.8.2</avro_version>
-		<jasypt_version>1.9.2</jasypt_version>
-		<commons_net_version>3.6</commons_net_version>
-		<jodd_core_version>4.3.1</jodd_core_version>
-		<jackson_fastxml_version>2.9.6</jackson_fastxml_version>
-		<xstream_version>1.4.10</xstream_version>
+		<guava_version>30.1-jre</guava_version>
+		<avro_version>1.10.1</avro_version>
+		<jasypt_version>1.9.3</jasypt_version>
+		<commons_net_version>3.7.2</commons_net_version>
+		<jodd_core_version>6.0.4</jodd_core_version>
+		<jackson_fastxml_version>2.12.1</jackson_fastxml_version>
+		<xstream_version>1.4.15</xstream_version>
 		<javax_jsp_version>2.3.3</javax_jsp_version>
 
-		<springboot_version>2.0.5.RELEASE</springboot_version>
+		<springboot_version>2.3.7.RELEASE</springboot_version>
 	</properties>
 
 	<repositories>
@@ -130,17 +130,17 @@
 			<dependency>
 				<groupId>org.scriptonbasestar.tools</groupId>
 				<artifactId>sb-tools-core</artifactId>
-				<version>sb-tools-20181207-1-DEV</version>
+				<version>sb-tools-20200122-1-DEV</version>
 			</dependency>
 			<dependency>
 				<groupId>org.scriptonbasestar.tools</groupId>
 				<artifactId>sb-tools-validation</artifactId>
-				<version>sb-tools-20181207-1-DEV</version>
+				<version>sb-tools-20200122-1-DEV</version>
 			</dependency>
 			<dependency>
 				<groupId>org.scriptonbasestar.tools</groupId>
 				<artifactId>sb-tools-crypto</artifactId>
-				<version>sb-tools-20181207-1-DEV</version>
+				<version>sb-tools-20200122-1-DEV</version>
 			</dependency>
 
 			<dependency>
