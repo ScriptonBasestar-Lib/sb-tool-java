@@ -6,7 +6,7 @@
 	<groupId>org.scriptonbasestar.tools</groupId>
 	<artifactId>sb-tools-java</artifactId>
 	<packaging>pom</packaging>
-	<version>sb-tools-20200122-1-DEV</version>
+	<version>sb-tools-20200122-3-DEV</version>
 
 	<modules>
 		<module>collection</module>
@@ -135,17 +135,17 @@
 			<dependency>
 				<groupId>org.scriptonbasestar.tools</groupId>
 				<artifactId>sb-tools-core</artifactId>
-				<version>sb-tools-20200122-1-DEV</version>
+				<version>sb-tools-20200122-3-DEV</version>
 			</dependency>
 			<dependency>
 				<groupId>org.scriptonbasestar.tools</groupId>
 				<artifactId>sb-tools-validation</artifactId>
-				<version>sb-tools-20200122-1-DEV</version>
+				<version>sb-tools-20200122-3-DEV</version>
 			</dependency>
 			<dependency>
 				<groupId>org.scriptonbasestar.tools</groupId>
 				<artifactId>sb-tools-crypto</artifactId>
-				<version>sb-tools-20200122-1-DEV</version>
+				<version>sb-tools-20200122-3-DEV</version>
 			</dependency>
 
 			<dependency>

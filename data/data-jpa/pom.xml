@@ -6,7 +6,7 @@
 	<parent>
 		<groupId>org.scriptonbasestar.tools</groupId>
 		<artifactId>sb-tools-data</artifactId>
-		<version>sb-tools-20200122-1-DEV</version>
+		<version>sb-tools-20200122-3-DEV</version>
 	</parent>
 
 	<artifactId>sb-tools-data-jpa</artifactId>
@@ -71,10 +71,14 @@
 							<goal>process</goal>
 						</goals>
 						<configuration>
+							<!--<outputDirectory>${project.build.directory}/generated-sources/java</outputDirectory>-->
 							<!--<outputDirectory>target/generated-sources/java</outputDirectory>-->
-							<!--<outputDirectory>src/main/generated-java</outputDirectory>-->
 							<outputDirectory>src/main/generated-java/</outputDirectory>
 							<processor>com.querydsl.apt.jpa.JPAAnnotationProcessor</processor>
+							<options>
+								<querydsl.entityAccessors>true</querydsl.entityAccessors>
+								<querydsl.useFields>false</querydsl.useFields>
+							</options>
 						</configuration>
 					</execution>
 				</executions>
@@ -82,7 +86,7 @@
 			<plugin>
 				<groupId>org.codehaus.mojo</groupId>
 				<artifactId>build-helper-maven-plugin</artifactId>
-				<version>3.0.0</version>
+				<version>3.2.0</version>
 				<executions>
 					<execution>
 						<id>add-source</id>
@@ -93,7 +97,9 @@
 						<configuration>
 							<sources>
 								<!--<source>${project.build.directory}/generated-sources/java/</source>-->
+								<!--<source>target/generated-sources/java/</source>-->
 								<source>src/main/generated-java/</source>
+								<source>src/main/java/</source>
 							</sources>
 						</configuration>
 					</execution>
